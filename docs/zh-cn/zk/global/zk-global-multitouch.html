@@ -959,7 +959,7 @@
                 <a href="../zk-agent.html">
             
                     
-                    代理事件模块接口 - 开发中
+                    代理事件模块接口
             
                 </a>
             
@@ -1032,12 +1032,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.9" data-path="../zk-shell.md">
+        <li class="chapter " data-level="1.11.9" data-path="../zk-shell.html">
             
-                <span>
+                <a href="../zk-shell.html">
             
                     
-                    Shell命令模块接口 - 开发中
+                    Shell命令模块接口
             
                 </a>
             
@@ -1196,38 +1196,39 @@
 </ul>
 <blockquote>
 <pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;request&apos;</span>);
-    <span class="hljs-keyword">var</span> url=<span class="hljs-string">&quot;http://127.0.0.1:20391/global&quot;</span>;
-<span class="hljs-keyword">var</span> touch1 = [
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">500</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1200</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">1</span>},
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">500</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1100</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">500</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1000</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>}
- ];
- <span class="hljs-keyword">var</span> touch2 = [
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1200</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">1</span>},
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1100</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1000</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
-     {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>}
- ];
-    <span class="hljs-keyword">var</span> p = {
-             <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;multiTouch&quot;</span>,
-             <span class="hljs-string">&quot;arrays&quot;</span>: [touch1,touch2],
-            <span class="hljs-string">&quot;timeout&quot;</span>:<span class="hljs-number">1000</span>
-         };
-    <span class="hljs-keyword">var</span> data = <span class="hljs-built_in">JSON</span>.stringify(p);
+    <span class="hljs-keyword">var</span> url = <span class="hljs-string">&quot;http://127.0.0.1:20390/global&quot;</span>;
+    <span class="hljs-keyword">var</span> touch1 = [
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">500</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1200</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">1</span>},
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">500</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1100</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">500</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1000</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>}
+    ];
+    <span class="hljs-keyword">var</span> touch2 = [
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1200</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">1</span>},
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1100</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1000</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>},
+      {<span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">800</span>, <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;pointer&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;delay&quot;</span>: <span class="hljs-number">20</span>}
+    ];
+    <span class="hljs-keyword">var</span> params = {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;multiTouch&quot;</span>,
+      <span class="hljs-string">&quot;arrays&quot;</span>: [touch1, touch2],
+      <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">1000</span>
+    };
     request({
-              url: url,
-              method: <span class="hljs-string">&quot;POST&quot;</span>,
-              json: <span class="hljs-literal">true</span>,
-              headers: {
-                 <span class="hljs-string">&quot;content-type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,
-              },
-             body: data
-          }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, response, body</span>) </span>{
-              <span class="hljs-keyword">if</span> (!error &amp;&amp; response.statusCode == <span class="hljs-number">200</span>) {
-                  <span class="hljs-built_in">console</span>.log(body) 
-          }
-}
+      url: url,
+      method: <span class="hljs-string">&quot;POST&quot;</span>,
+      json: <span class="hljs-literal">true</span>,
+      headers: {
+        <span class="hljs-string">&quot;content-type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,
+      },
+      body: params
+    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, response, body</span>) </span>{
+      <span class="hljs-keyword">if</span> (!error &amp;&amp; response.statusCode == <span class="hljs-number">200</span>) {
+        <span class="hljs-built_in">console</span>.log(body)
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(error)
+      }
+    });
 </code></pre>
 </blockquote>
 
@@ -1274,7 +1275,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多点触摸动作接口","level":"1.11.2.4","depth":3,"next":{"title":"滑动动作接口","level":"1.11.2.5","depth":3,"path":"zh-cn/zk/global/zk-global-swipe.md","ref":"zh-cn/zk/global/zk-global-swipe.md","articles":[]},"previous":{"title":"点击动作接口","level":"1.11.2.3","depth":3,"path":"zh-cn/zk/global/zk-global-click.md","ref":"zh-cn/zk/global/zk-global-click.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","code","copy-code-button","-lunr","-search","search-pro","anchor-navigation-ex","hide-element","favicon-absolute","popup"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/zh-cn/images/ico.png","appleTouchIconPrecomposedMore":{},"favicon":"/zh-cn/images/ico.png"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EasyClick开发文档","language":"zh-hans","gitbook":"*","description":"记录EasyClick开发教程和常用的函数"},"file":{"path":"zh-cn/zk/global/zk-global-multitouch.md","mtime":"2020-04-28T11:58:25.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-25T06:31:22.309Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多点触摸动作接口","level":"1.11.2.4","depth":3,"next":{"title":"滑动动作接口","level":"1.11.2.5","depth":3,"path":"zh-cn/zk/global/zk-global-swipe.md","ref":"zh-cn/zk/global/zk-global-swipe.md","articles":[]},"previous":{"title":"点击动作接口","level":"1.11.2.3","depth":3,"path":"zh-cn/zk/global/zk-global-click.md","ref":"zh-cn/zk/global/zk-global-click.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","code","copy-code-button","-lunr","-search","search-pro","anchor-navigation-ex","hide-element","favicon-absolute","popup"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/zh-cn/images/ico.png","appleTouchIconPrecomposedMore":{},"favicon":"/zh-cn/images/ico.png"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EasyClick开发文档","language":"zh-hans","gitbook":"*","description":"记录EasyClick开发教程和常用的函数"},"file":{"path":"zh-cn/zk/global/zk-global-multitouch.md","mtime":"2020-07-27T07:14:49.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-28T13:41:12.044Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
