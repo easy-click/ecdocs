@@ -1,39 +1,41 @@
-# docs
 
-#### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+- 技术交流 QQ群：777164022
 
-#### 软件架构
-软件架构说明
+# EasyClick单机版
+
+解放双手，可编程式、智能化自动点击App；只要会敲键盘就能进行编程！
+* 简单易编程
+* 丰富的API，图像识别
+* 可脱机运行，可单独发布
+* 支持无障碍/免ROOT运行
+* 智能IDE编程支持
+* ...
+
+# EasyClick企业版
+云控平台，数千台手机同步运行，节省企业测试成本
+* 不局限地域，任意地方部署设备
+* 云端画面实时同步
+* 定时/非定时执行任务
+* 人机控制同步，人工可介入控制替代自动操作
+* 自带数据分析功能，实时数据报表
+* ...
+
+# EasyClick能做什么
+* App爬虫等
+* 残障人士的辅助，例如语音读书等
+* 自动化测试App
+* ...
+
+# 适合人群
+* 有意学习自动化测试脚本的人员
+* 希望用自动操作代替手动的人员
+* 企业App测试团队及测试人员
 
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
 
 
-#### 码云特技
+技术交流 QQ群：777164022
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+在开始之前请阅读用户协议和免责声明，当你开始使用本产品，默认已经接受用户协议和免责声明。
+* [用户协议](/zh-cn/agreement.md)
+* [免责声明](/zh-cn/declare.md)

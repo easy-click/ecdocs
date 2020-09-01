@@ -8,4 +8,4 @@
 * 支持安卓5.0 ~ 10
 
 [GitHub](https://github.com/easy-click/easyclick-libs)
-[开始](#quick-start)
+[开始](README)
