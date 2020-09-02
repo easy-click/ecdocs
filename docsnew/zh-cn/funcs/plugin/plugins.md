@@ -8,7 +8,7 @@
 - 点击下一步并完成，会自动生成对应的java类和配置信息
 <br/>
 <br/>
-<img src='/zh-cn/images/plugin-1.jpg' width='400' >
+<img src='zh-cn/images/plugin-1.jpg' width='400' >
 
 # 插件目录结构
 - src/js/main.js 这个文件是js调用插件相关方法的测试入口
@@ -23,7 +23,7 @@
 
 
 <br/><br/>
-<img src='/zh-cn/images/plugin-2.jpg' width='400' >
+<img src='zh-cn/images/plugin-2.jpg' width='400' >
 
 # 插件java类 PluginClz
 - PluginClz是默认生成的插件java类
