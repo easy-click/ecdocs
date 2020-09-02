@@ -463,7 +463,113 @@
 > main(); 
 > ```
 
+### row
 
+> ```javascript
+> 
+> function main(){ 
+>     //获取选择器对象
+>     var selector = row(1);
+>     var result = click(selector);
+>     if (result) {
+>         toast("点击成功");
+>     } else {
+>         toast("点击失败");
+>     }
+> }
+> main(); 
+> ```
+
+
+
+
+### column
+
+> ```javascript
+> 
+> function main(){ 
+>     //获取选择器对象
+>     var selector = column(1);
+>     var result = click(selector);
+>     if (result) {
+>         toast("点击成功");
+>     } else {
+>         toast("点击失败");
+>     }
+> }
+> main(); 
+> ```
+
+### rowSpan
+
+> ```javascript
+> 
+> function main(){ 
+>     //获取选择器对象
+>     var selector = rowSpan(1);
+>     var result = click(selector);
+>     if (result) {
+>         toast("点击成功");
+>     } else {
+>         toast("点击失败");
+>     }
+> }
+> main(); 
+> ```
+
+
+
+### columnSpan
+
+> ```javascript
+> 
+> function main(){ 
+>     //获取选择器对象
+>     var selector = columnSpan(1);
+>     var result = click(selector);
+>     if (result) {
+>         toast("点击成功");
+>     } else {
+>         toast("点击失败");
+>     }
+> }
+> main(); 
+> ```
+
+
+### rowCount
+
+> ```javascript
+> 
+> function main(){ 
+>     //获取选择器对象
+>     var selector = rowCount(1);
+>     var result = click(selector);
+>     if (result) {
+>         toast("点击成功");
+>     } else {
+>         toast("点击失败");
+>     }
+> }
+> main(); 
+> ```
+
+### columnCount
+
+> ```javascript
+> 
+> function main(){ 
+>     //获取选择器对象
+>     var selector = columnCount(1);
+>     var result = click(selector);
+>     if (result) {
+>         toast("点击成功");
+>     } else {
+>         toast("点击失败");
+>     }
+> }
+> main(); 
+> ```
 
 ## 级联匹配
 
