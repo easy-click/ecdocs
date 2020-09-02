@@ -15,15 +15,15 @@
 - 默认路由器地址一般是 ：http://192.168.1.1，本文档依次为例，路由器是TPLINK，在浏览器输入网址：http://192.168.1.1
 - 找到虚拟服务器
 
-<img src='/zh-cn/images/remote_1.png' width='300' >
+<img src='zh-cn/images/remote_1.png' width='300' >
 
 - 找到虚拟服务器
 
-<img src='/zh-cn/images/remote_2.png' width='300' >
+<img src='zh-cn/images/remote_2.png' width='300' >
 
 - 找到外网IP
 
-<img src='/zh-cn/images/remote_3.png' width='300' >
+<img src='zh-cn/images/remote_3.png' width='300' >
 
 ## 在手机上EC进行连接
 - 在手机上打开EC调试程序

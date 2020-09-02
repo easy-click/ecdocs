@@ -6,7 +6,7 @@
 ## 设备连接
 ### USB连接
 <br/>
-<img src='/zh-cn/images/getstart-5.jpg' width='300' >
+<img src='zh-cn/images/getstart-5.jpg' width='300' >
 
 ### WIFI连接
 - WIFI连接是指需要再手机上开启无线调试模式，

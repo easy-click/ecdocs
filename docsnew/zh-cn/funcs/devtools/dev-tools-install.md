@@ -11,10 +11,10 @@
     
 - 安装后，打开bin/idea64.exe文件开始运行
     <br/>
-    <img src='/zh-cn/images/getstart-1.jpg'>
+    <img src='zh-cn/images/getstart-1.jpg'>
     
 - 下载EasyClick最新版本的IDEA插件，并按照到IDEA中，安装教程：https://blog.csdn.net/qq_35246620/article/details/78289074
 
 # 主界面预览
 
-<img src='/zh-cn/images/devtoos-overview.jpg'>
+<img src='zh-cn/images/devtoos-overview.jpg'>
