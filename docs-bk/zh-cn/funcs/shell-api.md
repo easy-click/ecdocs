@@ -4,6 +4,13 @@
 - shell模块的对象前缀是shell，例如 shell.installApp()这样调用
 
 
+# 载入模块
+
+
+> ```javascript
+> loadECModule("shell");
+> ```
+
 
 ## shell.installApp
 * 安装 apk
@@ -11,6 +18,8 @@
 * @return true 代表安装成功，false 代表安装失败
 
 > ```javascript
+> loadECModule("global");
+> loadECModule("shell");
 >     
 > function main(){
 >     var result = shell.installApp("/sdcard/app.apk");
@@ -26,9 +35,11 @@
 
 
 > ```javascript
+> loadECModule("global");
+> loadECModule("shell");
 >     
 > function main(){
->     var result = shell.uninstallApp("com.xx");
+>     var result = shell.uninstallApp("com.ss.android.article.news");
 > }
 > main();
 > ```
@@ -42,9 +53,11 @@
 
 
 > ```javascript
+> loadECModule("global");
+> loadECModule("shell");
 >     
 > function main(){
->     var result = shell.stopApp("com.xx");
+>     var result = shell.stopApp("com.ss.android.article.news");
 > }
 > main();
 > ```
@@ -60,6 +73,8 @@
 
 
 > ```javascript
+> loadECModule("global");
+> loadECModule("shell");
 >     
 > function main(){
 >     var result = shell.execCommand("pm install /sdcard/app.apk");
@@ -69,33 +84,3 @@
 
 
 
-## shell.sudo
-* 执行root模式下，相关的命令，需要有root权限
-* @param command 命令，例如安装App ： pm install /sdcard/app.apk
-* @return 命令执行后返回的字符串结果
-
-
-> ```javascript
->     
-> function main(){
->     var result = shell.sudo("pm install /sdcard/app.apk");
-> }
-> main();
-> ```
->
-
-
-## shell.execAgentCommand
-* 执行shell命令。需要启动代理服务
-* @param command 命令，例如安装App ： pm install /sdcard/app.apk
-* @return 命令执行后返回的字符串结果
-
-
-> ```javascript
->     
-> function main(){
->     var result = shell.execAgentCommand("pm install /sdcard/app.apk");
-> }
-> main();
-> ```
-> 

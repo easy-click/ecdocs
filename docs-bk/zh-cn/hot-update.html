@@ -1,0 +1,1344 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>热更新功能 · EasyClick开发文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="zk/zk.html" />
+    
+    
+    <link rel="prev" href="funcs/html-ui-custom.html" />
+    
+
+    
+        <link rel="shortcut icon" href="/zh-cn/images/ico.png" type="image/x-icon">
+    
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/zh-cn/images/ico.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    更改记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting-start.html">
+            
+                <a href="getting-start.html">
+            
+                    
+                    开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <a target="_blank" href="https://www.bilibili.com/video/bv1W54y1Q7JG">
+            
+                    
+                    视频教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="download_resources.html">
+            
+                <a href="download_resources.html">
+            
+                    
+                    资源下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="funcs/devtools/dev-tools.html">
+            
+                <a href="funcs/devtools/dev-tools.html">
+            
+                    
+                    开发工具介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="funcs/devtools/dev-tools-install.html">
+            
+                <a href="funcs/devtools/dev-tools-install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="funcs/devtools/dev-tools-project.html">
+            
+                <a href="funcs/devtools/dev-tools-project.html">
+            
+                    
+                    工程相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="funcs/devtools/dev-tools-device.html">
+            
+                <a href="funcs/devtools/dev-tools-device.html">
+            
+                    
+                    设备相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="funcs/devtools/dev-tools-screen.html">
+            
+                <a href="funcs/devtools/dev-tools-screen.html">
+            
+                    
+                    屏幕相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="funcs/devtools/dev-tools-settings.html">
+            
+                <a href="funcs/devtools/dev-tools-settings.html">
+            
+                    
+                    设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="funcs/devtools/dev-tools-remote.html">
+            
+                <a href="funcs/devtools/dev-tools-remote.html">
+            
+                    
+                    远程调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="funcs.html">
+            
+                <a href="funcs.html">
+            
+                    
+                    功能函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="funcs/global/global.html">
+            
+                <a href="funcs/global/global.html">
+            
+                    
+                    全局模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="funcs/global/global-shortcut.html">
+            
+                <a href="funcs/global/global-shortcut.html">
+            
+                    
+                    全局快捷事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="funcs/global/selector-node.html">
+            
+                <a href="funcs/global/selector-node.html">
+            
+                    
+                    选择器&节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="funcs/acevent-api.html">
+            
+                <a href="funcs/acevent-api.html">
+            
+                    
+                    无障碍事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="funcs/event-api.html">
+            
+                <a href="funcs/event-api.html">
+            
+                    
+                    代理事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="funcs/image-api.html">
+            
+                <a href="funcs/image-api.html">
+            
+                    
+                    图色函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="funcs/device-api.html">
+            
+                <a href="funcs/device-api.html">
+            
+                    
+                    设备函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="funcs/file-api.html">
+            
+                <a href="funcs/file-api.html">
+            
+                    
+                    文件函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="funcs/http-api.html">
+            
+                <a href="funcs/http-api.html">
+            
+                    
+                    网络函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="funcs/thread-api.html">
+            
+                <a href="funcs/thread-api.html">
+            
+                    
+                    线程函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="funcs/utils-api.html">
+            
+                <a href="funcs/utils-api.html">
+            
+                    
+                    常用工具函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="funcs/shell-api.html">
+            
+                <a href="funcs/shell-api.html">
+            
+                    
+                    Shell命令函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="funcs/sqlite-api.html">
+            
+                <a href="funcs/sqlite-api.html">
+            
+                    
+                    Sqlite命令函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="funcs/ui-custom.html">
+            
+                <a href="funcs/ui-custom.html">
+            
+                    
+                    原生UI定制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="funcs/ui-js-inter.html">
+            
+                <a href="funcs/ui-js-inter.html">
+            
+                    
+                    JS编写UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="funcs/ui-js-template.html">
+            
+                <a href="funcs/ui-js-template.html">
+            
+                    
+                    模板式UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="funcs/ui-native-view.html">
+            
+                <a href="funcs/ui-native-view.html">
+            
+                    
+                    原生UI控件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="funcs/ui/linearlayout.html">
+            
+                <a href="funcs/ui/linearlayout.html">
+            
+                    
+                    LinearLayout线性布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="funcs/ui/framelayout.html">
+            
+                <a href="funcs/ui/framelayout.html">
+            
+                    
+                    FrameLayout帧布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="funcs/ui/relativelayout.html">
+            
+                <a href="funcs/ui/relativelayout.html">
+            
+                    
+                    RelativeLayout绝对布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="funcs/ui/scrollview.html">
+            
+                <a href="funcs/ui/scrollview.html">
+            
+                    
+                    ScrollView滚动框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="funcs/ui/view.html">
+            
+                <a href="funcs/ui/view.html">
+            
+                    
+                    View视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.6" data-path="funcs/ui/button.html">
+            
+                <a href="funcs/ui/button.html">
+            
+                    
+                    Button按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.7" data-path="funcs/ui/textview.html">
+            
+                <a href="funcs/ui/textview.html">
+            
+                    
+                    TextView文本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.8" data-path="funcs/ui/edittext.html">
+            
+                <a href="funcs/ui/edittext.html">
+            
+                    
+                    EditText输入框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.9" data-path="funcs/ui/checkbox.html">
+            
+                <a href="funcs/ui/checkbox.html">
+            
+                    
+                    CheckBox复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.10" data-path="funcs/ui/radiogroup.html">
+            
+                <a href="funcs/ui/radiogroup.html">
+            
+                    
+                    RadioGroup布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.11" data-path="funcs/ui/radiobutton.html">
+            
+                <a href="funcs/ui/radiobutton.html">
+            
+                    
+                    RadioButton单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.12" data-path="funcs/ui/spinner.html">
+            
+                <a href="funcs/ui/spinner.html">
+            
+                    
+                    Spinner下拉选择框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.13" data-path="funcs/ui/webview.html">
+            
+                <a href="funcs/ui/webview.html">
+            
+                    
+                    WebView内嵌浏览器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.14" data-path="funcs/ui/imageview.html">
+            
+                <a href="funcs/ui/imageview.html">
+            
+                    
+                    ImageView图像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.15" data-path="funcs/ui/cardview.html">
+            
+                <a href="funcs/ui/cardview.html">
+            
+                    
+                    CardView卡片布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.16" data-path="funcs/ui/switch.html">
+            
+                <a href="funcs/ui/switch.html">
+            
+                    
+                    Swtich开关按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="funcs/html-ui-custom.html">
+            
+                <a href="funcs/html-ui-custom.html">
+            
+                    
+                    H5 UI定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="hot-update.html">
+            
+                <a href="hot-update.html">
+            
+                    
+                    热更新功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="zk/zk.html">
+            
+                <a href="zk/zk.html">
+            
+                    
+                    企业版中控接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="zk/zk-ec-state.html">
+            
+                <a href="zk/zk-ec-state.html">
+            
+                    
+                    EC状态控制接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="zk/zk-node.html">
+            
+                <a href="zk/zk-node.html">
+            
+                    
+                    全局节点模块接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="zk/global/zk-global-log.html">
+            
+                <a href="zk/global/zk-global-log.html">
+            
+                    
+                    日志接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="zk/global/zk-node-service.html">
+            
+                <a href="zk/global/zk-node-service.html">
+            
+                    
+                    节点服务接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.3" data-path="zk/global/zk-global-click.html">
+            
+                <a href="zk/global/zk-global-click.html">
+            
+                    
+                    点击动作接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.4" data-path="zk/global/zk-global-multitouch.html">
+            
+                <a href="zk/global/zk-global-multitouch.html">
+            
+                    
+                    多点触摸动作接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.5" data-path="zk/global/zk-global-swipe.html">
+            
+                <a href="zk/global/zk-global-swipe.html">
+            
+                    
+                    滑动动作接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.6" data-path="zk/global/zk-global-drag.html">
+            
+                <a href="zk/global/zk-global-drag.html">
+            
+                    
+                    拖动动作接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.7" data-path="zk/global/zk-global-input.html">
+            
+                <a href="zk/global/zk-global-input.html">
+            
+                    
+                    输入动作接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.8" data-path="zk/global/zk-global-node.html">
+            
+                <a href="zk/global/zk-global-node.html">
+            
+                    
+                    节点操作接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.9" data-path="zk/global/zk-global-systemkey.html">
+            
+                <a href="zk/global/zk-global-systemkey.html">
+            
+                    
+                    系统按键接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.10" data-path="zk/global/zk-global-notice.html">
+            
+                <a href="zk/global/zk-global-notice.html">
+            
+                    
+                    通知栏接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.11" data-path="zk/global/zk-global-floatview.html">
+            
+                <a href="zk/global/zk-global-floatview.html">
+            
+                    
+                    悬浮窗接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="zk/zk-agent.html">
+            
+                <a href="zk/zk-agent.html">
+            
+                    
+                    代理事件模块接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="zk/zk-image.html">
+            
+                <a href="zk/zk-image.html">
+            
+                    
+                    图色模块接口 - 开发中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="zk/zk-device.md">
+            
+                <span>
+            
+                    
+                    设备模块接口 - 开发中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="zk/zk-file.md">
+            
+                <span>
+            
+                    
+                    文件模块接口 - 开发中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="zk/zk-http.md">
+            
+                <span>
+            
+                    
+                    网络模块接口 - 开发中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="zk/zk-utils.md">
+            
+                <span>
+            
+                    
+                    常用工具模块接口 - 开发中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="zk/zk-shell.html">
+            
+                <a href="zk/zk-shell.html">
+            
+                    
+                    Shell命令模块接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="zk/zk-sqlite.md">
+            
+                <span>
+            
+                    
+                    Sqlite模块接口 - 开发中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="funcs/plugin/plugins.html">
+            
+                <a href="funcs/plugin/plugins.html">
+            
+                    
+                    插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="funcs/plugin/javajs.html">
+            
+                <a href="funcs/plugin/javajs.html">
+            
+                    
+                    Java-JS混合开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="active-device.html">
+            
+                <a href="active-device.html">
+            
+                    
+                    激活设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="question-answer.html">
+            
+                <a href="question-answer.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="agreement.html">
+            
+                <a href="agreement.html">
+            
+                    
+                    用户协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="declare.html">
+            
+                <a href="declare.html">
+            
+                    
+                    免责声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    技术交流 QQ群：777164022
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >热更新功能</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;"><b>1. </b>&#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;</a></li><li><span class="title-icon "></span><a href="#ec&#x5982;&#x4F55;&#x70ED;&#x66F4;&#x65B0;"><b>2. </b>EC&#x5982;&#x4F55;&#x70ED;&#x66F4;&#x65B0;</a></li><li><span class="title-icon "></span><a href="#ec-&#x52A0;&#x8F7D;&#x65B0;&#x5305;"><b>3. </b>EC &#x52A0;&#x8F7D;&#x65B0;&#x5305;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;"><b>3.1. </b>&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;</a></li><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;"><b>3.2. </b>&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;</a></li></ul></ul></div><a href="#&#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4EC0;&#x4E48;&#x662F;&#x70ED;&#x66F4;&#x65B0;</h1>
+<ul>
+<li>&#x70ED;&#x66F4;&#x65B0;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x4E0D;&#x7528;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x5373;&#x53EF;&#x5C06;&#x5173;&#x952E;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x66F4;&#x65B0;</li>
+<li>EC&#x7684;&#x70ED;&#x66F4;&#x65B0;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x6253;&#x5305;&#x540E;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#x811A;&#x672C;</li>
+</ul>
+<h1 id="ec&#x5982;&#x4F55;&#x70ED;&#x66F4;&#x65B0;"><a name="ec&#x5982;&#x4F55;&#x70ED;&#x66F4;&#x65B0;" class="anchor-navigation-ex-anchor" href="#ec&#x5982;&#x4F55;&#x70ED;&#x66F4;&#x65B0;"><i class="fa fa-link" aria-hidden="true"></i></a>2. EC&#x5982;&#x4F55;&#x70ED;&#x66F4;&#x65B0;</h1>
+<ul>
+<li>&#x6253;&#x5F00;&#x5DE5;&#x7A0B;&#x4E0B;&#x9762;&#x7684;update.json&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-json">{
+   <span class="hljs-string">&quot;update_url&quot;</span>: <span class="hljs-string">&quot;http://xxx.com/update&quot;</span>,
+   <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>
+ }
+</code></pre>
+</blockquote>
+<ul>
+<li>&#x53C2;&#x6570;&#x89E3;&#x6790;<ul>
+<li>update_url: &#x4EE3;&#x8868;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x66F4;&#x65B0;&#x63A5;&#x53E3;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x53E3;</li>
+<li>version: &#x4EE3;&#x8868;&#x5F53;&#x524D;&#x811A;&#x672C;&#x7684;&#x7248;&#x672C;&#x53F7;</li>
+</ul>
+</li>
+</ul>
+<h1 id="ec-&#x52A0;&#x8F7D;&#x65B0;&#x5305;"><a name="ec-&#x52A0;&#x8F7D;&#x65B0;&#x5305;" class="anchor-navigation-ex-anchor" href="#ec-&#x52A0;&#x8F7D;&#x65B0;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>3. EC &#x52A0;&#x8F7D;&#x65B0;&#x5305;</h1>
+<h2 id="&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;"><a name="&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;" class="anchor-navigation-ex-anchor" href="#&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. &#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;</h2>
+<ul>
+<li>&#x4EE5;&#x4E0A;&#x914D;&#x7F6E;&#x597D;&#x540E;&#xFF0C;&#x6253;&#x5305;&#x8FD0;&#x884C;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x81EA;&#x52A8;&#x4F7F;&#x7528;GET&#x65B9;&#x5F0F;&#x8BF7;&#x6C42; update_url&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x5E76;&#x4E14;&#x4F1A;&#x5E26;&#x4E0A;&#x53C2;&#x6570;&#xFF1B;
+  &#x4F8B;&#x5982; &#xFF1A;<a href="http://xxx.com/update?version=1.0.0" target="_blank">http://xxx.com/update?version=1.0.0</a>   &#x8BF7;&#x81EA;&#x884C;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x505A;&#x7248;&#x672C;&#x6BD4;&#x8F83;</li>
+</ul>
+<h2 id="&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;"><a name="&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. &#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;</h2>
+<ul>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;<blockquote>
+<pre><code class="lang-json">{
+   <span class="hljs-string">&quot;download_url&quot;</span>: <span class="hljs-string">&quot;http://xxx.com/aaa.iec&quot;</span>,
+   <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1.0&quot;</span>,
+  <span class="hljs-string">&quot;dialog&quot;</span>:<span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;msg&quot;</span>: <span class="hljs-string">&quot;&#x4F18;&#x5316;&#x90E8;&#x5206;&#x95EE;&#x9898;&quot;</span>,
+  <span class="hljs-string">&quot;force&quot;</span>: <span class="hljs-literal">false</span>
+ }
+</code></pre>
+</blockquote>
+</li>
+<li>download_url&#xFF1A; &#x4EE3;&#x8868;&#x65B0;&#x5305;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;</li>
+<li>version&#xFF1A;&#x4EE3;&#x8868;&#x65B0;&#x5305;&#x7684;&#x7248;&#x672C;&#x53F7;</li>
+<li><p>&#x8FD4;&#x56DE;&#x8FD9;&#x6837;&#x7684;&#x683C;&#x5F0F;&#x7684;JSON&#x540E;&#xFF0C;EC&#x4F1A;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;IEC&#x5305;&#x5E76;&#x52A0;&#x8F7D;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li><p>5.0.0.RC3 &#x65B0;&#x589E;&#x53C2;&#x6570;</p>
+<ul>
+<li>dialog: &#x4EE3;&#x8868;&#x662F;&#x5426;&#x7528;&#x5BF9;&#x8BDD;&#x6846;&#x7684;&#x5F62;&#x5F0F;&#x5C55;&#x793A;&#xFF0C;true &#x4EE3;&#x8868;&#x662F;&#x5BF9;&#x8BDD;&#x6846;&#xFF0C;false&#x4EE3;&#x8868;&#x4E0D;&#x662F;</li>
+<li>msg: &#x5BF9;&#x8BDD;&#x6846;&#x4E2D;&#x8981;&#x663E;&#x793A;&#x7684;&#x6D88;&#x606F;</li>
+<li>force : &#x4EE3;&#x7801;&#x5BF9;&#x8BDD;&#x6846;&#x6A21;&#x5F0F;&#x4E0B;&#x662F;&#x5426;&#x5F3A;&#x5236;&#x66F4;&#x65B0;&#xFF0C;true &#x4EE3;&#x8868;&#x5F3A;&#x5236;&#x66F4;&#x65B0;&#xFF0C;&#x65E0;&#x6CD5;&#x53D6;&#x6D88;&#xFF0C;false &#x4EE3;&#x8868;&#x4E0D;&#x662F;&#x5F3A;&#x5236;&#x66F4;&#x65B0;</li>
+</ul>
+</li>
+</ul>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="funcs/html-ui-custom.html" class="navigation navigation-prev " aria-label="Previous page: H5 UI定制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="zk/zk.html" class="navigation navigation-next " aria-label="Next page: 企业版中控接口">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"热更新功能","level":"1.10","depth":1,"next":{"title":"企业版中控接口","level":"1.11","depth":1,"path":"zh-cn/zk/zk.md","ref":"zh-cn/zk/zk.md","articles":[{"title":"EC状态控制接口","level":"1.11.1","depth":2,"path":"zh-cn/zk/zk-ec-state.md","ref":"zh-cn/zk/zk-ec-state.md","articles":[]},{"title":"全局节点模块接口","level":"1.11.2","depth":2,"path":"zh-cn/zk/zk-node.md","ref":"zh-cn/zk/zk-node.md","articles":[{"title":"日志接口","level":"1.11.2.1","depth":3,"path":"zh-cn/zk/global/zk-global-log.md","ref":"zh-cn/zk/global/zk-global-log.md","articles":[]},{"title":"节点服务接口","level":"1.11.2.2","depth":3,"path":"zh-cn/zk/global/zk-node-service.md","ref":"zh-cn/zk/global/zk-node-service.md","articles":[]},{"title":"点击动作接口","level":"1.11.2.3","depth":3,"path":"zh-cn/zk/global/zk-global-click.md","ref":"zh-cn/zk/global/zk-global-click.md","articles":[]},{"title":"多点触摸动作接口","level":"1.11.2.4","depth":3,"path":"zh-cn/zk/global/zk-global-multitouch.md","ref":"zh-cn/zk/global/zk-global-multitouch.md","articles":[]},{"title":"滑动动作接口","level":"1.11.2.5","depth":3,"path":"zh-cn/zk/global/zk-global-swipe.md","ref":"zh-cn/zk/global/zk-global-swipe.md","articles":[]},{"title":"拖动动作接口","level":"1.11.2.6","depth":3,"path":"zh-cn/zk/global/zk-global-drag.md","ref":"zh-cn/zk/global/zk-global-drag.md","articles":[]},{"title":"输入动作接口","level":"1.11.2.7","depth":3,"path":"zh-cn/zk/global/zk-global-input.md","ref":"zh-cn/zk/global/zk-global-input.md","articles":[]},{"title":"节点操作接口","level":"1.11.2.8","depth":3,"path":"zh-cn/zk/global/zk-global-node.md","ref":"zh-cn/zk/global/zk-global-node.md","articles":[]},{"title":"系统按键接口","level":"1.11.2.9","depth":3,"path":"zh-cn/zk/global/zk-global-systemkey.md","ref":"zh-cn/zk/global/zk-global-systemkey.md","articles":[]},{"title":"通知栏接口","level":"1.11.2.10","depth":3,"path":"zh-cn/zk/global/zk-global-notice.md","ref":"zh-cn/zk/global/zk-global-notice.md","articles":[]},{"title":"悬浮窗接口","level":"1.11.2.11","depth":3,"path":"zh-cn/zk/global/zk-global-floatview.md","ref":"zh-cn/zk/global/zk-global-floatview.md","articles":[]}]},{"title":"代理事件模块接口","level":"1.11.3","depth":2,"path":"zh-cn/zk/zk-agent.md","ref":"zh-cn/zk/zk-agent.md","articles":[]},{"title":"图色模块接口 - 开发中","level":"1.11.4","depth":2,"path":"zh-cn/zk/zk-image.md","ref":"zh-cn/zk/zk-image.md","articles":[]},{"title":"设备模块接口 - 开发中","level":"1.11.5","depth":2,"path":"zh-cn/zk/zk-device.md","ref":"zh-cn/zk/zk-device.md","articles":[]},{"title":"文件模块接口 - 开发中","level":"1.11.6","depth":2,"path":"zh-cn/zk/zk-file.md","ref":"zh-cn/zk/zk-file.md","articles":[]},{"title":"网络模块接口 - 开发中","level":"1.11.7","depth":2,"path":"zh-cn/zk/zk-http.md","ref":"zh-cn/zk/zk-http.md","articles":[]},{"title":"常用工具模块接口 - 开发中","level":"1.11.8","depth":2,"path":"zh-cn/zk/zk-utils.md","ref":"zh-cn/zk/zk-utils.md","articles":[]},{"title":"Shell命令模块接口","level":"1.11.9","depth":2,"path":"zh-cn/zk/zk-shell.md","ref":"zh-cn/zk/zk-shell.md","articles":[]},{"title":"Sqlite模块接口 - 开发中","level":"1.11.10","depth":2,"path":"zh-cn/zk/zk-sqlite.md","ref":"zh-cn/zk/zk-sqlite.md","articles":[]}]},"previous":{"title":"H5 UI定制","level":"1.9","depth":1,"path":"zh-cn/funcs/html-ui-custom.md","ref":"zh-cn/funcs/html-ui-custom.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","code","copy-code-button","-lunr","-search","search-plus","anchor-navigation-ex","hide-element","favicon-absolute","popup"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"popup":{},"code":{"copyButtons":true},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/zh-cn/images/ico.png","appleTouchIconPrecomposedMore":{},"favicon":"/zh-cn/images/ico.png"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"EasyClick开发文档","language":"zh-hans","gitbook":"*","description":"记录EasyClick开发教程和常用的函数"},"file":{"path":"zh-cn/hot-update.md","mtime":"2020-07-29T01:10:28.110Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-02T01:03:22.708Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
