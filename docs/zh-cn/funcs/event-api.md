@@ -1,11 +1,11 @@
-# 说明
+## 说明
 - 代理事件模块运行的所有函数，是需要使用电脑激活才能使用的，免root
 - 代理事件模块的对象前缀是agentEvent，例如 agentEvent.clickPoint这样调用
 - 这里列出来的是代理模式特有的函数，其他调用可以直接使用全局函数
 
 
-# 输入数据
-## setCurrentIme 
+## 输入数据
+### setCurrentIme  设置当前的输入法
 * 设置当前的输入法，用于输入数据
 * @return {boolean|布尔型}
 
@@ -22,7 +22,7 @@
 > main();
 > ``` 
 
-## restoreIme 
+### restoreIme  恢复到之前的输入法
 * 恢复到之前的输入法
 * @return {boolean|布尔型}
 
@@ -40,10 +40,10 @@
 > ``` 
 
 
-# 截图
+## 截图
 
 
-## fastScreenshot 
+### fastScreenshot  快速截屏幕的截图
 * 快速截屏幕的截图
 * @param filename 文件路径
 * @return 字符串 截图的路径
@@ -61,8 +61,8 @@
 
 
 
-# 手势及输入事件
-## inputEvent
+## 手势及输入事件
+### inputEvent 执行输入事件
 * 执行输入事件
 * @param action    动作，请看类:  MotionEvent.ACTION_*
 * @param x         x坐标   
@@ -84,7 +84,7 @@
 > ```
 
 
-## touchDown
+### touchDown 执行按下
 * 执行按下输入事件
 * @param x         x坐标   
 * @param y         y坐标   
@@ -103,7 +103,7 @@
 > main();
 > ```
 
-## touchMove
+### touchMove 执行移动
 * 执行移动输入事件
 * @param x         x坐标   
 * @param y         y坐标   
@@ -123,7 +123,7 @@
 > ```
 
 
-## touchUp
+### touchUp 执行弹起输入
 * 执行弹起输入事件
 * @param x         x坐标   
 * @param y         y坐标   
@@ -143,81 +143,9 @@
 > ```
 
 
-## multiTouch 多点触摸
-* 多点触摸<br/>
-* 触摸参数: action :一般情况下 按下为0，弹起为1，移动为2
-* x: X坐标
-* y: Y坐标
-* pointer：设置第几个手指触摸点，分别是 1，2，3等，代表第n个手指
-* delay: 该动作延迟多少毫秒执行
-* @param touch1 第1个手指的触摸点数组,例如：[{"action":0,"x":1,"y":1,"pointer":1,"delay":20},{"action":2,"x":1,"y":1,"pointer":1,"delay":20}]
-* @param touch2 第2个手指的触摸点数组
-* @param touch3 第3个手指的触摸点数组
-* @param timeout 多点触摸执行的超时时间，单位是毫秒
-* @return boolean|布尔型
-
-> ```javascript
-
-> function main() {
->    utils.openAppByName("视频");
->    sleep(3000);
->   //第一种数组式的写法
->    var touch1 = [
->
->        {"action": 0, "x": 500, "y": 1200, "pointer": 1, "delay": 1},
->        {
->            "action": 2,
->            "x": 500,
->            "y": 1100,
->            "pointer": 1,
->            "delay": 20
->        }, {
->            "action": 2,
->            "x": 500,
->            "y": 1000,
->            "pointer": 1,
->            "delay": 20
->        },
->        {
->            "action": 1,
->            "x": 1,
->            "y": 1,
->            "pointer": 1,
->            "delay": 20
->        }];
->
->
->   //第二种链式调用方法
->    var touch1 = MultiPoint
->        .get()
->        .action(0).x(500).y(1200).pointer(1).delay(1)
->        .next()
->        .action(2).x(500).y(1100).pointer(1).delay(1)
->        .next()
->        .action(2).x(500).y(1000).pointer(1).delay(1)
->        .next()
->        .action(2).x(500).y(900).pointer(1).delay(1)
->        .next()
->        .action(1).x(500).y(800).pointer(1).delay(1);
->    var touch2 = MultiPoint
->        .get()
->        .action(0).x(300).y(1200).pointer(2).delay(1)
->        .next()
->        .action(2).x(300).y(1100).pointer(2).delay(1)
->        .next()
->        .action(2).x(300).y(1000).pointer(2).delay(1)
->        .next()
->        .action(2).x(300).y(900).pointer(2).delay(1)
->        .next()
->        .action(1).x(300).y(800).pointer(2).delay(1);
->    var x = agentEvent.multiTouch(touch1, touch2, null, 30000);
->    logd("xxs " + x);
-> }
-> main();
-> ```
 
 
-## pressKey
+### pressKey 模拟按键
 * 模拟按键,例如home back等
 * @param key 对应的值分别为 home, back, left, right, up, down, center, menu, search, enter, delete(or del), recent(recent apps), volume_up, volume_down, volume_mute, camera, power
 * @return 布尔型 true 成功, false 失败
@@ -237,7 +165,7 @@
 
 
 
-## pressKeyCode
+### pressKeyCode 模拟键盘输入
 * 模拟键盘输入
 * @param keyCode 键盘的key，参见KeyEvent.KEYCODE_*
 * @return 布尔型 true 代表成功，false 代表失败
@@ -256,7 +184,7 @@
 > ```
 
 
-## pressKeyCodeWithMetaState
+### pressKeyCodeWithMetaState 模拟键盘输入
 * 模拟键盘输入
 * @param keyCode   keyCode 键盘的key，参见KeyEvent.KEYCODE_*
 * @param metaState metaState  控制按键，比如说shift键，alt键，ctrl键等控制键, 0或者 1
@@ -277,10 +205,10 @@
 
 
 
-# 系统按键相关
+## 系统按键相关
 
 
-## menu 
+### menu  打开菜单
 * 打开菜单
 * @return {null|布尔型}
 
@@ -297,7 +225,7 @@
 > main();
 > ```
 
-## enter 
+### enter  Enter键
 * Enter键
 * @return {null|布尔型}
 
@@ -311,7 +239,7 @@
 > main();
 > ```
 
-## delete 
+### delete 删除键
 * 删除键
 * @return {null|布尔型}
 
@@ -329,7 +257,7 @@
 > ```
 
 
-## search 
+### search 搜索
 * 搜索
 * @return {null|布尔型}
 
@@ -350,8 +278,8 @@
 
 
 
-# 屏幕控制
-## closeScreen
+## 屏幕控制
+### closeScreen 关闭屏幕
 * 关闭屏幕，屏幕不亮，但是依然可以自动点击，不同于sleepScreen
 * @return 布尔型 true 成功，false 失败
 
@@ -363,7 +291,7 @@
 > main();
 > ```
 
-## lightScreen
+### lightScreen 点亮屏幕
 * 点亮屏幕，和closeScreen相反的动作
 * @return 布尔型 true 成功，false 失败
 

@@ -1,9 +1,8 @@
-# 说明
+## 说明
 - sqlite模块函数主要是用于操作sqlite数据库
 - sqlite模块的对象前缀是sqlite，例如 sqlite.close()这样调用
 - sqlite 教程：https://www.runoob.com/sqlite/sqlite-tutorial.html
 
-# 函数
 
 ## sqlite.connectOrCreateDb 连接数据库
  * 创建或者链接一个数据库

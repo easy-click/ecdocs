@@ -1,6 +1,8 @@
-# 说明
+
+## 说明
 这个章节主要讲解选择器类使用和节点信息类
-# 选择器对象
+
+## 选择器对象
 - 选择器对象是支持级联选择，可以在无法直接选择到元素的时候，先通过选择父级后再选择子级
 - 选择器部分支撑正则匹配，请参考java的正则语法，[教程](https://www.runoob.com/java/java-regular-expressions.html)
 
@@ -573,8 +575,6 @@
 
 ## 级联匹配
 
-
-
 > ```javascript
 > 
 > function main(){ 
@@ -618,7 +618,8 @@
 > ```
 
 
-# 节点信息类
+## 节点信息类
+### 说明
 节点对象NodeInfo，可以通过获取getNodeInfo方法获取到节点信息的数组,节点包含的信息如下
 - id: 字符串，资源的ID
 - clz: 字符串，视图类名，例如 android.widget.TextView
@@ -650,7 +651,7 @@
     - right: 整型，右边位置
 
 
-## 选择器获取一个节点 getOneNodeInfo
+### 选择器获取一个节点 getOneNodeInfo
 * 通过选择器 获取第一个节点信息
 * @param timeout 等待时间，单位是毫秒, 如果是0，代表不等待
 * @return NodeInfo 对象 或者null
@@ -671,7 +672,7 @@
 > ```
 
 
-## 选择器获取多个节点 getNodeInfo
+### 选择器获取多个节点 getNodeInfo
 * 获取节点信息
 * @param timeout 等待时间，单位是毫秒, 如果是0，代表不等待
 * @return NodeInfo 节点信息集合
@@ -688,7 +689,7 @@
 
 
 
-## 级联获取一个子节点操作 getOneNodeInfo
+### 级联获取一个子节点操作 getOneNodeInfo
 * 通过选择器 获取第一个节点信息
 * @param timeout 等待时间，单位是毫秒, 如果是0，代表不等待
 * @return NodeInfo 对象 或者null
@@ -714,7 +715,7 @@
 > main(); 
 > ```
 
-## 级联获取多个子节点操作 getNodeInfo
+### 级联获取多个子节点操作 getNodeInfo
 * 获取节点信息
 * @param timeout 等待时间，单位是毫秒, 如果是0，代表不等待
 * @return NodeInfo 节点信息集合
@@ -741,7 +742,7 @@
 > ```
 
 
-## 获取父节点 parent
+### 获取父节点 parent
 * 该节点的父级节点
 * @return NodeInfo 对象 或者null
 
@@ -761,7 +762,7 @@
 > ```
 
 
-## 获取子节点 child
+### 获取子节点 child
 * 取得单个子节点
 * @param index 子节点索引
 * @return NodeInfo 对象 或者null
@@ -781,7 +782,7 @@
 > ```
 
 
-## 获取所有子节点 allChildren
+### 获取所有子节点 allChildren
 * 获取所有子节点
 * @return NodeInfo 节点集合
 
@@ -799,7 +800,7 @@
 > main(); 
 > ```
 
-## 所有兄弟节点 siblings
+### 所有兄弟节点 siblings
 * 当前节点的所有兄弟节点
 * @return NodeInfo 节点集合
 
@@ -818,7 +819,7 @@
 > ```
 
 
-## 前面的兄弟节点 previousSiblings
+### 前面的兄弟节点 previousSiblings
 * 在当前节点前面的兄弟节点
 * @return NodeInfo 节点集合
 
@@ -837,7 +838,7 @@
 > ```
 
 
-## 后面的兄弟节点 nextSiblings
+### 后面的兄弟节点 nextSiblings
 * 在当前节点后面的兄弟节点
 * @return NodeInfo 节点集合
 
@@ -856,7 +857,7 @@
 > ```
 
 
-## 节点区域随机点击 click
+### 节点区域随机点击 click
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 点击节点
 * @return bool, true 成功 ,false 失败
@@ -877,7 +878,7 @@
 > ```
 
 
-## 无指针点击 clickEx 
+### 无指针点击 clickEx 
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 无指针方式点击选择器，节点必须是可点击的才行
 * @param selectors 选择器对象
@@ -899,7 +900,7 @@
 > ```
 
 
-## 无指针长点击 longClickEx
+### 无指针长点击 longClickEx
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 无指针方式长点击选择器，节点必须是可点击的才行
 * @param selectors 选择器对象
@@ -920,7 +921,7 @@
 > 
 > ```
 
-## 节点点击中心点 clickCenter
+### 节点点击中心点 clickCenter
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 节点点击中心点
 * @return bool, true 成功 ,false 失败
@@ -941,7 +942,7 @@
 > ```
 
 
-## 节点长点击 longClick
+### 节点长点击 longClick
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 长点击节点
 * @return bool, true 成功 ,false 失败
@@ -964,7 +965,7 @@
 
 
 
-## 节点输入 inputText 
+### 节点输入 inputText 
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 对某个节点输入数据
 * @param content 要输入的内容
@@ -985,7 +986,7 @@
 > main(); 
 > ```
 
-## 节点输入法输入 imeInputText
+### 节点输入法输入 imeInputText
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 使用输入法对某个节点输入数据，前提是已经设置本程序的输入法为默认输入法
 * @param content 要输入的内容
@@ -1005,7 +1006,7 @@
 > main(); 
 > ```
 
-## imeInputKeyCode 
+### imeInputKeyCode 
 * 使用输入法输入内容，前提是已经设置本程序的输入法为默认输入法
 * 适合没有节点的情况，例如游戏等
 * @param selectors  选择器，可以为空，如果为空，前提是输入框是聚焦的状态
@@ -1026,7 +1027,7 @@
 > ``` 
 
 
-## 节点数据清除 clearText 
+### 节点数据清除 clearText 
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 清除节点文本数据
 
@@ -1047,7 +1048,7 @@
 > ```
 
 
-## 节点刷新 refresh
+### 节点刷新 refresh
 * 该方法会刷新节点缓存
 
 > ```javascript
@@ -1065,7 +1066,7 @@
 > ```
 
 
-## 节点有效判断 isValid
+### 节点有效判断 isValid
 * 节点信息是否有效
 @return bool|布尔型 true代表有
 
@@ -1085,7 +1086,7 @@
 > ```
 
 
-## 向前滚动 scrollForward
+### 向前滚动 scrollForward
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 向前滚动
 * @param selectors 选择器对象
@@ -1106,7 +1107,7 @@
 > 
 > ```
 
-## 向后滚动 scrollBackward 
+### 向后滚动 scrollBackward 
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 向后滚动
 * @param selectors 选择器对象

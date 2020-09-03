@@ -1,11 +1,10 @@
-# 说明
+## 说明
 - 设备模块函数主要是跟设备信息相关联
 - 设备模块的对象前缀是device，例如 device.getIMEI()这样调用
 
 
-# 函数
 
-##  device.getIMEI()
+##  device.getIMEI 获取IMEI
 * 获取手机的IMEI
 * @return 字符串
 
@@ -19,7 +18,7 @@
 > main();
 > ```
 
-##  device.getScreenWidth()
+##  device.getScreenWidth 屏幕宽度
 * 取得屏幕宽度
 * @return 整型
 
@@ -35,7 +34,7 @@
 
 
 
-##  device.getScreenHeight()
+##  device.getScreenHeight 屏幕高度
 * 取得屏幕高度
 * @return 整型
 
@@ -49,7 +48,7 @@
 > main();
 > ```
 
-##  device.getAndroidId()
+##  device.getAndroidId 取得Android ID
 * 取得Android ID
 * @return 字符串
 
@@ -63,7 +62,7 @@
 > main();
 > ```
 
-##  device.getBrand()
+##  device.getBrand 取得品牌
 * 取得手机品牌
 * @return 字符串
 
@@ -77,7 +76,7 @@
 > main();
 > ```
 
-##  device.getModel()
+##  device.getModel 取得机型
 * 取得手机机型
 * @return 字符串
 
@@ -92,7 +91,7 @@
 > main();
 > ```
 
-##  device.getImsi()
+##  device.getImsi 取得卡号
 * 取得手机卡号
 * @return 字符串
 
@@ -107,7 +106,7 @@
 > ```
 
 
-##  device.getSerial()
+##  device.getSerial 取得手机串号
 * 取得手机串号
 * @return 字符串
 
@@ -122,7 +121,7 @@
 > ```
 
 
-##  device.getSdkInt()
+##  device.getSdkInt 取得SDK 版本号
 * 取得手机SDK 版本号，例如 23
 * @return 字符串
 
@@ -136,7 +135,7 @@
 > main();
 > ```
 
-##  device.getOSVersion()
+##  device.getOSVersion 取得手机版本号
 * 取得手机版本号,例如 6.0等字符串
 * @return 字符串
 
@@ -151,7 +150,7 @@
 > ```
 
 
-## device.getMacAddress()
+## device.getMacAddress 获取mac地址
 * 获取mac地址
 * @return 字符串
 
@@ -165,7 +164,7 @@
 > main();
 > ```
 
-## device.getBattery()
+## device.getBattery 取得电量
 * 取得电量
 * @return int型
 
@@ -179,7 +178,7 @@
 > main();
 > ```
 
-## device.getTotalMem()
+## device.getTotalMem 取得总内存
 * 取得总内存
 * @return long型
 
@@ -193,7 +192,7 @@
 > main();
 > ```
 
-## device.getAvailMem()
+## device.getAvailMem 取得可用内存
 * 取得可用内存
 * @return long型
 
@@ -209,7 +208,7 @@
 
 
 
-## device.isCharging()
+## device.isCharging 是否正在充电
 * 是否正在充电
 * @return 布尔型
 
@@ -223,7 +222,7 @@
 > main();
 > ```
 
-## device.vibrate()
+## device.vibrate 发出震动
 * 发出震动 单位是毫秒
 
 > ```javascript
@@ -234,7 +233,7 @@
 > main();
 > ```
 
-## device.cancelVibration()
+## device.cancelVibration 取消震动
 * 取消震动
 
 > ```javascript

@@ -1,4 +1,6 @@
-# 说明
+
+## 说明
+
 - 截图函数需要Andrioid 5.0 以上版本才能使用
 - 无障碍模式下截图是需要权限的，如果弹出了运行截图，请授权
 - 代理模式下的截图不需要权限，建议长期运行使用代理模式
@@ -6,8 +8,8 @@
 - 图色模块需要对颜色进行查找，开发工具自带找色功能，请参考[找色找图操作](/zh-cn/funcs/devtools/dev-tools-screen.md#找色操作)
 
 
-# 设置
-## image.setInitParam
+## 设置
+### image.setInitParam 初始化参数
 * 设置图色模块初始化参数，可用于多分辨率兼容
 * @param params 超时时间，单位是毫秒
 * @return true 代表成功 false代表失败
@@ -21,8 +23,8 @@
 > main();
 > ```
 
-# 申请截图
-## image.requestScreenCapture
+## 申请截图
+### image.requestScreenCapture 申请截图权限
 * 向系统申请屏幕截图权限，返回是否请求成功。
 * 第一次使用该函数会弹出截图权限请求，建议选择“总是允许”。
 * 这个函数只是申请截图权限，并不会真正执行截图，真正的截图函数是captureScreen()。
@@ -49,7 +51,7 @@
 
 
 
-## image.releaseScreenCapture
+### image.releaseScreenCapture 释放截屏请求
 * 释放截屏请求
 
 
@@ -61,8 +63,8 @@
 > main();
 > ```
 
-# 截图
-## image.captureScreen
+## 截图
+### image.captureScreen 截取屏幕Image对象
 * 截取当前屏幕并返回一个Image对象。
 * 没有截图权限时执行该函数会返回null
 * 两次调用可能返回相同的Image对象。这是因为设备截图的更新需要一定的时间，短时间内（一般来说是16ms）连续调用则会返回同一张截图。
@@ -105,7 +107,7 @@
 > ```
 
 
-## image.captureFullScreen
+### image.captureFullScreen 截取全屏Image对象
 * 截取当前屏幕并返回一个Image对象。
 * @return AutoImage对象或者null
 
@@ -136,7 +138,7 @@
 > main();
 > ```
 
-## image.captureFullScreenEx
+### image.captureFullScreenEx 截取全屏屏Image对象扩展
 * 抓取全屏函数，代理模式下并且requestScreenCapture函数的type为0的时候，会使用截屏函数，尽力消除色差问题。
 * @return AutoImage对象或者null
 
@@ -167,7 +169,7 @@
 > main();
 > ```
 
-## image.captureScreenBitmap
+### image.captureScreenBitmap 截取屏幕Bitmap对象
  * 将屏幕抓取为Bitmap对象，如果中间有-1或者宽度、宽度为-1，将会是全屏
  * @param format jpg或者png，代理模式下有用
  * @param x 开始X坐标
@@ -206,7 +208,7 @@
 > ```
 
 
-## image.captureToFile
+### image.captureToFile 截取屏幕到文件
 * 截取当前屏幕并以PNG格式保存到path中。如果文件不存在会被创建；文件存在会被覆盖。
 * 如果区域空或则有负数的，就会是全屏
 * @param retryNumber 重试次数，直到能截到图为止，默认是3
@@ -246,9 +248,9 @@
 > main();
 > ```
 
-# 比色
+## 比色
 
-## image.cmpColor
+### image.cmpColor 单点比色
  * 单点或者多点比色，找到所有符合标准的点，如果都符合返回true，否则是false
  * @param image1 图片
  * @param points     字符串类似这样 6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696
@@ -284,7 +286,7 @@
 
 
 
-## image.cmpColorEx
+### image.cmpColorEx 单点比色扩展
  * 单点或者多点比色，找到所有符合标准的点，自动截图，如果都符合返回true，否则是false
  * @param points     字符串类似这样 6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696
  * @param threshold  找色时颜色相似度取值为 0.0 ~ 1.0
@@ -315,7 +317,7 @@
 
 
 
-## image.cmpMultiColor
+### image.cmpMultiColor 多点比色
  * 多点或者多点数组比色，找到所有符合标准的点，依次查找，如果找到就返回当前points的索引值，如果返回-1，说明都没有找到
  * @param image1 图片
  * @param points     数组类似这样 ["6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696","6|1|0x969696"]
@@ -349,7 +351,7 @@
 > main();
 > ```
 
-## image.cmpMultiColorEx
+### image.cmpMultiColorEx 多点比色扩展
  * 多点或者多点数组比色，找到所有符合标准的点，自动截屏，依次查找，如果找到就返回当前points的索引值，如果返回-1，说明都没有找到
  * @param points     数组类似这样 ["6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696","6|1|0x969696"]
  * @param threshold  找色时颜色相似度取值为 0.0 ~ 1.0
@@ -381,9 +383,9 @@
 
 
 
-# 找色
+## 找色
 
-## image.findColor
+### image.findColor 单点找色
 * 在图片中找到颜色和color完全相等的某个点，并返回该点的左边；如果没有找到，则返回null。
 * @param image 图片
 * @param color     要寻找的颜色
@@ -419,7 +421,7 @@
 
 
 
-## image.findColorJ
+### image.findColorJ 单点找色(JSON)
 * 在图片中找到颜色和color完全相等的点，参数从JSON中获取如果没有找到，则返回null。
 * @param image 图片
 * @param jsonFileName     res文件中取色工具生成的JSON文件，只要填写文件名称即可，后缀不用填写
@@ -447,7 +449,7 @@
 > ```
 
 
-## image.findColorEx
+### image.findColorEx 自动截屏单点找色
 * 在当前屏幕中找到颜色和color完全相等的点，并返回该点的左边；如果没有找到，则返回null。
 * @param color     要寻找的颜色
 * @param threshold 找色时颜色相似度取值为 0.0 ~ 1.0
@@ -478,7 +480,7 @@
 > ```
 
 
-## image.findColorExJ
+### image.findColorExJ 自动截屏单点找色(JSON)
 * 当前屏幕中找到颜色和color完全相等的点，参数从JSON中获取如果没有找到，则返回null。
 * @param jsonFileName     res文件中取色工具生成的JSON文件，只要填写文件名称即可，后缀不用填写
 * @return 多个Point 坐标点数组或者null
@@ -504,7 +506,7 @@
 
 
 
-## image.findMultiColor
+### image.findMultiColor 多点找色
 * 多点找色，找到所有符合标准的点，类似于按键精灵的多点找色。
 * @param image      要找色的图片
 * @param firstColor 第一个点的颜色
@@ -543,7 +545,7 @@
 
 
 
-## image.findMultiColorJ
+### image.findMultiColorJ 多点找色(JSON)
 * 多点找色，找到所有符合标准的点，参数从JSON文件中读取，类似于按键精灵的多点找色
 * @param image      要找色的图片
 * @param jsonFileName res文件中取色工具生成的JSON文件，只要填写文件名称即可，后缀不用填写
@@ -571,7 +573,7 @@
 > ```
 
 
-## image.findMultiColorEx
+### image.findMultiColorEx 自动截屏多点找色
 * 多点找色，找到所有符合标准的点，类似于按键精灵的多点找色。
 * @param firstColor 第一个点的颜色
 * @param threshold 找色时颜色相似度取值为 0.0 ~ 1.0
@@ -605,7 +607,7 @@
 > ```
 
 
-## image.findMultiColorExJ
+### image.findMultiColorExJ 自动截屏多点找色(JSON)
 * 多点找色，找到所有符合标准的点，自动抓取当前屏幕的图片,参数从JSON文件中读取，类似于按键精灵的多点找色
 * @param jsonFileName res文件中取色工具生成的JSON文件，只要填写文件名称即可，后缀不用填写
 * @return 多个Point 坐标点数组或者null
@@ -630,9 +632,9 @@
 > ```
 
 
-# 找图
+## 找图
 
-## image.findImage
+### image.findImage 找图
 * 找图。在大图片image中查找小图片template的位置（模块匹配），找到时返回位置坐标区域(Rect)，找不到时返回null。
 * @param image     大图片
 * @param template  小图片（模板）
@@ -675,7 +677,7 @@
 > ```
 
 
-## image.findImageEx
+### image.findImageEx 自动截屏找图
 * 找图。在当前屏幕中查找小图片template的位置（模块匹配），找到时返回位置坐标区域(Rect)，找不到时返回null。
 * @param template  小图片（模板）
 * @param x         找图区域 x 起始坐标
@@ -718,7 +720,7 @@
 
 
 
-## image.matchTemplate 模板匹配
+### image.matchTemplate 图片模板匹配
 * OpenCV模板匹配封装
 * @param image         大图片
 * @param template      小图片（模板）
@@ -759,7 +761,7 @@
 
 
 
-## image.matchTemplateEx 模板匹配
+### image.matchTemplateEx 图片模板匹配
 * OpenCV模板匹配封装，在当前屏幕截图中进行匹配
 * @param template      小图片（模板）
 * @param weakThreshold 图片相似度。取值范围为0~1的浮点数。默认值为0.9。
@@ -799,9 +801,9 @@
 
 
 
-# 二值化
+## 二值化
 
-## image.binaryzation
+### image.binaryzation 二值化Image
  * 对AutoImage图片进行二值化
  * @param img AutoImage图片对象
  * @param type 二值化类型，一般写1即可
@@ -850,7 +852,7 @@
 > ```
 
 
-## image.binaryzationBitmap
+### image.binaryzationBitmap 二值化Bitmap
  * 对安卓的 Bitmap 图片进行二值化
  * @param bitmap Bitmap 图片对象
  * @param type 二值化类型，一般写1即可
@@ -895,8 +897,8 @@
 > main();
 > ```
 
-# 其他
-## image.readImage
+## 其他
+### image.readImage 读取文件为Image
 * 读取在路径path的图片文件并返回一个{@link AutoImage}对象。如果文件不存在或者文件无法解码则返回null。
 * @param path 图片路径
 * @return AutoImage 对象或者null
@@ -910,7 +912,7 @@
 > main();
 > ```
 
-## image.readBitmap
+### image.readBitmap 读取文件为Bitmap
 * 读取在路径path的图片文件并返回一个{@link AutoImage}对象。如果文件不存在或者文件无法解码则返回null。
 * @param path 图片路径
 * @return android的bitmap对象或者null
@@ -924,7 +926,7 @@
 > main();
 > ```
 
-## image.pixelInImage
+### image.pixelInImage 图像坐标点颜色
 * 返回图片image在点(x, y)处的像素的ARGB值。
 * 该值的格式为0xAARRGGBB，是一个"32位整数"
 * 坐标系以图片左上角为原点。以图片左侧边为y轴，上侧边为x轴。
@@ -945,7 +947,7 @@
 
 
 
-## image.getPixelBitmap
+### image.getPixelBitmap 取得Bitmap单点颜色
  * 取得Bitmap图片的某个点的颜色值
  * @param bitmap 图片对象
  * @param x x坐标点
@@ -964,7 +966,7 @@
 
 
 
-## image.getPixelsBitmap
+### image.getPixelsBitmap 取得Bitmap区域颜色
  * 取得Bitmap图片的某个区域点的颜色值，等同于 Bitmap.getPixels
  * @param bitmap 图片对象
  * @param arraySize 要返回的区域数组的大小
@@ -989,8 +991,8 @@
 > ```
 
 
-# 图片转换
-## image.saveTo
+## 图片转换
+### image.saveTo 保存到文件
 * 保存到文件中
 * @param img 图片对象
 * @param path 路径
@@ -1009,7 +1011,7 @@
 
 
 
-## image.toBase64Format
+### image.toBase64Format Image转base64
 *  转成base64的字符串, jpg格式较小，可以减少内存
  * @param img 图片对象
  * @param format 格式  jpg或者 png
@@ -1027,7 +1029,7 @@
 > ```
 
 
-## image.clip
+### image.clip 剪切图片
  * 剪切图片
  * @param img 图片对象
  * @param x x起始坐标
@@ -1046,7 +1048,7 @@
 > main();
 > ```
 
-## image.pixel
+### image.pixel 图片某点颜色值
  * 取得图片的某个点的颜色值
  * @param img 图片对象
  * @param x x坐标点
@@ -1066,7 +1068,7 @@
 
 
 
-## image.isRecycled
+### image.isRecycled 图片回收判断
  * 是否被回收了
  * @param img 图片对象
  * @return bool true代表已经被回收了
@@ -1083,8 +1085,8 @@
 > ```
 
 
-## image.recycle
- * 回收图片
+### image.recycle 回收图片
+ * 回收图片 
  * @param img 图片对象
  
 > ```javascript
@@ -1098,7 +1100,7 @@
 > ```
 
 
-## image.clipBitmap (剪裁bitmap)
+### image.clipBitmap (剪裁bitmap)
  * 剪裁图片，请自行判断参数，正确性
  * @param bitmap 图片
  * @param x 开始X坐标
@@ -1139,7 +1141,7 @@
 
 
 
-## image.base64Bitmap (base64转bitmap)
+### image.base64Bitmap (base64转bitmap)
  * base64字符串转为Bitmap图片
  * @param data base64 数据
  * @param flag base64格式的标示，一般为0，
@@ -1176,7 +1178,7 @@
 
 
 
-## image.bitmapBase64 (bitmap转base64)
+### image.bitmapBase64 (bitmap转base64)
  * bitmap转为base64
  * @param bitmap 图片
  * @param format 格式，jpg或者png

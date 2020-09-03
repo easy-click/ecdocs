@@ -1,12 +1,11 @@
-# 说明
+## 说明
 - 线程模块函数主要是跟线程信息相关联
 - 线程模块的对象前缀是thread，例如 thread.execFuncSync()这样调用
 
 
 
-# 函数
 
-## setTimeout
+## setTimeout 延迟执行
  * 设定延迟多少毫秒后执行函数，在子线程中执行
  * @param func 要执行的函数
  * @param timeout 延迟时间，单位是毫秒
@@ -22,7 +21,7 @@
 > main();
 > ```
 
-## cancelTimeout
+## cancelTimeout  取消延迟执行
  * 取消延迟执行
  * @param t 要取消的函数
 > ```javascript
@@ -37,7 +36,7 @@
 > main();
 > ```
 
-## setInterval
+## setInterval 周期执行
  * 设置多少周期进行执行一次，在子线程中执行
  * @param func 函数
  * @param interval 周期时间，单位是毫秒
@@ -53,7 +52,7 @@
 > main();
 > ```
 
-## cancelInterval
+## cancelInterval 取消周期执行
  * 取消周期执行的函数
  * @param t 要取消的函数
  
@@ -69,7 +68,7 @@
 > ```
 
 
-## execSync
+## execSync 同步执行
 * 执行某个函数并且等待true返回，如果函数中返回的是true，该方法将立刻执行完毕
  * @param condition 条件函数
  * @param timeout   超时时间，单位是毫秒
@@ -84,7 +83,7 @@
 > main();
 > ```
 
-## thread.stopAll
+## thread.stopAll 停止
 * 取消所有正在运行的线程
 > ```javascript
 >     
@@ -97,7 +96,7 @@
 > main();
 > ```
 
-## thread.execAsync
+## thread.execAsync 异步执行
 * 异步执行线程，这里会将Runnable放到线程池中进行管理
 * @param runnable Runnable对象
 
@@ -124,7 +123,7 @@
 > main();
 > ```
 
-## thread.execSync
+## thread.execSync 同步执行
 * 执行某个函数并且等待true返回，如果函数中返回的是true，该方法将立刻执行完毕
  * @param condition 条件函数
  * @param timeout   超时时间，单位是毫秒
@@ -141,7 +140,7 @@
 > ```
 
 
-## thread.cancelThread
+## thread.cancelThread 取消线程
  * 取消线程的执行
  * @param t 线程对象ID
  * @return boolean
@@ -171,7 +170,7 @@
 
 
 
-## thread.isCancelled
+## thread.isCancelled 取消判断
  * 取消线程的执行
  * @param t 线程对象ID
  * @return boolean true代表已经取消了，false表示未取消

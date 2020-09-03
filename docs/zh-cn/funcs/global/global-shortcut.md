@@ -1,9 +1,10 @@
-# 说明
+## 说明
+
 全局模块中封装的快捷事件，不用区分是无障碍模式还是代理模式
 
-# 手势事件模式
+## 手势事件模式
 
-## setGestureActionMode 
+### setGestureActionMode 设置手势模式事件
 
  * 设置各种手势模式事件的操作类型，默认是异步,目前只对无障碍模式有效
  * @param mode 1 代表异步，2代表同步
@@ -16,8 +17,8 @@
 > main();
 > ```
 
-# 点击函数
-## clickPoint 
+## 点击函数
+### clickPoint 坐标点击
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 点击坐标
 * @param x x坐标
@@ -39,7 +40,7 @@
 
 
 
-## click 
+### click 选择器点击
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 点击选择器
 * @param selectors 选择器对象
@@ -60,7 +61,7 @@
 > 
 > ```
 
-## clickEx 
+### clickEx 无指针点击
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 无指针方式点击选择器，节点必须是可点击的才行
 * @param selectors 选择器对象
@@ -82,7 +83,7 @@
 > ```
 
 
-## longClickEx
+### longClickEx 无指针长点击
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 无指针方式长点击选择器，节点必须是可点击的才行
 * @param selectors 选择器对象
@@ -103,7 +104,7 @@
 > 
 > ```
 
-## clickRandom 
+### clickRandom 选择器随机点击
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 随机点击选择器的任意元素
 * @param selectors 选择器对象
@@ -125,7 +126,7 @@
 > ```
 
 
-## clickRandomEx
+### clickRandomEx 无指针随机点击
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 随机点击选择器的任意元素
 * @param selectors 选择器对象
@@ -146,7 +147,7 @@
 > 
 > ```
 
-## clickRandomRect 
+### clickRandomRect 区域随机点击
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 随机点击区域中的坐标
 * @param rect 区域对象
@@ -172,7 +173,7 @@
 > ```
 
 
-## clickCenter 
+### clickCenter 点击中心点
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 点击区域中的中心坐标
 * @param rect 区域对象
@@ -201,7 +202,7 @@
 
 
 
-## clickText 
+### clickText 点击文本
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 点击文本
 * @param text 文本
@@ -222,7 +223,7 @@
 > 
 > ```
 
-## longClick
+### longClick 选择器长点击
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 长点击选择器
 * @param selectors 选择器对象
@@ -245,7 +246,7 @@
 > ```
 
 
-## longClickPoint 
+### longClickPoint 坐标长点击
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 长点击坐标
 * @param x x坐标
@@ -268,8 +269,8 @@
 
 
 
-# 多点触摸
-## multiTouch 多点触摸
+## 多点触摸
+### multiTouch 多点触摸
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 多点触摸<br/>
 * 触摸参数: action :一般情况下 按下为0，弹起为1，移动为2
@@ -342,9 +343,9 @@
 > main();
 > ```
 
-# 滚动函数
+## 滚动函数
 
-## scrollForward
+### scrollForward 无指针向前滚动
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 向前滚动
 * @param selectors 选择器对象
@@ -367,7 +368,7 @@
 > ```
 
 
-## scrollBackward
+### scrollBackward 无指针向后滚动
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 向后滚动
 * @param selectors 选择器对象
@@ -391,8 +392,8 @@
 
 
 
-# 滑动函数
-## swipe 
+## 滑动函数
+### swipe  滑动
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 通过选择器滑动节点
 * @param selectors 节点选择器
@@ -417,7 +418,7 @@
 > ```
 
 
-## swipeToPoint 
+### swipeToPoint 坐标点滑动
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 从一个坐标滑动到另一个坐标
 * @param startX 起始坐标的X轴值
@@ -451,7 +452,7 @@
 
 
 
-## isScrollEnd 
+### isScrollEnd 滚到底部判断
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 是否滚动到底部了，如果查不到元素也会返回false
 * @param distance 滚动方向 UP,DOWN,LEFT,RIGHT
@@ -474,8 +475,8 @@
 
 
 
-# 拖动函数
-## drag 
+## 拖动函数
+### drag 拖动坐标
  * 执行条件：无障碍7.0以上或者手势执行为代理服务
  * 从一个坐标到另一个坐标的拖动
  * @param startX 起始坐标的X轴值
@@ -499,7 +500,7 @@
 > ```
 
 
-## dragTo 
+### dragTo 拖动选择器
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 通过选择器拖动某个元素到目标元素
 * @param selectors 选择器 {@link S}
@@ -524,7 +525,7 @@
 
 
 
-## dragToPoint
+### dragToPoint 拖动到目标选择器
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 通过选择器拖动某个元素到目标X Y 坐标
 * @param selectors 原始元素选择器
@@ -547,8 +548,8 @@
 > main();
 > ```
 
-# 输入数据
-## currentIsOurIme 
+## 输入数据
+### currentIsOurIme 是否是自带输入法
 * 当前是否是我们的输入法
 * @return {boolean|布尔型}
 
@@ -566,7 +567,7 @@
 > ``` 
 
 
-## inputText 
+### inputText  输入数据
 * 执行条件：无障碍5.0以上
 * 通过选择器输入数据
 * @param selectors  选择器
@@ -587,7 +588,7 @@
 > main();
 > ``` 
 
-## imeInputText 
+### imeInputText 输入法输入数据
 * 使用输入法输入内容，前提是已经设置本程序的输入法为默认输入法
 * 适合没有节点的情况，例如游戏等
 * @param selectors  选择器，可以为空，如果为空，前提是输入框是聚焦的状态
@@ -609,7 +610,7 @@
 > ``` 
 
 
-## imeInputKeyCode 
+### imeInputKeyCode 输入法输入code
 * 使用输入法输入内容，前提是已经设置本程序的输入法为默认输入法
 * 适合没有节点的情况，例如游戏等
 * @param selectors  选择器，可以为空，如果为空，前提是输入框是聚焦的状态
@@ -631,7 +632,7 @@
 > ``` 
 
 
-## pasteText 
+### pasteText 粘贴数据
 * 执行条件：无障碍5.0以上
 * 通过选择器粘贴数据
 * @param selectors  选择器
@@ -656,7 +657,7 @@
 
 
 
-## clearTextField 
+### clearTextField 清除数据
 * 执行条件：无障碍5.0以上
 * @param selectors 节点选择器
 * @return {boolean|布尔型}
@@ -676,9 +677,9 @@
 > ``` 
 
 
-# 节点操作
+## 节点操作
 
-## has 
+### has 节点存在判断
 * 通过选择器判断元素是否存在
 * @param selectors 选择器
 * @return {null|布尔型}
@@ -699,7 +700,7 @@
 
 
 
-## waitExistActivity 
+### waitExistActivity 等界面出现
 * 等待activity界面出现
 * @param activity 界面名称
 * @param timeout 超时时间，单位毫秒
@@ -719,7 +720,7 @@
 > main();
 > ``` 
 
-## waitExistNode 
+### waitExistNode 等节点出现
 * 通过选择器判断并等待元素是否存
 * @param selectors 选择器
 * @param timeout 超时时间，单位毫秒
@@ -740,7 +741,7 @@
 > ``` 
 
 
-## getText 
+### getText 获取文本
 * 获取选择器得到的文本数据
 * @param selectors 选择器
 * @return {字符串数组|null|字符串集合}
@@ -756,7 +757,7 @@
 > ``` 
 
 
-## getNodeInfo 
+### getNodeInfo 获取节点数组
 * 获取节点信息
 * @param selectors 选择器
 * @param timeout 等待时间，单位是毫秒
@@ -765,13 +766,13 @@
 > ```javascript
 > 
 > function main(){
->     var result = clz("android.widget.TextView").getNodeInfo(10*1000);
+>     var result = getNodeInfo(clz("android.widget.TextView"),10*1000);
 >     toast("result:"+result);
 > }
 > main();
 > ``` 
 
-## getNodeAttrs 
+### getNodeAttrs 节点属性信息
 * 获取节点属性信息
 * @param selectors 选择器
 * @param attr 属性值,例如 text,className，更多的属性请参考NodeInfo对象属性
@@ -793,7 +794,7 @@
 
 
 
-## getOneNodeInfo 
+### getOneNodeInfo 获取单个节点
 * 通过选择器 获取第一个节点信息
 * @param selectors 选择器
 * @param timeout 等待时间，单位是毫秒
@@ -802,7 +803,7 @@
 > ```javascript
 > 
 > function main(){
->     var result = clz("android.widget.TextView").getOneNodeInfo(10*1000);
+>     var result = getOneNodeInfo(clz("android.widget.TextView"),10*1000);
 >     toast("result:"+result);
 >     if (result){
 >         result.click();
@@ -814,7 +815,7 @@
 
 
 
-## setFetchNodeMode 
+### setFetchNodeMode 获取节点的模式
 * 设置获取节点的模式
 * @param mode 1 是增强型， 2 是快速型，默认是增强型
 * @param fetchInvisibleNode 是否抓取隐藏的元素，默认不抓取
@@ -830,7 +831,7 @@
 > main();
 > ``` 
 
-## addNodeFlag 
+### addNodeFlag 加上节点获取的某个标志位
 * 加上节点获取的某个标志位
 * @param flag 参见 AccessibilityServiceInfo.FLAG_*，如果是0是强制刷新
 * @return {null|boolean}
@@ -845,7 +846,7 @@
 > ``` 
 
 
-## removeNodeFlag 
+### removeNodeFlag 移除节点获取的某个标志位
 * 移除节点获取的某个标志位
 * @param flag 参见 AccessibilityServiceInfo.FLAG_*，如果是0是强制刷新
 * @return {null|boolean}
@@ -862,7 +863,7 @@
 
 
 
-## dumpXml 
+### dumpXml 元素变XML
 * 将元素节点变成XML
 * @return string string|null
 
@@ -879,7 +880,7 @@
 > ``` 
 
 
-## lockNode 
+### lockNode 锁定当前节点 
 * 锁定当前节点，锁定后，后面就算界面刷新，但是节点还是老的信息，需要和releaseNode进行配合才能进行解锁
 
 > ```javascript
@@ -911,7 +912,7 @@
 
 
 
-## releaseNode 
+### releaseNode 释放节点的锁
 * 释放节点的锁，释放后，当界面刷新的时候，节点信息会变成最新的
 
 > ```javascript
@@ -942,8 +943,8 @@
 
 
 
-# 系统按键相关
-## home 
+## 系统按键相关
+### home 返回主页
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 返回主页
 * @return {null|布尔型}
@@ -962,7 +963,7 @@
 > ```
 
 
-## power 
+### power  模拟电源按键
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 模拟电源按键，无障碍是电源对话框，代理模式是电源键按下
 * @return {null|布尔型}
@@ -980,7 +981,7 @@
 > main();
 > ```
 
-## back 
+### back 返回键
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 返回键
 * @return {null|布尔型}
@@ -999,7 +1000,7 @@
 > ```
 
 
-## openNotification
+### openNotification 打开通知栏
 * 执行条件：无障碍5.0以上或者手势执行为代理服务 
 * 打开通知栏
 * @return {null|布尔型}
@@ -1018,7 +1019,7 @@
 > ```
 
 
-## openQuickSettings 
+### openQuickSettings  打开快速设置
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 打开快速设置
 * @return {null|布尔型}
@@ -1036,7 +1037,7 @@
 > main();
 > ```
 
-## recentApps 
+### recentApps 最近APP任务按键
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 最近APP任务按键
 * @return {null|布尔型}
@@ -1055,7 +1056,7 @@
 > ```
 
 
-## getRunningPkg
+### getRunningPkg 当前运行的App包名
 * 取得当前运行的App包名
 * @return {字符串|null}
 
@@ -1068,7 +1069,7 @@
 > ```
 
 
-## getRunningActivity
+### getRunningActivity 当前运行的Activity类名
 * 取得当前运行的Activity类名
 * @return {字符串|null}
 
@@ -1081,8 +1082,8 @@
 > ```
 
 
-# 通知栏
-## requestNotificationPermission
+## 通知栏
+### requestNotificationPermission 请求监听状态栏的权限
 * 请求监听状态栏的权限
 * @param timeout 请求权限超时时间 单位是秒
 * @return true 代表请求权限成功，false代表失败
@@ -1096,7 +1097,7 @@
 > main();
 > ```
 
-## hasNotificationPermission
+### hasNotificationPermission 是否有状态栏监听权限
 * 检查是否含有状态栏监听权限
 * @return true 代表请求权限成功，false代表失败
 
@@ -1109,7 +1110,7 @@
 > main(); 
 > ```
 
-## getLastNotification
+### getLastNotification 获取最近通知栏对象
  * 获取最近通知栏对象
  * @param pkg 指定包名
  * @param size 指定获取的条数
@@ -1124,7 +1125,7 @@
 > main();
 > ```
 
-## shotNotification
+### shotNotification 通知发射处理
 *  将通知发射处理，相当于点击了通知栏
 * @param seqId
 * @return {boolean|布尔型}
@@ -1144,7 +1145,7 @@
 
 
 
-## ignoreNotification
+### ignoreNotification 忽略通知
 * 忽略通知，从缓存队列移除，下次将不会获取
 * @param seqId
 * @return {boolean|布尔型}
@@ -1161,7 +1162,7 @@
 > main();
 > ```
 
-## cancelNotification
+### cancelNotification 取消通知
 * 将通知进行取消操作
 * @param seqId
 * @return {boolean|布尔型}
@@ -1179,7 +1180,7 @@
 > ```
 
 
-## getLastToast
+### getLastToast 获取toast数据
 * 获取toast数据
 *  @param pkg 指定包名
 * @param size 指定获取的条数
@@ -1195,10 +1196,10 @@
 > ```
 
 
-# 悬浮窗日志
+## 悬浮窗日志
 
 
-## requestFloatViewPermission
+### requestFloatViewPermission 请求浮窗权限
 * 请求展示浮窗的权限
 * @param timeout 请求权限超时时间 单位是秒
 * @return true 代表请求权限成功，false代表失败
@@ -1212,7 +1213,7 @@
 > main();
 > ```
 
-## hasFloatViewPermission
+### hasFloatViewPermission 检查浮窗权限
 * 检查是否含有浮窗权限
 * @return true 代表请求权限成功，false代表失败
 
@@ -1226,7 +1227,7 @@
 > ```
 
 
-## showFloatView
+### showFloatView 展示浮窗
  * 展示浮窗（如果是开发工具调试，请先预览一下工程，然后运行脚本，避免读取不到path文件内容的情况）
  * @param params js的map对象，包含的
  * var map = {"path":"main.html","tag":"test"};  类似这样的参数
@@ -1261,7 +1262,7 @@
 > main();
 > ```
 
-## closeFloatView
+### closeFloatView 关闭浮窗
  * 关闭浮窗
  * @param tag showFloatView 使用的tag参数，对悬浮窗唯一定位的
  * @return true 成功，false代表失败
@@ -1288,7 +1289,7 @@
 > ```
 
 
-## closeAllFloatView
+### closeAllFloatView 关闭所有悬浮窗
  * 关闭所有悬浮窗，但不包含日志悬浮窗
  * @return true 成功，false代表失败
 
@@ -1314,7 +1315,7 @@
 > ```
 
 
-## showCtrlWindow
+### showCtrlWindow 展示启停浮窗
 * 展示启停浮窗
 * @return true 代表请求权限成功，false代表失败
 
@@ -1328,7 +1329,7 @@
 > ```
 
 
-## closeCtrlWindow
+### closeCtrlWindow 关闭启停浮窗
 * 关闭启停浮窗
 * @return true 代表请求权限成功，false代表失败
 
@@ -1343,7 +1344,7 @@
 
 
 
-## showLogWindow
+### showLogWindow 展示日志浮窗
 * 展示日志浮窗
 * @return true 代表请求权限成功，false代表失败
 
@@ -1356,7 +1357,7 @@
 > main();
 > ```
 
-## closeLogWindow
+### closeLogWindow 关闭日志浮窗
 * 关闭日志浮窗
 * @return true 代表请求权限成功，false代表失败
 
@@ -1369,7 +1370,7 @@
 > ```
 
 
-## setLogViewSizeEx
+### setLogViewSizeEx 设置日志窗口
  * 设置日志窗口大小扩展函数
  * @param map 例如
  *  {
@@ -1416,7 +1417,7 @@
 >     main();
 > ```
 
-## setLogViewSize
+### setLogViewSize 过期函数
 * 设置日志窗口大小
 * @param w 宽度
 * @param h 高度
@@ -1433,8 +1434,8 @@
 
 
 
-## setLogText
-* 展示消息到悬浮窗日志中，颜色是白色的
+### setLogText 展示消息
+* 展示消息到悬浮窗日志中
 * @param msg 消息
 * @param color 颜色值例如  #ffffff
 * @param size 字体大小
@@ -1448,9 +1449,9 @@
 > ```
 > 
 
-# 定时任务
+## 定时任务
 
-## startJob 开启定时 
+### startJob 开启定时 
  * 开启一个定时脚本任务
  * @param tag 任务的唯一标示，不能为空，脚本中可以使用readConfigString("jobTaskTag")获取当前tag值，判断是那个任务过来执行的
  * @param execTime 定时时间格式: 2020-04-17 19:20:00，或者直接是秒数字，例如 3，代表3秒后
@@ -1471,7 +1472,7 @@
 > main();
 > ``` 
 
-## cancelAllJob 取消所有定时 
+### cancelAllJob 取消所有定时 
  * 取消所有定时
  * @return bool true 代表有任务被取消
 
@@ -1485,7 +1486,7 @@
 > ``` 
 
 
-## cancelJob 取消指定TAG定时 
+### cancelJob 取消指定TAG定时 
  * 通过tag对定时任务进行取消
  * @param tag tag名称，startJob的时候tag参数的值
  * @return bool true 代表有任务被取消
@@ -1499,7 +1500,7 @@
 > main();
 > ``` 
 
-## getAllJobTag 获取所有定时标签 
+### getAllJobTag 获取所有定时标签 
  * 取得所有的定时任务标签
  * @return 字符串数组或者null
  
@@ -1513,9 +1514,9 @@
 > ``` 
 
 
-# 其他函数
+## 其他函数
 
-## random 随机函数 
+### random 随机函数 
  * 取得某个范围的随机值
  * @param min 最小值
  * @param max 最大值

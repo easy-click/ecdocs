@@ -1,19 +1,12 @@
-# 说明
+## 说明
 - 工具类模块函数主要是跟Android常用的信息相关联
 - 工具类模块的对象前缀是utils，例如 utils.requestShowLogPermission()这样调用
 
 
 
-# 函数
-
-
-
-
-
-
 ## 打开App相关
 
-### utils.openApp
+### utils.openApp 打开APP
 * 打开APP
 * @param packageName 程序的包名
 * @return 布尔型 true 代表成功，false 代表失败
@@ -27,7 +20,7 @@
 > ```
 
 
-### utils.openAppByName
+### utils.openAppByName 打开APP(应用名称)
 * 打开APP，通过应用名称
 * @param appName 程序名称，比如今日头条
 * @return 布尔型 true 代表成功，false 代表失败
@@ -42,7 +35,7 @@
 
 
 
-### utils.openActivity
+### utils.openActivity 打开activity
 * 打开一个activity，通过map参数
     * @param map 例如{"action":""},key的固定只有
     * action: 标准的android action字符串
@@ -79,7 +72,7 @@
 
 ## 图库相关
 
-### utils.insertImageToAlbum
+### utils.insertImageToAlbum 图片插入相册
 * 将图片插入到相册中，此方法会立刻更新相册数据
 * @param path 图片路径
 
@@ -93,7 +86,7 @@
 
 
 
-### utils.insertVideoToAlbum
+### utils.insertVideoToAlbum 视频插入相册
 * 将视频插入到相册中，此方法会立刻更新相册数据
 * @param path 视频路径
 
@@ -108,7 +101,7 @@
 
 ## 其他
 
-### utils.readConfigInt
+### utils.readConfigInt 读取整型配置
 * 读取JSON中的整型数据
 * @param jsonObject JSON对象
 * @param key  配置项目
@@ -123,7 +116,7 @@
 > main();
 > ```
 
-### utils.readJSONString
+### utils.readJSONString 读取JSON中字符串
 * 读取JSON中的字符串数据
 * @param jsonObject JSON对象
 * @param key        配置项目
@@ -140,7 +133,7 @@
 
 
 
-### utils.isObjectNull
+### utils.isObjectNull 判断一个对象为空
 * 判断一个对象为空
 * @param o 对象
 * @return true或者false
@@ -157,7 +150,7 @@
 
 
 
-### utils.isObjectNotNull
+### utils.isObjectNotNull 判断一个对象不为空
 * 判断一个对象不为空
 * @param o 对象
 * @return true或者false
@@ -174,7 +167,7 @@
 
 
 
-### utils.getRatio
+### utils.getRatio 取得比例
 * 取得比例，例如10参数，就是返回10%的比例，如果是true，说明随机比例正确，否则不正确
 * @param ratio 浮点型 1-100
 * @return true或者false
@@ -191,7 +184,7 @@
 
 
 
-### utils.getRangeInt
+### utils.getRangeInt 取得某个范围的随机值
 * 取得某个范围的随机值
 * @param min 最小值
 * @param max 最大值
@@ -208,7 +201,7 @@
 > ```
 
 
-### utils.isTrue
+### utils.isTrue 判断布尔型对象是否为真
 * 判断布尔型对象是否为真
 * @param r 布尔型对象
 * @return true 或者 false
@@ -223,7 +216,7 @@
 > ```
 
 
-### utils.fileMd5
+### utils.fileMd5 文件的MD5
 * 文件的MD5
 * @param file 文件路径
 * @return 文件MD5字符串或者null
@@ -238,7 +231,7 @@
 > ```
 
 
-### utils.dataMd5
+### utils.dataMd5 数据计算出来的MD5
 * 数据计算出来的MD5
 * @param data 数据
 * @return 数据MD5字符串或者null
@@ -254,7 +247,7 @@
 
 
 
-### utils.randomInt
+### utils.randomInt 随机整型数据
 * 随机整型数据
 * @param length 位数，要随机产生多少位的整型数据
 * @return 整型
@@ -268,7 +261,7 @@
 > main();
 > ```
 
-### utils.randomCharNumber
+### utils.randomCharNumber 取得随机的数字和字母
 * 取得随机的数字和字母
 * @param length 长度
 * @return 字符串数字混合
@@ -285,7 +278,7 @@
 
 
 
-### utils.getApkPkgName
+### utils.getApkPkgName 取得App文件的包名
 * 取得App文件的包名
 * @param filePath 文件路径
 * @return 字符串
@@ -301,7 +294,7 @@
 
 
 
-### utils.isAppExist
+### utils.isAppExist App是否已经安装
 * App是否已经安装
 * @param packageName 应用程序的包名
 * @return true 代表已经安装，false代表未安装
@@ -315,7 +308,7 @@
 > main();
 > ```
 
-### utils.getAppVersionCode
+### utils.getAppVersionCode 程序的版本标示
 * 取得已安装的程序的版本整型标示
 * @param packageName 应用程序的包名
 * @return 整型
@@ -330,7 +323,7 @@
 > ```
 
 
-### utils.getAppVersionName
+### utils.getAppVersionName 版本字符串标示
 * 取得已安装的程序的版本字符串标示
 * @param packageName 应用程序的包名
 * @return 字符串 例如 1.0.0
@@ -348,7 +341,7 @@
 
 
 
-### utils.setClipboardText
+### utils.setClipboardText 设置剪贴板文本
 * 设置剪贴板文本
 * @param text 文本
 * @return boolean
@@ -364,7 +357,7 @@
 
 
 
-### utils.getClipboardText
+### utils.getClipboardText 读取剪贴板文本
 * 读取剪贴板文本
 * @return string
 

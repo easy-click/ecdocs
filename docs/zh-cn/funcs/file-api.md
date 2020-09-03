@@ -1,12 +1,11 @@
-# 说明
+## 说明
 - 文件模块函数主要是跟文件信息相关联
 - 文件模块的对象前缀是file，例如 file.readFile()这样调用
 
 
 
-# 函数
 
-## file.readFile
+## file.readFile 读取为字符串
 * 将文件读取为字符串
 * @param path 文件路径
 * @return 字符串
@@ -21,7 +20,7 @@
 > ```
 
 
-## file.listDir
+## file.listDir 列出所有文件
  * 列出文件下的所有文件
  * @param path 路径
  * @return 路径字符串数组
@@ -38,7 +37,7 @@
 > main();
 > ```
 
-## file.writeFile
+## file.writeFile 写入文件
 * 将字符串存储到文件中
 * @param data 字符串 数据
 * @param path 文件路径
@@ -53,7 +52,7 @@
 > ```
 
 
-## file.create
+## file.create 创建
 * 创建一个文件或者文件夹
 * @param path 文件或者文件夹路径
 * @return 布尔型 true 代表创建成功
@@ -67,7 +66,7 @@
 > main();
 > ```        
 
-## file.readAssets
+## file.readAssets 读取assets
 * 从APK的assets文件夹中读取数据为字符串
 * @param path assets文件夹中的文件路径，例如 data/a.txt
 * @return 字符串
@@ -82,7 +81,7 @@
 > ```
 
 
-## file.deleteAllFile
+## file.deleteAllFile 删除
 * 删除所有文件或者文件夹
 * @param path 文件或者文件路径
 
@@ -94,7 +93,7 @@
 > main();
 > ```
 
-## file.appendLine
+## file.appendLine 追加字符串
 * 写入一行到文件中,追加模式
 * @param data 行数据
 * @param path 文件或者文件路径
@@ -111,7 +110,7 @@
 
 
 
-## file.readLine
+## file.readLine 读取一行
 * 读取一行数据，如果行号不对，返回的是空
 * @param path   路径
 * @param lineNo 行号
@@ -127,7 +126,7 @@
 
 
 
-## file.readAllLines
+## file.readAllLines 读取所有行
 * 读取所有数据
 * @param path   路径
 * @return 字符串
@@ -142,7 +141,7 @@
 
 
 
-## file.mkdirs
+## file.mkdirs 创建文件夹
 * 创建文件夹
 * @param path   路径
 * @return 布尔型 true 代表成功，false代表失败
@@ -157,7 +156,7 @@
 
 
 
-## file.exists
+## file.exists 是否存在
 * 文件或者文件夹是否存在
 * @param path   路径
 * @return 布尔型 true 代表成功，false代表失败

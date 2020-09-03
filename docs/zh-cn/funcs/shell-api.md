@@ -1,11 +1,11 @@
 
-# 说明
+## 说明
 - 代理模式下才能使用该函数，用户执行shell命令
 - shell模块的对象前缀是shell，例如 shell.installApp()这样调用
 
 
 
-## shell.installApp
+## shell.installApp 安装APP
 * 安装 apk
 * @param path 文件路径
 * @return true 代表安装成功，false 代表安装失败
@@ -19,7 +19,7 @@
 > ```
 
 
-## shell.uninstallApp
+## shell.uninstallApp 卸载APP
 * 卸载应用程序
 * @param packageName 应用程序的包名
 * @return true 代表卸载成功，false 代表卸载失败
@@ -35,7 +35,7 @@
 
 
 
-## shell.stopApp
+## shell.stopApp 停止APP
 * 停止正在执行的应用
 * @param packageName 应用程序的包名
 * @return true 代表成功，false 代表失败
@@ -53,8 +53,8 @@
 
 
 
-## shell.execCommand
-* 执行Shell命令
+## shell.execCommand  执行Shell命令
+* 执行Shell命令，会自动区分代理还是root
 * @param command 命令，例如安装App ： pm install /sdcard/app.apk
 * @return 命令执行后返回的字符串结果
 
@@ -69,7 +69,7 @@
 
 
 
-## shell.sudo
+## shell.sudo 执行ROOT下命令
 * 执行root模式下，相关的命令，需要有root权限
 * @param command 命令，例如安装App ： pm install /sdcard/app.apk
 * @return 命令执行后返回的字符串结果
@@ -85,7 +85,7 @@
 >
 
 
-## shell.execAgentCommand
+## shell.execAgentCommand 代理模式下执行shell
 * 执行shell命令。需要启动代理服务
 * @param command 命令，例如安装App ： pm install /sdcard/app.apk
 * @return 命令执行后返回的字符串结果

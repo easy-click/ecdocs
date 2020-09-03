@@ -1,10 +1,10 @@
-# 说明
+## 说明
 全局模块是指直接调用方法就可以使用的模块，无需使用前缀对象名称
 
 
-# 模块加载
+## 插件模块加载
 
-## loadDex 载入dex或者apk
+### loadDex 载入dex或者apk
 
  * 载入dex文件
  * @param path 路径，加载顺序分别是插件目录(例如 ab.apk)或者是文件路径(例如 /sdcard/ab.apk)加载
@@ -23,7 +23,7 @@
 > ```
 
 
-## loadJar 载入jar
+### loadJar 载入jar
 
  * 载入jar文件
  * @param path 路径，加载顺序分别是插件目录(例如 ab.jar)或者是文件路径(例如 /sdcard/ab.jar)加载
@@ -38,8 +38,59 @@
 > main();
 > ```
 
-# 动态执行JS
-## execScript 载入JS
+
+
+
+### importClass 导入JAVA类
+
+ * 导入java的class给js用
+ * @param clz class的名称例如: com.A
+
+> ```javascript
+> function main(){
+>     importClass(com.A);
+>     var obj = new com.A(); 
+> }
+> main();
+> ```
+
+
+### importPackage 导入JAVA包
+
+ * 导入java包下面所有类给js用
+ * @param clz class的名称例如: com.b
+
+> ```javascript
+> function main(){
+>     importPackage(com.b);
+>     var obj = new com.b.A(); 
+> }
+> main();
+> ```
+
+## 脚本启停
+
+### exit 退出脚本
+> ```javascript
+> exit();
+> ```
+
+### sleep  暂停执行
+* 休眠
+* @param miSecond 毫秒
+> ```javascript
+> function main(){
+>     var result = sleep(1000);
+>     if (result){
+>         toast("成功");
+>     } else {
+>         toast("失败");
+>     }
+> }
+> main();
+> ```
+
+### execScript 载入JS
 * 执行JS文件或者内容
 * @param type 1=文件，2=直接是JS内容
 * @param content 路径例如/sdcard/a.js或者js的内容
@@ -64,8 +115,7 @@
 > ```
 
 
-# 重启脚本
-## restartScript 
+### restartScript  重启脚本
 * 重启脚本，适合无限循环，或者有异常的情况可以下载最新的iec再次执行，避免进入UI才能热更新,
 * 注意: 该方法威力巨大，请自行控制好是否自动重启，否则只能强杀进程才能停止
 * @param path 新的IEC路径，如果不需要可以填写null
@@ -90,35 +140,9 @@
 > ```
 
 
+## JSON处理
 
-## importClass 导入JAVA类
-
- * 导入java的class给js用
- * @param clz class的名称例如: com.A
-
-> ```javascript
-> function main(){
->     importClass(com.A);
->     var obj = new com.A(); 
-> }
-> main();
-> ```
-
-
-## importPackage 导入JAVA包
-
- * 导入java包下面所有类给js用
- * @param clz class的名称例如: com.b
-
-> ```javascript
-> function main(){
->     importPackage(com.b);
->     var obj = new com.b.A(); 
-> }
-> main();
-> ```
-
-## JSON.stringify 格式化为JSON字符串
+### JSON.stringify 格式化为JSON字符串
 
  * 格式化对象为JSON字符串
  * @param 对象
@@ -132,7 +156,7 @@
 > main();
 > ```
 
-## JSON.parse 转换为JSON对象
+### JSON.parse 转换为JSON对象
 
  * 格式化JSON字符串为对象
  * @param 字符串
@@ -148,8 +172,8 @@
 > ```
 
 
-# 监听脚本
-## setStopCallback 脚本停止监听
+## 监听脚本
+### setStopCallback 脚本停止监听
 > ```javascript
 > function main(){
 >     setStopCallback(function (){
@@ -166,7 +190,7 @@
 > ```
 
 
-## setExceptionCallback 脚本异常停止监听
+### setExceptionCallback 脚本异常停止监听
 > ```javascript
 > function main(){
 >     setExceptionCallback(function (msg){
@@ -185,31 +209,11 @@
 > ```
 
 
-# 退出脚本
-## exit
-> ```javascript
-> exit();
-> ```
 
-# 暂停执行
-## sleep 
-* 休眠
-* @param miSecond 毫秒
-> ```javascript
-> function main(){
->     var result = sleep(1000);
->     if (result){
->         toast("成功");
->     } else {
->         toast("失败");
->     }
-> }
-> main();
-> ```
 
-# 日志消息方法
+## 日志消息方法
 
-## setSaveLog 
+## setSaveLog  保存日志
  * 设置保存日志信息到文件中
  * @param save 是否保存
  * @param path 自定义的文件夹
@@ -224,7 +228,7 @@
 > main();
 > ```
 
-## setFloatDisplayLineNumber 
+### setFloatDisplayLineNumber  打印日志行号
 * 打印日志的时候，悬浮窗是否展示行号，正式发布，可以不展示行号，不影响调试和保存在文件的日志中
 * @param ds  true 代表显示， false 不显示
 
@@ -238,7 +242,7 @@
 > ```
 
 
-## toast 
+### toast  Toast消息
  * 显示Toast消息
  * @param msg 消息字符串
  
@@ -250,7 +254,7 @@
 > main();
 > ```
 
-## toast1
+### toast1 Toast1消息
  * 显示Toast消息 (扩展方法)
  * @param msg 消息字符串
  
@@ -264,7 +268,7 @@
 
 
 
-## toast2 
+### toast2  Toast2消息
  * 显示Toast消息(扩展方法)
  * @param msg 消息字符串
  
@@ -277,7 +281,7 @@
 > ```
 
 
-## logd
+### logd 调试日志
  * 调试日志
  * @param msg 消息字符串
  
@@ -293,7 +297,7 @@
 > main();
 > ```
 
-## loge
+### loge 错误日志
  * 错误日志
  * @param msg 消息字符串
  
@@ -307,7 +311,7 @@
 > main();
 > ```
 
-## logw
+### logw 警告日志
  * 警告日志
  * @param msg 消息字符串
  
@@ -321,7 +325,7 @@
 > main();
 > ```
 
-## logi
+### logi 信息日志
  * 信息日志
  * @param msg 消息字符串
  
@@ -337,7 +341,7 @@
 > ```
 
 
-## clearLog
+### clearLog 清除日志
  * 清除日志
  * @param lines 整型，要清除的行数，-1 代表全部清除
  
@@ -360,8 +364,9 @@
 > ```
 
 
-# 读取IEC包资源
-## readResString 
+## 读取IEC包资源
+
+### readResString 读取字符串资源
 * 读取res文件夹中的资源文件,并返回字符串
 * @param fileName 文件名称，不要加res前缀
 * @return string 如果是null代表没内容
@@ -376,7 +381,7 @@
 > ```
 
 
-## readResBitmap 
+### readResBitmap  读取Bitmap资源
 * 读取res文件夹中的资源文件，并返Bitmap图片对象
 * @param fileName 文件名称，不要加res前缀
 * @return string 如果是null代表没内容
@@ -391,7 +396,7 @@
 > ```
 
 
-## readResAutoImage 
+### readResAutoImage  读取Image资源
 * 读取res文件夹中的资源文件，并返 AutoImage 图片对象
 * @param fileName 文件名称，不要加res前缀
 * @return string 如果是null代表没内容
@@ -407,7 +412,7 @@
 
 
 
-## saveResToFile 
+## saveResToFile 保存资源为文件
 * 保存res文件夹中的资源文件到指定的路径
 * @param fileName 文件名称，不要加res前缀
 * @param path 要保存到的路径地址，例如/sdcard/aa.txt
@@ -423,8 +428,8 @@
 > ```
 
 
-# UI参数读取
-## readConfigInt
+## UI参数读取
+### readConfigInt 读取整型配置
 * @description 读取UI界面中的参数,返回是整型
 * @param key 在UI界面中配置的key
 * @return 整型，找不到就返回0
@@ -438,7 +443,7 @@
 > 
 > ```
 
-## readConfigString
+### readConfigString 读取字符串配置
 * 读取UI界面中的参数,返回是字符串
 * @param key 在UI界面中配置的key
 * @return 字符串 找不到就返回空字符串
@@ -452,7 +457,7 @@
 > 
 > ```
 
-## readConfigDouble
+### readConfigDouble 读取double配置
 * 读取UI界面中的参数,返回是Double型
 * @param key 在UI界面中配置的key
 * @return double
@@ -466,7 +471,7 @@
 > ```
 
 
-## readConfigBoolean
+### readConfigBoolean 读取布尔型配置
  * 读取UI界面中的参数,返回是布尔型
  * @param key 在UI界面中配置的key
  * @return true 或者 false
@@ -480,7 +485,7 @@
  > ```
 
 
-## getConfigJSON
+### getConfigJSON 取所有配置
  * 取得配置的JSON
  * @return JSON数据
  
@@ -493,7 +498,7 @@
  > ```
 
 
-## updateConfig
+### updateConfig 更新配置
 * 更新配置
 * @param key 键
 * @param value  值
@@ -506,10 +511,10 @@
  > main();
  > ```
 
-# EC 系统设置
+## EC 系统设置
 
 
-## setECSystemConfig
+### setECSystemConfig 设置EC参数
  * 设置EC的系统参数
  * @param params  map形式例如 {"running_mode":"无障碍"},<br/>
  * {<br/>
@@ -541,7 +546,7 @@
 > main();
 > ```
 
-## openECSystemSetting
+### openECSystemSetting 打开EC系统界面
 * 打开EC系统设置页面
 * @return true 成功 false 失败
  
@@ -552,9 +557,21 @@
  > main();
  > ```
 
-# 设置IEC文件(脚本中的热更新)
 
-## setIECPath
+### openECloudSetting 打开EC云控界面
+* 打开EC云控界面
+* @return true 成功 false 失败
+ 
+> ```javascript
+ > function main(){
+ >     var result = openECloudSetting();
+ > }
+ > main();
+ > ```
+
+## 设置IEC文件(脚本中的热更新)
+
+### setIECPath 设置脚本路径
 * 设置要执行的IEC文件路径
 * @return true 成功 false 失败
  
@@ -572,9 +589,9 @@
  > ```
 
 
-# 运行模式
+## 运行模式
 
-## isAccMode
+### isAccMode 无障碍模式判断
  * 是否是无障碍模式
  * @return true或者false
  
@@ -586,7 +603,7 @@
  > main();
  > ```
 
-## isAgentMode
+### isAgentMode 代理模式判断
  * 是否是代理模式
  * @return true或者false
  
@@ -598,7 +615,7 @@
  > main();
  > ```
 
-## isServiceOk
+### isServiceOk 自动化服务状态
  * 自动化服务是否正常
  * @return true或者false
  
@@ -610,7 +627,7 @@
  > main();
  > ```
 
-## startEnv
+### startEnv 启动自动化
  * 启动自动化服务环境
  * @return true或者false
  

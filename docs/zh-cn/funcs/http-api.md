@@ -1,8 +1,7 @@
-# 说明
+## 说明
 - 网络模块函数主要是跟网络请求信息相关联
 - 网络模块的对象前缀是http，例如 http.downloadFile()这样调用
 
-# 函数
 
 ## http.request 万能请求函数
 * HTTP万能请求
@@ -234,7 +233,7 @@
 > ```
 
 
-## http.downloadFile
+## http.downloadFile 下载文件
 * 下载远程文件到本地,支持断点续传
 * @param remoteUrl 远程文件URL
 * @param file      要保存到本地的文件对象
@@ -254,7 +253,7 @@
 
 
 
-## http.downloadFileDefault
+## http.downloadFileDefault 下载文件
 * 下载远程文件到本地,支持断点续传，默认超时时间为30秒
 * @param remoteUrl 远程文件URL
 * @param file      要保存到本地的文件对象
@@ -272,7 +271,7 @@
 > ```
 
 
-## http.httpGetDefault
+## http.httpGetDefault GET请求
 * Http GET 请求
 * @param url 请求的URL
 * @param timeout 超时时间 单位毫秒
@@ -292,7 +291,7 @@
 
 
 
-## http.httpGet
+## http.httpGet GET请求
 * Http GET 请求
 * @param url     请求的URL
 * @param params  参数Map表 例如 {"a":"1"} 这样的参数或者字符串
@@ -314,7 +313,7 @@
 
 
 
-## http.httpPost
+## http.httpPost POST请求
 * Http Post 请求
 * @param url     请求的URL
 * @param params  参数，例如 {"a":"1"} 这样的参数或者字符串
@@ -351,7 +350,7 @@
 > main();
 > ```
 
-## http.postJSON
+## http.postJSON 发送JSON
 * HTTP POST JSON数据
 * @param url 请求的URL
 * @param json  json数据
@@ -421,59 +420,59 @@
 
 ### WebSocket 对象函数
 
-#### connect
+#### connect 连接
  * 开始异步连接
  * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
  
 
-#### isClosed
+#### isClosed 是否关闭
 * 是否已经关闭
 * @return true 代表已经关闭，false 未关闭
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
 
-#### isConnected
+#### isConnected 是否连接
 * 是否已经连接了
 * @return true 代表已经连接，false 未关闭
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
-#### close
+#### close 关闭
 * 关闭链接
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
-#### sendText
+#### sendText 发送文本
 * 发送文本消息
 * @param text 文本信息
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
 
-#### sendBinary
+#### sendBinary 发送字节
 * 发送字节信息
 * @param bin okio.ByteString 对象
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
 
-#### onOpen
+#### onOpen 打开回调
 * 当连接打开的时候事件回调
 * @param callback 回调函数
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
-#### onText
+#### onText 文件回调
 * 当有文本信息发送过来的时候回调
 * @param callback 回调函数
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
-#### onClose
+#### onClose 关闭回调
 * 当关闭的时候回调
 * @param callback 回调函数
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
-#### onError
+#### onError 错误回调
 * 当发生错误的时候回调
 * @param callback 回调函数
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
-#### onBinary
+#### onBinary 二进制消息回调
 * 当有二进制数据过来的时候回调
 * @param callback 回调函数
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
