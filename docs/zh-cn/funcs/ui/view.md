@@ -1,6 +1,6 @@
-# 说明
+## 说明
 View，最基础的视图
-# 使用示例
+## 使用示例
 ```xml
  <View android:visibility="visible"
           android:clickable="true"
@@ -25,10 +25,10 @@ View，最基础的视图
           android:tag="view"/>
 ```
 
-# 属性说明
+## 属性说明
 
-## 公有属性
+### 公有属性
 请参考 [公有属性](/zh-cn/funcs/ui-native-view.md#公有属性)
 
-## 私有属性
+### 私有属性
 无

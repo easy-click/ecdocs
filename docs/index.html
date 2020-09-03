@@ -17,16 +17,14 @@
     window.$docsify = {
         name: 'EasyClick文档',
         repo: '',
-        loadNavbar: true,
-        loadSidebar: true,
         auto2top: true, //当路线改变时，滚动到屏幕的顶部。
         coverpage: true, //激活封面功能。如果为true，则会从中加载_coverpage.md。
         executeScript: true, //执行页面上的脚本。只解析第一个脚本标记（演示）。如果存在Vue，则默认开启。
         loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载。
         loadNavbar: true,//_navbar.md如果为真，则从_navbar.md文件加载navbar ，否则从指定的路径加载。
         mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并。
-        maxLevel: 4,//最大的内容表级别。
-        subMaxLevel: 4,//在自定义边栏中添加目录（TOC）。
+        maxLevel: 2,//最大的内容表级别。
+        subMaxLevel: 5,//在自定义边栏中添加目录（TOC）。
         toc: {
             tocMaxLevel: 3,
             target: 'h2, h3, h4, h5, h6'
@@ -44,9 +42,9 @@
     }
 </script>
 <script src="//unpkg.com/docsify-plugin-toc"></script>
-
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+<script src="//unpkg.com/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
 </body>
 

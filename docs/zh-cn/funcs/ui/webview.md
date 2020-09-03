@@ -1,6 +1,6 @@
-# 说明
+## 说明
 WebView内嵌浏览器，支持H5和JS操作
-# 使用示例
+## 使用示例
 - 第一种 加载layout文件夹中的html
 ```xml
 <WebView android:layout_height="wrap_parent"
@@ -18,12 +18,12 @@ WebView内嵌浏览器，支持H5和JS操作
 ```
 
 
-# 属性说明
+## 属性说明
 
-## 公有属性
+### 公有属性
 请参考 [公有属性](/zh-cn/funcs/ui-native-view.md#公有属性)
 
-## 私有属性
+### 私有属性
 
 | 属性名 | 说明 | 可选值 |
 | :------: | :------: | :------: |

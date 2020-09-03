@@ -1,5 +1,5 @@
 
-# 支持以下视图
+## 支持以下视图
 - [LinearLayout 线性布局](/zh-cn/funcs/ui/linearlayout.md)
 - [FrameLayout 帧布局](/zh-cn/funcs/ui/framelayout.md)
 - [RelativeLayout 绝对布局](/zh-cn/funcs/ui/relativelayout.md)
@@ -17,7 +17,7 @@
 - [CardView卡片布局](/zh-cn/funcs/ui/cardview.md)
 - [Swtich开关按钮](/zh-cn/funcs/ui/switch.md)
 
-# 公有属性
+## 公有属性
 
 | 属性名 | 说明 | 可选值 |
 | :------: | :------: | :------: |
@@ -44,12 +44,12 @@
 | cornerRadius | 视图的圆角度数 | 具体数字+dp |
 
 
-# UI高度和宽度解释
+## UI高度和宽度解释
 - 属性为：layout_width, layout_height
 - match_parent 填充满父容器
 - wrap_content 以自身实际宽度为准
 - 数字型，例如：12dp，代表12个dp宽度，dp是android的宽度单位
 
-# UI界面参数读取
+## UI界面参数读取
 
 - 参考  [全局模块UI参数读取](/zh-cn/funcs/global/global.md#ui参数读取)
