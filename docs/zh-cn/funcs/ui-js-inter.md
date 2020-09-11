@@ -1248,38 +1248,31 @@
  * 设置EC的系统参数
  * @param params  map形式例如 {"running_mode":"无障碍"},<br/>
  * {<br/>
- *     "node_service":"需要",<br/>
- *     "proxy_service":"不需要",<br/>
  *     "running_mode":"无障碍",<br/>
  *     "auto_start_service":"是",<br/>
  *      "volume_start_tc":"否",<br/>
  *      "log_float_window":"否",<br/>
  *      "ctrl_float_window":"否"<br/>
+ *      "service_start_run_script":"否"<br/>
  * }<br/>
  *  参数解释有：<br/>
- *  node_service : 是否需要启动节点获取服务 值有 需要，不需要两种
- *  proxy_service : 是否需要启动底层代理服务 值有 需要，不需要两种
- *  running_mode : 手势执行服务 值有 无障碍，代理两种
+ *  running_mode :  值有 无障碍，代理两种
  *  auto_start_service : 开机启动服务 值有 是，否 两种
- *  volume_start_tc : 音量键启停 值有 是，否 两种
  *  log_float_window : 日志悬浮窗展示 值有 是，否 两种
  *  ctrl_float_window : 启停控制悬浮窗展示 值有 是，否 两种
+*  service_start_run_script : 服务被重启后自动重新运行 值有 是，否 两种
  *
  * @return 布尔型 true 是 false 否
  
 > ```javascript
 > function main(){
 >     var m = {
->           "node_service":"需要",
->           "proxy_service":"不需要",
 >           "running_mode":"无障碍",
 >           "auto_start_service":"是",
->            "volume_start_tc":"否",
 >            "log_float_window":"否",
 >            "ctrl_float_window":"否"
 >       };
 >     ui.setECSystemConfig(m);
->     
 > }
 > main();
 > ```

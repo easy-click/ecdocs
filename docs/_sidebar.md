@@ -48,6 +48,7 @@
         * [Swtich开关按钮](/zh-cn/funcs/ui/switch.md)
 * [H5 UI定制](/zh-cn/funcs/html-ui-custom.md)
 * [热更新功能](/zh-cn/hot-update.md)
+* [企业版云控接口](/zh-cn/ecloud/ecloud.md)
 * [企业版中控接口](/zh-cn/zk/zk.md)
     * [EC状态控制接口](/zh-cn/zk/zk-ec-state.md)
     * [全局节点模块接口](/zh-cn/zk/zk-node.md)

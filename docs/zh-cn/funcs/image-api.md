@@ -799,8 +799,6 @@
 > main();
 > ```
 
-
-
 ## 二值化
 
 ### image.binaryzation 二值化Image
@@ -1204,6 +1202,41 @@
 >            var ds = image.bitmapBase64(d,"jpg",100);
 >            logd(ds)
 >            loge(image.base64Bitmap(ds,0))
+>        }
+>
+>    }
+>   
+> }
+> main();
+> ```
+
+
+
+
+### image.imageToBitmap (AutoImage转Bitmap)
+ * 将AutoImage转换为安卓原生的Bitmap对象
+ * @param img {AutoImage}
+ * @return  {Bitmap} 对象
+ 
+> ```javascript
+> 
+> function main() {
+>   var request = image.requestScreenCapture(10000,0);
+>    if (!request) {
+>        request = image.requestScreenCapture(10000,0);
+>    }
+>
+>    logd("申请截图结果... "+request)
+>
+>    for (var i = 0; i < 100; i++) {
+>        var d =image.captureFullScreenEx("jpg",0,0,0,0,100);
+>        logd(d)
+>        sleep(1000);
+>        if (d) {
+>            var ds= image.imageToBitmap(d);
+>            logd(ds)
+>            ds.recycle();
+>            image.recyle(d);
 >        }
 >
 >    }

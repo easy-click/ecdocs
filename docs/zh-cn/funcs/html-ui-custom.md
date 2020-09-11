@@ -199,12 +199,14 @@
  *     "auto_start_service":"是",<br/>
  *      "log_float_window":"否",<br/>
  *      "ctrl_float_window":"否"<br/>
+ *      "service_start_run_script":"否"<br/>
  * }<br/>
  *  参数解释有：<br/>
- *  running_mode : 手势执行服务 值有 无障碍，代理两种
+ *  running_mode :  无障碍，代理两种
  *  auto_start_service : 开机启动服务 值有 是，否 两种
  *  log_float_window : 日志悬浮窗展示 值有 是，否 两种
  *  ctrl_float_window : 启停控制悬浮窗展示 值有 是，否 两种
+ *  service_start_run_script : 服务被重启后自动重新运行 值有 是，否 两种
  *
  * @return 布尔型 true 是 false 否
  
