@@ -34,7 +34,7 @@
 > ```javascript
 >     
 > function main(){
->     var d = ecloud.getDeviceNo()
+>     var d = ecloud.getTaskInfo()
 >     logd(d)
 > }
 > main();
