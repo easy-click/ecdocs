@@ -1,5 +1,176 @@
-## EC的实例下载
-- [下载例子]()
+## EC的实例代码
+
+- 以下是云控实例代码
+
+> ```javascript
+>     
+>   function main() {
+>    
+>       //如果自动化服务正常
+>       if (!autoServiceStart(3)) {
+>           logd("自动化服务启动失败，无法执行脚本");
+>           exit();
+>           return;
+>       }
+>       logd("开始执行脚本...");
+>       let ts = ecloud.getTaskInfo();
+>       if (ts == null) {
+>           ecloud.log("没有任务信息");
+>           return;
+>       }
+>       logd("任务信息:" + JSON.stringify(ts));
+>       logd(ts["taskName"]);
+>       //子任务信息
+>       let subs = ts["subTasks"];
+>       if (subs == null || subs.length <= 0) {
+>           ecloud.log("没有子任务信息 ");
+>           return;
+>       }
+>    
+>       //如果需要连接某个代理网络，请取得network参数并自行处理
+>       let networkInfo = ts["network"];
+>       if (networkInfo) {
+>           logd("网络信息:" + JSON.stringify(networkInfo));
+>       }
+>    
+>       // 动态获取需要的资源信息，可以根据实际情况获取使用
+>       var myRes = ecloud.getResources({
+>           "groupName": "快手素材组",
+>           "pageNum": 1,
+>           "pageSize": 1000
+>       });
+>       if (myRes) {
+>           logd("动态获取资源信息: " + JSON.stringify(myRes));
+>       }
+>    
+>       //开始循环子任务和对应的功能
+>       logd("子任务:" + JSON.stringify(subs));
+>       for (var i = 0; i < subs.length; i++) {
+>           var value = subs[i];
+>           let subTaskId = value["subTaskId"];
+>           let name = value["subTaskName"];
+>           logd("任务名称-> " + name);
+>    
+>           if (i == 0) {
+>               //模拟 - 第一个任务打开手机设置界面
+>               clickSettingTask(value)
+>           } else if (i == 1) {
+>               //模拟 - 第二个任务打开手机图库
+>               clickImgTask(value)
+>           }
+>       }
+>   }
+>    
+>   /**
+>    * 打开设置按钮
+>    **/
+>   function clickSettingTask(value) {
+>       var historyData = ecloud.getStorageDatas({
+>           "groupName": "设置组",
+>           "pageNum": 1,
+>           "pageSize": 1000
+>       });
+>       if (historyData) {
+>           logd("设置组的历史数据: " + JSON.stringify(historyData));
+>       }
+>    
+>       let clickResult = false;
+>       //先取出子任务ID，后续上传结果使用
+>       let subTaskId = value["subTaskId"];
+>       logd("扩展参数=> " + value["extraParam"]);
+>       logd("需要的资源=> " + JSON.stringify(value["resources"]));
+>       for (var i = 0; i < 10; i++) {
+>           sleep(1000);
+>           ecloud.log("找设置按钮 " + (i + 1) + "次");
+>           logd("-- " + "找设置按钮 " + (i + 1) + "次");
+>           var n = text("设置").getOneNodeInfo(1000);
+>           if (n) {
+>               clickResult = n.clickEx();
+>               if (clickResult) {
+>                   break;
+>               }
+>           }
+>       }
+>       //上传结果子任务执行结果
+>       if (clickResult) {
+>           ecloud.subTaskOk({
+>               "subTaskId": "" + subTaskId,
+>               "msg": "找到了设置"
+>           });
+>           // 模拟上传数据
+>           var d = ecloud.uploadStorageData({
+>               "groupName": "设置组",
+>               "dataKey": ecloud.getDeviceNo() + "-111",
+>               "content": "xxx" + new Date()
+>           });
+>           logd("上传数据结果->" + d);
+>       } else {
+>           ecloud.subTaskFail({
+>               "subTaskId": "" + subTaskId,
+>               "msg": "没找到设置"
+>           });
+>       }
+>   }
+>    
+>   /**
+>    * 打开手机图库
+>    **/
+>   function clickImgTask(value) {
+>       let clickResult = false;
+>       //先取出子任务ID，后续上传结果使用
+>       let subTaskId = value["subTaskId"];
+>       logd("clickImgTask 扩展参数=> " + value["extraParam"]);
+>       logd("clickImgTask 需要的资源=> " + JSON.stringify(value["resources"]));
+>       for (var i = 0; i < 10; i++) {
+>           sleep(1000);
+>           ecloud.log("找图库按钮 " + (i + 1) + "次");
+>           logd("-- " + "找图库按钮 " + (i + 1) + "次");
+>           var n = text("图库").getOneNodeInfo(1000);
+>           if (n) {
+>               clickResult = n.clickEx();
+>               if (clickResult) {
+>                   break;
+>               }
+>           }
+>       }
+>    
+>       //上传结果子任务执行结果
+>       if (clickResult) {
+>           ecloud.subTaskOk({
+>               "subTaskId": "" + subTaskId,
+>               "msg": "找到了图库"
+>           });
+>           // 模拟上传数据
+>           var d = ecloud.uploadStorageData({
+>               "groupName": "图库组",
+>               "dataKey": ecloud.getDeviceNo() + "-img",
+>               "content": "xxx" + new Date()
+>           });
+>           logd("上传数据结果->" + d);
+>       } else {
+>           ecloud.subTaskFail({
+>               "subTaskId": "" + subTaskId,
+>               "msg": "没找到图库"
+>           });
+>       }
+>   }
+>    
+>   function autoServiceStart(time) {
+>       for (var i = 0; i < time; i++) {
+>           if (isServiceOk()) {
+>               return true;
+>           }
+>           var started = startEnv();
+>           logd("第" + (i + 1) + "次启动服务结果: " + started);
+>           if (isServiceOk()) {
+>               return true;
+>           }
+>       }
+>       return isServiceOk();
+>   }
+>    
+>   main();
+> ```
 
 ##  ecloud.log 发送日志
 * 发送日志到云端
@@ -217,8 +388,6 @@
 > }
 > main();
 > ```
-
-
 
 
 ##  ecloud.subTaskOk 子任务成功
