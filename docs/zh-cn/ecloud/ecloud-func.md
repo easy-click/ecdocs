@@ -40,6 +40,72 @@
 > main();
 > ```
 
+- 返回值示例
+- taskId: 云端主任务ID
+- taskName: 云端主任务名称
+- sort: 主任务排序
+- scriptId: 脚本的云端ID
+- scriptName: 脚本名称
+- scriptVersion: 脚本的版本号
+- network: 网络资源对象
+    - address: 网络资源地址
+    - userName: 网络资源用户名
+    - password: 网络资源密码
+    - protocolType: 网络资源协议类型, 0、 PPTP   1、L2TP
+    - mppeType: 传输是否需要MPPE加密, 1是/0否
+    - shareKey: L2TP用的秘钥
+- subTasks: 子任务数组列表
+    - subTaskId: 子任务云端ID
+    - subTaskName: 子任务
+    - resourceGroupId: 资源组云端ID
+    - extraParam: 子任务扩展参数字符串
+    - sort: 子任务排序值
+    - resources: 子任务关联的资源列表对象
+        - name: 资源名称
+        - content: 资源内容
+        - type: 资源类型, 1 字符串  2 图片 3 视频 4 文件
+    
+    
+> ```json
+>  # 任务信息函数返回的值
+>   {
+>       "taskId": "1",
+>       "taskName": "X手浏览",
+>       "sort": 3,
+>       "scriptId": "1",
+>       "scriptName": "X手脚本",
+>       "scriptUrl": "http://xxx.com/a.iec",
+>       "scriptVersion": "1",
+>       "network": {
+>           "address": "180.1.1.3.2",
+>           "userName": "123",
+>           "password": "123",
+>           "protocolType": "1",
+>           "mppeType": "",
+>           "shareKey": ""
+>       },
+>       "subTasks": [
+>           {
+>               "subTaskId": "1",
+>               "subTaskName": "登录",
+>               "resourceGroupId": "1",
+>               "extraParam": "testtext",
+>               "sort": 1,
+>               "resources": [
+>                   {
+>                       "name": "账号1",
+>                       "content": "123456",
+>                       "type": 1
+>                   }
+>               ]
+>           }
+>       ]
+>   }
+> ```
+
+
+
+
 
 ##  ecloud.getResources 取得一组资源
  * 通过资源组取得一组资源
@@ -61,7 +127,28 @@
 > main();
 > ```
 
-
+- 返回值示例
+- total: 记录总数量
+- rows: 记录列表
+    - groupName: 资源组名
+    - name: 资源名称
+    - content: 内容
+    - type: 资源类型, 1 字符串  2 图片 3 视频 4 文件
+        
+        
+> ```json
+>   {
+>       "rows": [
+>           {
+>               "groupName": "",
+>               "name": "",
+>               "content": "",
+>               "type": 1
+>           }
+>       ],
+>       "total": 10000
+>   }
+> ```
 
 
 
@@ -84,6 +171,27 @@
 > main();
 > ```
 
+- 返回值示例
+- total: 记录总数量
+- rows: 记录列表
+    - groupName: 数据所在组名
+    - dataKey: 数据唯一标识
+    - content: 数据内容
+    - deviceNo: 产生该数据的设备号
+
+> ```json
+>     {
+>         "rows": [
+>             {
+>                 "dataKey": "",
+>                 "groupName": "",
+>                 "deviceNo": "",
+>                 "content": ""
+>             }
+>         ],
+>         "total": 10000
+>     }
+> ```
 
 
 ##  ecloud.uploadStorageData 上传要存储的数据
