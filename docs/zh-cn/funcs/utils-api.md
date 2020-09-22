@@ -70,6 +70,91 @@
 
 
 
+
+### utils.openIntentAction 通过Action打开某个界面
+ * 通过Action打开某个界面
+ * @param action action动作，例如 android.settings.ACCESSIBILITY_SETTINGS = 辅助功能，
+ * 如果改方法不满足要求，可以直接使用intent进行打开：
+ * 常用的action有：
+ * android.settings.ACCESSIBILITY_SETTINGS //辅助功能
+ * android.settings.ADD_ACCOUNT_SETTINGS //添加账户
+ * android.settings.AIRPLANE_MODE_SETTINGS //系统设置首页
+ * android.settings.APN_SETTINGS //APN设置
+ * android.settings.APPLICATION_SETTINGS //应用管理
+ * android.settings.BATTERY_SAVER_SETTINGS //节电助手
+ * android.settings.BLUETOOTH_SETTINGS //蓝牙
+ * android.settings.CAPTIONING_SETTINGS //字幕
+ * android.settings.CAST_SETTINGS //无线显示
+ * android.settings.DATA_ROAMING_SETTINGS //移动网络
+ * android.settings.DATE_SETTINGS //日期和时间设置
+ * android.settings.DEVICE_INFO_SETTINGS //关于手机
+ * android.settings.DISPLAY_SETTINGS //显示设置
+ * android.settings.DREAM_SETTINGS //互动屏保设置
+ * android.settings.HARD_KEYBOARD_SETTINGS //实体键盘
+ * android.settings.HOME_SETTINGS //应用权限,默认应用设置,特殊权限
+ * android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS //忽略电池优化设置
+ * android.settings.INPUT_METHOD_SETTINGS //可用虚拟键盘设置
+ * android.settings.INPUT_METHOD_SUBTYPE_SETTINGS //安卓键盘语言设置(AOSP)
+ * android.settings.INTERNAL_STORAGE_SETTINGS //内存和存储
+ * android.settings.LOCALE_SETTINGS //语言偏好设置
+ * android.settings.LOCATION_SOURCE_SETTINGS //定位服务设置
+ * android.settings.MANAGE_ALL_APPLICATIONS_SETTINGS //所有应用
+ * android.settings.MANAGE_APPLICATIONS_SETTINGS //应用管理
+ * android.settings.MANAGE_DEFAULT_APPS_SETTINGS //与ACTION_HOME_SETTINGS相同
+ * android.settings.action.MANAGE_OVERLAY_PERMISSION //在其他应用上层显示,悬浮窗
+ * android.settings.MANAGE_UNKNOWN_APP_SOURCES //安装未知应用 安卓8.0
+ * android.settings.action.MANAGE_WRITE_SETTINGS //可修改系统设置 权限
+ * android.settings.MEMORY_CARD_SETTINGS //内存与存储
+ * android.settings.NETWORK_OPERATOR_SETTINGS //可用网络选择
+ * android.settings.NFCSHARING_SETTINGS //NFC设置
+ * android.settings.NFC_SETTINGS //网络中的 更多设置
+ * android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS //通知权限设置
+ * android.settings.NOTIFICATION_POLICY_ACCESS_SETTINGS //勿扰权限设置
+ * android.settings.ACTION_PRINT_SETTINGS //打印服务设置
+ * android.settings.PRIVACY_SETTINGS //备份和重置
+ * android.settings.SECURITY_SETTINGS //安全设置
+ * android.settings.SHOW_REGULATORY_INFO //监管信息
+ * android.settings.SOUND_SETTINGS //声音设置
+ * android.settings.SYNC_SETTINGS //添加账户设置
+ * android.settings.USAGE_ACCESS_SETTINGS //有权查看使用情况的应用
+ * android.settings.USER_DICTIONARY_SETTINGS //个人词典
+ * android.settings.VOICE_INPUT_SETTINGS //辅助应用和语音输入
+ * android.settings.VPN_SETTINGS //VPN设置
+ * android.settings.VR_LISTENER_SETTINGS //VR助手
+ * android.settings.WEBVIEW_SETTINGS //选择webview
+ * android.settings.WIFI_IP_SETTINGS //高级WLAN设置
+ * android.settings.WIFI_SETTINGS //选择WIFI,连接WIFI
+ * com.android.settings.Settings$DevelopmentSettingsActivity
+ * @return {null|boolean|*}
+> ```javascript
+>     
+> function main(){
+>    utils.openIntentAction("android.settings.ACCESSIBILITY_SETTINGS");
+> }
+> main();
+> ```
+
+- 直接使用Intent打开方式
+
+
+> ```javascript
+>     
+>         importClass(android.content.Intent);
+>         importClass(android.net.Uri)
+>         var intent = new Intent();
+>         intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+>         intent.setData(Uri.parse("package:com.gibb.easyclick"))
+>         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+>         try {
+>              context.startActivity(intent);
+>         } catch (e) {
+>             loge(e)
+>         }
+> ```
+
+ 
+
+
 ## 图库相关
 
 ### utils.insertImageToAlbum 图片插入相册

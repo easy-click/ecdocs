@@ -243,3 +243,57 @@
 > }
 > main();
 > ```
+
+
+
+## device.keepAwake 保持设备唤醒
+* 保持设备唤醒
+* @param flag 参考安卓PowerManager中的唤醒标准
+
+> ```javascript
+>     
+> function main(){
+>      importClass(android.os.PowerManager)
+>      device.keepAwake(PowerManager.ACQUIRE_CAUSES_WAKEUP);
+> }
+> main();
+> ```
+
+
+
+## device.keepScreenOn 保持屏幕唤醒状态
+* 保持屏幕唤醒状态
+
+> ```javascript
+>     
+> function main(){
+>      device.keepScreenOn();
+> }
+> main();
+> ```
+
+
+
+## device.keepScreenDim 保持设备昏暗状态
+* 保持设备昏暗状态
+
+> ```javascript
+>     
+> function main(){
+>      device.keepScreenDim();
+> }
+> main();
+> ```
+
+
+
+## device.cancelKeepingAwake 取消保持唤醒状态
+* 取消保持唤醒状态
+
+> ```javascript
+>     
+> function main(){
+>      device.cancelKeepingAwake();
+> }
+> main();
+> ```
