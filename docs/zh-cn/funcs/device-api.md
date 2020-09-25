@@ -254,7 +254,7 @@
 >     
 > function main(){
 >      importClass(android.os.PowerManager)
->      device.keepAwake(PowerManager.ACQUIRE_CAUSES_WAKEUP);
+>      device.keepAwake(PowerManager.SCREEN_DIM_WAKE_LOCK|PowerManager.ACQUIRE_CAUSES_WAKEUP);
 > }
 > main();
 > ```
