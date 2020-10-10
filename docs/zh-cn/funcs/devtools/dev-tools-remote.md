@@ -30,13 +30,13 @@
 
 - 进入远程连接页面 
 
-<img src='/zh-cn/images/remote_5.png' width='300' >
+<img src='zh-cn/images/remote_5.png' width='300' >
 
 
 
 - 输入信息进行连接 
 
-<img src='/zh-cn/images/remote_6.png' width='300' >
+<img src='zh-cn/images/remote_6.png' width='300' >
 
 
 ## FRP反向代理
