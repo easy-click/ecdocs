@@ -135,3 +135,8 @@
         at org.mozilla.javascript.NativeJSON.jo(Unknown Source:63)
         at org.mozilla.javascript.NativeJSON.str(Unknown Source:237)
         at org.mozilla.javascript.NativeJSON.jo(Unknown Source:63)
+        
+# java-js 插件或者混合项目运行闪退
+- 确认jdk是1.8版本的
+- 确认项目不包含中文等特殊字符
+- 确认项目的名称和路径是一致

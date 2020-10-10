@@ -170,5 +170,18 @@
 > ```
 
 
-
+## file.copy 文件复制
+ * 复制文件
+ *
+ * @param src 源文件路径
+ * @param dest 目标文件路径
+ * @return 布尔型 true 代表成功
+> ```javascript
+>     
+> function main(){
+>     var t=file.copy("/sdcard/a.png","/sdcard/b.png");
+>     toast(t);
+> }
+> main();
+> ```
  
