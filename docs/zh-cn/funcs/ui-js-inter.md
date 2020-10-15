@@ -1241,7 +1241,22 @@
 > main();
 >  ```
 
+### UI线程异步任务 run
 
+ * 在主线程进行运行函数，相当于 getHandler.post
+ * @param delayTime 延迟时间，单位毫秒，如果是0就是理解执行
+ * @param callback 回调
+
+> ```javascript
+> function main() {
+>     ui.run(30,function (){
+>         logd("Fsdfsd");
+>     })
+>     sleep(1000)
+> }
+> 
+> main();
+>  ```
 
 ### 设置EC的系统参数 setECSystemConfig
  * 设置EC的系统参数

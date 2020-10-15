@@ -23,17 +23,16 @@
 > ```
 
 
-### loadJar 载入jar
+### require 导入JS
 
- * 载入jar文件
- * @param path 路径，加载顺序分别是插件目录(例如 ab.jar)或者是文件路径(例如 /sdcard/ab.jar)加载
- * @return true 载入成功， false载入失败
+ * 导入JS模块
+ * @param path 路径，例如 本地/sdcard/a.js或者 EC工程中的文件路径 slib/a.js
+ * @return 模块对象
 
 > ```javascript
 > function main(){
->     loadJar("/sdcard/a.jar");
->     // a.jar中存在com.A这个这个类，可以直接使用
->     var obj = new com.A(); 
+>     test = require("slib/a.js")
+>     logd(test.c());
 > }
 > main();
 > ```
