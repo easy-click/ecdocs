@@ -207,6 +207,7 @@
  *  log_float_window : 日志悬浮窗展示 值有 是，否 两种
  *  ctrl_float_window : 启停控制悬浮窗展示 值有 是，否 两种
  *  service_start_run_script : 服务被重启后自动重新运行 值有 是，否 两种
+ *  home_key_start_stop : 三击HOME启停脚本 值有 是，否 两种
  *
  * @return 布尔型 true 是 false 否
  
