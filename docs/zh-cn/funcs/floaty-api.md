@@ -331,3 +331,109 @@
 >}
 >main();
 > ```
+
+
+
+
+## floaty.touchable 设置悬浮窗触摸状态
+ * 设置悬浮窗可触摸
+ * @param touchable 是否可触摸 true 代表可触摸，false不能触摸
+ * @return {bool} true成功 false 失败
+
+> ```javascript
+>     
+> function main(){
+>      let tag="123";
+>      //关闭tag=123的浮窗
+>     floaty.close(tag)
+>     //请求权限
+>     let p = floaty.requestFloatViewPermission(1000)
+>    logd("是否有浮窗权限: "+p);
+>    if (!p) {
+>        loge("没有浮窗权限，终止执行");
+>        return;
+>    }
+>
+>    sleep(1000);
+>    //展示main.xml文件的视图，并且返回安卓原生原生的对象
+>    let view = floaty.showFloatXml(tag,"main.xml",100,100);
+>
+>    logd(view);
+>    if (view) {
+>         // 从悬浮窗中查找视图tag=web的对象 （例子）
+>        //let web = view.findViewWithTag("web")
+>    }
+>
+>    sleep(2000)
+>    //更新尺寸
+>    floaty.updateSize(tag,800,1800)
+>
+>    sleep(2000)
+>    //更新X坐标
+>    floaty.updateX(tag,100)
+>
+>    sleep(2000)
+>    //更新X坐标
+>    floaty.updateY(tag,100)
+>    sleep(2000)
+>    //更新不可触摸状态
+>    floaty.touchable(tag,false)
+>    sleep(10000)
+>    //更新可以触摸状态
+>    floaty.touchable(123,true)
+>}
+>main();
+> ```
+
+
+
+
+## floaty.focusable 设置悬浮窗聚焦状态
+ * 设置悬浮窗可聚焦（视图包含输入框需要聚焦才能进行输入）
+ * @param focusable 是否可聚焦 true 代表可聚焦，false不能聚焦
+ * @return {bool} true成功 false 失败
+
+> ```javascript
+>     
+> function main(){
+>      let tag="123";
+>      //关闭tag=123的浮窗
+>     floaty.close(tag)
+>     //请求权限
+>     let p = floaty.requestFloatViewPermission(1000)
+>    logd("是否有浮窗权限: "+p);
+>    if (!p) {
+>        loge("没有浮窗权限，终止执行");
+>        return;
+>    }
+>
+>    sleep(1000);
+>    //展示main.xml文件的视图，并且返回安卓原生原生的对象
+>    let view = floaty.showFloatXml(tag,"main.xml",100,100);
+>    floaty.focusable(tag,true)
+>    logd(view);
+>    if (view) {
+>         // 从悬浮窗中查找视图tag=web的对象 （例子）
+>        //let web = view.findViewWithTag("web")
+>    }
+>
+>    sleep(2000)
+>    //更新尺寸
+>    floaty.updateSize(tag,800,1800)
+>
+>    sleep(2000)
+>    //更新X坐标
+>    floaty.updateX(tag,100)
+>
+>    sleep(2000)
+>    //更新X坐标
+>    floaty.updateY(tag,100)
+>    sleep(2000)
+>    //更新不可触摸状态
+>    floaty.touchable(tag,false)
+>    sleep(10000)
+>    //更新可以触摸状态
+>    floaty.touchable(123,true)
+>}
+>main();
+> ```
