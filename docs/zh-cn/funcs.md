@@ -5,6 +5,7 @@
 - [代理事件](/zh-cn/funcs/event-api.md)
 - [图色函数](/zh-cn/funcs/image-api.md)
 - [设备函数](/zh-cn/funcs/device-api.md)
+* [悬浮窗函数](/zh-cn/funcs/floaty-api.md)
 - [文件函数](/zh-cn/funcs/file-api.md)
 - [网络函数](/zh-cn/funcs/http-api.md)
 - [线程函数](/zh-cn/funcs/thread-api.md)

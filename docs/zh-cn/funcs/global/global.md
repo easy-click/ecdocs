@@ -171,7 +171,7 @@
 > ```
 
 
-## 监听脚本
+## 监听脚本和服务
 ### setStopCallback 脚本停止监听
 > ```javascript
 > function main(){
@@ -208,6 +208,72 @@
 > ```
 
 
+
+### observeEvent (无障碍模式)对系统事件进行监听
+
+ * (无障碍模式)对系统事件进行监听
+ * @param event 事件类型 类型有:
+ * activity-change 页面切换，OK
+ * notification-show：状态栏通知展示， OK
+ * toast-show：Toast消息展示， OK
+ * key-down：按键按下， OK
+ * key-up：按键弹起 OK
+ * acc-service-interrupt：无障碍服务被中断 OK
+ * acc-service-destroy： 无障碍服务被销毁 OK
+ * acc-event：无障碍节点事件 OK
+ * acc-service-connected: 无障碍服务连接成功 OK
+ * auto-service-status: 自动化服务可用状态
+ *
+ * @param callback 事件回调
+ * @return {bool}  | true 成功，false失败
+
+> ```javascript
+> function main(){
+>     startEnv();
+>   logd("开始监听");
+>      observeEvent("activity-change",function (key,data){
+>             logd("页面切换: "+typeof data)
+>             logd("页面切换: "+data)
+>          });
+>         //监听无障碍节点事件
+>      observeEvent("acc-event",function (key,data){
+>               logd("acc-event: "+typeof data)
+>                 logd("acc-event: "+data)
+>              });
+>     while(true){
+>         sleep(1000)
+>     }
+>     //取消事件监听
+>     cancelObserveEvent("acc-event")
+> }
+> main();
+> ```
+
+
+### cancelObserveEvent 取消对系统事件监听
+ * 取消事件监听
+ * @param event 事件类型
+ * @return {bool} | true 成功，false失败
+
+> ```javascript
+> function main(){
+>     startEnv();
+>   logd("开始监听");
+>      observeEvent("activity-change",function (key,data){
+>             logd("页面切换: "+typeof data)
+>             logd("页面切换: "+data)
+>          });
+>         //监听无障碍节点事件
+>      observeEvent("acc-event",function (key,data){
+>               logd("acc-event: "+typeof data)
+>                 logd("acc-event: "+data)
+>              });
+>         sleep(10000)
+>     //取消事件监听
+>     cancelObserveEvent("acc-event")
+> }
+> main();
+> ```
 
 
 ## 日志消息方法
