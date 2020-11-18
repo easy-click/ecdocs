@@ -799,6 +799,7 @@
 > main();
 > ```
 
+
 ## 二值化
 
 ### image.binaryzation 二值化Image
@@ -894,6 +895,121 @@
 > }
 > main();
 > ```
+
+## OCR 文字识别
+
+
+
+### image.initOcr 初始化OCR模块
+ * 初始化OCR模块，百度PaddleOCR，具体请看相关文档，默认自带了Paddle的训练模型
+ * @param map map参数表
+ * key分别为：
+ *  modelDir: 百度Paddle OCR训练模型目录
+ * labelFile: 百度Paddle OCR 文字文本路径
+ * @return {bool} 布尔型 成功或者失败
+
+> ```javascript
+> 
+> function main() {
+>   let r = image.initOcr({});
+>   logd(r)
+>      var request = image.requestScreenCapture(10000,0);
+>          if (!request) {
+>             request = image.requestScreenCapture(10000,0);
+>          }
+>          logd("申请截图结果... "+request)
+>   
+>   while(true){
+>       sleep(1000)
+>       //let b = image.readBitmap("/sdcard/test.png");
+>          var b = image.captureScreenBitmap("jpg",0,0,0,0,100);
+>       if (b) {
+>           let rs = image.ocrBitmap(b,10000);
+>           if (rs) {
+>               logd("rs "+JSON.stringify(rs));
+>           }
+>           b.recycle();
+>       }
+>   }
+> image.releaseOcr();
+> }
+> main();
+> ```
+
+
+
+### image.ocrBitmap 对Bitmap进行OCR
+ * 对Bitmap进行OCR，返回的是JSON数据，其中数据类似于与：
+ *  [{"label":"奇趣装扮三阶盘化","confidence":0.48334712,"points":[{"x":11,"y":25},{"x":239,"y":10},{"x":241,"y":43},{"x":13,"y":59}]},{"label":"快来加入威房箱物","confidence":0.6789893,"points":[{"x":183,"y":264},{"x":429,"y":249},{"x":432,"y":298},{"x":186,"y":313}]},{"label":"养成","confidence":0.5535166,"points":[{"x":317,"y":305},{"x":463,"y":284},{"x":470,"y":333},{"x":324,"y":354}]}]
+ *  <br/>
+ *  label: 代表是识别的文字
+ *  confidence：代表识别的准确度
+ * points: 代表坐标，有4个值，分别是：左上方，右上方，右下方，左下方
+ * @param bitmap 图片
+ * @param timeout 超时时间 单位毫秒
+ * @return {JSON} JSON对象
+
+> ```javascript
+> 
+> function main() {
+>   let r = image.initOcr({});
+>   logd(r)
+>      var request = image.requestScreenCapture(10000,0);
+>          if (!request) {
+>             request = image.requestScreenCapture(10000,0);
+>          }
+>          logd("申请截图结果... "+request)
+>   
+>   while(true){
+>       sleep(1000)
+>       //let b = image.readBitmap("/sdcard/test.png");
+>          var b = image.captureScreenBitmap("jpg",0,0,0,0,100);
+>       if (b) {
+>           let rs = image.ocrBitmap(b,10000);
+>           if (rs) {
+>               logd("rs "+JSON.stringify(rs));
+>           }
+>           b.recycle();
+>       }
+>     image.releaseOcr();
+>   }
+> }
+> main();
+> ```
+
+
+### image.releaseOcr 释放OCR占用的资源
+ * 释放OCR占用的资源
+ * @return {bool} 成功或者失败
+
+> ```javascript
+> 
+> function main() {
+>   let r = image.initOcr({});
+>   logd(r)
+>      var request = image.requestScreenCapture(10000,0);
+>          if (!request) {
+>             request = image.requestScreenCapture(10000,0);
+>          }
+>          logd("申请截图结果... "+request)
+>   
+>   while(true){
+>       sleep(1000)
+>       //let b = image.readBitmap("/sdcard/test.png");
+>          var b = image.captureScreenBitmap("jpg",0,0,0,0,100);
+>       if (b) {
+>           let rs = image.ocrBitmap(b,10000);
+>           if (rs) {
+>               logd("rs "+JSON.stringify(rs));
+>           }
+>           b.recycle();
+>       }
+>     image.releaseOcr();
+>   }
+> }
+> main();
+> ```
+
 
 ## 其他
 ### image.readImage 读取文件为Image
