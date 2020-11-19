@@ -931,7 +931,6 @@
 >           b.recycle();
 >       }
 >   }
-> image.releaseOcr();
 > }
 > main();
 > ```
@@ -971,7 +970,6 @@
 >           }
 >           b.recycle();
 >       }
->     image.releaseOcr();
 >   }
 > }
 > main();
@@ -1004,8 +1002,8 @@
 >           }
 >           b.recycle();
 >       }
->     image.releaseOcr();
 >   }
+>   image.releaseOcr();
 > }
 > main();
 > ```

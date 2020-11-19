@@ -20,6 +20,31 @@
 > ```
 
 
+## file.deleteLine 删除文件某一行
+ * 删除文件某一行或者根据包含条件删除
+ * 运行环境: 无限制
+ * 兼容版本: Android 4.4 以上
+ *
+ * @param path 文件路径
+ * @param line 行数，如果是-1 代表这个条件不生效
+ * @param contains 包含某个字符串就删除，如果为null代表这个条件不生效
+ *
+ * @return {bool} true 成功 false 失败
+
+> ```javascript
+>     
+> function main(){
+>   //删除包含 时间 字符串的行
+>   let r = file.deleteLine("/sdcard/a.txt",-1,"时间");
+>   logd("r "+r);
+>   //删除第3行
+>    r = file.deleteLine("/sdcard/a.txt",3,null);
+>   logd("r "+r);
+> }
+> main();
+> ```
+
+
 ## file.listDir 列出所有文件
  * 列出文件下的所有文件
  * @param path 路径
