@@ -494,6 +494,21 @@
 
 
 ## UI参数读取
+
+
+### deleteConfig 删除配置值
+* @param key 在UI界面中配置的key
+* @return {bool} true 代表成功 false 代表失败
+
+
+> ```javascript
+> function main(){
+>     var testData = deleteConfig("test_key");
+> }
+> main();
+> 
+
+
 ### readConfigInt 读取整型配置
 * @description 读取UI界面中的参数,返回是整型
 * @param key 在UI界面中配置的key
