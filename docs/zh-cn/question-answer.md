@@ -75,6 +75,16 @@
 - 例如小米手机权限问题导致无法使用openAppByName等打开APP函数，请到权限管理允许启动三方应用权限，或者允许全部的权限
 - OPPO 解决方法： https://www.jianshu.com/p/5f6d8379533b
 - 安卓10无法后台预览或者打开应用，可以给EC调试版本赋予悬浮窗权限，或者在脚本中调用requestFloatViewPermission(10);方法请求并赋予权限
+- 荣耀系列打开允许关联启动 
+<br/>
+<img src='zh-cn/images/ry-open-activity.png' width='300' >
+
+## 打开三方APP函数不生效
+- 小米系统请允许 "后台弹出界面"，其他的如果有限制也可以自行百度解决
+- 具体参考：https://blog.csdn.net/shenshibaoma/article/details/103909618
+- 或者http://www.360doc.com/content/19/0814/09/26794451_854750882.shtml
+
+
 
 ## 屏幕映射不成功
 - 由于机型兼容性问题，可能导致屏幕映射不成功，不影响节点获取，两个功能是独立的。 可以用三方的，比如 qtscrcpy，或者scrcpy
@@ -90,10 +100,6 @@
 > adb connect 手机ip地址 
 > ```
 
-## 打开三方APP函数不生效
-- 小米系统请允许 "后台弹出界面"，其他的如果有限制也可以自行百度解决
-- 具体参考：https://blog.csdn.net/shenshibaoma/article/details/103909618
-- 或者http://www.360doc.com/content/19/0814/09/26794451_854750882.shtml
 
 ## 小米之类的手机点击没反应
 - 因为开发者选项中的【USB 调试（安全设置）】没有开启，开启即可
