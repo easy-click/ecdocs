@@ -1016,8 +1016,9 @@
 > ```javascript
 > 
 > function main(){
->     var result = clz("android.widget.EditText").imeInputKeyCode(66);
+>     var result = clz("android.widget.EditText").getOneNodeInfo(10000);
 >     if (result){
+>         result.imeInputKeyCode(66);
 >         toast("是");
 >     } else {
 >         toast("否");
@@ -1036,7 +1037,7 @@
 > function main(){ 
 >     //获取选择器对象
 >     //选择 节点 clz=android.widget.EditText 所有节点
->     var node = clz("android.widget.EditText").getOneNodeInfo();
+>     var node = clz("android.widget.EditText").getOneNodeInfo(10000);
 >     if (node) {
 >         var r =node.clearText();
 >         logd("r -=> "+r);
