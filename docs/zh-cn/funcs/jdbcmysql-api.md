@@ -640,8 +640,7 @@
 > ```javascript
 >     
 > function main(){
->     var result = sqlite.close();
->     logd("close result："+ result);
+>     jdbc.psqlClose()
 > }
 > main();
 > ```

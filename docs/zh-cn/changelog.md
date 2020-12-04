@@ -1,4 +1,15 @@
-当前最新版本: 5.10.0
+当前最新版本: 5.11.0
+
+ - 5.11.0:
+        
+        1、优化bsf,dsf节点查找
+        2、新增直连MySql模块
+        3、新增 FlexboxLayout 弹性盒子布局
+        4、新增window.ec.call函数，可以在ui.js注入自定义的函数给HTML调用，注入函数为: ui.registeH5Function
+        5、优化移动悬浮窗不允许超过屏幕
+        6、修复部分布局的match_parent、wrap_content、layout_weight不生效
+        7、优化openActivity打开图片文件，自动加上需要的权限设定
+        8、新增talkingdata三方统计的唯一标识函数，作为设备唯一标识device.tcDeviceId
 
  - 5.10.0:
         1、修复启停悬浮窗控制 日志悬浮窗，更改为非贴边模式
