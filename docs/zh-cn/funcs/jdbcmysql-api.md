@@ -115,7 +115,7 @@
 > ```
 
 
-## jdbc.createPreparedStatement 创建一个预处理SQL语句
+## jdbc.createPreparedStatement 创建一个预处理SQL语
  * 创建一个预处理SQL语句
  * @param sql 预处理语句
  * @return  {bool} true 代表成功 false 代表失败
