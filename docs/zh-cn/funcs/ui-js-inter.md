@@ -1169,6 +1169,71 @@
 
 ## 其他扩展
 
+### registeH5Function 向H5注入扩展函数
+ * 向网页中注入一个JS函数，H5可以调用该函数，以实现脚本和HTML的互通扩展
+ * @param funcName 注入的函数名称
+ * @param callback 回调 常见例子
+ * @return 布尔型 true 代表成功，false 代表失败
+
+
+> ```javascript
+> // ui.js中的注入
+> function main() {
+>   //UI中进行注入新的扩展
+>    ui.registeH5Function("customFunction",function(data){
+>        logd("h5 call-> "+data);
+>       //返回给网页的数据
+>       return new Date().toString()
+>    })
+>    ui.layout("main", "main.html");
+> }
+> 
+> main();
+>  ```
+网页中的调用
+> ```html
+> <!DOCTYPE html>
+> <html lang="en">
+> <head>
+>     <meta charset="UTF-8">
+>   <title>Title</title>
+> </head>
+> <body>
+>     <button onclick="test()">测试扩展函数</button>
+>         <script>
+>             function test(){
+>                 //调用ui.js注入进来的扩展
+>                let d =window.ec.call('customFunction',JSON.stringify({'action':'android.settings.SETTINGS'}));
+>                console.log("ddd  "+d )
+>             }
+>         </script>
+> </body>
+> </html>
+>  ```
+
+
+### unregisteH5Function 取消向网页中注入一个JS函数
+ * 取消向网页中注入一个JS函数
+ * @param funcName 注入的函数名称
+ * @return 布尔型 true 代表成功，false 代表失败
+
+> ```javascript
+> // ui.js中的注入
+> function main() {
+>   //UI中进行注入新的扩展
+>    ui.registeH5Function("customFunction",function(data){
+>        logd("h5 call-> "+data);
+>    })
+>    ui.layout("main", "main.html");
+> 
+>   ui.unregisteH5Function("customFunction");
+>    
+> }
+> 
+> main();
+>  ```
+
+
 ### 监听Activity 状态 onActivityEvent
 
  * 监听UI所在的activity事件

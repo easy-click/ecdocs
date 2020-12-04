@@ -104,6 +104,52 @@
 
 - 浏览器扩展的方法，主要用于网页和EC程序进行交互，并且这些方法只能在网页中调用才行
 
+
+### 调用自定义扩展
+### call 调用扩展函数
+ * 调用脚本或者ui.js注入进来的扩展函数
+ * @param funcName 注入的函数名称
+ * @param data 可以是普通的字符串，也可以是JSON的字符串
+ * @return {string} 调用的扩展函数返回的数据
+
+
+> ```javascript
+> // ui.js中的注入
+> function main() {
+>   //UI中进行注入新的扩展
+>    ui.registeH5Function("customFunction",function(data){
+>        logd("h5 call-> "+data);
+>       //返回给网页的数据
+>       return new Date().toString()
+>    })
+>    ui.layout("main", "main.html");
+> }
+> 
+> main();
+>  ```
+网页中的调用
+> ```html
+> <!DOCTYPE html>
+> <html lang="en">
+> <head>
+>     <meta charset="UTF-8">
+>   <title>Title</title>
+> </head>
+> <body>
+>     <button onclick="test()">测试扩展函数</button>
+>         <script>
+>             function test(){
+>                 //调用ui.js注入进来的扩展
+>                  let d =window.ec.call('customFunction',JSON.stringify({'action':'android.settings.SETTINGS'}));
+>                  console.log("ddd  "+d )
+>             }
+>         </script>
+> </body>
+> </html>
+>  ```
+
+
+
 ### 启动脚本
 
 

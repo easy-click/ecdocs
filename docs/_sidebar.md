@@ -26,6 +26,8 @@
     * [常用工具函数](/zh-cn/funcs/utils-api.md)
     * [Shell命令函数](/zh-cn/funcs/shell-api.md)
     * [Sqlite命令函数](/zh-cn/funcs/sqlite-api.md)
+    * [JDBC MYSQL 命令函数](/zh-cn/funcs/jdbcmysql-api.md)
+
 
 * [UI编写定制](/zh-cn/funcs/ui.md)
     * [原生UI定制](/zh-cn/funcs/ui-custom.md)
