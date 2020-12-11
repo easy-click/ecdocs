@@ -431,6 +431,45 @@
 
 ## 读取IEC包资源
 
+
+### readIECFileAsString 读取IEC内部文件为字符串
+ * 读取IEC文件中的资源文件，并返回字符串
+ * @param fileName 文件名称，如果放在某个文件夹下 需要加上文件名称
+ * @return {string} 如果是null代表没内容
+
+
+> ```javascript
+> function main(){
+>     var testData = readIECFileAsString("res/a.txt");
+>    logd(testData)
+> }
+> main();
+> 
+> ```
+
+
+### readIECFileAsByte 读取IEC内部文件为数组资源
+* 读取IEC文件中的资源文件，并返回java的直接数组
+* @param fileName 文件名称，如果放在某个文件夹下 需要加上文件名称
+* @return {字节数组} 如果是null代表没内容
+
+
+> ```javascript
+> function main(){
+> //这里已读取图片为例子
+> var d =readIECFileAsByte("res/a.png")
+> importPackage(android.graphics)
+> let ad =BitmapFactory.decodeByteArray(d,0,d.length)
+> logd(d)
+> logd(d.length)
+> logd(ad);
+> }
+> main();
+> 
+> ```
+
+
+
 ### readResString 读取字符串资源
 * 读取res文件夹中的资源文件,并返回字符串
 * @param fileName 文件名称，不要加res前缀
@@ -444,6 +483,9 @@
 > main();
 > 
 > ```
+
+
+
 
 
 ### readResBitmap  读取Bitmap资源
