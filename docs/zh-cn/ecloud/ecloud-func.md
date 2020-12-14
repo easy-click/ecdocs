@@ -15,7 +15,7 @@
 >       logd("开始执行脚本...");
 >       let ts = ecloud.getTaskInfo();
 >       if (ts == null) {
->           ecloud.log("没有任务信息");
+>           logd("没有任务信息");
 >           return;
 >       }
 >       logd("任务信息:" + JSON.stringify(ts));
@@ -23,7 +23,7 @@
 >       //子任务信息
 >       let subs = ts["subTasks"];
 >       if (subs == null || subs.length <= 0) {
->           ecloud.log("没有子任务信息 ");
+>           logd("没有子任务信息 ");
 >           return;
 >       }
 >    
@@ -81,7 +81,7 @@
 >       logd("需要的资源=> " + JSON.stringify(value["resources"]));
 >       for (var i = 0; i < 10; i++) {
 >           sleep(1000);
->           ecloud.log("找设置按钮 " + (i + 1) + "次");
+>           logd("找设置按钮 " + (i + 1) + "次");
 >           logd("-- " + "找设置按钮 " + (i + 1) + "次");
 >           var n = text("设置").getOneNodeInfo(1000);
 >           if (n) {
@@ -123,7 +123,7 @@
 >       logd("clickImgTask 需要的资源=> " + JSON.stringify(value["resources"]));
 >       for (var i = 0; i < 10; i++) {
 >           sleep(1000);
->           ecloud.log("找图库按钮 " + (i + 1) + "次");
+>          
 >           logd("-- " + "找图库按钮 " + (i + 1) + "次");
 >           var n = text("图库").getOneNodeInfo(1000);
 >           if (n) {
