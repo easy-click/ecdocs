@@ -454,3 +454,42 @@
 > }
 > main();
 > ```
+
+
+### utils.playMp3 播放MP3音乐
+* 播放MP3音乐
+* 支持版本 EC 5.12.0 以上
+* @param path 文件路径 例如 /sdcard/a.mp3
+* @param loop 是否循环播放 true代表是
+* @return {bool} true 代表成功 false 代表失败
+
+> ```javascript
+>     
+> function main(){
+>    let d = utils.playMp3("/sdcard/a.mp3",true)
+>    logd("dd "+d)
+>    sleep(30*1000)
+>    utils.stopMp3()
+>    logd("stop play ")
+> }
+> main();
+> ```
+
+
+
+### utils.stopMp3 停止播放mp3音乐
+* 停止播放mp3音乐
+* 支持版本 EC 5.12.0 以上
+* @return {bool} true 代表成功 false 代表失败
+
+> ```javascript
+>     
+> function main(){
+>    let d = utils.playMp3("/sdcard/a.mp3",true)
+>    logd("dd "+d)
+>    sleep(30*1000)
+>    utils.stopMp3()
+>    logd("stop play ")
+> }
+> main();
+> ```

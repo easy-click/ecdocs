@@ -12,6 +12,19 @@
 - 游戏测试用户可以不必要开启无障碍，只用代理服务也能完成自动化测试
 
 ## 保证EC后台允许运行
+- 方案来源dontkillmyapp.com，可以按照一下链接内容进行设定，保证EC长时间运行，目前为英文版本，暂且观看，等待翻译
+- OnePlus 设置地址: https://dontkillmyapp.com/oneplus
+- Huawei 设置地址: https://dontkillmyapp.com/huawei
+- Samsung 设置地址: https://dontkillmyapp.com/samsung
+- Xiaomi 设置地址: https://dontkillmyapp.com/xiaomi
+- Meizu 设置地址: https://dontkillmyapp.com/meizu
+- Asus 设置地址: https://dontkillmyapp.com/asus
+- Wiko 设置地址: https://dontkillmyapp.com/wiko
+- Lenovo 设置地址: https://dontkillmyapp.com/lenovo
+- OPPO 设置地址: https://dontkillmyapp.com/oppo
+- ASOP 设置地址: https://dontkillmyapp.com/google
+
+- 以下是部分翻译：
 - 长时间运行任务Android可能会杀死进程，可以在EC系统设置中设定重启自动运行脚本弥补该问题
 - 以下的操作可能会帮助你
     - 禁用应用的电池优化
