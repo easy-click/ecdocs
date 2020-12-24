@@ -245,7 +245,7 @@
 >       "sort": 3,
 >       "scriptId": "1",
 >       "scriptName": "X手脚本",
->       "scriptUrl": "http://xxx.com/a.iec",
+>       "scriptUrl": "http://baidu.com/a.iec",
 >       "scriptVersion": "1",
 >       "network": {
 >           "address": "180.1.1.3.2",

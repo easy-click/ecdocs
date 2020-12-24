@@ -2,7 +2,18 @@
 - 设备模块函数主要是跟设备信息相关联
 - 设备模块的对象前缀是device，例如 device.getIMEI()这样调用
 
+##  device.tcDeviceId 三方统计唯一设备标识
+ * 取得talkingdata三方统计定义的唯一设备标识
+ * @return {字符串}
 
+> ```javascript
+>     
+> function main(){
+>     var d = device.tcDeviceId();
+>     toast(d);
+> }
+> main();
+> ```
 
 ##  device.getIMEI 获取IMEI
 * 获取手机的IMEI

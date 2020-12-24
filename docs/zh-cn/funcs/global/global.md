@@ -278,7 +278,7 @@
 
 ## 日志消息方法
 
-## setSaveLog  保存日志
+### setSaveLog  保存日志
  * 设置保存日志信息到文件中
  * @param save 是否保存
  * @param path 自定义的文件夹
@@ -519,7 +519,7 @@
 
 
 
-## saveResToFile 保存资源为文件
+### saveResToFile 保存资源为文件
 * 保存res文件夹中的资源文件到指定的路径
 * @param fileName 文件名称，不要加res前缀
 * @param path 要保存到的路径地址，例如/sdcard/aa.txt
@@ -760,3 +760,58 @@
  > }
  > main();
  > ```
+
+
+## 时间相关
+
+### time 毫秒时间
+ * 毫秒时间函数
+ * @return {long} 毫秒级别的long时间
+ 
+ 
+> ```javascript
+> function main(){
+>    logd(time());
+> }
+> main();
+> ```
+
+
+### timeFormat 格式化时间
+ * 格式化时间函数例如：```yyyy-MM-dd HH:mm:ss```
+ * @return {string} 格式化之后的当前时间
+ 
+> ```javascript
+> function main(){
+>    logd(timeFormat("yyyy-MM-dd HH:mm:ss"));
+> }
+> main();
+> ```
+
+
+### console.time 计时开始
+ * 计时开始,和timeEnd成对出现计算用时
+ * @param label 标签
+ * @return  {long} 当前时间
+> ```javascript
+> function main(){
+>    console.time("1");
+>     sleep(1000)
+>     logd(console.timeEnd("1"))
+> }
+> main();
+> ```
+
+
+### console.timeEnd 计时开始
+ * 计时结束,和timeEnd成对出现计算用时
+ * @param label 标签
+ * @return {long} 与计时开始的差值
+> ```javascript
+> function main(){
+>    console.time("1");
+>     sleep(1000)
+>     logd(console.timeEnd("1"))
+> }
+> main();
+> ```

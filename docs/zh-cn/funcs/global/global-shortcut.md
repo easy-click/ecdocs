@@ -679,6 +679,27 @@
 
 ## 节点操作
 
+### lastNodeEventTime 最近节点事件发生时间
+ * 获取最近的节点事件处罚的时间，可通过时间判断节点服务是否可用
+ *
+ * @return {long} 长整型时间，毫秒级别
+
+> ```javascript
+> 
+> function main(){
+>    startEnv();
+>       logd("开始监听");
+>    
+>       while(true){
+>           let d = lastNodeEventTime();
+>           logd("time-> "+d);
+>           sleep(1000)
+>       }
+> }
+> main();
+> ``` 
+
+
 ### has 节点存在判断
 * 通过选择器判断元素是否存在
 * @param selectors 选择器

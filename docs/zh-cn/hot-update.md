@@ -8,7 +8,7 @@
 
 > ```json
 > {
->    "update_url": "http://xxx.com/update",
+>    "update_url": "http://baidu.com/update",
 >    "version": "1.0.0"
 >  }
 > 
@@ -22,13 +22,13 @@
 
 ### 客户端请求
 - 以上配置好后，打包运行，程序会自动使用GET方式请求 update_url对应的地址并且会带上参数；
-    例如 ：http://xxx.com/update?version=1.0.0   请自行在服务端做版本比较
+    例如 ：http://baidu.com/update?version=1.0.0   请自行在服务端做版本比较
 
 ### 服务端返回   
 - 服务端返回格式如下：
 > ```json
 > {
->    "download_url": "http://xxx.com/aaa.iec",
+>    "download_url": "http://baidu.com/aaa.iec",
 >    "version": "1.1.0",
 >   "dialog":true,
 >   "msg": "优化部分问题",
