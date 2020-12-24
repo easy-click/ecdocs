@@ -762,9 +762,23 @@
  > ```
 
 
+### closeEnv 关闭自动化
+ * 适用版本(EC 5.14.0+)
+ * 关闭自动化服务环境
+ * @return true或者false
+ 
+ 
+> ```javascript
+ > function main(){
+ >     var result = closeEnv();
+ > }
+ > main();
+ > ```
+
 ## 时间相关
 
 ### time 毫秒时间
+ * 适用版本(EC 5.14.0+)
  * 毫秒时间函数
  * @return {long} 毫秒级别的long时间
  
@@ -778,6 +792,7 @@
 
 
 ### timeFormat 格式化时间
+ * 适用版本(EC 5.14.0+)
  * 格式化时间函数例如：```yyyy-MM-dd HH:mm:ss```
  * @return {string} 格式化之后的当前时间
  
@@ -790,6 +805,7 @@
 
 
 ### console.time 计时开始
+ * 适用版本(EC 5.14.0+)
  * 计时开始,和timeEnd成对出现计算用时
  * @param label 标签
  * @return  {long} 当前时间
@@ -804,6 +820,7 @@
 
 
 ### console.timeEnd 计时开始
+ * 适用版本(EC 5.14.0+)
  * 计时结束,和timeEnd成对出现计算用时
  * @param label 标签
  * @return {long} 与计时开始的差值
