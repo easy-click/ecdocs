@@ -80,6 +80,6 @@
 * [常见问题](/zh-cn/question-answer.md)
 * [用户协议](/zh-cn/agreement.md)
 * [免责声明](/zh-cn/declare.md)
-* [技术交流 QQ群：777164022]()
+* [技术交流 QQ群1：777164022  QQ群2: 620028786]()
 
 
