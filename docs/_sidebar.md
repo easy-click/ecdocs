@@ -1,7 +1,7 @@
 * [简介](README.md)
 * [更改记录](/zh-cn/changelog.md)
 * [开始](/zh-cn/getting-start.md)
-* [视频教程](https://www.bilibili.com/video/bv1W54y1Q7JG)
+* [EC教程](/zh-cn/jiaocheng.md)
 * [资源下载](/zh-cn/download_resources.md)
 * [开发工具介绍](/zh-cn/funcs/devtools/dev-tools.md)
     * [安装](/zh-cn/funcs/devtools/dev-tools-install.md)
