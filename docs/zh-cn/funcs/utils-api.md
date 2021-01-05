@@ -183,6 +183,80 @@
 > main();
 > ```
 
+## 二维码
+
+
+### utils.createQRCode 生成一个二维码
+ * 生成一个二维码
+ * 适用版本(EC 5.15.0+)
+ * @param content 二维码字符串内容
+ * @param width 图像宽度
+ * @param height 图像高度
+ * @param logo 图像中心的logo，非必填项，Bitmap 对象，文件转Bitmap请看image模块
+ * @return {Bitmap} Android的Bitmap对象，保存到文件请看image模块
+
+> ```javascript
+> 
+>     function main() {
+>     
+>         //生成一个二维码bitmap 带logo的
+>         let bot = utils.createQRCode("我是大佬的弟弟",1000,1000,image.readBitmap("/sdcard/yyb2.png"));
+>         logd("bot "+bot);
+>         //保存的到文件
+>         let saved = image.saveBitmap(bot,"png",100,"/sdcard/tmp.png");
+>         logd("saved "+saved);
+>         //回收掉防止内存暴涨
+>          if (bot) {
+>                 bot.recycle()
+>             }
+>         //扫描二维码
+>         let bitmap = image.readBitmap("/sdcard/tmp.png")
+>         let data = utils.decodeQRCode(bitmap);
+>         logd("data "+data);
+>         //回收掉防止内存暴涨
+>         if (bitmap) {
+>             bitmap.recycle()
+>         }
+>     }
+>     
+>     main();
+> ```
+
+
+### utils.decodeQRCode 解析一个二维码
+ * 解析一个二维码
+ * 适用版本(EC 5.15.0+)
+ * @param src 图像 Bitmap 对象，文件转Bitmap请看image模块
+ * @return {string} 解析后的字符串
+
+> ```javascript
+> 
+>     function main() {
+>     
+>         //生成一个二维码bitmap 带logo的
+>         let bot = utils.createQRCode("我是大佬的弟弟",1000,1000,image.readBitmap("/sdcard/yyb2.png"));
+>         logd("bot "+bot);
+>         //保存的到文件
+>         let saved = image.saveBitmap(bot,"png",100,"/sdcard/tmp.png");
+>         logd("saved "+saved);
+>         //回收掉防止内存暴涨
+>          if (bot) {
+>                 bot.recycle()
+>             }
+>         //扫描二维码
+>         let bitmap = image.readBitmap("/sdcard/tmp.png")
+>         let data = utils.decodeQRCode(bitmap);
+>         logd("data "+data);
+>         //回收掉防止内存暴涨
+>         if (bitmap) {
+>             bitmap.recycle()
+>         }
+>     }
+>     
+>     main();
+> ```
+
+
 
 ## 其他
 

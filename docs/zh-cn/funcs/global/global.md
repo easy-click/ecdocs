@@ -713,6 +713,39 @@
 
 ## 运行模式
 
+### activeSelf 激活自己
+* 激活自己,条件：1 开启USB调试，2 开启本机ADB WIFI调试,请参考激活章节文档
+* 适用版本(EC 5.15.0+)
+* @param activeType 激活类型，0 自动，1 模式1 2 模式2
+* @param timeout 超时时间
+* @return {string} 激活成功：代表成功，其他都是错误消息
+ 
+> ```javascript
+> function main(){
+>     var result = activeSelf(0,10*1000);
+>         logd(result)
+> }
+> main();
+> ```
+ 
+ 
+### activeDevice 通过IP激活其他设备
+* ip 设备的IP,条件：1 开启目标设备USB调试，2 开启目标设备ADB WIFI调试,请参考激活章节文档
+* 适用版本(EC 5.15.0+)
+* @param ip 设备的IP
+* @param activeType 激活类型，0 自动，1 模式1 2 模式2
+* @param timeout 超时时间
+* @return {string} 激活成功：代表成功，其他都是错误消息
+ 
+> ```javascript
+> function main(){
+>     var result = activeDevice("192.168.1.108",0,10*1000);
+>     logd(result)
+> }
+> main();
+> ```
+
+
 ### isAccMode 无障碍模式判断
  * 是否是无障碍模式
  * @return true或者false

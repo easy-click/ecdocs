@@ -21,6 +21,7 @@
     * [设备函数](/zh-cn/funcs/device-api.md)
     * [悬浮窗函数](/zh-cn/funcs/floaty-api.md)
     * [文件函数](/zh-cn/funcs/file-api.md)
+    * [Stroage存储函数](/zh-cn/funcs/storage-api.md)
     * [网络函数](/zh-cn/funcs/http-api.md)
     * [线程函数](/zh-cn/funcs/thread-api.md)
     * [常用工具函数](/zh-cn/funcs/utils-api.md)

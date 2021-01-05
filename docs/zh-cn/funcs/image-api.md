@@ -1122,6 +1122,43 @@
 
 
 
+### image.saveBitmap 保存bitmap图像
+ * 保存bitmap图像
+ * 适用版本(EC 5.15.0+)
+ * @param bitmap 图片
+ * @param format 要保存图像格式，有 png，jpg，webp
+ * @param q 要保存图像质量，1-100
+ * @param path 要保存图像路径
+ * @return {bool} true 成功 false 失败
+
+> ```javascript
+> 
+>     function main() {
+>     
+>         //生成一个二维码bitmap 带logo的
+>         let bot = utils.createQRCode("我是大佬的弟弟",1000,1000,image.readBitmap("/sdcard/yyb2.png"));
+>         logd("bot "+bot);
+>         //保存的到文件
+>         let saved = image.saveBitmap(bot,"png",100,"/sdcard/tmp.png");
+>         logd("saved "+saved);
+>         //回收掉防止内存暴涨
+>          if (bot) {
+>                 bot.recycle()
+>             }
+>         //扫描二维码
+>         let bitmap = image.readBitmap("/sdcard/tmp.png")
+>         let data = utils.decodeQRCode(bitmap);
+>         logd("data "+data);
+>         //回收掉防止内存暴涨
+>         if (bitmap) {
+>             bitmap.recycle()
+>         }
+>     }
+>     
+>     main();
+> ```
+
+
 
 ### image.toBase64Format Image转base64
 *  转成base64的字符串, jpg格式较小，可以减少内存
