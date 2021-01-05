@@ -17,15 +17,18 @@
 - 下载EasyClick最新版本的IDEA插件，并按照到IDEA中，安装教程：https://blog.csdn.net/qq_35246620/article/details/78289074
 
 # 创建工程
-<img src='zh-cn/images/getstart-2.jpg' width='300'>
+- 创建工作空间<br/>
+<img src='zh-cn/images/getstart-2.png' width='300'>
 <br/>
-<img src='zh-cn/images/getstart-3.jpg' width='300' >
+- 创建项目<br/>
+<img src='zh-cn/images/getstart-3.png' width='300' >
 <br/>
-<img src='zh-cn/images/getstart-4.jpg' width='300' >
+- 选择项目<br/>
+<img src='zh-cn/images/getstart-4.png' width='300' >
 <br/>
-创建成功
+- 创建成功<br/>
 <br/>
-<img src='zh-cn/images/project-end.jpg' width='300' >
+<img src='zh-cn/images/new-project.png' width='300' >
 
 
 # 连接设备
