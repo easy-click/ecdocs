@@ -1,7 +1,7 @@
-# 什么是中控
+## 什么是中控
 - 中控平台是一个统一管理和控制设备的平台
 
-# 中控对接
+## 中控对接
 
 - 已有的中控平台如何对接到EC程序中?
 
@@ -10,10 +10,10 @@ https://www.cnblogs.com/bookyao/p/12134438.html
 以及java如何进行POST JSON: 
 https://blog.csdn.net/qq_26975307/article/details/82713725
 
-# EC在手机端远程地址是什么
+## EC在手机端远程地址是什么
 - EC在手机端的端口是 20390
 
-# USB连接设备模式
+## USB连接设备模式
 - 如果是USB直接连接设备的，请使用adb forward命令将EC端口转发到电脑端口，教程：https://www.jianshu.com/p/63c4d5c31909
 
 - 例如将设备的20390转发到电脑的20390端口上：
@@ -36,16 +36,16 @@ https://blog.csdn.net/qq_26975307/article/details/82713725
 - 如何获取手机序列号教程 https://www.cnblogs.com/yjlch1016/p/8512592.html
 
    
-# WIFI连接模式
+## WIFI连接模式
 - 如果中控和设备在同一局域网，可以直接找到手机IP，直接请求手机到20390端口
 
 
-# 按键精灵调用
+## 按键精灵调用
 
 - 如果你使用按键精灵或者其他手机软件调用EC，可以直接在手机上请求 http://127.0.0.1:20390
 - 如果是按键精灵调用EC，请使用开发工具打企业版本的APK包
 
-# 接口返回
+## 接口返回
 接口返回示例：
 > ```javascript
 > {
@@ -62,7 +62,7 @@ https://blog.csdn.net/qq_26975307/article/details/82713725
 
 
 
-# 中控接口
+## 中控接口
 - [EC状态控制接口](/zh-cn/zk/zk-ec-state.md)
 - [全局节点模块接口](/zh-cn/zk/zk-node.md)
     * [日志接口](/zh-cn/zk/global/zk-global-log.md)
