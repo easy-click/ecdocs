@@ -986,6 +986,29 @@
 > ```
 
 
+### splitScreen 分割屏幕
+* 执行条件：无障碍5.0以上或者手势执行为代理服务
+* 适用版本(EC 5.15.0+)
+* 返回主页
+* @return {null|布尔型}
+
+> ```javascript
+> 
+> function main(){
+>     var result = splitScreen();
+>     if (result){
+>         toast("成功");
+>     } else {
+>         toast("失败");
+>     }
+> }
+> main();
+> ```
+
+
+
+
+
 ### power  模拟电源按键
 * 执行条件：无障碍5.0以上或者手势执行为代理服务
 * 模拟电源按键，无障碍是电源对话框，代理模式是电源键按下
