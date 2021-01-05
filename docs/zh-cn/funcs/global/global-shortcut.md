@@ -268,6 +268,27 @@
 > ```
 
 
+### press 坐标长按
+ * 长按住事件
+ * 适用版本(EC 5.15.0+)
+ * @param x x坐标
+ * @param y y坐标
+ * @param delay 长按时间  毫秒
+ * @return {bool} true 成功 false 失败
+ 
+
+> ```javascript
+> 
+> function main(){
+>     var result = press(100,100,5000);
+>     if (result){
+>         toast("长按成功");
+>     } else {
+>         toast("长按失败");
+>     }
+> }
+> main();
+> ```
 
 ## 多点触摸
 ### multiTouch 多点触摸

@@ -301,4 +301,4 @@
 >  logd(storage.contains("key"));
 >   logd(storage.getDecryptString("key"));
 > main();
-> `
+> ```
