@@ -1,16 +1,16 @@
-# 说明
+## 说明
 - 混合开发是把java和js放在一起编写，js调用java的方法
 - 编译后java代码和jar包会变成一个defaultplugin.apk文件作为插件使用
 - 本章节主要介绍使用EasyClick 混合开发
 
-# 新建Java-JS混合项目
+## 新建Java-JS混合项目
 - 使用IDEA创建项目选择'EasyClick Java-JS混合项目'
 - 点击下一步并完成，会自动生成对应的java类和配置信息
 <br/>
 <br/>
 <img src='zh-cn/images/javajs.png' width='400' >
 
-# 目录结构
+## 目录结构
 - src/js/main.js 这个文件是js调用插件相关方法的测试入口
 - src/com/ 这个文件夹下面存放的的java源码，PluginClz 类是默认生成的插件入口类
 - libs/jarlibs文件夹用于存放三方引用jar包，会被合并到插件中
@@ -25,12 +25,21 @@
 <br/><br/>
 <img src='zh-cn/images/javajs-2.png' width='400' >
 
-# 默认java类 PluginClz
+## 配置JDK和输出class目录
+- 在项目上点击右键
+<br/>
+<img src='zh-cn/images/minx-1.png' width='400' >
+<br/>
+<img src='zh-cn/images/minx-2.png' width='400' >
+<br/>
+<img src='zh-cn/images/minx-3.png' width='400' >
+
+## 默认java类 PluginClz
 - PluginClz是默认生成的java类
 - test 方法是默认生成的默认方法
 - 实际调用请看main.js中的调用
 
-# main.js 使用Java
+## main.js 使用Java
 - java编译后是插件形式，插件名称是defaultplugin.apk，请在脚本运行的时候调用 loadDex("defaultplugin.apk");
 -  [loadDex 函数](/zh-cn/funcs/global/global.md#loadDex)载入插件
 - 然后在使用importClass或者importPackage方法进行引入java类
@@ -44,6 +53,9 @@
 
 # 打包
 - 执行菜单栏 'EasyClick 开发工具 - 打包工程' 即可，打包结果请看EasyClick 运行日志的输出
+
+
+# JDO
 
 
 
