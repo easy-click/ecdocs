@@ -22,6 +22,47 @@
 
 ## 存储数据
 
+
+
+### storage.keys 所有key获取
+ * 所有key获取
+ * 适用版本(EC 5.16.0+)
+ * @return {string} JSON字符串
+
+> ```javascript
+>     
+> function main(){
+>  let storage= storages.create("123");
+>  logd(storage);
+>  //存储数据
+>  let r = storage.putString("key","sdfasfd");
+>  logd(r);
+>  logd(storage.keys());
+> }
+> main();
+> ```
+
+
+### storage.all 获取所有的key和值
+ * 获取所有的key和值
+ * 适用版本(EC 5.16.0+)
+ * @return {string} JSON字符串
+
+> ```javascript
+>     
+> function main(){
+>  let storage= storages.create("123");
+>  logd(storage);
+>  //存储数据
+>  let r = storage.putString("key","sdfasfd");
+>  logd(r);
+>  logd(storage.all());
+> }
+> main();
+> ```
+
+
+
 ### storage.putString 存储字符串
  * 存储字符串
  * 适用版本(EC 5.15.0+)

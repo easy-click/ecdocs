@@ -34,6 +34,16 @@
 <br/>
 <img src='zh-cn/images/minx-3.png' width='400' >
 
+
+## 引用android.jar
+- 找到android.jar点击右键,选择加入lib
+<br/>
+<img src='zh-cn/images/addlib-1.png' width='300' ><br/><br/>
+- 选择确定
+<br/><br/>
+<img src='zh-cn/images/addlib-2.png' width='300' ><br/>
+
+
 ## 默认java类 PluginClz
 - PluginClz是默认生成的java类
 - test 方法是默认生成的默认方法
@@ -55,7 +65,6 @@
 - 执行菜单栏 'EasyClick 开发工具 - 打包工程' 即可，打包结果请看EasyClick 运行日志的输出
 
 
-# JDO
 
 
 

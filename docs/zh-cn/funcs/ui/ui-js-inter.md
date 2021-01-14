@@ -1097,9 +1097,6 @@
 
 ### 取消所有定时任务 cancelAllJob
 
-
-
-
  * 取消所有的定时任务
  * @return 布尔型 true代表成功，false代表失败
  
@@ -1169,6 +1166,22 @@
 
 ## 其他扩展
 
+### setWebViewType 切换webview内核函数
+ * 适用版本(EC 5.16.0+)
+ * 设置加载网页的webview组件组件类型，默认是X5浏览器
+ * @param type 1：系统自带的webview， 2：X5浏览器
+ * @return 布尔型 true 代表成功，false 代表失败
+ 
+ > ```javascript
+ > // ui.js中的注入
+ > function main() {
+ >    ui.setWebViewType(2)
+ >    ui.layout("main", "main.html");
+ > }
+ > 
+ > main();
+ >  ```
+
 ### registeH5Function 向H5注入扩展函数
  * 向网页中注入一个JS函数，H5可以调用该函数，以实现脚本和HTML的互通扩展
  * @param funcName 注入的函数名称
@@ -1234,7 +1247,7 @@
 >  ```
 
 
-### 监听Activity 状态 onActivityEvent
+### onActivityEvent 监听Activity 状态 
 
  * 监听UI所在的activity事件
  * @param eventType 事件类型，分别为：onResume：Activity恢复时， onPause: Activity暂停时， onStop：Activity停止时， onDestroy：Activity销毁时
@@ -1263,7 +1276,7 @@
 > main();
 >  ```
 
-### UI对应的Activity getActivity
+### getActivity UI对应的Activity 
 
  * 取得当前的activity对象
  * @return Activity 对象或者null
@@ -1287,7 +1300,7 @@
 
 
 
-### 原生的Handler getHandler
+### getHandler 原生的Handler 
 
  * 取得当前的Handler对象
  * @return Handler 对象或者null
@@ -1306,7 +1319,7 @@
 > main();
 >  ```
 
-### UI线程异步任务 run
+### run UI线程异步任务 
 
  * 在主线程进行运行函数，相当于 getHandler.post
  * @param delayTime 延迟时间，单位毫秒，如果是0就是理解执行
@@ -1323,7 +1336,7 @@
 > main();
 >  ```
 
-### 设置EC的系统参数 setECSystemConfig
+### setECSystemConfig 设置EC的系统参数 
  * 设置EC的系统参数
  * @param params  map形式例如 {"running_mode":"无障碍"},<br/>
  * {<br/>
@@ -1358,7 +1371,7 @@
 > ```
 
 
-### 打开EC系统设置 openECSystemSetting
+### openECSystemSetting 打开EC系统设置 
  * 打开EC的系统设置
  * @return 布尔型 true代表成功 false代表失败
  
@@ -1373,7 +1386,7 @@
 
 
 
-### 打开其他应用程序 openActivity
+### openActivity 打开其他应用程序 
  * 打开一个activity，通过map参数
  * @param map 例如{"action":""},key的固定只有
  * action,

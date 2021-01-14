@@ -658,6 +658,11 @@
 >         exit();
 >     }
 >     sleep(5000);
+>     //从工程目录下res文件夹下读取sms.png文件
+>    var sms=readResAutoImage("sms.png");
+>     //在当前屏幕中查找，并且限制只查找一个
+>     var point = image.findImageEx( sms, 1,0,0,0,0,1,1);
+>     logd("point "+point);
 >     //抓取屏幕
 >    var aimage = image.captureFullScreen();
 >     logd("aimage "+aimage);
