@@ -17,6 +17,10 @@
 >     var t=setTimeout(function() {
 >         toast("我是一秒后执行的代码");
 >     },1000);
+>     while(true){
+>        //阻塞程序,模拟脚本运行中
+>        sleep(1000)
+>     }
 > }
 > main();
 > ```
@@ -48,6 +52,10 @@
 >     var t=setInterval(function() {
 >         toast("我是每隔一秒执行的代码");
 >     },1000);
+>     while(true){
+>        //阻塞程序,模拟脚本运行中
+>        sleep(1000)
+>     }
 > }
 > main();
 > ```
