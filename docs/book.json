@@ -1,0 +1,33 @@
+{
+  "title": "EasyClick开发文档",
+  "description": "免root,自动化,测试框架,airtest,auto.js,easyclick,jsdroid,jsd,aj,appium,按键精灵,触动精灵",
+  "language": "zh-hans",
+  "plugins": [
+    "chapter-fold",
+    "code",
+    "copy-code-button",
+    "-lunr",
+    "-search",
+    "search-plus",
+    "anchor-navigation-ex",
+    "hide-element",
+    "favicon-absolute",
+    "popup"
+  ],
+  "pluginsConfig": {
+    "hide-element": {
+      "elements": [
+        ".gitbook-link"
+      ]
+    },
+    "favicon-absolute": {
+      "favicon": "/zh-cn/images/ico.png",
+      "appleTouchIconPrecomposed152": "/zh-cn/images/ico.png"
+    },
+    "anchor-navigation-ex": {
+      "showLevel": true,
+      "associatedWithSummary": true,
+      "mode": "float"
+    }
+  }
+}

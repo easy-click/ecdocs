@@ -128,7 +128,6 @@
 > function main(){
 >     var data="sss";
 >     var t=file.appendLine(data,"/sdcard/test.txt");
->     //为了电脑上美观,可以补个\r var t=file.appendLine(data+"\r","/sdcard/test.txt");
 >     toast(t);
 > }
 > main();
