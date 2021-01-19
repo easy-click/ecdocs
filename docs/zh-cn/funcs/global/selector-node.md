@@ -682,7 +682,10 @@
 >     //获取选择器对象
 >     //选择 节点 clz=android.widget.CheckBox所有节点，
 >     var node = clz("android.widget.CheckBox").getNodeInfo(10000);
->      logd(node);
+>    //这玩意是个数组
+>    for(let i=0;i<node.length;i++){
+>        logd(node[i])
+>    }
 > }
 > main(); 
 > ```
@@ -792,7 +795,10 @@
 >     var node = clz("android.widget.ViewGroup").getOneNodeInfo(10000);
 >     if (node) {
 >        var x= node.allChildren();
->        logd(x);
+>        //这玩意是个数组
+>        for(let i=0;i<x.length;i++){
+>            logd(x[i])
+>        }
 >     } else {
 >         toast("无节点");
 >     }
@@ -810,7 +816,10 @@
 >     var node = clz("android.widget.ViewGroup").getOneNodeInfo(10000);
 >     if (node) {
 >        var x= node.siblings();
->        logd(x);
+>        //这玩意是个数组
+>        for(let i=0;i<x.length;i++){
+>            logd(x[i])
+>        }
 >     } else {
 >         toast("无节点");
 >     }
@@ -828,8 +837,8 @@
 >     //选择 节点 clz=android.widget.ViewGroup 所有节点
 >     var node = clz("android.widget.ViewGroup").getOneNodeInfo(10000);
 >     if (node!=null) {
->        //这玩意是个数组
 >        let x= node.previousSiblings();
+>        //这玩意是个数组
 >        for(let i=0;i<x.length;i++){
 >            logd(x[i])
 >        }
@@ -850,8 +859,8 @@
 >     //选择 节点 clz=android.widget.ViewGroup 所有节点
 >     var node = clz("android.widget.ViewGroup").getOneNodeInfo(10000);
 >     if (node) {
->        //这玩意是个数组
 >        let x= node.nextSiblings();
+>        //这玩意是个数组
 >        for(let i=0;i<x.length;i++){
 >            logd(x[i])
 >        }
