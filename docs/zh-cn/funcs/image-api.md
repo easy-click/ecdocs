@@ -896,11 +896,12 @@
 > main();
 > ```
 
-## OCR 文字识别(ocr没开发完,用不了,不用往下看了)
+## OCR 文字识别
 
 
 
 ### image.initOcr 初始化OCR模块
+ *(注意!!!!ocr没开发完,用不了,不用往下看了)
  * 初始化OCR模块，百度PaddleOCR，具体请看相关文档，默认自带了Paddle的训练模型
  * @param map map参数表
  * key分别为：
