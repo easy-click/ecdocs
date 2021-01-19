@@ -828,8 +828,11 @@
 >     //选择 节点 clz=android.widget.ViewGroup 所有节点
 >     var node = clz("android.widget.ViewGroup").getOneNodeInfo(10000);
 >     if (node!=null) {
->        var x= node.previousSiblings();
->        logd(x);
+>        //这玩意是个数组
+>        let x= node.previousSiblings();
+>        for(let i=0;i<x.length;i++){
+>            logd(x[i])
+>        }
 >     } else {
 >         toast("无节点");
 >     }
@@ -847,8 +850,11 @@
 >     //选择 节点 clz=android.widget.ViewGroup 所有节点
 >     var node = clz("android.widget.ViewGroup").getOneNodeInfo(10000);
 >     if (node) {
->        var x= node.nextSiblings();
->        logd(x);
+>        //这玩意是个数组
+>        let x= node.nextSiblings();
+>        for(let i=0;i<x.length;i++){
+>            logd(x[i])
+>        }
 >     } else {
 >         toast("无节点");
 >     }
