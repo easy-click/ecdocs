@@ -413,6 +413,12 @@
 >       if (aimage != null) {
 >           var points = image.findColor(aimage,"0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >           logd("points "+points);
+>            //这玩意是个数组
+>            if(points){
+>                for(let i=0;i<points.length;i++){
+>                    logd(points[i])
+>               }
+>            }
 >       }
 > 
 > }
@@ -442,6 +448,12 @@
 >       if (aimage != null) {
 >           var points = image.findColorJ(aimage,"金币");
 >           logd("points "+points);
+>            //这玩意是个数组
+>            if(points){
+>                for(let i=0;i<points.length;i++){
+>                    logd(points[i])
+>               }
+>            }
 >       }
 > 
 > }
@@ -474,6 +486,12 @@
 >       }
 >       var points = image.findColorEx("0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points "+points);
+>        //这玩意是个数组
+>        if(points){
+>            for(let i=0;i<points.length;i++){
+>                logd(points[i])
+>           }
+>        }
 > 
 > }
 > main();
@@ -498,6 +516,12 @@
 >       }
 >       var points = image.findColorExJ("金币");
 >       logd("points "+points);
+>        //这玩意是个数组
+>        if(points){
+>            for(let i=0;i<points.length;i++){
+>                logd(points[i])
+>           }
+>        }
 > 
 > }
 > main();
@@ -535,6 +559,12 @@
 >       if (aimage != null) {
 >           var points = image.findMultiColor(aimage,"0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >           logd("points "+points);
+>            //这玩意是个数组
+>            if(points){
+>                for(let i=0;i<points.length;i++){
+>                    logd(points[i])
+>               }
+>            }
 >       }
 > 
 > }
@@ -566,6 +596,12 @@
 >       if (aimage != null) {
 >           var points = image.findMultiColorJ(aimage,"金币");
 >           logd("points "+points);
+>            //这玩意是个数组
+>            if(points){
+>                for(let i=0;i<points.length;i++){
+>                    logd(points[i])
+>               }
+>            }
 >       }
 > 
 > }
@@ -600,6 +636,12 @@
 >       
 >       var points = image.findMultiColorEx("0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points "+points);
+>        //这玩意是个数组
+>        if(points){
+>            for(let i=0;i<points.length;i++){
+>                logd(points[i])
+>           }
+>        }
 >       
 > 
 > }
@@ -625,8 +667,12 @@
 >       }
 >       var points = image.findMultiColorExJ("金币");
 >       logd("points "+points);
->       
-> 
+>        //这玩意是个数组
+>        if(points){
+>            for(let i=0;i<points.length;i++){
+>                logd(points[i])
+>           }
+>        }
 > }
 > main();
 > ```
@@ -644,7 +690,7 @@
 * @param ey 终点Y坐标
 * @param threshold 图片相似度。取值范围为0~1的浮点数。默认值为0.9。
 * @param limit 限制结果的数量，如果要找到1个，就填写1，如果是多个请填写多个
-* @return Rect 区域坐标对象或者null
+* @return Rect 区域坐标对象数组或者null
   
 
 > ```javascript
@@ -657,19 +703,20 @@
 >        toast("申请失败");
 >         exit();
 >     }
->     sleep(5000);
->     //从工程目录下res文件夹下读取sms.png文件
->    var sms=readResAutoImage("sms.png");
->     //在当前屏幕中查找，并且限制只查找一个
->     var point = image.findImageEx( sms, 0,0,0,0,1,1);
->     logd("point "+point);
+>     sleep(1000);
 >     //抓取屏幕
 >    var aimage = image.captureFullScreen();
 >     logd("aimage "+aimage);
 >     if (aimage != null) {
 >         //在图片中查找
->         point = image.findImage(aimage, sms,0,0,0,0,1, 1);
->         logd("point "+point);
+>         letpoints = image.findImage(aimage, sms,0,0,0,0,1, 1);
+>         logd("points "+points);
+>        //这玩意是个数组
+>        if(points){
+>            for(let i=0;i<points.length;i++){
+>                logd(points[i])
+>           }
+>        }
 >     }
 > }
 > 
@@ -699,12 +746,18 @@
 >        toast("申请失败");
 >         exit();
 >     }
->     sleep(5000);
+>     sleep(1000);
 >     //从工程目录下res文件夹下读取sms.png文件
 >    var sms=readResAutoImage("sms.png");
 >     //在当前屏幕中查找，并且限制只查找一个
->     var point = image.findImageEx(sms,0,0,0,0,1, 1);
->     logd("point "+point);
+>     var points = image.findImageEx(sms,0,0,0,0,1, 1);
+>     logd("points "+points);
+>            //这玩意是个数组
+>    if(points){
+>        for(let i=0;i<points.length;i++){
+>            logd(points[i])
+>       }
+>    }
 > }
 > 
 > main();
@@ -752,8 +805,14 @@
 >         rectp.top=100;
 >         rectp.right=100;
 >         rectp.bottom=400;
->          var x = image.matchTemplate(aimage, temp,0.9,0.9,rectp,-1,1);
->          logd(x);
+>          var points = image.matchTemplate(aimage, temp,0.9,0.9,rectp,-1,1);
+>          logd(points);
+>        //这玩意是个数组
+>        if(points){
+>            for(let i=0;i<points.length;i++){
+>                logd(points[i])
+>           }
+>        }
 >      }
 > }
 > main();
@@ -792,8 +851,14 @@
 >         rectp.top=100;
 >         rectp.right=100;
 >         rectp.bottom=400;
->          var x = image.matchTemplateEx( temp,0.9,0.9,rectp,-1,1);
->          logd(x);
+>          var points = image.matchTemplateEx( temp,0.9,0.9,rectp,-1,1);
+>          logd(points);
+>            //这玩意是个数组
+>            if(points){
+>                for(let i=0;i<points.length;i++){
+>                    logd(points[i])
+>               }
+>            }
 >      }
 > }
 > main();
@@ -901,7 +966,6 @@
 
 
 ### image.initOcr 初始化OCR模块
-
  * 初始化OCR模块，百度PaddleOCR，具体请看相关文档，默认自带了Paddle的训练模型
  * @param map map参数表
  * key分别为：
