@@ -845,7 +845,7 @@
  * @return  {long} 当前时间
 > ```javascript
 > function main(){
->    console.time("1");
+>     console.time("1");
 >     sleep(1000)
 >     logd(console.timeEnd("1"))
 > }
@@ -853,14 +853,14 @@
 > ```
 
 
-### console.timeEnd 计时开始
+### console.timeEnd 计时结束
  * 适用版本(EC 5.14.0+)
  * 计时结束,和timeEnd成对出现计算用时
  * @param label 标签
  * @return {long} 与计时开始的差值
 > ```javascript
 > function main(){
->    console.time("1");
+>     console.time("1");
 >     sleep(1000)
 >     logd(console.timeEnd("1"))
 > }
