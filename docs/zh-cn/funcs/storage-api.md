@@ -78,8 +78,8 @@
 >  //存储数据
 >  let r = storage.putString("key","sdfasfd");
 >  logd(r);
->  //获取数据
->  logd(storage.getString("key",""));
+>  //获取数据,暂时有bug,需 +""
+>  logd(storage.getString("key","")+"");
 > }
 > main();
 > ```
@@ -190,8 +190,8 @@
 >  //存储数据
 >  let r = storage.putString("key","sdfasfd");
 >  logd(r);
->  //获取数据
->  logd(storage.getString("key",""));
+>  //获取数据,暂时有bug,需 +""
+>  logd(storage.getString("key","")+"");
 > }
 > main();
 > ```
