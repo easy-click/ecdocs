@@ -752,7 +752,7 @@
 >     //在当前屏幕中查找，并且限制只查找一个
 >     var points = image.findImageEx(sms,0,0,0,0,1, 1);
 >     logd("points "+points);
->            //这玩意是个数组
+>    //这玩意是个数组
 >    if(points){
 >        for(let i=0;i<points.length;i++){
 >            logd(points[i])
