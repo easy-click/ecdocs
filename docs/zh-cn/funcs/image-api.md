@@ -1252,7 +1252,7 @@
 >    //申请完权限等1s再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
->     var r = image.saveTo(imageX,"/sdard/a.png");
+>     var r = image.saveTo(imageX,"/sdcard/a.png");
 >     toast("result "+r);
 > }
 > main();
