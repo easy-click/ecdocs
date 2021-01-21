@@ -734,15 +734,17 @@
 >        toast("申请失败");
 >         exit();
 >     }
->        //申请完权限等1s再截图,否则会截不到图
->        sleep(1000)
+>    //申请完权限等1s再截图,否则会截不到图
+>    sleep(1000)
+>    //从工程目录下res文件夹下读取sms.png文件
+>    let sms=readResAutoImage("sms.png");
 >     //抓取屏幕
->    var aimage = image.captureFullScreen();
->     logd("aimage "+aimage);
->     if (aimage != null) {
->         //在图片中查找
->         let points = image.findImage(aimage, sms,0,0,0,0,1, 1);
->         logd("points "+points);
+>    let aimage = image.captureFullScreen();
+>    logd("aimage "+aimage);
+>    if (aimage != null) {
+>        //在图片中查找
+>        let points = image.findImage(aimage, sms,0,0,0,0,1, 1);
+>        logd("points "+points);
 >        //这玩意是个数组
 >        if(points){
 >            for(let i=0;i<points.length;i++){
