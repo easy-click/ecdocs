@@ -741,7 +741,7 @@
 >     logd("aimage "+aimage);
 >     if (aimage != null) {
 >         //在图片中查找
->         letpoints = image.findImage(aimage, sms,0,0,0,0,1, 1);
+>         let points = image.findImage(aimage, sms,0,0,0,0,1, 1);
 >         logd("points "+points);
 >        //这玩意是个数组
 >        if(points){
