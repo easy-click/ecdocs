@@ -104,6 +104,8 @@
 >               var cap = image.captureScreen(3,0,0,300,400)
 >               logd("截图数据: " +cap)
 >               sleep(1000)
+>                //图片要回收
+>                image.recycle(cap)
 >           }
 > }
 > main();
@@ -137,6 +139,8 @@
 >            var cap = image.captureFullScreen()
 >            logd("截图数据: " +cap)
 >            sleep(1000)
+>            //图片要回收
+>            image.recycle(cap)
 >        }
 >   }
 > main();
@@ -169,6 +173,8 @@
 >            var cap = image.captureFullScreenEx()
 >            logd("截图数据: " +cap)
 >            sleep(1000)
+>            //图片要回收
+>            image.recycle(cap)
 >        }
 >   }
 > main();
@@ -208,6 +214,8 @@
 >            var cap = image.captureScreenBitmap("jpg",100,100,200,300,100);
 >            logd("截图数据: " +cap)
 >            sleep(1000)
+>            //图片要回收
+>            image.recycle(cap)
 >        }
 >   }
 > main();
@@ -249,6 +257,8 @@
 >            var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
 >            logd("截图数据: " +cap)
 >            sleep(1000)
+>            //图片要回收
+>            image.recycle(cap)
 >        }
 >   }
 
@@ -286,6 +296,8 @@
 >            var points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
 >           var points = image.cmpColor(aimage,points3, 0.9, 0, 0, 0, 0);
 >           logd("points "+points);
+>           //图片要回收
+>           image.recycle(aimage)
 >       }
 > 
 > }
@@ -354,11 +366,13 @@
 >        sleep(1000)
 >        var aimage = image.captureFullScreen();
 >       if (aimage != null) {
->        var points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->        var points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->        var points3 ="205|1130|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>            var points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>            var points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>            var points3 ="205|1130|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
 >           var points = image.cmpMultiColor(aimage,[points1,points2,points3], 0.9, 0, 0, 0, 0);
 >           logd("points "+points);
+>           //图片要回收
+>           image.recycle(aimage)
 >     }
 > }
 > main();
@@ -436,6 +450,8 @@
 >                    logd(points[i])
 >               }
 >            }
+>           //图片要回收
+>           image.recycle(aimage)
 >       }
 > 
 > }
@@ -473,6 +489,8 @@
 >                    logd(points[i])
 >               }
 >            }
+>           //图片要回收
+>           image.recycle(aimage)
 >       }
 > 
 > }
@@ -590,6 +608,8 @@
 >                    logd(points[i])
 >               }
 >            }
+>           //图片要回收
+>           image.recycle(aimage)
 >       }
 > 
 > }
@@ -629,6 +649,8 @@
 >                    logd(points[i])
 >               }
 >            }
+>           //图片要回收
+>           image.recycle(aimage)
 >       }
 > 
 > }
@@ -751,6 +773,8 @@
 >                logd(points[i])
 >           }
 >        }
+>           //图片要回收
+>           image.recycle(aimage)
 >     }
 > }
 > 
@@ -850,6 +874,8 @@
 >                logd(points[i])
 >           }
 >        }
+>           //图片要回收
+>           image.recycle(aimage)
 >      }
 > }
 > main();
@@ -898,6 +924,8 @@
 >                    logd(points[i])
 >               }
 >            }
+>           //图片要回收
+>           image.recycle(aimage)
 >      }
 > }
 > main();
@@ -949,6 +977,8 @@
 >                      logd("saved "+saved)
 >                      exit()
 >                  }
+>                   //图片要回收
+>                   image.recycle(d)
 >              }
 >          }
 > 
@@ -997,6 +1027,8 @@
 >                  if (bd) {
 >                      exit()
 >                  }
+>               //图片要回收
+>               image.recycle(d)
 >              }
 >          }
 > 
@@ -1132,6 +1164,8 @@
 > 
 > function main() {
 >     var autoimg = image.readImage("/sdcard/a.png");
+>     //图片要回收
+>     image.recycle(autoimg)
 > }
 > main();
 > ```
@@ -1146,6 +1180,8 @@
 > 
 > function main() {
 >     var autoimg = image.readBitmap("/sdcard/a.png");
+>     //图片要回收
+>     image.recycle(autoimg)
 > }
 > main();
 > ```
@@ -1172,6 +1208,8 @@
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var color = image.pixelInImage(imageX,100,100);
+>     //图片要回收
+>     image.recycle(imageX)
 > }
 > main();
 > ```
@@ -1198,6 +1236,8 @@
 >    sleep(1000)
 >    var bitmap = image.captureScreenBitmap("jpg",800,800,100,100,100);
 >    var color = image.getPixelBitmap(bitmap,100,100);
+>    //图片要回收
+>    image.recycle(bitmap)
 > }
 > main();
 > ```
@@ -1231,6 +1271,8 @@
 >    var w = bitmap.getWidth();
 >    var h =bitmap.getHeight();
 >    var mPixels =  image.getPixelsBitmap(bitmap,w*h, 0, w, 0, 0,w, h);
+>           //图片要回收
+>           image.recycle(bitmap)
 > }
 > main();
 > ```
@@ -1256,6 +1298,8 @@
 >     var imageX = image.captureFullScreen();
 >     var r = image.saveTo(imageX,"/sdcard/a.png");
 >     toast("result "+r);
+>           //图片要回收
+>           image.recycle(imageX )
 > }
 > main();
 > ```
@@ -1320,6 +1364,8 @@
 >     var imageX = image.captureFullScreen();
 >     var r = image.toBase64Format(imageX,"jpg",50);
 >     toast("result "+r);
+>     //图片要回收
+>     image.recycle(imageX )
 > }
 > main();
 > ```
@@ -1347,6 +1393,8 @@
 >     var imageX = image.captureFullScreen();
 >     var r = image.clip(imageX,100,100,300,400);
 >     toast("result "+r);
+>     //图片要回收
+>     image.recycle(imageX )
 > }
 > main();
 > ```
@@ -1372,6 +1420,8 @@
 >     var imageX = image.captureFullScreen();
 >     var r = image.pixel(imageX,100,100);
 >     toast("result "+r);
+>     //图片要回收
+>     image.recycle(imageX )
 > }
 > main();
 > ```
@@ -1390,6 +1440,8 @@
 >     var imageX = image.captureFullScreen();
 >     var r = image.isRecycled(imageX);
 >     toast("result "+r);
+>     //图片要回收
+>     image.recycle(imageX )
 > }
 > main();
 > ```
@@ -1404,6 +1456,8 @@
 > function main() {
 >    var imageX = image.captureFullScreen();
 >    image.recycle(imageX);
+>     //图片要回收
+>     image.recycle(imageX )
 >   
 > }
 > main();
@@ -1439,6 +1493,8 @@
 >            var ds = image.bitmapBase64(d,"jpg",100);
 >            logd(ds)
 >            loge(image.base64Bitmap(ds,0))
+>             //图片要回收
+>             image.recycle(d)
 >        }
 >
 >    }
@@ -1479,6 +1535,8 @@
 >            var ds = image.bitmapBase64(d,"jpg",100);
 >            logd(ds)
 >            loge(image.base64Bitmap(ds,0))
+>             //图片要回收
+>             image.recycle(d)
 >        }
 >
 >    }
@@ -1517,6 +1575,8 @@
 >            var ds = image.bitmapBase64(d,"jpg",100);
 >            logd(ds)
 >            loge(image.base64Bitmap(ds,0))
+>             //图片要回收
+>             image.recycle(d)
 >        }
 >
 >    }
