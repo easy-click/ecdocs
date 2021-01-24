@@ -4,7 +4,7 @@
 # 下载开发工具
 - [百度网盘下载](https://pan.baidu.com/s/124sTYQAZkedgfnTv3iFTZg) 提取码：7bhy
 - [天翼云下载](https://cloud.189.cn/t/UbAjqanEzeMz) 密码：nup3
-- QQ群下载 QQ群1：777164022  QQ群2: 620028786
+- QQ群下载 QQ群1：777164022  QQ群2: 620028786 QQ群3: 647082990
 
 - 下载idea开发工具，文件以idea-xxx开头的，也可以自行到idea官网下载
 
