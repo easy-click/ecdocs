@@ -45,11 +45,6 @@
 >         "debug":true
 >     }
 > 
->      let baiduOnlineInitMap ={
->             "type":"baiduOnlinesZDxt",
->             "ak":"xxx",
->             "sk":"xxx"
->      }
 >     let  inited = ocr.initOcr(tessInitMap)
 >     logd("初始化结果 -> "+inited );
 >     if (!inited) {
@@ -94,14 +89,6 @@
 > ```javascript
 > 
 >   function main() {
->   
->       //Tesseract模块初始化参数
->       let tessInitMap ={
->           "type":"tess",
->           "language":"chi_sim",
->           "debug":true
->       }
->   
 >        let baiduOnlineInitMap ={
 >               "type":"baiduOnline",
 >               "ak":"xx",
