@@ -10,7 +10,7 @@
 >     
 > function main(){
 >     var d = device.tcDeviceId();
->     //如果想传给对象,需强转一下,否则json解析会报错
+>     //如果想传给对象,需强转一下,否则会报错
 >     d+=""
 >     toast(d);
 > }
