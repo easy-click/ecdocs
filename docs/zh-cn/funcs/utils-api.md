@@ -183,6 +183,113 @@
 > main();
 > ```
 
+
+## 解压缩
+
+### utils.zip 压缩
+ * 将多个文件压缩成一个zip文件
+ * 适用版本(EC 5.17.0+)
+ * @param zipFile 目标zip文件的路径
+ * @param passwd 目标ip文件密码，空代表无密码
+ * @param files 要压缩的文件或者文件夹，文件数组例如: ["/sdcard/a.txt","/sdcard/bb/"]
+ * @return {bool} true 代表成功  false代表失败
+
+> ```javascript
+>  
+> function main() {
+> 
+>         zipFile ="/sdcard/a.zip"
+>         //压缩文件
+>         let passwd = "123";
+>         let files =["/sdcard/test.json","/sdcard/gifshow"]
+>         let re = utils.zip(zipFile,passwd,files);
+>         logd("压缩结果: "+re);
+> 
+>         let ure = utils.unzip(zipFile,passwd,"/sdcard/test111/");
+>         logd("解压结果: "+ure);
+> 
+> 
+>        let data = utils.readFileInZip("/sdcard/a.zip",passwd,"test.json")
+>         logd("读取数据结果: "+data);
+> }
+> 
+> main()
+> ```
+
+
+### utils.unzip 解压
+ * 将zip文件解压到一个文件夹中
+ * 适用版本(EC 5.17.0+)
+ * @param zipFile 目标zip文件的路径
+ * @param passwd 目标ip文件密码
+ * @param destDir 要解压到的目标文件夹
+ * @return {bool} true 代表成功  false代表失败
+
+> ```javascript
+>  
+> function main() {
+> 
+>         zipFile ="/sdcard/a.zip"
+>         //压缩文件
+>         let passwd = "123";
+>         let files =["/sdcard/test.json","/sdcard/gifshow"]
+>         let re = utils.zip(zipFile,passwd,files);
+>         logd("压缩结果: "+re);
+> 
+>         let ure = utils.unzip(zipFile,passwd,"/sdcard/test111/");
+>         logd("解压结果: "+ure);
+> 
+> 
+>        let data = utils.readFileInZip("/sdcard/a.zip",passwd,"test.json")
+>         logd("读取数据结果: "+data);
+> }
+> 
+> main()
+> ```
+
+
+
+
+
+
+
+### utils.readFileInZip ZIP中读取
+ * 从zip文件中读取数据
+ * 适用版本(EC 5.17.0+)
+ * @param zipFile zip文件的路径
+ * @param passwd zip文件密码
+ * @param filePathInZip 文件在zip中的路径，例如 a/b.txt
+ * @return {string} 解析后的字符串
+
+> ```javascript
+>  
+> function main() {
+> 
+>         zipFile ="/sdcard/a.zip"
+>         //压缩文件
+>         let passwd = "123";
+>         let files =["/sdcard/test.json","/sdcard/gifshow"]
+>         let re = utils.zip(zipFile,passwd,files);
+>         logd("压缩结果: "+re);
+> 
+>         let ure = utils.unzip(zipFile,passwd,"/sdcard/test111/");
+>         logd("解压结果: "+ure);
+> 
+> 
+>        let data = utils.readFileInZip("/sdcard/a.zip",passwd,"test.json")
+>         logd("读取数据结果: "+data);
+> }
+> 
+> main()
+> ```
+
+
+
+
+
+
+
+
 ## 二维码
 
 

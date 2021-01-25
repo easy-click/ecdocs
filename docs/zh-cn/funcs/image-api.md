@@ -236,33 +236,37 @@
 
 > ```javascript
 > 
->   function main() {
->       logd("isServiceOk "+isServiceOk());
->       startEnv()
->       logd("isServiceOk "+isServiceOk());
->    
->        var request = image.requestScreenCapture(10000,0);
->    
->        if (!request) {
->           request = image.requestScreenCapture(10000,0);
->        }
->        logd("申请截图结果... "+request)
->        if (!request) {
->           return;
->        }
->        home();
->        //申请完权限等1s再截图,否则会截不到图
->        sleep(1000)
->        for (var i = 0; i < 10; i++) {
->            var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
->            logd("截图数据: " +cap)
->            sleep(1000)
->            //图片要回收
->            image.recycle(cap)
->        }
->   }
+> function main() {
+>    logd("isServiceOk "+isServiceOk());
+>    startEnv()
+>    logd("isServiceOk "+isServiceOk());
+> 
+>     var request = image.requestScreenCapture(10000,0);
+> 
+>     if (!request) {
+>        request = image.requestScreenCapture(10000,0);
+>     }
+>     logd("申请截图结果... "+request)
+>     if (!request) {
+>        return;
+>     }
+>     home();
+>     //申请完权限等1s再截图,否则会截不到图
+>     sleep(1000)
+>     for (var i = 0; i < 10; i++) {
+>         var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
+>         logd("截图数据: " +cap)
+>         sleep(1000)
+>         //图片要回收
+>         image.recycle(cap)
+>     }
+> }
+> ```
 
 > main();
+>
+> ```
+> 
 > ```
 
 ## 比色
@@ -1379,7 +1383,7 @@
 * @param ex 终点X坐标
 * @param ey 终点Y坐标
  * @return AutoImage 对象或者null
- 
+
 > ```javascript
 > 
 > function main() {
@@ -1405,8 +1409,8 @@
  * @param x x坐标点
  * @param y y坐标点
  * @return int 颜色值
- 
- 
+
+
 > ```javascript
 > 
 > function main() {
@@ -1432,8 +1436,8 @@
  * 是否被回收了
  * @param img 图片对象
  * @return bool true代表已经被回收了
- 
- 
+
+
 > ```javascript
 > 
 > function main() {
@@ -1450,7 +1454,7 @@
 ### image.recycle 回收图片
  * 回收图片 
  * @param img 图片对象
- 
+
 > ```javascript
 > 
 > function main() {
@@ -1472,7 +1476,7 @@
  * @param w 剪裁宽度
  * @param h 剪裁高度
  * @return {Bitmap} 安卓的Bitmap对象
- 
+
 > ```javascript
 > 
 > function main() {
@@ -1514,7 +1518,7 @@
  * @param flag base64格式的标示，一般为0，
  * 可选参数为 ：0 默认， 1 无填充模式，2 无换行模式，4 换行模式
  * @return {Bitmap} 安卓的Bitmap对象
- 
+
 > ```javascript
 > 
 > function main() {
@@ -1554,7 +1558,7 @@
  * @param format 格式，jpg或者png
  * @param q 质量  1 - 100
  * @return {string} base64字符串
- 
+
 > ```javascript
 > 
 > function main() {
@@ -1592,7 +1596,7 @@
  * 将AutoImage转换为安卓原生的Bitmap对象
  * @param img {AutoImage}
  * @return  {Bitmap} 对象
- 
+
 > ```javascript
 > 
 > function main() {
