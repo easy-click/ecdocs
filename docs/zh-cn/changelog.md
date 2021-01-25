@@ -3,9 +3,14 @@
 - 5.17.0:
 
   1、新增Tesseract和百度在线的OCR模块
+
   2、新增压缩zip和解压unzip函数
+
   3、修复setSaveLog日志不输出到文件的问题
+
   4、修复 ui.js 调用setStopCallback，setExceptionCallback无效的问题
+
+  
 
  - 5.16.0:
         1、新增storage.keys()函数
