@@ -91,63 +91,58 @@
 
 - 百度在线OCR例子
 
-  ```javascript
-  
-  
-  function main() {
-  
-      //Tesseract模块初始化参数
-      let tessInitMap ={
-          "type":"tess",
-          "language":"chi_sim",
-          "debug":true
-      }
-  
-       let baiduOnlineInitMap ={
-              "type":"baiduOnline",
-              "ak":"xx",
-              "sk":"xx"
-       }
-  
-      let  inited = ocr.initOcr(baiduOnlineInitMap)
-      logd("初始化结果 -> "+inited );
-      if (!inited) {
-          loge("error : "+ocr.getErrorMsg());
-          return;
-      }
-  
-      //读取一个bitmap
-      let bitmap = image.readBitmap("/sdcard/a.png");
-      if (!bitmap) {
-           loge("读取图片失败");
-           return;
-      }
-      // 对图片进行识别
-      let result = ocr.ocrBitmap(bitmap,20*1000,{"url":"https://aip.baidubce.com/rest/2.0/ocr/v1/accurate"});
-      if (result) {
-          logd("ocr结果-》 "+JSON.stringify(result));
-          for (var i = 0; i < result.length; i++) {
-              var value=result[i];
-              logd("文字 : "+value.label+" x: "+value.x +" y: "+value.y+" width: "+value.width+" height: "+value.height);
-          }
-      }else{
-          logw("未识别到结果 " +ocr.getErrorMsg());
-      }
-  
-      bitmap.recycle();
-      //释放所有资源
-      ocr.releaseAll();
-  
-  }
-  
-  
-  main();
-  
-  
-  
-  ```
-
-  
+> ```javascript
+> 
+>   function main() {
+>   
+>       //Tesseract模块初始化参数
+>       let tessInitMap ={
+>           "type":"tess",
+>           "language":"chi_sim",
+>           "debug":true
+>       }
+>   
+>        let baiduOnlineInitMap ={
+>               "type":"baiduOnline",
+>               "ak":"xx",
+>               "sk":"xx"
+>        }
+>   
+>       let  inited = ocr.initOcr(baiduOnlineInitMap)
+>       logd("初始化结果 -> "+inited );
+>       if (!inited) {
+>           loge("error : "+ocr.getErrorMsg());
+>           return;
+>       }
+>   
+>       //读取一个bitmap
+>       let bitmap = image.readBitmap("/sdcard/a.png");
+>       if (!bitmap) {
+>            loge("读取图片失败");
+>            return;
+>       }
+>       // URL 参数参见 ： https://ai.baidu.com/ai-doc/OCR/tk3h7y2aq
+>       // 对图片进行识别
+>       let result = ocr.ocrBitmap(bitmap,20*1000,{"url":"https://aip.baidubce.com/rest/2.0/ocr/v1/accurate"});
+>       if (result) {
+>           logd("ocr结果-》 "+JSON.stringify(result));
+>           for (var i = 0; i < result.length; i++) {
+>               var value=result[i];
+>               logd("文字 : "+value.label+" x: "+value.x +" y: "+value.y+" width: "+value.width+" height: "+value.height);
+>           }
+>       }else{
+>           logw("未识别到结果 " +ocr.getErrorMsg());
+>       }
+>   
+>       bitmap.recycle();
+>       //释放所有资源
+>       ocr.releaseAll();
+>   
+>   }
+> 
+>   main();
+>   
+> ```
 
 
 
@@ -156,7 +151,6 @@
 
 
 ## ocr.setOcrType 设置类型
-
  * 设置OCR实现方式
  * 适用版本(EC 5.17.0+)
  * @param type 值分别为 tess = Tesseract模块，baiduOnline=百度在在线识别模块
