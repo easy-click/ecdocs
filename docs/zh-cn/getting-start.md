@@ -1,5 +1,7 @@
 # 新建项目视频教程
 - [https://www.bilibili.com/video/BV1bK4y15778/](https://www.bilibili.com/video/BV1bK4y15778/)
+- 2021最新教程[https://www.bilibili.com/video/BV1vz4y1S7gd](https://www.bilibili.com/video/BV1vz4y1S7gd)
+
 
 # 下载开发工具
 - [百度网盘下载](https://pan.baidu.com/s/124sTYQAZkedgfnTv3iFTZg) 提取码：7bhy
