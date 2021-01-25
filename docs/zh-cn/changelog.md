@@ -9,6 +9,8 @@
   4、修复 ui.js 调用setStopCallback，setExceptionCallback无效的问题
   ```
 
+  
+
  - 5.16.0:
         1、新增storage.keys()函数
         2、新增storage.all()函数

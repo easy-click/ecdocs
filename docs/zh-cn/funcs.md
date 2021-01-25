@@ -4,6 +4,7 @@
 - [无障碍事件](/zh-cn/funcs/acevent-api.md)
 - [代理事件](/zh-cn/funcs/event-api.md)
 - [图色函数](/zh-cn/funcs/image-api.md)
+- [OCR识别](/zh-cn/funcs/ocr-api.md)
 - [设备函数](/zh-cn/funcs/device-api.md)
 * [悬浮窗函数](/zh-cn/funcs/floaty-api.md)
 - [文件函数](/zh-cn/funcs/file-api.md)

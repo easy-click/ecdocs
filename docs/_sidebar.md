@@ -1,5 +1,7 @@
 * [简介](README.md)
+
 * [更改记录](/zh-cn/changelog.md)
+
 * [工具&教程](/zh-cn/tools/)
     * [学习教程](/zh-cn/jiaocheng.md)
     * [第一个Demo](/zh-cn/getting-start.md)
@@ -14,24 +16,43 @@
     
 * [脚本函数](/zh-cn/funcs.md)
     * [全局模块](/zh-cn/funcs/global/global.md)
+    
     * [全局快捷事件](/zh-cn/funcs/global/global-shortcut.md)
+    
     * [选择器&节点](/zh-cn/funcs/global/selector-node.md)
+    
     * [无障碍事件](/zh-cn/funcs/acevent-api.md)
+    
     * [代理事件](/zh-cn/funcs/event-api.md)
+    
     * [图色函数](/zh-cn/funcs/image-api.md)
+    
     * [OCR识别](/zh-cn/funcs/ocr-api.md)
+    
     * [设备函数](/zh-cn/funcs/device-api.md)
+    
     * [悬浮窗函数](/zh-cn/funcs/floaty-api.md)
+    
     * [文件函数](/zh-cn/funcs/file-api.md)
+    
     * [Stroage存储函数](/zh-cn/funcs/storage-api.md)
+    
     * [网络函数](/zh-cn/funcs/http-api.md)
+    
     * [线程函数](/zh-cn/funcs/thread-api.md)
+    
     * [常用工具函数](/zh-cn/funcs/utils-api.md)
+    
     * [Shell命令函数](/zh-cn/funcs/shell-api.md)
+    
     * [Sqlite命令函数](/zh-cn/funcs/sqlite-api.md)
-* [JDBC MYSQL 命令函数](/zh-cn/funcs/jdbcmysql-api.md)
+    
+    * [JDBC MYSQL 命令函数](/zh-cn/funcs/jdbcmysql-api.md)
+    
+      
     
 * [UI编写](/zh-cn/funcs/ui/)
+    
     * [原生UI定制](/zh-cn/funcs/ui/ui-custom.md)
         * [JS编写UI](/zh-cn/funcs/ui/ui-js-inter.md)
         * [模板式UI](/zh-cn/funcs/ui/ui-js-template.md)
@@ -52,8 +73,8 @@
             * [ImageView图像](/zh-cn/funcs/ui/uidetail/imageview.md)
             * [CardView卡片布局](/zh-cn/funcs/ui/uidetail/cardview.md)
             * [Swtich开关按钮](/zh-cn/funcs/ui/uidetail/switch.md)
-    * [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
-
+* [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
+    
 * [企业版本](/zh-cn/enterprise/)
     * [企业版云控接口](/zh-cn/ecloud/)
         * [云控介绍](/zh-cn/ecloud/intro.md)
@@ -82,14 +103,20 @@
         * [常用工具模块接口 - 开发中](/zh-cn/zk/zk-utils.md)
         * [Shell命令模块接口](/zh-cn/zk/zk-shell.md)
         * [Sqlite模块接口 - 开发中](/zh-cn/zk/zk-sqlite.md)
+    
 * [高级功能](/zh-cn/advance/)
     * [热更新功能](/zh-cn/hot-update.md)
     * [插件开发](/zh-cn/funcs/plugin/plugins.md)
     * [Java-JS混合开发](/zh-cn/funcs/plugin/javajs.md)
+    
 * [免Root激活](/zh-cn/active-device.md)
+
 * [常见问题](/zh-cn/question-answer.md)
+
 * [用户协议](/zh-cn/agreement.md)
+
 * [免责声明](/zh-cn/declare.md)
+
 * [学习交流](/zh-cn/joinus.md)
 
 
