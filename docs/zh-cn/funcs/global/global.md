@@ -601,7 +601,7 @@
  
 > ```javascript
  > function main(){
- >     var testData = readConfigDouble("test_key");
+ >     var testData = readConfigBoolean("test_key");
  > }
  > main();
  > ```
