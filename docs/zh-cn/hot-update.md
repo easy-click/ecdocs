@@ -8,6 +8,7 @@
 - 打开工程下面的update.json，内容如下:
 
 > ```json
+>!!![沙雕警告]!!!热更的是编译的iec文件,不是打包的脚本apk
 > {
 >    "update_url": "http://baidu.com/update",
 >    "version": "1.0.0"
@@ -28,6 +29,7 @@
 ### 服务端返回   
 - 服务端返回格式如下：
 > ```json
+>!!![沙雕警告]!!!热更的是编译的iec文件,不是打包的脚本apk
 > {
 >    "download_url": "http://baidu.com/aaa.iec",
 >    "version": "1.1.0",
