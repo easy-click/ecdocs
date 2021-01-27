@@ -255,10 +255,8 @@
 >     sleep(1000)
 >     for (var i = 0; i < 10; i++) {
 >         var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
->         logd("截图数据: " +cap)
->         sleep(1000)
->         //图片要回收
->         image.recycle(cap)
+>         logd("是否成功: " +cap)
+>         sleep(1000)   
 >     }
 > }
 > ```
