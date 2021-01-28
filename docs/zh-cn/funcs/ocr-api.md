@@ -8,25 +8,149 @@
 
 ## ocr.initOcr 初始化
 
- * 初始化OCR模块
- * 适用版本(EC 5.17.0+)
+ * 初始化OCR模块，精准度和时间推荐 easyedge > paddleocr > baiduOnline > tess
+ * 适用版本(EC 5.18.0+)
  * @param map map参数表
  * key分别为：
- * type : OCR类型，值分别为 tess = Tesseract模块，baiduOnline=百度在在线识别模块
- * 如果类型是 tess,请将训练的模型放到 /sdcard/tessdata/ 文件夹下,参数设置为 : {"type":"tess","language":"chi_sim","debug":false}<Br/>
- * language: 语言数据集文件， 例如chi_sim.traineddata 代表是中文简体语言，参数就填写chi_sim
- * debug: 代码是否设置调试模式，一般设置false即可
- * 如果类型是 baiduOnline, 参数设置为 : {"type":"baiduOnline","ak":"xxx","sk":"xx"}<Br/>
- * ak = api key,sk = secret key, 百度OCR文档地址 : https://ai.baidu.com/ai-doc/OCR/Ck3h7y2ia
+ * type : OCR类型，值分别为:
+    * easyedge= 百度AI,
+    * paddleocr=PaddleOcr
+    * tess = Tesseract 模块
+    * baiduOnline=百度在在线识别模块
+ * 如果类型是 easyedge, 参数设置为 : {"type":"easyedge"},下载并安装好easyedge_OCR.APK, 并授予全部权限，从资源区下载
+ * 如果类型是 paddleocr, 参数设置为 : {"type":"paddleocr"},下载并安装好 PPOCR.APK, 并授予全部权限，从资源区下载
+ * 如果类型是 tess,请将训练的模型放到 /sdcard/tessdata/ 文件夹下,参数设置为 :
+    * {"type":"tess","language":"chi_sim","debug":false,"psm":1,"tessedit_char_blacklist":"","tessedit_char_whitelist":"","save_blob_choices":""}
+    * language: 语言数据集文件， 例如chi_sim.traineddata 代表是中文简体语言，参数就填写chi_sim
+    * debug: 代码是否设置调试模式，一般设置false即可
+    * psm :自己查询Tesseract资料，TessBaseAPI.PageSegMode.PSM_AUTO_OSD这样的整型值
+    * tessedit_char_blacklist: 自己查询Tesseract资料
+    * tessedit_char_whitelist: 自己查询Tesseract资料
+    * save_blob_choices: 自己查询Tesseract资料
+ * 如果类型是 baiduOnline, 参数设置为 : {"type":"baiduOnline","ak":"xxx","sk":"xx"}
+    * ak = api key,sk = secret key, 百度OCR文档地址 : https://ai.baidu.com/ai-doc/OCR/Ck3h7y2ia
  * @return {bool} 布尔型 成功或者失败
 
 
+- easyedge OCR例子
 
+> ```javascript
+>   function main() {
+>   	let paddleocr = {
+>   		"type": "paddleocr"
+>   	}
+>    
+>   	let easyedge = {
+>   		"type": "easyedge",
+>    
+>   	}
+>   	let inited = ocr.initOcr(easyedge)
+>   	logd("初始化结果 -> " + inited);
+>   	if (!inited) {
+>   		loge("error : " + ocr.getErrorMsg());
+>   		return;
+>   	}
+>    
+>   	let initServer = ocr.initOcrServer(5 * 1000);
+>   	logd("initServer " + initServer);
+>   	if (!initServer) {
+>   		loge("initServer error : " + ocr.getErrorMsg());
+>   		return;
+>   	}
+>    
+>   	for (var ix = 0; ix < 20; ix++) {
+>    
+>   		//读取一个bitmap
+>   		let bitmap = image.readBitmap("/sdcard/Screenshot_20210127_152932_com.huawei.android.lau.jpg");
+>   		if (!bitmap) {
+>   			loge("读取图片失败");
+>   			continue;
+>   		}
+>   		console.time("1")
+>   		logd("start---ocr");
+>   		// 对图片进行识别
+>   		let result = ocr.ocrBitmap(bitmap, 20 * 1000, {});
+>   		logd(result)
+>   		if (result) {
+>   			logd("ocr结果-》 " + JSON.stringify(result));
+>   			for (var i = 0; i < result.length; i++) {
+>   				var value = result[i];
+>   				logd("文字 : " + value.label + " x: " + value.x + " y: " + value.y + " width: " + value.width + " height: " + value.height);
+>   			}
+>   		} else {
+>   			logw("未识别到结果");
+>   		}
+>   		bitmap.recycle();
+>   		logd("耗时: " + console.timeEnd(1) + " ms")
+>   		sleep(1000);
+>   		logd("ix = "+ix)
+>   	}
+>   	//释放所有资源
+>   	ocr.releaseAll();
+>   }
+>   main();
+> 
+> ```
 
+- Paddle OCR例子
 
-
-
-
+> ```javascript
+>   function main() {
+>   	let paddleocr = {
+>   		"type": "paddleocr"
+>   	}
+>    
+>   	let easyedge = {
+>   		"type": "easyedge",
+>    
+>   	}
+>   	let inited = ocr.initOcr(paddleocr)
+>   	logd("初始化结果 -> " + inited);
+>   	if (!inited) {
+>   		loge("error : " + ocr.getErrorMsg());
+>   		return;
+>   	}
+>    
+>   	let initServer = ocr.initOcrServer(5 * 1000);
+>   	logd("initServer " + initServer);
+>   	if (!initServer) {
+>   		loge("initServer error : " + ocr.getErrorMsg());
+>   		return;
+>   	}
+>    
+>   	for (var ix = 0; ix < 20; ix++) {
+>    
+>   		//读取一个bitmap
+>   		let bitmap = image.readBitmap("/sdcard/Screenshot_20210127_152932_com.huawei.android.lau.jpg");
+>   		if (!bitmap) {
+>   			loge("读取图片失败");
+>   			continue;
+>   		}
+>   		console.time("1")
+>   		logd("start---ocr");
+>   		// 对图片进行识别
+>   		let result = ocr.ocrBitmap(bitmap, 20 * 1000, {});
+>   		logd(result)
+>   		if (result) {
+>   			logd("ocr结果-》 " + JSON.stringify(result));
+>   			for (var i = 0; i < result.length; i++) {
+>   				var value = result[i];
+>   				logd("文字 : " + value.label + " x: " + value.x + " y: " + value.y + " width: " + value.width + " height: " + value.height);
+>   			}
+>   		} else {
+>   			logw("未识别到结果");
+>   		}
+>   		bitmap.recycle();
+>   		logd("耗时: " + console.timeEnd(1) + " ms")
+>   		sleep(1000);
+>   		logd("ix = "+ix)
+>   	}
+>   	//释放所有资源
+>   	ocr.releaseAll();
+>   }
+>   main();
+> 
+> ```
 
 
 
