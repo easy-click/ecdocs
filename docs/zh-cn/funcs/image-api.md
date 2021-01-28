@@ -1098,6 +1098,36 @@
 > ```
 
 
+### image.argb 颜色转16进制字符串
+* 将整型的颜色值转成16进制RGB字符串
+* @param color 整型值
+* @return {string} 颜色字符串
+
+> ```javascript
+> 
+> function main() {
+>      var req = image.requestScreenCapture(10000,0);
+>        if (!req) {
+>         req = image.requestScreenCapture(10000,0);
+>      }
+>      if (!req) {
+>          toast("申请权限失败");
+>      }
+>      //申请完权限等1s再截图,否则会截不到图
+>      sleep(1000)
+>      var aimage = image.captureFullScreen();
+>      if (aimage != null) {
+>          var points3 ="765|22|0x1296DB";
+>          logd("==> "+image.argb(image.pixel(aimage,765,22)));
+>          var points = image.cmpColor(aimage,points3, 0.5, 0, 0, 0, 0);
+>          logd("points "+points);
+>          //图片要回收
+>          image.recycle(aimage)
+>      }
+> }
+> main();
+> ```
+
 
 ### image.argb RGB字符串
  * 将整型的颜色值转成16进制RGB字符串
