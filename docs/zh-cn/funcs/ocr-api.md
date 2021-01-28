@@ -17,8 +17,8 @@
     * paddleocr=PaddleOcr
     * tess = Tesseract 模块
     * baiduOnline=百度在在线识别模块
- * 如果类型是 easyedge, 参数设置为 : {"type":"easyedge"},下载并安装好easyedge_OCR.APK, 并授予全部权限，从资源区下载
- * 如果类型是 paddleocr, 参数设置为 : {"type":"paddleocr"},下载并安装好 PPOCR.APK, 并授予全部权限，从资源区下载
+ * 如果类型是 easyedge, 参数设置为 : {"type":"easyedge"},下载并安装好easyedge_OCR.APK, 并授予全部权限并打开APP，从资源区下载
+ * 如果类型是 paddleocr, 参数设置为 : {"type":"paddleocr"},下载并安装好 PPOCR.APK, 并授予全部权限并打开APP，从资源区下载
  * 如果类型是 tess,请将训练的模型放到 /sdcard/tessdata/ 文件夹下,参数设置为 :
     * {"type":"tess","language":"chi_sim","debug":false,"psm":1,"tessedit_char_blacklist":"","tessedit_char_whitelist":"","save_blob_choices":""}
     * language: 语言数据集文件， 例如chi_sim.traineddata 代表是中文简体语言，参数就填写chi_sim
