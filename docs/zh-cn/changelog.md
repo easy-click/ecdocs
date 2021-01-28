@@ -2,10 +2,10 @@
 
 - 5.18.0:
     
-    1、新增PaddleOCR模块
-    2、新增EasyEdge OCR模块
-    3、修复比色函数cmpColor的问题，新增argb颜色转16进制字符串函数
-    4、优化日志多线程异步改为队列模式
+        1、新增PaddleOCR模块
+        2、新增EasyEdge OCR模块
+        3、修复比色函数cmpColor的问题，新增argb颜色转16进制字符串函数
+        4、优化日志多线程异步改为队列模式
 
 - 5.17.0:
 
