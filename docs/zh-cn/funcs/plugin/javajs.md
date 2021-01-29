@@ -4,7 +4,7 @@
 - 本章节主要介绍使用EasyClick 混合开发
 
 ## 新建Java-JS混合项目
-- 使用IDEA创建项目选择'EasyClick Java-JS混合项目'
+- 使用IDEA创建项目选择'EasyClick Java-JS混合项目',jdk版本要用1.8,小版本无所谓
 - 点击下一步并完成，会自动生成对应的java类和配置信息
 <br/>
 <br/>
