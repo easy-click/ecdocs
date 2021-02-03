@@ -283,10 +283,140 @@
 > main()
 > ```
 
+## 加解密相关
+
+### encodeDecoder.aesEncrypt AES加密
+ * AES加密,算法AES/ECB/PKCS5Padding
+ * 适用版本(EC 5.19.0+)
+ * @param data 数据字符串
+ * @param password 密码，至少8个字符
+ * @return {string} 加密后的base64字符串
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.aesEncrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.aesDecrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>   }
+>   main();
+> ```
+
+### encodeDecoder.aesDecrypt AES解密
+ * AES解密,算法AES/ECB/PKCS5Padding
+ * 适用版本(EC 5.19.0+)
+ * @param data 加密后的base64字符串
+ * @param password 密码，至少8个字符
+ * @return {string} 解密后的字符串
+ 
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.aesEncrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.aesDecrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>   }
+>   main();
+> ```
 
 
 
+### encodeDecoder.desEncrypt DES加密
+ * DES加密,算法ADES
+ * 适用版本(EC 5.19.0+)
+ * @param data 数据字符串
+ * @param password 密码，至少8个字符
+ * @return {string} 加密后的base64字符串
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.desEncrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.desDecrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>   }
+>   main();
+> ```
 
+### encodeDecoder.desDecrypt DES解密
+ * DES解密,算法ADES
+ * 适用版本(EC 5.19.0+)
+ * @param data 加密后的base64字符串
+ * @param password 密码，至少8个字符
+ * @return {string} 解密后的字符串
+ 
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.desEncrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.desDecrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>   }
+>   main();
+> ```
+
+### encodeDecoder.des3Encrypt 3DES加密
+ * 3DES加密,算法是 DESede/CBC/PKCS5Padding
+ * 适用版本(EC 5.19.0+)
+ * @param data 数据字符串
+ * @param password 密码
+ * @return {string} 加密后的base64字符串
+ 
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.des3Encrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.des3Decrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>   }
+>   main();
+> ```
+
+
+### encodeDecoder.des3Decrypt 3DES解密
+ * 3DES解密，算法是 DESede/CBC/PKCS5Padding
+ * 适用版本(EC 5.19.0+)
+ * @param data 加密后的base64字符串
+ * @param password 密码
+ * @return {string} 解密后的字符串
+ 
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.des3Encrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.des3Decrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>   }
+>   main();
+> ```
+
+
+### encodeDecoder.getErrorMsg 获取加解密错误信息
+ * 获取上一次加解密的错误信息
+ * @return {string} null代表无错误
+ 
+> ```javascript
+>   function main() {
+>       let dat ="我是数据"
+>       let pwd = "12356783";
+>       let d = encodeDecoder.des3Encrypt(dat,pwd)
+>       logd("加密后的数据-> "+d);
+>       let dd = encodeDecoder.des3Decrypt(d,pwd)
+>       logd("解密后的数据-> "+dd);
+>      logd("getErrorMsg -> "+encodeDecoder.getErrorMsg());
+>   }
+>   main();
+> ```
 
 
 

@@ -1,7 +1,13 @@
-当前最新版本: 5.18.0
+当前最新版本: 5.19.0
+
+- 5.19.0:
+        
+        1、优化toast函数,有悬浮窗权限下可悬停
+        2、新增sqlite模块getErrorMsg函数
+        3、新增utils模块下aes、des、3des加解密
 
 - 5.18.0:
-    
+        
         1、新增PaddleOCR模块
         2、新增EasyEdge OCR模块
         3、修复比色函数cmpColor的问题，新增argb颜色转16进制字符串函数

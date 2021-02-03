@@ -174,7 +174,21 @@
 > main();
 > ```
 
+## sqlite.getErrorMsg 获取错误信息
+* 获取上一次执行sql的错误信息
+ * @return {string} null代表无错误信息
 
+> ```javascript
+>     
+> function main(){
+>     var tableName="tbl_user";
+>     var result = sqlite.dropTable(tableName);
+>     logd("dropTable result："+ result);
+>     var result = sqlite.getErrorMsg();
+>     logd("getErrorMsg result："+ result);
+> }
+> main();
+> ```
 
 
 
