@@ -2,7 +2,7 @@
 
 - OCR模块是属于对图像进行识别
 - OCR模块的对象前缀是ocr，例如 ocr.initOcr()这样调用
-- 目前的OCR包含了Tesseract和百度在线识别
+- 目前的OCR包含了百度AI的easyedge,paddleocr,Tesseract和百度在线识别
 - Tesseract 请下载对应的语言包或者自己创建语言包
 
 
