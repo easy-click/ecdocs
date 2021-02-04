@@ -2,6 +2,7 @@
 - 热更新一般用于不用安装程序即可将关键的代码进行更新
 - EC的热更新主要用于更新打包后的自动化测试脚本
 - !!![沙雕警告]!!!热更的是编译的iec文件,不是打包的脚本apk
+- 注意: 一定要保持update.json文件和服务端接口返回的版本好一直，否则可能导致异常情况
 
 ## EC如何热更新
 
@@ -48,4 +49,155 @@
     - msg: 对话框中要显示的消息
     - force : 代码对话框模式下是否强制更新，true 代表强制更新，无法取消，false 代表不是强制更新
 
-    
+## UI启动更新
+
+- 如果上述配置无误，打开界面会自动更新
+
+## 脚本内热更新
+- 脚本执行期间可以做热更新操作，需要配合代码来进行执行
+
+### hotupdater.updateReq 请求更新
+
+ * 请求热更新接口，如果是false，也有可能是无需更新，可以使用getErrorMsg查看具体得信息
+ * 适用版本(EC 5.20.0+)
+ * @return {bool} true 代表需要更新 false代表无需更新
+
+> ```javascript
+>     function main() {
+>         let version = 7;
+>         toast("Hello World -> "+version);
+>         //请求服务器是否有新版本
+>         let updateResult = hotupdater.updateReq();
+>         logd("请求更新是否有: "+updateResult);
+>         if (!updateResult) {
+>             logw("请求失败错误信息: "+hotupdater.getErrorMsg());
+>         }else{
+>             logd("请求数据: "+hotupdater.getUpdateResp());
+>             //有更新得情况下进行下载新的版本
+>             let path = hotupdater.updateDownload();
+>             logd("下载路径为: "+path);
+>             if (!path) {
+>                 logw("下载IEC文件错误信息: "+hotupdater.getErrorMsg());
+>             }else{
+>                 restartScript(path,true,3)
+>                 return;
+>             }
+>         }
+>         sleep(1000);
+>         for (var i = 0; i < 10; i++) {
+>             logd(time()+" "+version);
+>             sleep(5000)
+>         }
+>     }
+>     main();
+> ```
+
+### hotupdater.updateDownload 请求下载IEC
+
+ * 下载热更新请求到得IEC文件
+ * 适用版本(EC 5.20.0+)
+ * @return {string} 下载后热更新文件得路径，如果为空，也有可能是无需更新
+
+> ```javascript
+>     function main() {
+>         let version = 7;
+>         toast("Hello World -> "+version);
+>         //请求服务器是否有新版本
+>         let updateResult = hotupdater.updateReq();
+>         logd("请求更新是否有: "+updateResult);
+>         if (!updateResult) {
+>             logw("请求失败错误信息: "+hotupdater.getErrorMsg());
+>         }else{
+>             logd("请求数据: "+hotupdater.getUpdateResp());
+>             //有更新得情况下进行下载新的版本
+>             let path = hotupdater.updateDownload();
+>             logd("下载路径为: "+path);
+>             if (!path) {
+>                 logw("下载IEC文件错误信息: "+hotupdater.getErrorMsg());
+>             }else{
+>                 restartScript(path,true,3)
+>                 return;
+>             }
+>         }
+>         sleep(1000);
+>         for (var i = 0; i < 10; i++) {
+>             logd(time()+" "+version);
+>             sleep(5000)
+>         }
+>     }
+>     main();
+> ```
+
+
+
+### hotupdater.getUpdateResp 获取请求结果
+
+ * 获取热更新得请求结果
+ * 适用版本(EC 5.20.0+)
+ * @return {string} 字符串
+
+> ```javascript
+>     function main() {
+>         let version = 7;
+>         toast("Hello World -> "+version);
+>         //请求服务器是否有新版本
+>         let updateResult = hotupdater.updateReq();
+>         logd("请求更新是否有: "+updateResult);
+>         if (!updateResult) {
+>             logw("请求失败错误信息: "+hotupdater.getErrorMsg());
+>         }else{
+>             logd("请求数据: "+hotupdater.getUpdateResp());
+>             //有更新得情况下进行下载新的版本
+>             let path = hotupdater.updateDownload();
+>             logd("下载路径为: "+path);
+>             if (!path) {
+>                 logw("下载IEC文件错误信息: "+hotupdater.getErrorMsg());
+>             }else{
+>                 restartScript(path,true,3)
+>                 return;
+>             }
+>         }
+>         sleep(1000);
+>         for (var i = 0; i < 10; i++) {
+>             logd(time()+" "+version);
+>             sleep(5000)
+>         }
+>     }
+>     main();
+> ```
+
+### hotupdater.getErrorMsg 获取错误信息
+
+ * 获取热更新重新的错误
+ * 适用版本(EC 5.20.0+)
+ * @return {string} 字符串
+
+> ```javascript
+>     function main() {
+>         let version = 7;
+>         toast("Hello World -> "+version);
+>         //请求服务器是否有新版本
+>         let updateResult = hotupdater.updateReq();
+>         logd("请求更新是否有: "+updateResult);
+>         if (!updateResult) {
+>             logw("请求失败错误信息: "+hotupdater.getErrorMsg());
+>         }else{
+>             logd("请求数据: "+hotupdater.getUpdateResp());
+>             //有更新得情况下进行下载新的版本
+>             let path = hotupdater.updateDownload();
+>             logd("下载路径为: "+path);
+>             if (!path) {
+>                 logw("下载IEC文件错误信息: "+hotupdater.getErrorMsg());
+>             }else{
+>                 restartScript(path,true,3)
+>                 return;
+>             }
+>         }
+>         sleep(1000);
+>         for (var i = 0; i < 10; i++) {
+>             logd(time()+" "+version);
+>             sleep(5000)
+>         }
+>     }
+>     main();
+> ```

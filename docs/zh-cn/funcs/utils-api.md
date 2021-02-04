@@ -403,6 +403,7 @@
 
 ### encodeDecoder.getErrorMsg 获取加解密错误信息
  * 获取上一次加解密的错误信息
+ * 适用版本(EC 5.19.0+)
  * @return {string} null代表无错误
  
 > ```javascript

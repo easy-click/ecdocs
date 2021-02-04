@@ -383,22 +383,22 @@
 >     //新建一个ws连接
 >       var ws =http.newWebsocket("http://192.168.1.180:9909/ws",null);
 >       //设置连接打开的时候监听器
->       ws.onOpen(function (ws,code,msg){
+>       ws.onOpen(function (ws1,code,msg){
 >          logi("onOpen code "+code +"  msg:"+msg);
 >       })
 >       //设置有文本信息监听器
->        ws.onText(function (ws,text){
+>        ws.onText(function (ws1,text){
 >             logi(" onText "+text);
 >          })
 >        //设置关闭时候的监听器
->         ws.onClose(function (ws,code,reason){
+>         ws.onClose(function (ws1,code,reason){
 >                 logi(" onClose  "+code +"  reason : "+reason+" remote:");
 >         })
->         ws.onError(function (ws,msg){
+>         ws.onError(function (ws1,msg){
 >                 logi(" onError  "+msg );
 >         })
 >         // bytes 是 java的okio.ByteString 对象
->         ws.onBinary(function (ws,bytes){
+>         ws.onBinary(function (ws1,bytes){
 >                 logi(" onBinary  "+bytes.hex() );
 >                logi(" onBinary  "+bytes.utf8() );
 >                logi(" onBinary  "+bytes.md5() );
