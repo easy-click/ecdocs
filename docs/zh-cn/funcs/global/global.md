@@ -307,16 +307,37 @@
 > ```
 
 
-### toast  Toast消息
- * 显示Toast消息
- * @param msg 消息字符串
- 
+### toast  带参数Toast消息
+* 显示Toast消息
+* 适用版本(EC 5.21.0+)
+* @param msg 消息字符串
+* @param extra 扩展map参数，只有在有悬浮窗权限情况下参数才会生效
+    * x : X坐标
+    * y : Y坐标 
+    * duration : 持续时长 单位是毫秒
+    * textColor : 16进制文字颜色，例如#888888
+    * width : toast宽度
+    * height : toast高度
+    * draggable : 是否能够拖动true 代表可以
 
 > ```javascript
-> function main(){
->     toast("msg");
-> }
-> main();
+>     function main() {
+>         let toastExtra={
+>             "x":100, 
+>             "y":1200,
+>             "duration":1000,
+>             "textColor":"#778899",
+>             "width":200,
+>             "height":200,
+>             "draggable":true
+>         }
+>         for (var i = 0; i < 3; i++) {
+>             sleep(500)
+>             toast(time()+"ddd",toastExtra);
+>         }
+>         logd(time()+"  222");
+>     }
+>     main();
 > ```
 
 ### toast1 Toast1消息
@@ -343,6 +364,31 @@
 >     toast2("msg");
 > }
 > main();
+> ```
+
+
+### setLogLevel 设置日志的等级
+* 设置日志的等级,可以根据情况关闭或开启日志
+* 适用版本(EC 5.21.0+)
+* @param level 日志等级，值分别是 debug,info,warn,error,off，排序分别是debug < info < warn < error < off，
+* 例如 off代表关闭所有级别日志，debug代表打印包含logd,logi,logw,loge的日志，info代表打印包含logi,logw,loge的日志，warn 代表打印包含logw,loge的日志
+* @param displayToast 是否展示toast消息
+* @return {bool} 布尔型 true代表成功 false代表失败
+
+> ```javascript
+>   function main() {
+>       setLogLevel("info",false)
+>       for (var i = 0; i < 1; i++) {
+>           sleep(10);
+>           //logd(time()+" debug");
+>           logi(time()+" info");
+>           //logw(time()+" warn");
+>          // loge(time()+" error");
+>           toast("--- "+time());
+>       }
+>       //logd(time()+"  222");
+>   }
+>   main();
 > ```
 
 

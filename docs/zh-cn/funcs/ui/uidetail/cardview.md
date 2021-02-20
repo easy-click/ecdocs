@@ -23,8 +23,8 @@ CardView 卡片布局
 
 | 属性名 | 说明 | 可选值 |
 | :------: | :------: | :------: |
-| layout_weight |  背景颜色 | 颜色的字符串<br/>例如 #888888|
-| cardBackgroundColor | 背景颜色 | 数字 <br/>例如 20dp|
+| layout_weight | 子元素权重 | 数字<br/>当父级为LinearLayout的时候，子控件可以设置权重|
+| cardBackgroundColor | 背景颜色 | 数字 <br/>例如 #888888|
 | cardCornerRadius | 设置圆角大小 |  数字 <br/>例如 20dp|
 | cardElevation | 设置z轴的阴影 | 数字 <br/>例如 20dp|
 | cardMaxElevation | 设置z轴的最大高度值 |数字 <br/>例如 20dp|
