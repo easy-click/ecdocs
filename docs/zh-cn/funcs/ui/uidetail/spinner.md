@@ -8,6 +8,7 @@
             android:text="选择1|选择2"
             android:textColor="#669999"
             android:textSize="14dp"
+            android:defaultText="选择2"
             android:gravity="center"
     />
 ```
@@ -26,4 +27,6 @@
 | text | 下拉文字 | 字符串<br/>多个下拉选项用竖线分隔，例如：选项1&#124;选型2|
 | textColor | 文字颜色 | 16进制，例如#FFFFFF |
 | textSize | 文字大小 | 具体数字+dp |
+| defaultText | 默认选择的数据 | text中的某一项 |
+
 

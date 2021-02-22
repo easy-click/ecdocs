@@ -33,4 +33,5 @@
 | lines | 行数 | 具体数字 |
 | maxLines | 最大 | 具体数字 |
 | ellipsize | 文字长度超过宽度时的显示方式 | start:省略号显示在开头<br/>end:省略号显示在结尾<br/>middle:省略号显示在中间<br/>marquee:以横向滚动方式显示(需获得当前焦点时)<br/>none:不显示 |
+| inputType | 输入框类型 | text:文本<br/>phone:号码<br/>number:数字<br/>textPassword:文本密码<br/>numberPassword:数字密码 |
 
