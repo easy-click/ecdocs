@@ -594,8 +594,8 @@
 >       }
 >       
 >       //更新数据
->       q = "update table1 set uname=?,ucontent=?,create_time=? where id=?;"
->       qur = jdbc.createPreparedStatement(q)
+>       let q = "update table1 set uname=?,ucontent=?,create_time=? where id=?;"
+>       let qur = jdbc.createPreparedStatement(q)
 >       if (qur) {
 >           //设置第一个索引的参数
 >           jdbc.psqlSetString(1,"我是名称")
@@ -606,7 +606,7 @@
 >           //设置id
 >           jdbc.psqlSetInt(4,1)
 >       }
->       rowcount = jdbc.psqlExecuteUpdate();
+>       let rowcount = jdbc.psqlExecuteUpdate();
 >       logi("插入语句执行影响行数 -> " + rowcount);
 >       if (rowcount<=0) {
 >           loge("插入错误: "+jdbc.getLastError())
