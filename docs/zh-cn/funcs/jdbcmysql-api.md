@@ -134,24 +134,24 @@
 >           logd(jdbc.getLastError());
 >       }
 >   
->       //更新数据
->       q = "update table1 set uname=?,ucontent=?,create_time=? where id=?;"
->       qur = jdbc.createPreparedStatement(q)
+>       //查询语句
+>       let q = "select * from table1 where id=? or uname=?"
+>       //创建一个查询
+>       let qur = jdbc.createPreparedStatement(q)
 >       if (qur) {
 >           //设置第一个索引的参数
->           jdbc.psqlSetString(1,"我是名称")
+>           jdbc.psqlSetInt(1,1)
 >           //设置第二个索引参数
->           jdbc.psqlSetString(2,'我是内容')
->           //设置时间戳
->           jdbc.psqlSetTimestamp(3, "yyyy-MM-dd hh:mm:ss", "2020-10-02 12:02:11")
->           //设置id
->           jdbc.psqlSetInt(4,1)
+>           jdbc.psqlSetString(2,'test')
+>       
 >       }
->       rowcount = jdbc.psqlExecuteUpdate();
->       logi("插入语句执行影响行数 -> " + rowcount);
->       if (rowcount<=0) {
->           loge("插入错误: "+jdbc.getLastError())
->       }    
+>       //预处理查询
+>       let data =jdbc.psqlQuery()
+>       logd(data);
+>       
+>       //关闭预处理语句
+>       jdbc.psqlClose()
+>         
 >       //插入数据
 >       q = "insert table1(`uname`,`ucontent`,`create_time`)values(?,?,?);"
 >       qur = jdbc.createPreparedStatement(q)
@@ -593,24 +593,24 @@
 >           logd(jdbc.getLastError());
 >       }
 >       
->       //查询语句
->       let q = "select * from table1 where id=? or uname=?"
->       //创建一个查询
->       let qur = jdbc.createPreparedStatement(q)
+>       //更新数据
+>       q = "update table1 set uname=?,ucontent=?,create_time=? where id=?;"
+>       qur = jdbc.createPreparedStatement(q)
 >       if (qur) {
 >           //设置第一个索引的参数
->           jdbc.psqlSetInt(1,1)
+>           jdbc.psqlSetString(1,"我是名称")
 >           //设置第二个索引参数
->           jdbc.psqlSetString(2,'test')
->       
+>           jdbc.psqlSetString(2,'我是内容')
+>           //设置时间戳
+>           jdbc.psqlSetTimestamp(3, "yyyy-MM-dd hh:mm:ss", "2020-10-02 12:02:11")
+>           //设置id
+>           jdbc.psqlSetInt(4,1)
 >       }
->       //预处理查询
->       let data =jdbc.psqlQuery()
->       logd(data);
->       
->       //关闭预处理语句
->       jdbc.psqlClose()
->       
+>       rowcount = jdbc.psqlExecuteUpdate();
+>       logi("插入语句执行影响行数 -> " + rowcount);
+>       if (rowcount<=0) {
+>           loge("插入错误: "+jdbc.getLastError())
+>       }  
 >       //插入数据
 >       q = "insert table1(`uname`,`ucontent`,`create_time`)values(?,?,?);"
 >       qur = jdbc.createPreparedStatement(q)
