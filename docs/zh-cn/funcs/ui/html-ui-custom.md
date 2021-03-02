@@ -267,7 +267,6 @@
  * @return 布尔型 true 是 false 否
  
 > ```javascript
-
 >     var m = {
 >           "running_mode":"无障碍",
 >           "auto_start_service":"是",
@@ -276,7 +275,6 @@
 >       };
 >   window.ec.setECSystemConfig(JSON.stringify(m));
 >     
-
 > ```
 
 
