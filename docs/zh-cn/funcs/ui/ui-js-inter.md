@@ -986,7 +986,10 @@
 > main();
 >  ```
 
-### 启动测试脚本 start
+
+
+
+### 启动脚本 start
 
  * 启动脚本
  * @return 布尔型 true代表启动成功，false代表启动失败
@@ -1002,11 +1005,11 @@
 > }
 > 
 > main();
->  ```
 
 
-### 停止测试脚本 stopTask
- * 停止测试脚本
+
+### 停止脚本 stopTask
+ * 停止脚本
  * @return 布尔型 true代表启动成功，false代表启动失败
 
 > ```javascript
@@ -1022,6 +1025,22 @@
 > main();
 >  ```
 
+
+
+### 脚本是否运行 isScriptRunning
+
+ * 脚本是否运行
+ * @return 布尔型 true代表启动成功，false代表启动失败
+
+> ```javascript
+> function main() {
+>   ui.layout("参数设置", "main.xml");
+>   //xml中有个tag=startBtn的按钮
+>   logd("运行状态 -> {}",ui.isScriptRunning())
+> }
+> 
+> main();
+>  ```
 
 ## 定时任务
 

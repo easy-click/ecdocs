@@ -165,6 +165,15 @@
 
 
 
+
+
+### 脚本是否正在运行
+
+
+> ```javascript
+> window.ec.isScriptRunning()     
+> ```
+
 ### 隐藏开始按钮
 
 
