@@ -843,14 +843,14 @@
 
 
 ### closeEnv 关闭自动化
- * 适用版本(EC 5.14.0+)
- * 关闭自动化服务环境
- * @return true或者false
+ * 关闭自动化环境
+ * @param skinAccPage 无障碍模式停止失败 是否跳转到开启无障碍页面
+ * @return 布尔型  true代表启动成功，false代表启动失败
  
  
 > ```javascript
  > function main(){
- >     var result = closeEnv();
+ >     var result = closeEnv(false);
  > }
  > main();
  > ```
