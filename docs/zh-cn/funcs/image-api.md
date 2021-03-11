@@ -771,9 +771,11 @@
 >                logd(points[i])
 >           }
 >        }
->           //图片要回收
->           image.recycle(aimage)
+>         //图片要回收
+>         image.recycle(aimage)
 >     }
+>     //图片要回收
+>     image.recycle(sms)
 > }
 > 
 > main();
@@ -815,6 +817,8 @@
 >            logd(points[i])
 >       }
 >    }
+>     //图片要回收
+>     image.recycle(sms)
 > }
 > 
 > main();
@@ -872,8 +876,10 @@
 >                logd(points[i])
 >           }
 >        }
->           //图片要回收
->           image.recycle(aimage)
+>        //图片要回收
+>        image.recycle(aimage)
+>        //图片要回收
+>        image.recycle(temp )
 >      }
 > }
 > main();
@@ -924,6 +930,8 @@
 >            }
 >           //图片要回收
 >           image.recycle(aimage)
+>        //图片要回收
+>        image.recycle(temp )
 >      }
 > }
 > main();
@@ -1210,8 +1218,8 @@
 >    var w = bitmap.getWidth();
 >    var h =bitmap.getHeight();
 >    var mPixels =  image.getPixelsBitmap(bitmap,w*h, 0, w, 0, 0,w, h);
->           //图片要回收
->           image.recycle(bitmap)
+>    //图片要回收
+>    image.recycle(bitmap)
 > }
 > main();
 > ```
@@ -1237,8 +1245,8 @@
 >     var imageX = image.captureFullScreen();
 >     var r = image.saveTo(imageX,"/sdcard/a.png");
 >     toast("result "+r);
->           //图片要回收
->           image.recycle(imageX )
+>     //图片要回收
+>     image.recycle(imageX )
 > }
 > main();
 > ```
@@ -1334,6 +1342,7 @@
 >     toast("result "+r);
 >     //图片要回收
 >     image.recycle(imageX )
+>     image.recycle(r)
 > }
 > main();
 > ```
@@ -1394,7 +1403,6 @@
 > 
 > function main() {
 >    var imageX = image.captureFullScreen();
->    image.recycle(imageX);
 >     //图片要回收
 >     image.recycle(imageX )
 >   
