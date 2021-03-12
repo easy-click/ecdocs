@@ -379,51 +379,86 @@
  
 > ```javascript
 >     
-> function main(){
->     //新建一个ws连接
->       var ws =http.newWebsocket("http://192.168.1.180:9909/ws",null);
->       //设置连接打开的时候监听器
->       ws.onOpen(function (ws1,code,msg){
->          logi("onOpen code "+code +"  msg:"+msg);
->       })
->       //设置有文本信息监听器
->        ws.onText(function (ws1,text){
->             logi(" onText "+text);
->          })
->        //设置关闭时候的监听器
->         ws.onClose(function (ws1,code,reason){
->                 logi(" onClose  "+code +"  reason : "+reason+" remote:");
->         })
->         ws.onError(function (ws1,msg){
->                 logi(" onError  "+msg );
->         })
->         // bytes 是 java的okio.ByteString 对象
->         ws.onBinary(function (ws1,bytes){
->                 logi(" onBinary  "+bytes.hex() );
->                logi(" onBinary  "+bytes.utf8() );
->                logi(" onBinary  "+bytes.md5() );
->         })
->      //开始连接
->     ws.connect();
->     sleep(1000)
->     if (ws.isConnected()) {
->     //发送文本
->        ws.sendText("ping");
+>     function main(){
+>         let result=[];
+>         //新建一个ws连接
+>           var ws =http.newWebsocket("ws://192.168.1.180:8099/rapi/ws/test",null);
+>           //设置连接打开的时候监听器
+>           ws.onOpen(function (ws1,code,msg){
+>              logi("onOpen code "+code +"  msg:"+msg);
+>           })
+>           //设置有文本信息监听器
+>            ws.onText(function (ws1,text){
+>                 logi(" onText "+text);
+>              })
+>            //设置关闭时候的监听器
+>             ws.onClose(function (ws1,code,reason){
+>                     logi(" onClose  "+code +"  reason : "+reason+" remote:");
+>             })
+>             ws.onError(function (ws1,msg){
+>                     logi(" onError  "+msg );
+>                     result[0]= "error";
+>             })
+>             // bytes 是 java的bytes数组 对象
+>             ws.onBinary(function (ws1,bytes){
+>                     //转成java的
+>                     logi(" onBinary  "+new java.lang.String(bytes));
+>             })
+>          //开始连接   阻塞的
+>         let r = ws.connectBlocking(10000);
+>         //let r = ws.connect();
+>         logd("connect {} rr = {}",result[0],r);
+>         logd("isconnect "+ws.isConnected());
+>         while(true){
+>             logd("isconnect "+ws.isConnected());
+>              sleep(1000)
+>              if (ws.isConnected()) {
+>                 ws.sendText("new Date-> "+new Date())
+>                 sleep(1000)
+>                 // java的字符串转字节
+>                 ws.sendBinary(new java.lang.String("test").getBytes());
+>              }else{
+>                 //重置链接
+>                 let reset = ws.reset();
+>                 logd("reset {}",reset)
+>                 if (reset) {
+>                     logd("开始重连...");
+>                     let rc = ws.connectBlocking(10000);
+>                     logd("重连--> "+rc);
+>                 }
+>              }
+>         }
+>         logd("isClosed "+ws.isClosed())
+>         sleep(1000)
+>          //关闭连接
+>         ws.close();
 >     }
->     logd("isClosed "+ws.isClosed())
->      sleep(1000)
->      //关闭连接
->     ws.close();
-> }
-> main();
+>     main();
 > ```
 
 ### WebSocket 对象函数
 
-#### connect 连接
+#### connect 异步连接
  * 开始异步连接
  * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
  
+ 
+#### reset 重置连接
+ * 重置连接
+ * @return {bool} true 代表成功 false代表失败
+ * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
+  
+
+#### reconnectBlocking 同步重连
+ * 开始同步重新链接
+ * @return {bool} true 代表链接成功 false代表失败
+ * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
+  
+#### reconnectBlocking 同步连接
+ * @param timeout 链接超时时间 单位是毫秒
+ * @return {bool} true 代表链接成功 false代表失败
+ * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
+  
 
 #### isClosed 是否关闭
 * 是否已经关闭
@@ -448,7 +483,7 @@
 
 #### sendBinary 发送字节
 * 发送字节信息
-* @param bin okio.ByteString 对象
+* @param bin java byte 数组对象
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 
 
