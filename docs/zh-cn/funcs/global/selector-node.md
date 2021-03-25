@@ -661,6 +661,7 @@
 >     //获取选择器对象
 >     //选择 节点 clz=android.widget.CheckBox所有节点，
 >     var node = clz("android.widget.CheckBox").getOneNodeInfo(10000);
+>     
 >     if (node) {
 >        var x= node.click();
 >        logd(x);
@@ -684,7 +685,7 @@
 >     var node = clz("android.widget.CheckBox").getNodeInfo(10000);
 >    //这玩意是个数组
 >    for(let i=0;i<node.length;i++){
->        logd(node[i])
+>        logd(JSON.stringify(node[i]))
 >    }
 > }
 > main(); 

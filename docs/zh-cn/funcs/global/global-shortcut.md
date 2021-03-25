@@ -809,7 +809,7 @@
 > 
 > function main(){
 >     var result = getNodeInfo(clz("android.widget.TextView"),10*1000);
->     toast("result:"+result);
+>     toast("result:"+JSON.stringify(result));
 > }
 > main();
 > ``` 
@@ -846,7 +846,7 @@
 > 
 > function main(){
 >     var result = getOneNodeInfo(clz("android.widget.TextView"),10*1000);
->     toast("result:"+result);
+>     toast("result:"+JSON.stringify(result));
 >     if (result){
 >         result.click();
 >     }
@@ -1438,27 +1438,33 @@
 
 
 ### setLogViewSizeEx 设置日志窗口
+
  * 设置日志窗口大小扩展函数
+ * backgroundImg适用版本(EC 6.0.0+)
  * @param map 例如
- *  {
- *      "x":100,
- *      "y":100,
- *      "w":100,
- *      "h":200,
- *      "textSize":12,
- *      "backgroundColor":"#ffffff",
- *      "title":"我是日志",
- *      "showTitle":true
- *  }
- *  解释：
- *      x: 起始X位置
- *      y: 起始Y位置
- *      w:宽度
- *      h:高度
- *      textSize:日志的字体大小
- *      backgroundColor:背景颜色，例如#336699
- *      title:日志框标题
- *      showTitle：是否显示标题
+    > ```json
+       {
+           "x":100,
+           "y":100,
+         "w":100,
+          "h":200,
+         "textSize":12,
+           "backgroundColor":"#ffffff",
+          "backgroundImg":"res/a.png",
+           "title":"我是日志",
+           "showTitle":true
+      }
+      解释：
+          x: 起始X位置
+         y: 起始Y位置
+          w:宽度
+           h:高度
+           textSize:日志的字体大小
+           backgroundColor:背景颜色，例如#336699
+           title:日志框标题
+           showTitle：是否显示标题
+          backgroundImg 背景图片，放到工程的res文件夹，录入填写res/a.png
+    > ```
  * @return bool true代表成功，false代表失败
 
 

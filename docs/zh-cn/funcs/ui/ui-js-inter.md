@@ -799,7 +799,6 @@
 
  * 关闭控制浮窗
  * @return 布尔型 true代表成功，false代表失败
-
 > ```javascript
 > function main() {
 >     var r = ui.hasFloatViewPermission();
@@ -819,6 +818,168 @@
 > main();
 >  ```
 
+
+### 控制浮窗新增按钮 addCtrlView
+
+
+* 新增启停浮窗按钮
+* 适用版本(EC 6.0.0+)
+* @param tag 按钮的标签
+* @param icon 按钮的图标路径，工程中的res/文件下的图片，例如填写 res/a.png
+* @param width 按钮的宽度，单位是dp，系统按钮是36
+* @param height 按钮的高度，单位是dp，系统按钮是36
+* @param index 按钮的加入索引，-1代表往后添加，0代表的是加入到第一位
+* @param onClickListener 按钮的点击回调
+* @return 布尔型 true代表成功，false代表失败
+
+> ```javascript
+>   function main() {
+>       ui.toast("我是ui的Toast函数");
+>       var set = ui.layout("参数设置", "main.xml");
+>       ui.layout("其他说明", "main2.xml");
+>       ui.logd("设置UI结果: " + set);
+>       ui.showCtrlWindow()
+>           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
+>         ui.run(1000,function (){
+>                         //移出对应的视图
+>                          ui.removeCtrlView("log_close_ctrl")
+>                          ui.removeCtrlView("main_page_ctrl")
+>                          ui.removeCtrlView("script_status_ctrl")
+>                           //加入新的按钮
+>                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
+>                              logd(v);
+>                              //启动脚本
+>                              ui.start();
+>                          })
+>           })
+>         ui.run(3000,function (){
+>               //移出所有控制视图
+>               ui.removeAllCtrlView()
+>         })
+>          ui.run(5000,function (){
+>                   //重置
+>                     ui.resetDefaultCtrlView()
+>               })
+>   }
+>   main();
+>  ```
+
+
+
+### 删除启停浮窗按钮 removeCtrlView
+* 删除启停浮窗按钮
+* 适用版本(EC 6.0.0+)
+* @param tag 按钮的标签
+* @return 布尔型 true代表成功，false代表失败
+
+> ```javascript
+>   function main() {
+>       ui.toast("我是ui的Toast函数");
+>       var set = ui.layout("参数设置", "main.xml");
+>       ui.layout("其他说明", "main2.xml");
+>       ui.logd("设置UI结果: " + set);
+>       ui.showCtrlWindow()
+>           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
+>         ui.run(1000,function (){
+>                         //移出对应的视图
+>                          ui.removeCtrlView("log_close_ctrl")
+>                          ui.removeCtrlView("main_page_ctrl")
+>                          ui.removeCtrlView("script_status_ctrl")
+>                           //加入新的按钮
+>                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
+>                              logd(v);
+>                              //启动脚本
+>                              ui.start();
+>                          })
+>           })
+>         ui.run(3000,function (){
+>               //移出所有控制视图
+>               ui.removeAllCtrlView()
+>         })
+>          ui.run(5000,function (){
+>                   //重置
+>                     ui.resetDefaultCtrlView()
+>               })
+>   }
+>   main();
+>  ```
+
+
+
+### 删除所有启停浮窗按钮 removeAllCtrlView
+* 删除所有启停浮窗按钮
+* 适用版本(EC 6.0.0+)
+* @return 布尔型 true代表成功，false代表失败
+
+> ```javascript
+>   function main() {
+>       ui.toast("我是ui的Toast函数");
+>       var set = ui.layout("参数设置", "main.xml");
+>       ui.layout("其他说明", "main2.xml");
+>       ui.logd("设置UI结果: " + set);
+>       ui.showCtrlWindow()
+>           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
+>         ui.run(1000,function (){
+>                         //移出对应的视图
+>                          ui.removeCtrlView("log_close_ctrl")
+>                          ui.removeCtrlView("main_page_ctrl")
+>                          ui.removeCtrlView("script_status_ctrl")
+>                           //加入新的按钮
+>                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
+>                              logd(v);
+>                              //启动脚本
+>                              ui.start();
+>                          })
+>           })
+>         ui.run(3000,function (){
+>               //移出所有控制视图
+>               ui.removeAllCtrlView()
+>         })
+>          ui.run(5000,function (){
+>                   //重置
+>                     ui.resetDefaultCtrlView()
+>               })
+>   }
+>   main();
+>  ```
+
+
+### 重置启停浮窗按钮 resetDefaultCtrlView
+* 重置启停浮窗按钮
+* 适用版本(EC 6.0.0+)
+* @return 布尔型 true代表成功，false代表失败
+
+> ```javascript
+>   function main() {
+>       ui.toast("我是ui的Toast函数");
+>       var set = ui.layout("参数设置", "main.xml");
+>       ui.layout("其他说明", "main2.xml");
+>       ui.logd("设置UI结果: " + set);
+>       ui.showCtrlWindow()
+>           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
+>         ui.run(1000,function (){
+>                         //移出对应的视图
+>                          ui.removeCtrlView("log_close_ctrl")
+>                          ui.removeCtrlView("main_page_ctrl")
+>                          ui.removeCtrlView("script_status_ctrl")
+>                           //加入新的按钮
+>                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
+>                              logd(v);
+>                              //启动脚本
+>                              ui.start();
+>                          })
+>           })
+>         ui.run(3000,function (){
+>               //移出所有控制视图
+>               ui.removeAllCtrlView()
+>         })
+>          ui.run(5000,function (){
+>                   //重置
+>                     ui.resetDefaultCtrlView()
+>               })
+>   }
+>   main();
+>  ```
 
 
 ### 展示日志浮窗 showLogWindow

@@ -1,4 +1,16 @@
-当前最新版本: 5.25.0
+当前最新版本: 6.0.0
+
+- 6.0.0 :
+
+        1、新增设置app为壁纸功能
+        2、新增代理模式下监听acc-event事件监听等
+        3、新增日志框的backgroundImg图片背景
+        4、新增EC系统设置root申请和判断 
+        5、新增悬浮窗自定义按钮函数(ui模块)addCtrlView, removeCtrlView
+        6、调整软件架构，提升代理模式性能
+        7、优化多线程对节点操作
+        9、更新iec加密机制(可配合v6加密+dex模式增加破解难度) 
+        10、去除NodeInfo等对象的toString函数，请使用JSON.stringify转字符串打印
 
 - 5.25.0:
         

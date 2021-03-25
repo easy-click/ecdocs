@@ -209,21 +209,21 @@
 
 
 
-### observeEvent (无障碍模式)对系统事件进行监听
+### observeEvent 对系统事件进行监听
 
- * (无障碍模式)对系统事件进行监听
+ * 对系统事件进行监听
+ * 代理模式适用版本(EC 6.0.0+)
  * @param event 事件类型 类型有:
- * activity-change 页面切换，OK
- * notification-show：状态栏通知展示， OK
- * toast-show：Toast消息展示， OK
- * key-down：按键按下， OK
- * key-up：按键弹起 OK
- * acc-service-interrupt：无障碍服务被中断 OK
- * acc-service-destroy： 无障碍服务被销毁 OK
- * acc-event：无障碍节点事件 OK
- * acc-service-connected: 无障碍服务连接成功 OK
- * auto-service-status: 自动化服务可用状态
- *
+ * activity-change 页面切换，支持无障碍和代理模式
+ * notification-show：状态栏通知展示， 支持无障碍和代理模式
+ * toast-show：Toast消息展示， 支持无障碍和代理模式
+ * key-down：按键按下， 支持无障碍
+ * key-up：按键弹起 支持无障碍
+ * acc-service-interrupt：无障碍服务被中断 支持无障碍
+ * acc-service-destroy： 无障碍服务被销毁 支持无障碍
+ * acc-event：无障碍节点事件 支持无障碍和代理模式
+ * acc-service-connected: 无障碍服务连接成功 支持无障碍
+ * auto-service-status: 自动化服务可用状态 支持无障碍
  * @param callback 事件回调
  * @return {bool}  | true 成功，false失败
 

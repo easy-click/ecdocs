@@ -85,6 +85,21 @@
 >
 
 
+## shell.su 请求授予root
+ * 请求授予root权限
+ * 适用版本(EC 6.0.0+)
+ * 运行环境: 无限制
+ * @return {boolean} true代表有root权限
+
+> ```javascript
+>     
+> function main(){
+>     var result = shell.su();
+> }
+> main();
+> ```
+>
+
 ## shell.execAgentCommand 代理模式下执行shell
 * 执行shell命令。需要启动代理服务
 * @param command 命令，例如安装App ： pm install /sdcard/app.apk
