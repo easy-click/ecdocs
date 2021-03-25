@@ -784,9 +784,11 @@
 >        //这玩意是个数组
 >        if(points){
 >            for(let i=0;i<points.length;i++){
->                    logd(points[i],points[i].x,points[i].y)
+>                    logd(points[i])
+>                    let x = ~~((points[i].left + points[i].right)/2)
+>                    let y = ~~((points[i].top + points[i].bottom)/2)
 >                    //点击坐标
->                    clickPoint(points[i].x,points[i].y)
+>                    clickPoint(x,y)
 >           }
 >        }
 >         //图片要回收
@@ -832,9 +834,11 @@
 >    //这玩意是个数组
 >    if(points){
 >        for(let i=0;i<points.length;i++){
->                    logd(points[i],points[i].x,points[i].y)
+>                    logd(points[i])
+>                    let x = ~~((points[i].left + points[i].right)/2)
+>                    let y = ~~((points[i].top + points[i].bottom)/2)
 >                    //点击坐标
->                    clickPoint(points[i].x,points[i].y)
+>                    clickPoint(x,y)
 >       }
 >    }
 >     //图片要回收
@@ -893,9 +897,11 @@
 >        //这玩意是个数组
 >        if(points){
 >            for(let i=0;i<points.length;i++){
->                    logd(points[i],points[i].x,points[i].y)
+>                    logd(points[i])
+>                    let x = ~~((points[i].left + points[i].right)/2)
+>                    let y = ~~((points[i].top + points[i].bottom)/2)
 >                    //点击坐标
->                    clickPoint(points[i].x,points[i].y)
+>                    clickPoint(x,y)
 >           }
 >        }
 >        //图片要回收
@@ -947,9 +953,11 @@
 >            //这玩意是个数组
 >            if(points){
 >                for(let i=0;i<points.length;i++){
->                    logd(points[i],points[i].x,points[i].y)
+>                    logd(points[i])
+>                    let x = ~~((points[i].left + points[i].right)/2)
+>                    let y = ~~((points[i].top + points[i].bottom)/2)
 >                    //点击坐标
->                    clickPoint(points[i].x,points[i].y)
+>                    clickPoint(x,y)
 >               }
 >            }
 >           //图片要回收
