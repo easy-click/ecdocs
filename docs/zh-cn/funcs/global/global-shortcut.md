@@ -1452,6 +1452,7 @@
            "backgroundColor":"#ffffff",
           "backgroundImg":"res/a.png",
            "title":"我是日志",
+           "backgroundAlpha":255,
            "showTitle":true
       }
       解释：
@@ -1463,7 +1464,8 @@
            backgroundColor:背景颜色，例如#336699
            title:日志框标题
            showTitle：是否显示标题
-          backgroundImg 背景图片，放到工程的res文件夹，录入填写res/a.png
+          backgroundImg 背景图片,支持GIF动画，放到工程的res文件夹，录入填写res/a.png
+          backgroundAlpha 背景图的透明度 255 - 0
     > ```
  * @return bool true代表成功，false代表失败
 
