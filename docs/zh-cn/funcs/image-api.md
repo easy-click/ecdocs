@@ -887,23 +887,21 @@
 >      var aimage = image.captureFullScreen();
 >      if (aimage != null) {
 >         var temp = readResAutoImage("tmp.png");
->         var rectp= new Rect();
->         rectp.left=10;
->         rectp.top=100;
->         rectp.right=100;
->         rectp.bottom=400;
->          var points = image.matchTemplate(aimage, temp,0.9,0.9,rectp,-1,1);
->          logd(points);
+>         let rectp= new Rect();
+>         rectp.left=0;
+>         rectp.top=0;
+>         rectp.right==device.getScreenWidth();
+>         rectp.bottom=device.getScreenHeight();
+>          let matchs = image.matchTemplate(aimage, temp,0.9,0.9,rectp,-1,1);
 >        //这玩意是个数组
->        if(points){
->            for(let i=0;i<points.length;i++){
->                    logd(points[i])
->                    let x = ~~((points[i].left + points[i].right)/2)
->                    let y = ~~((points[i].top + points[i].bottom)/2)
->                    //点击坐标
->                    clickPoint(x,y)
->           }
->        }
+>          logd(JSON.stringify(matchs));
+>            //这玩意是个数组
+>            if(matchs){
+>                for(let i=0;i<matchs.length;i++){
+>                    logd(JSON.stringify(matchs[i]));
+>                    clickPoint(matchs[i].x,matchs[i].y)
+>               }
+>            }
 >        //图片要回收
 >        image.recycle(aimage)
 >        //图片要回收
@@ -924,7 +922,7 @@
 * @param maxLevel      默认为-1，一般而言不必修改此参数。不加此参数时该参数会根据图片大小自动调整。找图算法是采用图像金字塔进行的, level参数表示金字塔的层次,
  level越大可能带来越高的找图效率，但也可能造成找图失败（图片因过度缩小而无法分辨）或返回错误位置。因此，除非您清楚该参数的意义并需要进行性能调优，否则不需要用到该参数。
 * @param limit 限制结果的数量，如果要找到1个，就填写1，如果是多个请填写多个
-* @return Match集合 或者null
+* @return Match 集合 或者null
   
 
 > ```javascript
@@ -944,20 +942,17 @@
 >      if (aimage != null) {
 >         var temp = readResAutoImage("tmp.png");
 >         var rectp= new Rect();
->         rectp.left=10;
->         rectp.top=100;
->         rectp.right=100;
->         rectp.bottom=400;
->          var points = image.matchTemplateEx( temp,0.9,0.9,rectp,-1,1);
->          logd(points);
+>         rectp.left=0;
+>         rectp.top=0;
+>         rectp.right==device.getScreenWidth();
+>         rectp.bottom=device.getScreenHeight();
+>          let matchs = image.matchTemplateEx( temp,0.9,0.9,rectp,-1,1);
+>          logd(JSON.stringify(matchs));
 >            //这玩意是个数组
->            if(points){
->                for(let i=0;i<points.length;i++){
->                    logd(points[i])
->                    let x = ~~((points[i].left + points[i].right)/2)
->                    let y = ~~((points[i].top + points[i].bottom)/2)
->                    //点击坐标
->                    clickPoint(x,y)
+>            if(matchs){
+>                for(let i=0;i<matchs.length;i++){
+>                    logd(JSON.stringify(matchs[i]));
+>                    clickPoint(matchs[i].x,matchs[i].y)
 >               }
 >            }
 >           //图片要回收
