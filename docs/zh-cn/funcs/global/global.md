@@ -726,6 +726,31 @@
  > ```
 
 
+### setWallpaperService 设置壁纸服务函数
+ * 设置壁纸服务函数
+ * 适用版本(EC 6.1.0+)
+ * @return 布尔型  true代表启动成功，false代表启动失败
+> ```javascript
+ > function main(){
+ >     var result = setWallpaperService();
+ > }
+ > main();
+ > ```
+
+
+
+
+### isWallpaperServiceSet 是否设置壁纸成功
+ * 是否设置壁纸成功
+ * 适用版本(EC 6.1.0+)
+ * @return 布尔型  true代表启动成功，false代表启动失败
+> ```javascript
+ > function main(){
+ >     var result = isWallpaperServiceSet();
+ > }
+ > main();
+ > ```
+
 ### openECloudSetting 打开EC云控界面
 * 打开EC云控界面
 * @return true 成功 false 失败
