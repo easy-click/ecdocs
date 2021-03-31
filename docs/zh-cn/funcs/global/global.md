@@ -69,10 +69,44 @@
 
 ## 脚本启停
 
+
+
 ### exit 退出脚本
+
 > ```javascript
 > exit();
 > ```
+
+### isScriptExit 是否已退出脚本
+
+ * 判断EC运行的当前线程是否处于退出状态，可用判断脚本是否退出，或者子线程是否退出
+ * 适用版本(EC 6.2.0+)
+ * @return true 已退出
+
+>```javascript
+> function main(){
+>      try{
+>                while(true){
+>                        sleep(1000)
+>                        logd("222")
+>                        if (isScriptExit()) {
+>                            break
+>                        }
+>                    }
+>                  logd("222")
+>            }catch(e){
+>                logd(e)
+>               if (isScriptExit()) {
+>                   return
+>                }
+>            }
+> }
+> main();
+> ```
+
+
+
+
 
 ### sleep  暂停执行
 * 休眠
