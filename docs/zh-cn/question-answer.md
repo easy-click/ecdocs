@@ -5,11 +5,16 @@
 * JS教程：https://www.runoob.com/js/js-tutorial.html
 
 
-## 特性
-- 脚本和UI可以进行任意交互
-- 所有的服务都变成可选，对应用测试或者游戏测试用户比较友好
-- 重写了找色函数，支持多方向查找
-- 游戏测试用户可以不必要开启无障碍，只用代理服务也能完成自动化测试
+## 常见踩坑解决方案
+- 1.热更新失败 https://www.bilibili.com/video/BV1Pt4y1B75R?p=1
+- 2.java混合项目闪退 https://www.bilibili.com/video/BV1Pt4y1B75R?p=2
+- 3.卡编译开始,java报错 https://www.bilibili.com/video/BV1Pt4y1B75R?p=3
+- 4.夜神模拟器连不上处理方法 https://www.bilibili.com/video/BV1Pt4y1B75R?p=4
+- 5.OCR识别坑点补充https://www.bilibili.com/video/BV1Pt4y1B75R?p=5 
+- 6.EC设置输入法 https://www.bilibili.com/video/BV1Pt4y1B75R?p=6
+- 7.选择器,节点对象的区别用法 https://www.bilibili.com/video/BV1Pt4y1B75R?p=7
+- 8.ADB无法链接 https://www.bilibili.com/video/BV1vz4y1S7gd?p=3
+- 9.其他问题    https://www.bilibili.com/video/BV1vz4y1S7gd?p=7
 
 ## 代理模式激活设备后,拔掉usb就丢失激活状态
 找到手机开发者选项, 查找 网络 adb,仅充电 adb 组合字样,打开,然后在激活的时候usb链接模式选择充电模式进行激活
