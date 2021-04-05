@@ -785,8 +785,8 @@
 >        if(points){
 >            for(let i=0;i<points.length;i++){
 >                    logd(points[i])
->                    let x = ~~((points[i].left + points[i].right)/2)
->                    let y = ~~((points[i].top + points[i].bottom)/2)
+>                    let x = parseInt((points[i].left + points[i].right)/2)
+>                    let y = parseInt((points[i].top + points[i].bottom)/2)
 >                    //点击坐标
 >                    clickPoint(x,y)
 >           }
@@ -835,8 +835,8 @@
 >    if(points){
 >        for(let i=0;i<points.length;i++){
 >                    logd(points[i])
->                    let x = ~~((points[i].left + points[i].right)/2)
->                    let y = ~~((points[i].top + points[i].bottom)/2)
+>                    let x = parseInt((points[i].left + points[i].right)/2)
+>                    let y = parseInt((points[i].top + points[i].bottom)/2)
 >                    //点击坐标
 >                    clickPoint(x,y)
 >       }
