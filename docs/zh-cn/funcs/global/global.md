@@ -31,6 +31,7 @@
 
 > ```javascript
 > function main(){
+>     //注意,js文件不要放在js目录或下级目录中
 >     test = require("slib/a.js")
 >     logd(test.c());
 > }
