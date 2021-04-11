@@ -1,7 +1,7 @@
 
 - EC支持H5和原生的方式编写UI
 - EasyClick 原生UI 遵循了Android的UI设计方式，相当于Android UI的简化版本
-- 原生UI教程: https://blog.csdn.net/qq_21460781/article/details/115409085
+- 原生UI教程: https://blog.csdn.net/qq_21460781/article/details/115580217?spm=1001.2014.3001.5502
 
 * [H5 UI编写](/zh-cn/funcs/ui/html-ui-custom.md)
 * [JS编写UI](/zh-cn/funcs/ui/ui-js-inter.md)
