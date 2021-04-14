@@ -154,7 +154,7 @@
 ## file.readAllLines 读取所有行
 * 读取所有数据
 * @param path   路径
-* @return 字符串
+* @return 字符串数组|null
 > ```javascript
 >     
 > function main(){
