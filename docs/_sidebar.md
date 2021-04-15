@@ -52,7 +52,7 @@
       
     
 * [UI编写](/zh-cn/funcs/ui/)
-    
+  
     * [原生UI定制](/zh-cn/funcs/ui/ui-custom.md)
         * [JS编写UI](/zh-cn/funcs/ui/ui-js-inter.md)
         * [模板式UI](/zh-cn/funcs/ui/ui-js-template.md)
@@ -74,12 +74,13 @@
             * [CardView卡片布局](/zh-cn/funcs/ui/uidetail/cardview.md)
             * [Swtich开关按钮](/zh-cn/funcs/ui/uidetail/switch.md)
 * [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
-    
+  
 * [企业版本](/zh-cn/enterprise/)
-    * [企业版云控接口](/zh-cn/ecloud/)
-        * [云控介绍](/zh-cn/ecloud/intro.md)
-        * [云控函数](/zh-cn/ecloud/ecloud-func.md)
-        * [开放API](/zh-cn/ecloud/openapi.md)
+    * [企业版云控接口(2.0+)](/zh-cn/ecloud2/)
+        * [云控介绍(2.0+)](/zh-cn/ecloud2/intro.md)
+        * [云控函数(2.0+)](/zh-cn/ecloud2/ecloud-func.md)
+        * [开放API(2.0+)](/zh-cn/ecloud2/openapi.md)
+    * [企业版云控接口(老版本)](/zh-cn/ecloud/)
     * [企业版中控接口](/zh-cn/zk/)
         * [对接说明](/zh-cn/zk/zk.md)
         * [EC状态控制接口](/zh-cn/zk/zk-ec-state.md)
