@@ -1411,6 +1411,44 @@
 
 
 
+### setCtrlViewSizeEx 设置启停控制窗口
+
+ * 设置启停控制窗口参数
+ *  适用版本(EC 6.5.0+)
+ * @param map 例如
+    > ```json
+       {
+           "x":100,
+           "y":100,
+           "backgroundColor":"#ffffff"
+      }
+      解释：
+          x: 起始X位置
+         y: 起始Y位置
+           backgroundColor:背景颜色，例如#336699
+    > ```
+ * @return bool true代表成功，false代表失败
+
+> ```javascript
+>     function main() {
+>        requestFloatViewPermission(1000);
+>          var m =  {
+>                        "x":100,
+>                        "y":200,
+>                        "backgroundColor":"#ffffff"
+>                    }
+>     
+>     
+>          showCtrlWindow();
+>          setCtrlViewSizeEx(m);
+>          sleep(5000);
+>     }
+>     main();
+> ```
+
+
+
+
 ### showLogWindow 展示日志浮窗
 * 展示日志浮窗
 * @return true 代表请求权限成功，false代表失败
