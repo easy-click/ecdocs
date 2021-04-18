@@ -604,7 +604,7 @@
 > function main(){ 
 >     //获取选择器对象，
 >     //选择包含"选择器"并且checked=true并且类名=android.widget.CheckBox的元素
->     var selector = text(".*选择器.*")
+>     var selector = textMatch(".*选择器.*")
 >                           .checked(true)
 >                           .clz("android.widget.CheckBox");
 >     var result = click(selector);
