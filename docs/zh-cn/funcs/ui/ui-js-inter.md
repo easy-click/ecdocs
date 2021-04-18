@@ -121,8 +121,12 @@
 >         ui.auto_env.setChecked(r);
 >     });
 > }
+> ```
 
 > main();
+>
+> ```
+> 
 > ```
 
 ## 脚本如何与JS交互
@@ -316,7 +320,7 @@
 
 
 ### 从存储区清空数据 clearAllShareData
- 
+
  * 清理所有存储区的数据
  * @return true 或者 false
 
@@ -681,7 +685,7 @@
 
 
 ### customDialog 
- 
+
  * 自定义对话框
  *  @param params 例如{"cancelable":""},key的固定只有
  * fullScreen 是否全屏
@@ -690,7 +694,7 @@
  * @param onViewBind 视图绑定时候回调函数
  * @param dismissListener 对话框消失的回调
  * @return 布尔型 true 代表成功，false 代表失败
- 
+
 > ```javascript
 > 
 > function main() {
@@ -819,7 +823,7 @@
 >  ```
 
 
-### 控制浮窗新增按钮 addCtrlView
+### 启停浮窗新增按钮 addCtrlView
 
 
 * 新增启停浮窗按钮
@@ -866,7 +870,56 @@
 
 
 
+
+
+### 启停浮窗更新按钮 updateCtrlView
+
+
+* 更新启停浮窗按钮
+* 适用版本(EC 6.6.0+)
+* @param tag 按钮的标签
+* @param icon 按钮的图标路径，工程中的res/文件下的图片，例如填写 res/a.png
+* @param onClickListener 按钮的点击回调
+* @return 布尔型 true代表成功，false代表失败
+
+> ```javascript
+> function main() {
+>    ui.toast("我是ui的Toast函数");
+>    var set = ui.layout("参数设置", "main.xml");
+>    ui.layout("其他说明", "main2.xml");
+>    ui.logd("设置UI结果: " + set);
+>    ui.showCtrlWindow()
+>        // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
+>      ui.run(1000,function (){
+>                      //移出对应的视图
+>                       ui.removeCtrlView("log_close_ctrl")
+>                       ui.removeCtrlView("main_page_ctrl")
+>                       ui.removeCtrlView("script_status_ctrl")
+>                        //加入新的按钮
+>                       ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
+>                           logd(v);
+>                           //启动脚本
+>                           ui.start();
+>                       })
+>        })
+>      ui.run(3000,function (){
+>              //更新按钮动作
+>                       ui.updateCtrlView("tag","res/ab.png",function(v){
+>                           logd("aaaa");
+>                         
+>                       })
+>      })
+>     
+> }
+> main();
+> ```
+
+
+
+
+
 ### 删除启停浮窗按钮 removeCtrlView
+
 * 删除启停浮窗按钮
 * 适用版本(EC 6.0.0+)
 * @param tag 按钮的标签
@@ -1157,15 +1210,16 @@
 
 > ```javascript
 > function main() {
->   ui.layout("参数设置", "main.xml");
->   //xml中有个tag=startBtn的按钮
->    //启动脚本按钮
->       ui.setEvent(ui.startBtn, "click", function (view) {
->           ui.start();
->       });
+> ui.layout("参数设置", "main.xml");
+> //xml中有个tag=startBtn的按钮
+> //启动脚本按钮
+>    ui.setEvent(ui.startBtn, "click", function (view) {
+>        ui.start();
+>    });
 > }
 > 
 > main();
+> ```
 
 
 
@@ -1212,7 +1266,7 @@
  * @param execTime 定时时间格式: 2020-04-17 19:20:00，或者直接是秒数字，例如 3，代表3秒后
  * @param cancelBeforeRunning
  * @return 整型 jobid
- 
+
 > ```javascript
 > function main() {
 >   var set = ui.layout("参数设置", "main.xml");
@@ -1246,7 +1300,7 @@
  * 取消指定标签的任务
  * @param tag 标签
  * @return 布尔型 true代表成功，false代表失败
- 
+
 > ```javascript
 > function main() {
 >   var set = ui.layout("参数设置", "main.xml");
@@ -1279,7 +1333,7 @@
 
  * 取消所有的定时任务
  * @return 布尔型 true代表成功，false代表失败
- 
+
 > ```javascript
 > function main() {
 >   var set = ui.layout("参数设置", "main.xml");
@@ -1314,7 +1368,7 @@
 
  * 获取所有定时任务TAG
  * @return JSON字符串
- 
+
 > ```javascript
 > function main() {
 >   var set = ui.layout("参数设置", "main.xml");
@@ -1351,7 +1405,7 @@
  * 设置加载网页的webview组件组件类型，默认是X5浏览器
  * @param type 1：系统自带的webview， 2：X5浏览器
  * @return 布尔型 true 代表成功，false 代表失败
- 
+
  > ```javascript
  > // ui.js中的注入
  > function main() {
@@ -1536,7 +1590,7 @@
  *  home_key_start_stop : 三击HOME启停脚本 值有 是，否 两种
  *
  * @return 布尔型 true 是 false 否
- 
+
 > ```javascript
 > function main(){
 >     var m = {
@@ -1554,7 +1608,7 @@
 ### openECSystemSetting 打开EC系统设置 
  * 打开EC的系统设置
  * @return 布尔型 true代表成功 false代表失败
- 
+
 > ```javascript
 > function main() {
 >    
@@ -1572,7 +1626,7 @@
  * action,
  * uri,pkg,className,flag,其他的都是参数了
  * @return 布尔型 true 代表成功，false 代表失败
- 
+
 > ```javascript
 > function main() {
 >     //打开安装包界面
