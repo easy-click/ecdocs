@@ -1,6 +1,6 @@
 # 新建项目视频教程
+- 2021最新教程[http://home.laoleng.top:3001/web/#/9?page_id=167)
 - [https://www.bilibili.com/video/BV1bK4y15778/](https://www.bilibili.com/video/BV1bK4y15778/)
-- 2021最新教程[https://www.bilibili.com/video/BV1vz4y1S7gd](https://www.bilibili.com/video/BV1vz4y1S7gd)
 
 
 # 下载开发工具
