@@ -10,7 +10,7 @@
 
 ## 设置
 ### image.setInitParam 初始化参数
-* 设置图色模块初始化参数，可用于多分辨率兼容
+* 设置图色模块初始化参数,设置找图超时时间
 * @param params 超时时间，单位是毫秒
 * @return true 代表成功 false代表失败
 
