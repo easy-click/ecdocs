@@ -1181,7 +1181,7 @@
  * 获取最近通知栏对象
  * @param pkg 指定包名
  * @param size 指定获取的条数
- * @return {NotificationInfo数组|null}
+ * @return {NotificationInfo数组}
 
 > ```javascript
 > 
