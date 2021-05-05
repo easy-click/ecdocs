@@ -328,7 +328,31 @@
 > main();
 > ```
 
+
+
+
+
+### setSaveLogEx  保存日志
+
+ * 设置保存日志信息到文件中
+ * @param save 是否保存
+ * @param path 自定义的文件夹
+ * @param size 每个文件分隔的尺寸
+ * @param fileName 日志的自定义文件名称
+ * @return 保存日志文件的目录
+
+> ```javascript
+> function main(){
+>  var s = setSaveLogEx(true,"/sdcard/aaa/",1024*1024,"testlog");
+>  logd("save dir is:"+s);
+> }
+> main();
+> ```
+
+
+
 ### setFloatDisplayLineNumber  打印日志行号
+
 * 打印日志的时候，悬浮窗是否展示行号，正式发布，可以不展示行号，不影响调试和保存在文件的日志中
 * @param ds  true 代表显示， false 不显示
 
