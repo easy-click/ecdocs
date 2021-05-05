@@ -441,3 +441,187 @@
 >}
 >main();
 > ```
+
+
+
+
+
+## floaty.getX 获取浮窗位置X坐标
+
+- 获取浮窗位置X坐标
+- 适合版本:EC 6.7.0+
+- @param tag 悬浮窗的标签
+- @return {int} -1 代表失败 其他都是坐标
+
+```javascript
+
+function main(){
+  let tag="123";
+  //关闭tag=123的浮窗
+ floaty.close(tag)
+ //请求权限
+ let p = floaty.requestFloatViewPermission(1000)
+logd("是否有浮窗权限: "+p);
+if (!p) {
+    loge("没有浮窗权限，终止执行");
+    return;
+}
+
+sleep(1000);
+//展示main.xml文件的视图，并且返回安卓原生原生的对象
+let view = floaty.showFloatXml(tag,"main.xml",100,100);
+floaty.focusable(tag,true)
+logd(view);
+if (view) {
+     // 从悬浮窗中查找视图tag=web的对象 （例子）
+    //let web = view.findViewWithTag("web")
+}
+
+sleep(2000)
+logd(floaty.getX(tag))
+logd(floaty.getY(tag))
+logd(floaty.getWidth(tag))
+logd(floaty.getHeight(tag))
+
+}
+main();
+
+
+```
+
+
+
+## floaty.getY 获取浮窗位置Y坐标
+
+- 获取浮窗位置y坐标
+- 适合版本:EC 6.7.0+
+- @param tag 悬浮窗的标签
+- @return {int} -1 代表失败 其他都是坐标
+
+```javascript
+function main(){
+  let tag="123";
+  //关闭tag=123的浮窗
+ floaty.close(tag)
+ //请求权限
+ let p = floaty.requestFloatViewPermission(1000)
+logd("是否有浮窗权限: "+p);
+if (!p) {
+    loge("没有浮窗权限，终止执行");
+    return;
+}
+
+sleep(1000);
+//展示main.xml文件的视图，并且返回安卓原生原生的对象
+let view = floaty.showFloatXml(tag,"main.xml",100,100);
+floaty.focusable(tag,true)
+logd(view);
+if (view) {
+     // 从悬浮窗中查找视图tag=web的对象 （例子）
+    //let web = view.findViewWithTag("web")
+}
+
+sleep(2000)
+logd(floaty.getX(tag))
+logd(floaty.getY(tag))
+logd(floaty.getWidth(tag))
+logd(floaty.getHeight(tag))
+
+}
+main();
+
+
+```
+
+
+
+
+
+## floaty.getWidth 获取浮窗宽度
+
+- 获取浮窗宽度
+- 适合版本:EC 6.7.0+
+- @param tag 悬浮窗的标签
+- @return {int} -1 代表失败 其他都是坐标
+
+```javascript
+function main(){
+  let tag="123";
+  //关闭tag=123的浮窗
+ floaty.close(tag)
+ //请求权限
+ let p = floaty.requestFloatViewPermission(1000)
+logd("是否有浮窗权限: "+p);
+if (!p) {
+    loge("没有浮窗权限，终止执行");
+    return;
+}
+
+sleep(1000);
+//展示main.xml文件的视图，并且返回安卓原生原生的对象
+let view = floaty.showFloatXml(tag,"main.xml",100,100);
+floaty.focusable(tag,true)
+logd(view);
+if (view) {
+     // 从悬浮窗中查找视图tag=web的对象 （例子）
+    //let web = view.findViewWithTag("web")
+}
+
+sleep(2000)
+logd(floaty.getX(tag))
+logd(floaty.getY(tag))
+logd(floaty.getWidth(tag))
+logd(floaty.getHeight(tag))
+
+}
+main();
+
+
+```
+
+
+
+
+
+## floaty.getHeight 获取浮窗高度
+
+- 获取浮窗高度
+- 适合版本:EC 6.7.0+
+- @param tag 悬浮窗的标签
+- @return {int} -1 代表失败 其他都是坐标
+
+```javascript
+function main(){
+  let tag="123";
+  //关闭tag=123的浮窗
+ floaty.close(tag)
+ //请求权限
+ let p = floaty.requestFloatViewPermission(1000)
+logd("是否有浮窗权限: "+p);
+if (!p) {
+    loge("没有浮窗权限，终止执行");
+    return;
+}
+
+sleep(1000);
+//展示main.xml文件的视图，并且返回安卓原生原生的对象
+let view = floaty.showFloatXml(tag,"main.xml",100,100);
+floaty.focusable(tag,true)
+logd(view);
+if (view) {
+     // 从悬浮窗中查找视图tag=web的对象 （例子）
+    //let web = view.findViewWithTag("web")
+}
+
+sleep(2000)
+logd(floaty.getX(tag))
+logd(floaty.getY(tag))
+logd(floaty.getWidth(tag))
+logd(floaty.getHeight(tag))
+
+}
+main();
+
+
+```
+

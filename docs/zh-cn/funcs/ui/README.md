@@ -11,6 +11,7 @@
     * [FrameLayout帧布局](/zh-cn/funcs/ui/uidetail/framelayout.md)
     * [RelativeLayout绝对布局](/zh-cn/funcs/ui/uidetail/relativelayout.md)
     * [ScrollView滚动框](/zh-cn/funcs/ui/uidetail/scrollview.md)
+    * [HorizontalScrollView滚动框](/zh-cn/funcs/ui/uidetail/h_scrollview.md)
     * [View视图](/zh-cn/funcs/ui/uidetail/view.md)
     * [Button按钮](/zh-cn/funcs/ui/uidetail/button.md)
     * [TextView文本](/zh-cn/funcs/ui/uidetail/textview.md)

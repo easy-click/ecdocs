@@ -378,7 +378,7 @@
 ### toast1 Toast1消息
  * 显示Toast消息 (扩展方法)
  * @param msg 消息字符串
- 
+
 
 > ```javascript
 > function main(){
@@ -392,7 +392,7 @@
 ### toast2  Toast2消息
  * 显示Toast消息(扩展方法)
  * @param msg 消息字符串
- 
+
 
 > ```javascript
 > function main(){
@@ -430,7 +430,7 @@
 ### logd 调试日志
  * 调试日志
  * @param msg 消息字符串
- 
+
 
 > ```javascript
 > 
@@ -446,7 +446,7 @@
 ### loge 错误日志
  * 错误日志
  * @param msg 消息字符串
- 
+
 
 > ```javascript
 > function main(){
@@ -460,7 +460,7 @@
 ### logw 警告日志
  * 警告日志
  * @param msg 消息字符串
- 
+
 
 > ```javascript
 > function main(){
@@ -474,7 +474,7 @@
 ### logi 信息日志
  * 信息日志
  * @param msg 消息字符串
- 
+
 
 > ```javascript
 > function main(){
@@ -490,7 +490,7 @@
 ### clearLog 清除日志
  * 清除日志
  * @param lines 整型，要清除的行数，-1 代表全部清除
- 
+
 
 > ```javascript
 > function main(){
@@ -626,10 +626,11 @@
 
 > ```javascript
 > function main(){
->     var testData = deleteConfig("test_key");
+>  var testData = deleteConfig("test_key");
 > }
 > main();
 > 
+> ```
 
 
 ### readConfigInt 读取整型配置
@@ -678,8 +679,8 @@
  * 读取UI界面中的参数,返回是布尔型
  * @param key 在UI界面中配置的key
  * @return true 或者 false
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var testData = readConfigBoolean("test_key");
@@ -691,8 +692,8 @@
 ### getConfigJSON 取所有配置
  * 取得配置的JSON
  * @return JSON数据
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var testData = getConfigJSON();
@@ -706,7 +707,7 @@
 * @param key 键
 * @param value  值
 * @return {boolean} true 成功，false失败
- 
+
 > ```javascript
  > function main(){
  >    updateConfig("a","sss");
@@ -733,7 +734,7 @@
  *  ctrl_float_window : 启停控制悬浮窗展示 值有 是，否 两种
  *
  * @return 布尔型 true 是 false 否
- 
+
 > ```javascript
 > function main(){
 >     var m = {
@@ -752,7 +753,7 @@
 ### openECSystemSetting 打开EC系统界面
 * 打开EC系统设置页面
 * @return true 成功 false 失败
- 
+
 > ```javascript
  > function main(){
  >     var result = openECSystemSetting();
@@ -789,7 +790,7 @@
 ### openECloudSetting 打开EC云控界面
 * 打开EC云控界面
 * @return true 成功 false 失败
- 
+
 > ```javascript
  > function main(){
  >     var result = openECloudSetting();
@@ -802,7 +803,7 @@
 ### setIECPath 设置脚本路径
 * 设置要执行的IEC文件路径
 * @return true 成功 false 失败
- 
+
 > ```javascript
  > function main(){
  >     var result = setIECPath("/sdcard/release.iec");
@@ -825,7 +826,7 @@
 * @param activeType 激活类型，0 自动，1 模式1 2 模式2
 * @param timeout 超时时间
 * @return {string} 激活成功：代表成功，其他都是错误消息
- 
+
 > ```javascript
 > function main(){
 >     var result = activeSelf(0,10*1000);
@@ -833,8 +834,8 @@
 > }
 > main();
 > ```
- 
- 
+
+
 ### activeDevice 通过IP激活其他设备
 * ip 设备的IP,条件：1 开启目标设备USB调试，2 开启目标设备ADB WIFI调试,请参考激活章节文档
 * 适用版本(EC 5.15.0+)
@@ -842,7 +843,7 @@
 * @param activeType 激活类型，0 自动，1 模式1 2 模式2
 * @param timeout 超时时间
 * @return {string} 激活成功：代表成功，其他都是错误消息
- 
+
 > ```javascript
 > function main(){
 >     var result = activeDevice("192.168.1.108",0,10*1000);
@@ -855,8 +856,8 @@
 ### isAccMode 无障碍模式判断
  * 是否是无障碍模式
  * @return true或者false
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var result = isAccMode();
@@ -867,8 +868,8 @@
 ### isAgentMode 代理模式判断
  * 是否是代理模式
  * @return true或者false
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var result = isAgentMode();
@@ -879,8 +880,8 @@
 ### isServiceOk 自动化服务状态
  * 自动化服务是否正常
  * @return true或者false
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var result = isServiceOk();
@@ -891,8 +892,8 @@
 ### startEnv 启动自动化
  * 启动自动化服务环境
  * @return true或者false
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var result = startEnv();
@@ -902,12 +903,32 @@
 
 
 
+
+
+### daemonEnv 守护自动化环境
+
+ * 守护自动化环境
+ * 如果是激活或者无障碍保活的情况下，尽量保证自动服务不掉线
+ * 适合版本:EC 6.7.0+
+ * @param daemon 是否守护自动化环境 true 是，false 否
+ * @return 布尔型  true代表启动成功，false代表启动失败
+
+
+> ```javascript
+> function main(){
+>  var result = daemonEnv(true);
+> }
+> main();
+> ```
+
+
+
 ### closeEnv 关闭自动化
  * 关闭自动化环境
  * @param skinAccPage 无障碍模式停止失败 是否跳转到开启无障碍页面
  * @return 布尔型  true代表启动成功，false代表启动失败
- 
- 
+
+
 > ```javascript
  > function main(){
  >     var result = closeEnv(false);
@@ -922,8 +943,8 @@
  * 适用版本(EC 5.14.0+)
  * 毫秒级当前时间戳
  * @return {long} 毫秒级别的long时间
- 
- 
+
+
 > ```javascript
 > function main(){
 >    logd(time());
@@ -936,7 +957,7 @@
  * 适用版本(EC 5.14.0+)
  * 格式化时间函数例如：```yyyy-MM-dd HH:mm:ss```
  * @return {string} 格式化之后的当前时间
- 
+
 > ```javascript
 > function main(){
 >    logd(timeFormat("yyyy-MM-dd HH:mm:ss"));

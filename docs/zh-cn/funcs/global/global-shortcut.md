@@ -24,7 +24,7 @@
 * @param x x坐标
 * @param y y坐标
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > function main(){
@@ -45,7 +45,7 @@
 * 点击选择器
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > function main(){
@@ -66,7 +66,7 @@
 * 无指针方式点击选择器，节点必须是可点击的才行
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > function main(){
@@ -88,7 +88,7 @@
 * 无指针方式长点击选择器，节点必须是可点击的才行
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > function main(){
@@ -109,7 +109,7 @@
 * 随机点击选择器的任意元素
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > function main(){
@@ -131,7 +131,7 @@
 * 随机点击选择器的任意元素
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > function main(){
@@ -152,7 +152,7 @@
 * 随机点击区域中的坐标
 * @param rect 区域对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -178,7 +178,7 @@
 * 点击区域中的中心坐标
 * @param rect 区域对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -207,7 +207,7 @@
 * 点击文本
 * @param text 文本
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -228,7 +228,7 @@
 * 长点击选择器
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -252,7 +252,7 @@
 * @param x x坐标
 * @param y y坐标
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -275,7 +275,7 @@
  * @param y y坐标
  * @param delay 长按时间  毫秒
  * @return {bool} true 成功 false 失败
- 
+
 
 > ```javascript
 > 
@@ -371,7 +371,7 @@
 * 向前滚动
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -394,7 +394,7 @@
 * 向后滚动
 * @param selectors 选择器对象
 * @return {boolean|布尔型}
- 
+
 
 > ```javascript
 > 
@@ -422,7 +422,7 @@
 * @param endY      结束的Y坐标
 * @param duration 持续时长 单位毫秒
 * @return 布尔型 true 代表成功 false 代表失败
- 
+
 
 > ```javascript
 > 
@@ -448,7 +448,7 @@
 * @param endY   结束坐标的Y轴值
 * @param duration 持续时长 单位毫秒
 * @return 布尔型 true 滑动成功, false 滑动失败
- 
+
 
 > ```javascript
 > 
@@ -585,7 +585,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 ### inputText  输入数据
@@ -607,7 +607,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 ### imeInputText 输入法输入数据
 * 使用输入法输入内容，前提是已经设置本程序的输入法为默认输入法
@@ -628,7 +628,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 ### imeInputKeyCode 输入法输入code
@@ -650,7 +650,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 ### pasteText 粘贴数据
@@ -672,7 +672,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -695,7 +695,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 ## 节点操作
@@ -718,7 +718,7 @@
 >       }
 > }
 > main();
-> ``` 
+> ```
 
 
 ### has 节点存在判断
@@ -738,7 +738,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -760,7 +760,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 ### waitExistNode 等节点出现
 * 通过选择器判断并等待元素是否存
@@ -780,7 +780,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 ### getText 获取文本
@@ -796,7 +796,7 @@
 >     toast("result:"+result);
 > }
 > main();
-> ``` 
+> ```
 
 
 ### getNodeInfo 获取节点数组
@@ -812,7 +812,7 @@
 >     toast("result:"+JSON.stringify(result));
 > }
 > main();
-> ``` 
+> ```
 
 ### getNodeAttrs 节点属性信息
 * 获取节点属性信息
@@ -832,7 +832,7 @@
 >     toast("result:"+result);
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -852,7 +852,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -873,7 +873,7 @@
 >     toast("result:"+result);
 > }
 > main();
-> ``` 
+> ```
 
 ### addNodeFlag 加上节点获取的某个标志位
 * 加上节点获取的某个标志位
@@ -887,7 +887,7 @@
 >     toast("result:"+result);
 > }
 > main();
-> ``` 
+> ```
 
 
 ### removeNodeFlag 移除节点获取的某个标志位
@@ -902,7 +902,7 @@
 >     toast("result:"+result);
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -921,7 +921,7 @@
 >     }
 > }
 > main();
-> ``` 
+> ```
 
 
 ### lockNode 锁定当前节点 
@@ -949,7 +949,7 @@
 >          }
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -981,7 +981,7 @@
 >          }
 > }
 > main();
-> ``` 
+> ```
 
 
 
@@ -1583,7 +1583,7 @@
 >     logd("job id "+id2);   
 > }
 > main();
-> ``` 
+> ```
 
 ### cancelAllJob 取消所有定时 
  * 取消所有定时
@@ -1596,7 +1596,7 @@
 >     logd(result);
 > }
 > main();
-> ``` 
+> ```
 
 
 ### cancelJob 取消指定TAG定时 
@@ -1611,12 +1611,12 @@
 >     logd(result);
 > }
 > main();
-> ``` 
+> ```
 
 ### getAllJobTag 获取所有定时标签 
  * 取得所有的定时任务标签
  * @return 字符串数组或者null
- 
+
 > ```javascript
 > 
 > function main(){
@@ -1624,7 +1624,7 @@
 >     logd(result);
 > }
 > main();
-> ``` 
+> ```
 
 
 ## 其他函数
@@ -1642,4 +1642,4 @@
 >     sleep(result);
 > }
 > main();
-> ``` 
+> ```

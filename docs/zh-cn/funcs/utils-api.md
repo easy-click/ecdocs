@@ -309,7 +309,7 @@
  * @param data 加密后的base64字符串
  * @param password 密码，至少8个字符
  * @return {string} 解密后的字符串
- 
+
 > ```javascript
 >   function main() {
 >       let dat ="我是数据"
@@ -348,7 +348,7 @@
  * @param data 加密后的base64字符串
  * @param password 密码，至少8个字符
  * @return {string} 解密后的字符串
- 
+
 > ```javascript
 >   function main() {
 >       let dat ="我是数据"
@@ -367,7 +367,7 @@
  * @param data 数据字符串
  * @param password 密码
  * @return {string} 加密后的base64字符串
- 
+
 > ```javascript
 >   function main() {
 >       let dat ="我是数据"
@@ -387,7 +387,7 @@
  * @param data 加密后的base64字符串
  * @param password 密码
  * @return {string} 解密后的字符串
- 
+
 > ```javascript
 >   function main() {
 >       let dat ="我是数据"
@@ -405,7 +405,7 @@
  * 获取上一次加解密的错误信息
  * 适用版本(EC 5.19.0+)
  * @return {string} null代表无错误
- 
+
 > ```javascript
 >   function main() {
 >       let dat ="我是数据"
