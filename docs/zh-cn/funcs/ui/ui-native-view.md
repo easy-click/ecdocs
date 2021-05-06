@@ -20,6 +20,7 @@
 - [Swtich开关按钮](/zh-cn/funcs/ui/uidetail/switch.md)
 - [FlexboxLayout弹性盒子布局](/zh-cn/funcs/ui/uidetail/flexboxlayout.md)
 - [include标签](/zh-cn/funcs/ui/uidetail/includetag.md)
+- [Canvas标签](/zh-cn/funcs/ui/uidetail/canvas.md)
 
 ## 公有属性
 
