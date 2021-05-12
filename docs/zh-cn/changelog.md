@@ -1,4 +1,20 @@
-当前最新版本: 6.7.0
+当前最新版本: 6.8.0
+
+- 6.8.0
+
+```JSON
+1、新增Canvas组件
+2、新增screencap命令用于截图
+3、优化节点代码
+4、修复横向滚动组件的问题
+5、image.recycle回收兼容Bitmap
+6、修复无障碍获取包名和activity的问题
+7、增加ui.js的dex运行模式
+8、新增getStartAppCmd和getStartActivityCmd配合root或者代理模式启动app
+
+```
+
+
 
 - 6.7.0:
 

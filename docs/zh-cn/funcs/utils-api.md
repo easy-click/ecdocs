@@ -20,7 +20,48 @@
 > ```
 
 
+
+
+
+### utils.getStartAppCmd 命令打开app
+
+* 拼接打开APP命令
+* 适合EC6.8.0+
+* @param packageName 程序的包名
+* @return {string} 命令字符串
+
+> ```javascript
+> function main(){
+> 	  startEnv()
+>     let pkg = "com.youdao.translator";
+>     //获取命令
+>     let d =utils.getStartAppCmd(pkg);
+>     
+>     logd(d);
+> 
+>     //激活命令执行
+>     //let result = shell.execCommand(d);
+>     //logd("result => "+result);
+>     //root方式执行
+>     //var result = shell.sudo(d);
+>     //logd("result => "+result);
+>     //开启代理服务，使用代理服务执行命令
+>     var result = shell.execAgentCommand(d);
+>     logd("result => "+result);
+> }
+> main();
+> ```
+
+
+
+
+
+
+
+
+
 ### utils.openAppByName 打开APP(应用名称)
+
 * 打开APP，通过应用名称
 * @param appName 程序名称，比如今日头条
 * @return 布尔型 true 代表成功，false 代表失败
@@ -67,6 +108,66 @@
 > }
 > main();
 > ```
+
+
+
+
+
+### utils.getStartActivityCmd命令 打开activity
+
+- 适合EC6.8.0+
+
+* 打开一个activity，通过map参数
+  * @param map 例如{"action":""},key的固定只有
+  * action: 标准的android action字符串
+  * uri: uri可以是http网址，也可以是文件file:///地址，也可以是 URLSchema语法 
+  * type: uri对应的type，等同于MIME类型，例如安装apk包的type是 application/vnd.android.package-archive
+  * pkg: 要打开的activity对应的包名
+  * className: 要打开的 className 对应的类名
+  * flag: androi打开activity 标准的flag标志位，特殊情况下可以填写
+  * 其他的都是属于intent参数了
+* @return 布尔型 true 代表成功，false 代表失败
+
+```javascript
+
+
+function main() {
+    startEnv()
+    //let pkg = "com.youdao.translator";
+
+    let map1={
+        "action":"android.intent.action.VIEW",
+        "pkg":"com.youdao.translator"
+    }
+    //uri演示打电话 这里的uri可以是其他
+     let map2={
+            "action":"android.intent.action.CALL",
+            "uri":"tel:1000"
+     }
+    //获取命令
+    let d =utils.getStartActivityCmd(map1);
+    
+    logd(d);
+
+    //激活命令执行
+    //let result = shell.execCommand(d);
+    //logd("result => "+result);
+    //root方式执行
+    //var result = shell.sudo(d);
+    //logd("result => "+result);
+    //开启代理服务，使用代理服务执行命令
+    var result = shell.execAgentCommand(d);
+    logd("result => "+result);
+
+}
+
+
+main()
+
+
+```
+
+
 
 
 

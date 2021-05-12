@@ -263,6 +263,80 @@
 > main();
 > ```
 
+
+
+### image.screencapImage screencap命令截图
+
+* 使用系统的screencap命令截图AutoImage，适合root或者代理模式, 有root权限或者开启了代理服务
+* 适合版本 EC 6.8.0+
+* @param root 是否优先使用root方式截图
+* @return AutoImage 对象或者null
+
+```javascript
+
+function main() {
+    startEnv()
+    for (var i = 0; i < 10; i++) {
+        sleep(1000);
+        let d =image.screencapImage(false);
+        logd(d);
+        if (d) {
+             var r = image.saveTo(d,"/sdcard/data/a"+i+".png");
+             logd(r);
+             image.recycle(d )
+
+             logd("isRecycled "+image.isRecycled(d));
+        }
+
+    }
+
+}
+
+main()
+
+```
+
+
+
+### image.screencapBitmap screencap命令截图Bitmap
+
+* 使用系统的screencap命令截图为bitmap，适合root或者代理模式, 有root权限或者开启了代理服务
+* 适合版本 EC 6.8.0+
+* @param root 是否优先使用root方式截图
+* @return {Bitmap} 对象
+
+```javascript
+
+function main() {
+    startEnv()
+    for (var i = 0; i < 10; i++) {
+        sleep(1000);
+        let d =image.screencapBitmap(false);
+        logd(d);
+        if (d) {
+             var r = image.saveBitmap(d,"png",100,"/sdcard/data/b"+i+".png");
+             logd(r);
+
+             image.recycle(d)
+
+             logd("isRecycled "+image.isRecycled(d));
+
+        }
+    }
+}
+main()
+
+
+```
+
+
+
+
+
+
+
+
+
 ## 比色
 
 ### image.cmpColor 单点比色
