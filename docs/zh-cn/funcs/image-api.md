@@ -100,7 +100,7 @@
 >           home();
 >            //申请完权限等1s再截图,否则会截不到图
 >            sleep(1000)
->           for (var i = 0; i < 10; i++) {
+>           for (let i = 0; i < 10; i++) {
 >               var cap = image.captureScreen(3,0,0,300,400)
 >               logd("截图数据: " +cap)
 >               sleep(1000)
@@ -135,7 +135,7 @@
 >        home();
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->        for (var i = 0; i < 10; i++) {
+>        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureFullScreen()
 >            logd("截图数据: " +cap)
 >            sleep(1000)
@@ -169,7 +169,7 @@
 >        home();
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->        for (var i = 0; i < 10; i++) {
+>        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureFullScreenEx()
 >            logd("截图数据: " +cap)
 >            sleep(1000)
@@ -210,7 +210,7 @@
 >        home();
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->        for (var i = 0; i < 10; i++) {
+>        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureScreenBitmap("jpg",100,100,200,300,100);
 >            logd("截图数据: " +cap)
 >            sleep(1000)
@@ -253,7 +253,7 @@
 >     home();
 >     //申请完权限等1s再截图,否则会截不到图
 >     sleep(1000)
->     for (var i = 0; i < 10; i++) {
+>     for (let i = 0; i < 10; i++) {
 >         var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
 >         logd("是否成功: " +cap)
 >         sleep(1000)   
@@ -276,12 +276,12 @@
 
 function main() {
     startEnv()
-    for (var i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         sleep(1000);
         let d =image.screencapImage(false);
         logd(d);
         if (d) {
-             var r = image.saveTo(d,"/sdcard/data/a"+i+".png");
+             let r = image.saveTo(d,"/sdcard/data/a"+i+".png");
              logd(r);
              image.recycle(d )
 
@@ -309,12 +309,12 @@ main()
 
 function main() {
     startEnv()
-    for (var i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         sleep(1000);
         let d =image.screencapBitmap(false);
         logd(d);
         if (d) {
-             var r = image.saveBitmap(d,"png",100,"/sdcard/data/b"+i+".png");
+             let r = image.saveBitmap(d,"png",100,"/sdcard/data/b"+i+".png");
              logd(r);
 
              image.recycle(d)
@@ -353,7 +353,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
+>       let req = image.requestScreenCapture(10000,0);
 >         if (!req) {
 >          req = image.requestScreenCapture(10000,0);
 >       }
@@ -363,10 +363,10 @@ main()
 >       }
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->       var aimage = image.captureFullScreen();
+>       let aimage = image.captureFullScreen();
 >       if (aimage != null) {
->            var points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
->           var points = image.cmpColor(aimage,points3, 0.9, 0, 0, 0, 0);
+>            let points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>           let points = image.cmpColor(aimage,points3, 0.9, 0, 0, 0, 0);
 >           logd("points "+points);
 >           //图片要回收
 >           image.recycle(aimage)
@@ -392,7 +392,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
+>       let req = image.requestScreenCapture(10000,0);
 >         if (!req) {
 >          req = image.requestScreenCapture(10000,0);
 >       }
@@ -402,8 +402,8 @@ main()
 >       }
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->            var points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
->           var points = image.cmpColorEx(points3, 0.9, 0, 0, 0, 0);
+>            let points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>           let points = image.cmpColorEx(points3, 0.9, 0, 0, 0, 0);
 >           logd("points "+points);
 > 
 > }
@@ -426,7 +426,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
+>       let req = image.requestScreenCapture(10000,0);
 >         if (!req) {
 >          req = image.requestScreenCapture(10000,0);
 >       }
@@ -436,12 +436,12 @@ main()
 >       }
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->        var aimage = image.captureFullScreen();
+>        let aimage = image.captureFullScreen();
 >       if (aimage != null) {
->            var points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->            var points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->            var points3 ="205|1130|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->           var points = image.cmpMultiColor(aimage,[points1,points2,points3], 0.9, 0, 0, 0, 0);
+>            let points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>            let points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>            let points3 ="205|1130|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>           let points = image.cmpMultiColor(aimage,[points1,points2,points3], 0.9, 0, 0, 0, 0);
 >           logd("points "+points);
 >           //图片要回收
 >           image.recycle(aimage)
@@ -463,7 +463,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
+>       let req = image.requestScreenCapture(10000,0);
 >         if (!req) {
 >          req = image.requestScreenCapture(10000,0);
 >       }
@@ -473,11 +473,11 @@ main()
 >       }
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->        var points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->        var points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->        var points3 ="205|1130|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
->           var points = image.cmpMultiColorEx([points1,points2,points3], 0.9, 0, 0, 0, 0);
->           logd("points "+points);
+>        let points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>        let points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>        let points3 ="205|1130|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
+>        let points = image.cmpMultiColorEx([points1,points2,points3], 0.9, 0, 0, 0, 0);
+>        logd("points "+points);
 > }
 > main();
 > ```
@@ -502,7 +502,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
+>       let req = image.requestScreenCapture(10000,0);
 >         if (!req) {
 >          req = image.requestScreenCapture(10000,0);
 >       }
@@ -512,12 +512,12 @@ main()
 >       }
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->       var aimage = image.captureFullScreen();
+>       let aimage = image.captureFullScreen();
 >       if (aimage != null) {
->           var points = image.findColor(aimage,"0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
+>           let points = image.findColor(aimage,"0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >           logd("points "+points);
 >            //这玩意是个数组
->            if(points){
+>            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
 >                    logd(points[i],points[i].x,points[i].y)
 >                    //点击坐标
@@ -558,7 +558,7 @@ main()
 >           var points = image.findColorJ(aimage,"金币");
 >           logd("points "+points);
 >            //这玩意是个数组
->            if(points){
+>            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
 >                    logd(points[i],points[i].x,points[i].y)
 >                    //点击坐标
@@ -602,7 +602,7 @@ main()
 >       var points = image.findColorEx("0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points "+points);
 >        //这玩意是个数组
->        if(points){
+>        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
 >                logd(points[i],points[i].x,points[i].y)
 >                //点击坐标
@@ -636,7 +636,7 @@ main()
 >       var points = image.findColorExJ("金币");
 >       logd("points "+points);
 >        //这玩意是个数组
->        if(points){
+>        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
 >  >              logd(points[i],points[i].x,points[i].y)
 >                 //点击坐标
@@ -683,7 +683,7 @@ main()
 >           var points = image.findMultiColor(aimage,"0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >           logd("points "+points);
 >            //这玩意是个数组
->            if(points){
+>            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
 >                    logd(points[i],points[i].x,points[i].y)
 >                    //点击坐标
@@ -726,7 +726,7 @@ main()
 >           var points = image.findMultiColorJ(aimage,"金币");
 >           logd("points "+points);
 >            //这玩意是个数组
->            if(points){
+>            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
 >                    logd(points[i],points[i].x,points[i].y)
 >                    //点击坐标
@@ -772,7 +772,7 @@ main()
 >       var points = image.findMultiColorEx("0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points "+points);
 >        //这玩意是个数组
->        if(points){
+>        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
 >                    logd(points[i],points[i].x,points[i].y)
 >                    //点击坐标
@@ -807,7 +807,7 @@ main()
 >       var points = image.findMultiColorExJ("金币");
 >       logd("points "+points);
 >        //这玩意是个数组
->        if(points){
+>        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
 >                    logd(points[i],points[i].x,points[i].y)
 >                    //点击坐标
@@ -856,7 +856,7 @@ main()
 >        let points = image.findImage(aimage, sms,0,0,0,0,1, 1);
 >        logd("points "+points);
 >        //这玩意是个数组
->        if(points){
+>        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
 >                    logd(points[i])
 >                    let x = parseInt((points[i].left + points[i].right)/2)
@@ -906,7 +906,7 @@ main()
 >     var points = image.findImageEx(sms,0,0,0,0,1, 1);
 >     logd("points "+points);
 >    //这玩意是个数组
->    if(points){
+>    if(points && points.length > 0){
 >        for(let i=0;i<points.length;i++){
 >                    logd(points[i])
 >                    let x = parseInt((points[i].left + points[i].right)/2)
@@ -970,7 +970,7 @@ main()
 >        //这玩意是个数组
 >          logd(JSON.stringify(matchs));
 >            //这玩意是个数组
->            if(matchs){
+>            if(matchs && matchs.length > 0){
 >                for(let i=0;i<matchs.length;i++){
 >                    logd(JSON.stringify(matchs[i]));
 >                    clickPoint(matchs[i].x,matchs[i].y)
@@ -1023,7 +1023,7 @@ main()
 >          let matchs = image.matchTemplateEx( temp,0.9,0.9,rectp,-1,1);
 >          logd(JSON.stringify(matchs));
 >            //这玩意是个数组
->            if(matchs){
+>            if(matchs && matchs.length > 0){
 >                for(let i=0;i<matchs.length;i++){
 >                    logd(JSON.stringify(matchs[i]));
 >                    clickPoint(matchs[i].x,matchs[i].y)
