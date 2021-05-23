@@ -1201,7 +1201,7 @@
 > 
 > function main(){
 >     var result = getLastNotification("com.x",1);
->     if (result!=null && result.length>0){
+>     if (result && result.length>0){
 >         var s = shotNotification(result[0].seqId);
 >         toast("结果:"+s);
 >     }   
@@ -1256,8 +1256,13 @@
 > ```javascript
 > 
 > function main(){
->     var result = getLastToast("com.xx",100);
->     toast("结果:"+result);
+>     let result = getLastToast("com.xx",100);
+>     toast("结果:"+JSON.stringify(result));
+>     if(result && result>0){
+>        for(let i=0;i<result.length;i++){
+>            logd(result[i])
+>        }
+>     }
 > }
 > main();
 > ```
