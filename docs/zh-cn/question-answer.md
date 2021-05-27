@@ -175,7 +175,7 @@ vivo 省电管理：
 
 ## 打包后运行不能点击 
 - 如果EC调试版本和打包的APP同时存在，两个APP运行模式不同，可能有冲突，卸载EC调试版本即可
- 
+
 
 ## 3.x 与 4.x 迁移
 - 3.X版本自动化服务是脚本运行的必要条件，4.x 将自动化服务作为非必要条件，在4.x中使用自动化服务请自行在脚本中判断或者启动服务环境，
@@ -200,7 +200,7 @@ vivo 省电管理：
 ## JSON.stringify 内存溢出
 - 如果有以下错误，请检查一下要转换的对象中是否有java的string，解决方法将原来的string转为js的字符串
  例如 s= s +""  这样既可
-    
+   
     STACK_TRACE=java.lang.StackOverflowError: stack size 1039KB
         at java.lang.reflect.Method.invoke(Native Method)
         at org.mozilla.javascript.MemberBox.invoke(Unknown Source:4)
@@ -224,3 +224,10 @@ vivo 省电管理：
 
 ## 无障碍打开提示未开启
 - 这个现象是由于手机系统造成的，可以尝试重启手机解决该问题
+
+### OCR apk无法启动
+
+- 请在手机上设置允许自启动、允许关联启动、允许后台活动
+
+  <img src='zh-cn/images/ry-open-activity.png' width='300' >
+

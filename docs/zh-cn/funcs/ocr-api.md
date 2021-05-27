@@ -57,7 +57,7 @@
 >   		loge("initServer error : " + ocr.getErrorMsg());
 >   		return;
 >   	}
->    
+>    	ocr.setDaemonServer(true,500);
 >   	for (var ix = 0; ix < 20; ix++) {
 >    
 >   		//读取一个bitmap
@@ -117,7 +117,7 @@
 >   		loge("initServer error : " + ocr.getErrorMsg());
 >   		return;
 >   	}
->    
+>    	ocr.setDaemonServer(true,500);
 >   	for (var ix = 0; ix < 20; ix++) {
 >    
 >   		//读取一个bitmap
@@ -272,6 +272,24 @@
 ```javascript
 代码例子常见 OCR初始化
 ```
+
+
+
+## ocr.setDaemonServer 守护OCR服务
+
+* 设置是否守护OCR服务
+* 适合版本 EC 6.9.0+
+* @param daemon true 代表守护，false代表不守护
+* @param delay 每次守护间隔，单位是毫秒
+* @return {bool} 成功或者失败
+
+
+
+```javascript
+代码例子常见 OCR初始化
+```
+
+
 
 
 
