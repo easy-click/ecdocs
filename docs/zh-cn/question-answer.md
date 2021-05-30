@@ -231,3 +231,21 @@ vivo 省电管理：
 
   <img src='zh-cn/images/ry-open-activity.png' width='300' >
 
+
+
+## 6.9.0之前解决H5横向滑动卡
+
+1、原因：是由于viewpager和webview的事件冲突
+2、解决方案，在ui.js中直接设置activity的视图
+
+```javascript
+function main() {
+    var u1=ui.parseView("main2.xml");
+    var activity=ui.getActivity();
+    activity.setContentView(u1);
+}
+main();
+
+
+```
+
