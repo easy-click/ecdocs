@@ -245,7 +245,5 @@ function main() {
     activity.setContentView(u1);
 }
 main();
-
-
 ```
 
