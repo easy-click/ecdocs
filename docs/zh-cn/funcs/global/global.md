@@ -181,7 +181,7 @@
 
  * 格式化对象为JSON字符串
  * @param 对象
-
+ * @return 字符串
 > ```javascript
 > function main(){
 >     var m ={"sss":"a"};
@@ -195,7 +195,7 @@
 
  * 格式化JSON字符串为对象
  * @param 字符串
-
+ * @return 对象
 > ```javascript
 > function main(){
 >     var m ={"sss":"a"};
