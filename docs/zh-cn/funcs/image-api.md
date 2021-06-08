@@ -487,9 +487,9 @@ main()
 ## 找色
 
 ### image.findColor 单点找色
-* 在图片中找到颜色和color完全相等的某个点，并返回该点的左边；如果没有找到，则返回null。
+* 在图片中找到颜色和color完全相等的某个点，并返回该点的坐标；如果没有找到，则返回null。
 * @param image 图片
-* @param color     要寻找的颜色
+* @param color     要寻找的颜色类似， 0xCDD7E9-0x101010|0xCDD7E9-0x101010
 * @param threshold 找色时颜色相似度取值为 0.0 ~ 1.0
 * @param x 区域的X起始坐标
 * @param y 区域的Y起始坐标
@@ -514,7 +514,7 @@ main()
 >        sleep(1000)
 >       let aimage = image.captureFullScreen();
 >       if (aimage != null) {
->           let points = image.findColor(aimage,"0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
+>           let points = image.findColor(aimage,"0xCDD7E9-0x101010|0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >           logd("points "+points);
 >            //这玩意是个数组
 >            if(points && points.length > 0){
@@ -575,7 +575,7 @@ main()
 
 
 ### image.findColorEx 自动截屏单点找色
-* 在当前屏幕中找到颜色和color完全相等的点，并返回该点的左边；如果没有找到，则返回null。
+* 在当前屏幕中找到颜色和color完全相等的点，并返回该点的坐标；如果没有找到，则返回null。
 * @param color     要寻找的颜色
 * @param threshold 找色时颜色相似度取值为 0.0 ~ 1.0
 * @param x 区域的X起始坐标
@@ -599,7 +599,7 @@ main()
 >       }
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
->       var points = image.findColorEx("0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
+>       var points = image.findColorEx("0xCDD7E9-0x101010|0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points "+points);
 >        //这玩意是个数组
 >        if(points && points.length > 0){
