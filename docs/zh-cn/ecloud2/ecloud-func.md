@@ -279,6 +279,54 @@
 
 
 
+
+
+##  ecloud.getDataPop 取得并删除数据
+
+ * 通过数据组名或者数据名称取得数据,获取后云控自动删除, 前提是要中云控中存在这个数据
+
+ * 适合版本： EC 6.11.0+
+
+ * @param map 可扩展参数表
+
+* 例如 {"groupName":"数据组1","dataName":"key","getType":1}
+
+* key定义： groupName = 数据组名称
+
+* dataName = 数据名称
+
+* getType = 获取数据方式，1 头部获取，2 尾部获取，3 随机获取
+
+* @return {null|string} 字符串
+
+  
+
+> ```javascript
+> function main(){
+>  var d = ecloud.getDataPop({"groupName":"资源组1","dataName":"111","getType":1})
+>  logd(d)
+> }
+> main();
+> ```
+
+- 返回值示例
+- id: 数据id，不用管这个
+- name: 数据的名称
+- content: 数据的内容
+
+> ```json
+>  [
+>          {
+>              "id": "",
+>              "name": "",
+>              "content": ""
+>          }
+>      ]
+> 
+> ```
+
+
+
 ##  ecloud.addData 新增数据
 
  * 新增一组数据，如果组名存在了，会自动最近数据
@@ -438,6 +486,24 @@
 > ```
 
 
+
+##  ecloud.removeScriptFile 清除脚本
+
+ * 删除脚本文件保证安全
+
+ * 适合版本： EC 6.11.0+
+
+ * @return {bool} true代表成功 false ，代表失败
+
+   
+
+> ```javascript
+> function main(){
+> var d = ecloud.removeScriptFile()
+> logd(d)
+> }
+> main();
+> ```
 
 
 
