@@ -3,7 +3,7 @@
 * 会基本语法和函数调用就可以编程
 * 开发工具成熟易上手
 * JS教程：https://www.runoob.com/js/js-tutorial.html
-
+* 简单易学
 
 ## 常见踩坑解决方案
 - 1.热更新失败 https://www.bilibili.com/video/BV1Pt4y1B75R?p=1
