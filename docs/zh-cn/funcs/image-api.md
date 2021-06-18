@@ -97,12 +97,10 @@
 >              request = image.requestScreenCapture(10000,0);
 >           }
 >           logd("申请截图结果... "+request)
->           if (!request) {
 >                if(!request){
 >                    loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
 >                    exit()
 >                }
->           }
 >            //申请完权限等1s再截图,否则会截不到图
 >            sleep(1000)
 >           for (let i = 0; i < 10; i++) {
