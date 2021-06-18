@@ -44,6 +44,7 @@
 >            request = image.requestScreenCapture(10000,0);
 >            if(!request){
 >                loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>                exit()
 >            }
 >        }
 >        logd("申请截图结果... "+request)
@@ -94,15 +95,15 @@
 >           var request = image.requestScreenCapture(10000,0);
 >           if (!request) {
 >              request = image.requestScreenCapture(10000,0);
->                if(!request){
->                    loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->                }
+
 >           }
 >           logd("申请截图结果... "+request)
 >           if (!request) {
->              return;
+>                if(!request){
+>                    loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>                    exit()
+>                }
 >           }
->           home();
 >            //申请完权限等1s再截图,否则会截不到图
 >            sleep(1000)
 >           for (let i = 0; i < 10; i++) {
@@ -134,10 +135,10 @@
 >           request = image.requestScreenCapture(10000,0);
 >        }
 >        logd("申请截图结果... "+request)
->        if (!request) {
->           return;
+>        if(!request){
+>            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>            exit()
 >        }
->        home();
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
@@ -168,10 +169,10 @@
 >           request = image.requestScreenCapture(10000,0);
 >        }
 >        logd("申请截图结果... "+request)
->        if (!request) {
->           return;
+>        if(!request){
+>            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>            exit()
 >        }
->        home();
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
@@ -209,10 +210,10 @@
 >           request = image.requestScreenCapture(10000,0);
 >        }
 >        logd("申请截图结果... "+request)
->        if (!request) {
->           return;
+>        if(!request){
+>            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>            exit()
 >        }
->        home();
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
@@ -252,9 +253,10 @@
 >        request = image.requestScreenCapture(10000,0);
 >     }
 >     logd("申请截图结果... "+request)
->     if (!request) {
->        return;
->     }
+>        if(!request){
+>            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>            exit()
+>        }
 >     home();
 >     //申请完权限等1s再截图,否则会截不到图
 >     sleep(1000)
