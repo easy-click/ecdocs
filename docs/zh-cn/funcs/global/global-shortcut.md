@@ -890,7 +890,7 @@
 > ```
 
 
-### removeNodeFlag 移除节点获取的某个标志位
+### removeNodeFlag 移除节点获取的某个标志位[强制刷新节点]
 * 移除节点获取的某个标志位
 * @param flag 参见 AccessibilityServiceInfo.FLAG_*，如果是0是强制刷新
 * @return {null|boolean}
