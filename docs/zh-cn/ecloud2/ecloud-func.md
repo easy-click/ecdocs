@@ -281,29 +281,24 @@
 
 
 
-##  ecloud.getDataPop 取得并删除数据
+##  ecloud.getDataPop 取得并删除数
 
- * 通过数据组名或者数据名称取得数据,获取后云控自动删除, 前提是要中云控中存在这个数据
 
- * 适合版本： EC 6.11.0+
 
- * @param map 可扩展参数表
-
-* 例如 {"groupName":"数据组1","dataName":"key","getType":1}
-
+* 通过数据组名或者数据名称取得数据,获取后云控自动删除, 前提是要中云控中存在这个数据
+* @param map 可扩展参数表
+* 例如 {"groupName":"数据组1","dataName":"key","getType":1,"size":1}
 * key定义： groupName = 数据组名称
-
 * dataName = 数据名称
-
 * getType = 获取数据方式，1 头部获取，2 尾部获取，3 随机获取
+* size = 需要获取的数据条数
+* @return {null|json数组} 空或者JSON数组
 
-* @return {null|string} 字符串
 
-  
 
 > ```javascript
 > function main(){
->  var d = ecloud.getDataPop({"groupName":"资源组1","dataName":"111","getType":1})
+>  var d = ecloud.getDataPop({"groupName":"资源组1","dataName":"111","getType":1,"size":10})
 >  logd(d)
 > }
 > main();
