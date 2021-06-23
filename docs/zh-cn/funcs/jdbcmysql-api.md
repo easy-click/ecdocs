@@ -22,6 +22,7 @@
 >     logd("connect "+conn);
 >     if (!conn) {
 >         logd(jdbc.getLastError());
+>         exit()
 >     }
 >     //查询语句
 >     let q = "Select * from table1 where id=1"
@@ -47,6 +48,7 @@
 >     logd("connect "+conn);
 >     if (!conn) {
 >         logd(jdbc.getLastError());
+>         exit()
 >     }
 >     //查询语句
 >     let q = "Select * from table1 where id=1"
@@ -74,6 +76,7 @@
 >     logd("connect "+conn);
 >     if (!conn) {
 >         logd(jdbc.getLastError());
+>         exit()
 >     }
 >     //查询语句
 >     let q = "Select * from table1 where id=1"
@@ -104,6 +107,7 @@
 >     logd("connect "+conn);
 >     if (!conn) {
 >         logd(jdbc.getLastError());
+>         exit()
 >     }
 >     //查询语句
 >     let q = "select * from table1 where id=1"
@@ -132,6 +136,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >   
 >       //查询语句
@@ -190,6 +195,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >       
 >       //查询语句
@@ -251,6 +257,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >       
 >       //查询语句
@@ -324,6 +331,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >       
 >       //查询语句
@@ -418,6 +426,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >       
 >       //查询语句
@@ -479,6 +488,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >       
 >       //查询语句
@@ -538,6 +548,7 @@
 >           logd("connect "+conn);
 >           if (!conn) {
 >               logd(jdbc.getLastError());
+>         exit()
 >           }
 >           
 >           
@@ -591,6 +602,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>         exit()
 >       }
 >       
 >       //更新数据
@@ -661,6 +673,7 @@
 >       logd("connect "+conn);
 >       if (!conn) {
 >           logd(jdbc.getLastError());
+>           exit()
 >       }
 >       
 >       //查询语句
