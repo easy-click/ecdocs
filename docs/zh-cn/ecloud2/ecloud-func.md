@@ -298,27 +298,19 @@
 
 > ```javascript
 > function main(){
->  var d = ecloud.getDataPop({"groupName":"资源组1","dataName":"111","getType":1,"size":10})
->  logd(d)
+> var d = ecloud.getDataPop({"groupName":"资源组1","dataName":"111","getType":1,"size":10})
+> logd(d)
+>   logd(d[0])
 > }
 > main();
 > ```
 
 - 返回值示例
-- id: 数据id，不用管这个
-- name: 数据的名称
-- content: 数据的内容
 
 > ```json
->  [
->          {
->              "id": "",
->              "name": "",
->              "content": ""
->          }
->      ]
-> 
-> ```
+>  ["aaa","bbb"]
+>    
+>    ```
 
 
 
