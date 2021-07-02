@@ -861,7 +861,7 @@
 * 设置获取节点的模式
 * @param mode 1 是增强型， 2 是快速型，默认是增强型
 * @param fetchInvisibleNode 是否抓取隐藏的元素，默认不抓取
-* @param fetchNotImportantNode 是否抓取不重要的元素
+* @param fetchNotImportantNode 是否抓取不重要的元素，默认抓取
 * @param algorithm 节点查找算法,默认是nsf，分别有 nsf = 节点静态算法，bsf= 广度优先， dsf=深度度优先
 
 * @return {boolean|*}
@@ -869,7 +869,7 @@
 > ```javascript
 > 
 > function main(){
->     var result = setFetchNodeMode(1,true,true,"nsf");
+>     var result = setFetchNodeMode(1,false,true,"nsf");
 >     toast("result:"+result);
 > }
 > main();
