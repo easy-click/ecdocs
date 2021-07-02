@@ -833,7 +833,7 @@ main()
 * @param y         找图区域 y 起始坐标
 * @param ex 终点X坐标
 * @param ey 终点Y坐标
-* @param weakThreshold 弱阈值。该值用于在每一轮模板匹配中检验是否继续匹配。如果相似度小于该值，则不再继续匹配。取值范围为0~1的浮点数。默认值为0.9。
+* @param weakThreshold 弱阈值。该值用于在每一轮模板匹配中检验是否继续匹配。如果相似度小于该值，则不再继续匹配。取值范围为0~1的浮点数。默认值为0.7。
 * @param threshold 图片相似度。取值范围为0~1的浮点数。默认值为0.9。
 * @param limit 限制结果的数量，如果要找到1个，就填写1，如果是多个请填写多个
 * @param method 0: TM_SQDIFF平方差匹配法,1: TM_SQDIFF_NORMED归一化平方差匹配方法,2: TM_CCORR相关匹配法,3: TM_CCORR_NORMED归一化相关匹配法,4: TM_CCOEFF系数匹配法,5: TM_CCOEFF_NORMED归一化系数匹配法
@@ -858,7 +858,7 @@ main()
 >    logd("aimage "+aimage);
 >    if (aimage != null) {
 >        //在图片中查找
->        let points = image.findImage(aimage, sms,0, 0, 0, 0,0.9, 0.9, 21, 3);
+>        let points = image.findImage(aimage, sms,0, 0, 0, 0,0.7, 0.9, 21, 5);
 >        logd("points "+points);
 >        //这玩意是个数组
 >        if(points && points.length > 0){
@@ -888,7 +888,7 @@ main()
 * @param y         找图区域 y 起始坐标
 * @param ex 终点X坐标
 * @param ey 终点Y坐标
-* @param weakThreshold 弱阈值。该值用于在每一轮模板匹配中检验是否继续匹配。如果相似度小于该值，则不再继续匹配。取值范围为0~1的浮点数。默认值为0.9。
+* @param weakThreshold 弱阈值。该值用于在每一轮模板匹配中检验是否继续匹配。如果相似度小于该值，则不再继续匹配。取值范围为0~1的浮点数。默认值为0.7。
 * @param threshold 图片相似度。取值范围为0~1的浮点数。默认值为0.9。
 * @param limit 限制结果的数量，如果要找到1个，就填写1，如果是多个请填写多个
 * @param method 0: TM_SQDIFF平方差匹配法,1: TM_SQDIFF_NORMED归一化平方差匹配方法,2: TM_CCORR相关匹配法,3: TM_CCORR_NORMED归一化相关匹配法,4: TM_CCOEFF系数匹配法,5: TM_CCOEFF_NORMED归一化系数匹配法
@@ -909,7 +909,7 @@ main()
 >     //从工程目录下res文件夹下读取sms.png文件
 >    var sms=readResAutoImage("sms.png");
 >     //在当前屏幕中查找，并且限制只查找一个
->     var points = image.findImageEx(sms,0,0,0,0,0.9, 0.9, 21, 3);
+>     var points = image.findImageEx(sms,0,0,0,0,0.7, 0.9, 21, 5);
 >     logd("points "+points);
 >    //这玩意是个数组
 >    if(points && points.length > 0){
@@ -972,7 +972,7 @@ main()
 >         rectp.top=0;
 >         rectp.right==device.getScreenWidth();
 >         rectp.bottom=device.getScreenHeight();
->          let matchs = image.matchTemplate(aimage, temp,0.9,0.9,rectp,-1,10,3);
+>          let matchs = image.matchTemplate(aimage, temp,0.7,0.9,rectp,-1,10,5);
 >        //这玩意是个数组
 >          logd(JSON.stringify(matchs));
 >            //这玩意是个数组
@@ -1026,7 +1026,7 @@ main()
 >         rectp.top=0;
 >         rectp.right==device.getScreenWidth();
 >         rectp.bottom=device.getScreenHeight();
->          let matchs = image.matchTemplateEx( temp,0.9,0.9,rectp,-1,1,3);
+>          let matchs = image.matchTemplateEx( temp,0.7,0.9,rectp,-1,1,5);
 >          logd(JSON.stringify(matchs));
 >            //这玩意是个数组
 >            if(matchs && matchs.length > 0){
