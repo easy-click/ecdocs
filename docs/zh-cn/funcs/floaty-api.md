@@ -63,35 +63,32 @@
  * @return {View} android的View对象
 
 > ```javascript
->  
+> 
 > function main(){
 > let tag="123";
->  //关闭tag=123的浮窗
+> //关闭tag=123的浮窗
 > floaty.close(tag)
 > //请求权限
 > let p = floaty.requestFloatViewPermission(1000)
 > logd("是否有浮窗权限: "+p);
 > if (!p) {
->     loge("没有浮窗权限，终止执行");
->     return;
+>  loge("没有浮窗权限，终止执行");
+>  return;
 > }
+>     sleep(1000);
+>     //展示main.xml文件的视图，并且返回安卓原生原生的对象
+>    let view = floaty.showFloatXml(tag,"main.xml",100,100);
+> 
+>    logd(view);
+>   if (view) {
+>          // 从悬浮窗中查找视图tag=web的对象 （例子）
+>       //let web = view.findViewWithTag("web")
+>    }
+>   }
+>   main();
 > ```
 
->    sleep(1000);
->    //展示main.xml文件的视图，并且返回安卓原生原生的对象
->    let view = floaty.showFloatXml(tag,"main.xml",100,100);
 
->    logd(view);
->    if (view) {
->         // 从悬浮窗中查找视图tag=web的对象 （例子）
->        //let web = view.findViewWithTag("web")
->    }
->    }
->    main();
->
->    ```
->    
->    ```
 
 
 ## floaty.showFloatView 显示一个View悬浮窗
