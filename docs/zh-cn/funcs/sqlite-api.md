@@ -7,13 +7,13 @@
 
 ## sqlite.connectOrCreateDb 连接数据库
  * 创建或者链接一个数据库
- * @param dbName 数据库名称
+ * @param dbName 数据库路径名称
  * @return boolean true 代表请求权限成功，false代表失败
 
 > ```javascript
 >     
 > function main(){
->     var create = sqlite.connectOrCreateDb("test.db");
+>     var create = sqlite.connectOrCreateDb("/sdcard/test.db");
 >     logd("create db result："+create);
 > }
 > main();
