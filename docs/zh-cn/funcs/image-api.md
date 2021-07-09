@@ -1365,7 +1365,7 @@ main()
  * 适用版本(EC 5.15.0+)
  * @param bitmap 图片
  * @param format 要保存图像格式，有 png，jpg，webp
- * @param q 要保存图像质量，1-100
+ * @param q 要保存图像质量，1-100,png格式无效
  * @param path 要保存图像路径
  * @return {bool} true 成功 false 失败
 
@@ -1402,7 +1402,7 @@ main()
 *  转成base64的字符串, jpg格式较小，可以减少内存
  * @param img 图片对象
  * @param format 格式  jpg或者 png
- * @param q 质量  1-100，质量越大 越清晰
+ * @param q 质量  1-100，质量越大 越清晰,png格式无效
  * @return 字符串
 
 > ```javascript
@@ -1606,7 +1606,7 @@ main()
  * bitmap转为base64
  * @param bitmap 图片
  * @param format 格式，jpg或者png
- * @param q 质量  1 - 100
+ * @param q 质量  1 - 100,png格式无效
  * @return {string} base64字符串
 
 > ```javascript
