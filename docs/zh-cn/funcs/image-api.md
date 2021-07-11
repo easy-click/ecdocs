@@ -1642,6 +1642,10 @@ main()
 
 
 
+
+
+
+
 ### image.imageToBitmap (AutoImage转Bitmap)
  * 将AutoImage转换为安卓原生的Bitmap对象
  * @param img {AutoImage}
