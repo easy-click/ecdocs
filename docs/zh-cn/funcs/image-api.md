@@ -48,7 +48,7 @@
 >            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
 >            exit()
 >        }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 > }
 > main();
@@ -101,7 +101,7 @@
 >                    loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
 >                    exit()
 >                }
->            //申请完权限等1s再截图,否则会截不到图
+>            //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >            sleep(1000)
 >           for (let i = 0; i < 10; i++) {
 >               var cap = image.captureScreen(3,0,0,300,400)
@@ -136,7 +136,7 @@
 >            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
 >            exit()
 >        }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureFullScreen()
@@ -170,7 +170,7 @@
 >            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
 >            exit()
 >        }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureFullScreenEx()
@@ -211,7 +211,7 @@
 >            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
 >            exit()
 >        }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureScreenBitmap("jpg",100,100,200,300,100);
@@ -255,7 +255,7 @@
 >            exit()
 >        }
 >     home();
->     //申请完权限等1s再截图,否则会截不到图
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >     sleep(1000)
 >     for (let i = 0; i < 10; i++) {
 >         var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
@@ -365,7 +365,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       let aimage = image.captureFullScreen();
 >       if (aimage != null) {
@@ -404,7 +404,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >            let points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
 >           let points = image.cmpColorEx(points3, 0.9, 0, 0, 0, 0);
@@ -438,7 +438,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >        let aimage = image.captureFullScreen();
 >       if (aimage != null) {
@@ -475,7 +475,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >        let points1 ="205|112230|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
 >        let points2 ="205|113022|0xff944b,211|1158|0xff8e42,191|1175|0xfcfbf7";
@@ -514,7 +514,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       let aimage = image.captureFullScreen();
 >       if (aimage != null) {
@@ -555,7 +555,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var aimage = image.captureFullScreen();
 >       if (aimage != null) {
@@ -601,7 +601,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findColorEx("0xCDD7E9-0x101010|0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points " + JSON.stringify(points));
@@ -635,7 +635,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findColorExJ("金币");
 >       logd("points " + JSON.stringify(points));
@@ -680,7 +680,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var aimage = image.captureFullScreen();
 >       if (aimage != null) {
@@ -723,7 +723,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var aimage = image.captureFullScreen();
 >       if (aimage != null) {
@@ -771,7 +771,7 @@ main()
 >           return;
 >       }
 >       
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findMultiColorEx("0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
 >       logd("points " + JSON.stringify(points));
@@ -806,7 +806,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findMultiColorExJ("金币");
 >       logd("points " + JSON.stringify(points));
@@ -849,7 +849,7 @@ main()
 >        toast("申请失败");
 >         exit();
 >     }
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    //从工程目录下res文件夹下读取sms.png文件
 >    let sms=readResAutoImage("sms.png");
@@ -904,7 +904,7 @@ main()
 >        toast("申请失败");
 >         exit();
 >     }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >     //从工程目录下res文件夹下读取sms.png文件
 >    var sms=readResAutoImage("sms.png");
@@ -962,7 +962,7 @@ main()
 >          toast("申请权限失败");
 >          return;
 >      }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >      var aimage = image.captureFullScreen();
 >      if (aimage != null) {
@@ -1016,7 +1016,7 @@ main()
 >          toast("申请权限失败");
 >          return;
 >      }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >      var aimage = image.captureFullScreen();
 >      if (aimage != null) {
@@ -1073,7 +1073,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       for (var i = 0; i < 1000; i++) {
 >              sleep(1000);
@@ -1126,7 +1126,7 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
->        //申请完权限等1s再截图,否则会截不到图
+>        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       for (var i = 0; i < 1000; i++) {
 >              sleep(1000);
@@ -1202,7 +1202,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var color = image.pixelInImage(imageX,100,100);
@@ -1228,7 +1228,7 @@ main()
 >      if (!req) {
 >          toast("申请权限失败");
 >      }
->      //申请完权限等1s再截图,否则会截不到图
+>      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >      sleep(1000)
 >      var aimage = image.captureFullScreen();
 >      if (aimage != null) {
@@ -1257,7 +1257,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var color = image.pixel(imageX,100,100);
@@ -1286,7 +1286,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    ///申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    var bitmap = image.captureScreenBitmap("jpg",800,800,100,100,100);
 >    var color = image.getPixelBitmap(bitmap,100,100);
@@ -1319,7 +1319,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    var bitmap = image.captureScreenBitmap("jpg",800,800,100,100,100);
 >    var w = bitmap.getWidth();
@@ -1347,7 +1347,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var r = image.saveTo(imageX,"/sdcard/a.png");
@@ -1413,7 +1413,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var r = image.toBase64Format(imageX,"jpg",50);
@@ -1442,7 +1442,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>   //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var r = image.clip(imageX,100,100,300,400);
@@ -1470,7 +1470,7 @@ main()
 >        request = image.requestScreenCapture(10000,0);
 >    }
 >    logd("申请截图结果... "+request)
->    //申请完权限等1s再截图,否则会截不到图
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
 >     var r = image.pixel(imageX,100,100);
@@ -1536,7 +1536,7 @@ main()
 >    }
 >
 >    logd("申请截图结果... "+request)
->        //申请完权限等1s再截图,否则会截不到图
+>      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
 >        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
@@ -1578,7 +1578,7 @@ main()
 >    }
 >
 >    logd("申请截图结果... "+request)
->        //申请完权限等1s再截图,否则会截不到图
+>      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
 >        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
@@ -1618,7 +1618,7 @@ main()
 >    }
 >
 >    logd("申请截图结果... "+request)
->        //申请完权限等1s再截图,否则会截不到图
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
 >        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
@@ -1660,7 +1660,7 @@ main()
 >    }
 >
 >    logd("申请截图结果... "+request)
->        //申请完权限等1s再截图,否则会截不到图
+>       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
 >        var d =image.captureFullScreenEx("jpg",0,0,0,0,100);
