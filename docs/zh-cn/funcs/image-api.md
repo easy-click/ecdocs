@@ -519,11 +519,11 @@ main()
 >       let aimage = image.captureFullScreen();
 >       if (aimage != null) {
 >           let points = image.findColor(aimage,"0xCDD7E9-0x101010|0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
->           logd("points "+points);
+>           logd("points "+JSON.stringify(points));
 >            //这玩意是个数组
->            if(points && points.length > 0){
+>            if(points){
 >                for(let i=0;i<points.length;i++){
->                    logd(points[i],points[i].x,points[i].y)
+>                    logd(JSON.stringify(points[i]),points[i].x,points[i].y)
 >                    //点击坐标
 >                    clickPoint(points[i].x,points[i].y)
 >               }
@@ -560,11 +560,11 @@ main()
 >       var aimage = image.captureFullScreen();
 >       if (aimage != null) {
 >           var points = image.findColorJ(aimage,"金币");
->           logd("points "+points);
+>           logd("points "+JSON.stringify(points));
 >            //这玩意是个数组
 >            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
->                    logd(points[i],points[i].x,points[i].y)
+>                    logd(JSON.stringify(points[i]), points[i].x, points[i].y)
 >                    //点击坐标
 >                    clickPoint(points[i].x,points[i].y)
 >               }
@@ -604,11 +604,11 @@ main()
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findColorEx("0xCDD7E9-0x101010|0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
->       logd("points "+points);
+>       logd("points " + JSON.stringify(points));
 >        //这玩意是个数组
 >        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
->                logd(points[i],points[i].x,points[i].y)
+>                logd(JSON.stringify(points[i]), points[i].x, points[i].y)
 >                //点击坐标
 >                clickPoint(points[i].x,points[i].y)
 >           }
@@ -638,7 +638,7 @@ main()
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findColorExJ("金币");
->       logd("points "+points);
+>       logd("points " + JSON.stringify(points));
 >        //这玩意是个数组
 >        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
@@ -685,7 +685,7 @@ main()
 >       var aimage = image.captureFullScreen();
 >       if (aimage != null) {
 >           var points = image.findMultiColor(aimage,"0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
->           logd("points "+points);
+>           logd("points " + JSON.stringify(points));
 >            //这玩意是个数组
 >            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
@@ -728,7 +728,7 @@ main()
 >       var aimage = image.captureFullScreen();
 >       if (aimage != null) {
 >           var points = image.findMultiColorJ(aimage,"金币");
->           logd("points "+points);
+>           logd("points " + JSON.stringify(points));
 >            //这玩意是个数组
 >            if(points && points.length > 0){
 >                for(let i=0;i<points.length;i++){
@@ -774,7 +774,7 @@ main()
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findMultiColorEx("0xDD7A5F-0x101010", "29|25|0xBB454B-0x101010,58|44|0xA6363A-0x101010", 0.9, 0, 0, 0, 0, 10,1);
->       logd("points "+points);
+>       logd("points " + JSON.stringify(points));
 >        //这玩意是个数组
 >        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
@@ -809,7 +809,7 @@ main()
 >        //申请完权限等1s再截图,否则会截不到图
 >        sleep(1000)
 >       var points = image.findMultiColorExJ("金币");
->       logd("points "+points);
+>       logd("points " + JSON.stringify(points));
 >        //这玩意是个数组
 >        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
@@ -859,7 +859,7 @@ main()
 >    if (aimage != null) {
 >        //在图片中查找
 >        let points = image.findImage(aimage, sms,0, 0, 0, 0,0.7, 0.9, 21, 5);
->        logd("points "+points);
+>        logd("points " + JSON.stringify(points));
 >        //这玩意是个数组
 >        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
@@ -910,7 +910,7 @@ main()
 >    var sms=readResAutoImage("sms.png");
 >     //在当前屏幕中查找，并且限制只查找一个
 >     var points = image.findImageEx(sms,0,0,0,0,0.7, 0.9, 21, 5);
->     logd("points "+points);
+>     logd("points " + JSON.stringify(points));
 >    //这玩意是个数组
 >    if(points && points.length > 0){
 >        for(let i=0;i<points.length;i++){
