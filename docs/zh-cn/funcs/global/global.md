@@ -32,6 +32,7 @@
 > ```javascript
 > function main(){
 >     //注意,js文件不要放在js目录或下级目录中
+>     //注意,EC3.5版本不支持,EC已经6.15了兄弟
 >     test = require("slib/a.js")
 >     logd(test.c());
 > }
