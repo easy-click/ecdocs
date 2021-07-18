@@ -1678,3 +1678,44 @@ main()
 > }
 > main();
 > ```
+
+
+
+
+### image.bitmapToImage (Bitmap转AutoImage)
+
+ * 将安卓原生的Bitmap对象转换为AutoImage
+ * 适合EC 6.15.0+版本
+ * @param img {Bitmap}对象
+ * @return {AutoImage} 对象
+
+> ```javascript
+> function main() {
+> var request = image.requestScreenCapture(10000,0);
+> if (!request) {
+>     request = image.requestScreenCapture(10000,0);
+> }
+> 
+> logd("申请截图结果... "+request)
+>    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)
+> for (var i = 0; i < 100; i++) {
+>     var d =image.captureFullScreenEx("jpg",0,0,0,0,100);
+>     logd(d)
+>     sleep(1000);
+>     if (d) {
+>         var ds= image.imageToBitmap(d);
+>         logd(ds)
+>       	//再次转换为autoimage对象
+>       	let sy= image.bitmapToImage(ds);
+>       	logd(sy)
+>         ds.recycle();
+>         image.recyle(d);
+>     }
+> 
+> }
+> 
+> }
+> main();
+> ```
+

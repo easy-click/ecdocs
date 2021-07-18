@@ -494,7 +494,334 @@
 
 
 
+##  ecloud.dynamicCreateTable 动态创建更新表
+
+* 创建或者更新动态数据表结构
+
+* 如果columns有增加新的，就自动创建字段，如果少了某个字段，就自动从表中移出字段
+
+* 请谨慎操作表，以免数据丢失！！！
+
+* 适合版本EC 6.16.0+
+
+* @param param 参数
+
+  ```json
+  {
+  	"tableName": "我是牛逼的表",
+  	"tableNameEn": "niubi_table",
+  	"columns": [{
+  			"columnInfo": "姓名",
+  			"columnName": "name",
+  			"columnSize": 500
+  		},
+  		{
+  			"columnInfo": "年龄",
+  			"columnName": "age",
+  			"columnSize": 500
+  		},
+  		{
+  			"columnInfo": "性别",
+  			"columnName": "sex",
+  			"columnSize": 500
+  		}
+  	]
+  }
+  ```
+
+  
+
+* 解释: 
+
+* tableName: 中文表名，相当于名称，但是不是实际表名
+
+* tableNameEn: 英文表名，真实的表名
+
+* columns: 表的字段数据，字段类型统一是字符串
+
+* columnInfo: 字段的注释信息
+
+* columnName: 字段名称，要用英文，不要有空格和特殊字符
+
+* columnSize: 字段长度
+
+* @return {string} JSON字符串，执行转换为JSON对象
+
+* 成功返回示例：{"result":{"data":1}}，data代表操作的成功行数
+
+* 失败返回示例：{"result":{"msg":"我是错误信息"}}
 
 
 
+> ```javascript
+> function main(){
+> 
+> let crateTable = {
+> 
+>                          "tableName": "我是牛逼的表",
+>                          "tableNameEn": "niubi_tablexx",
+>                          "columns": [
+>                              {
+>                                  "columnInfo": "姓名",
+>                                  "columnName": "name",
+>                                  "columnSize": 500
+>                              },
+>                              {
+>                                  "columnInfo": "年龄",
+>                                  "columnName": "age",
+>                                  "columnSize": 500
+>                              },
+>                              {
+>                                  "columnInfo": "性别",
+>                                  "columnName": "sex",
+>                                  "columnSize": 500
+>                              }
+>                          ]
+>                      };
+> 
+> 
+> let creae =ecloud.dynamicCreateTable(crateTable)
+> logd("===> {}",creae);
+> 
+> }
+> main();
+> ```
+
+
+
+
+
+##  ecloud.dynamicQuery 动态查询表数据
+
+* 动态查询数据
+
+* 适合版本EC 6.16.0+
+
+* @param param 参数
+
+  ```json
+  
+  {
+  	"pageNumber": 1,
+  	"pageSize": 4,
+  	"fields": "id,name",
+  	"query": "and name like '%我是%'",
+  	"tableNameEn": "niubi_table",
+  	"search": {
+  		"id": "1",
+  		"name": "我是name"
+  	}
+  }
+  ```
+
+  
+
+* 解释: 
+
+* pageNumber: 页码 从1开始
+
+* pageSize: 每页条数
+
+* fields: 要查下的字段，可以不写，如果填写就是用英文逗号链接，请看例子
+
+* query: 自定义的查询条件，遵循sql的写法
+
+* tableNameEn: 英文的表名
+
+* search：查询条件，和query查询条件二选一，这个查询是等于模式
+
+* search 例子： "id":"1" 代表查询字段id=1的记录
+
+* @return {string} JSON字符串，自行转换为JSON对象
+
+* 成功返回示例：{"result":{"data":[{"name":"3","id":2}]}}，data代表返回的数据数组
+
+* 失败返回示例：{"result":{"msg":"我是错误信息"}}
+
+
+
+```javascript
+function main(){
+	let query={
+            "pageNumber":1,
+            "pageSize":2,
+            "fields":"",
+            "query":" and age like '%2%'",
+            "tableNameEn": "niubi_tablexx",
+            "search": {
+             }
+    };
+	let queryr =ecloud.dynamicQuery(query)
+	logd("===> {}",queryr);
+}
+main();
+```
+
+## ecloud.dynamicAdd 动态增加表数据
+
+* 动态增加数据
+
+* 适合版本EC 6.16.0+
+
+  ```json
+  {
+  	"tableNameEn": "niubi_table",
+  	"columns": {
+  		"name": "我是牛逼",
+  		"age": "niubi_table2",
+  		"sex": "niubi_table2"
+  	}
+  }
+  ```
+
+  
+
+* @param param 参数
+
+* 解释:
+
+* tableNameEn: 英文的表名
+
+* columns: 字段和字段值列表
+
+* 例如 "name": "我是牛逼的表"，代表插入一个数据name=我是牛逼的表
+
+* @return {string} JSON字符串，自行转换为JSON对象
+
+* 成功返回示例：{"result":{"data":1}}，data代表操作的成功行数
+
+* 失败返回示例：{"result":{"msg":"我是错误信息"}}
+
+```javascript
+function main(){
+    let add ={
+                "tableNameEn": "niubi_tablexx",
+                "columns": {
+                    "name": "我是牛逼的表",
+                    "age": "niubi_table2",
+                    "sex": "niubi_table2"
+                }
+    	}
+
+    let queryr =ecloud.dynamicAdd(add)
+    logd("===> {}",queryr);
+
+}
+main();
+```
+
+
+
+## ecloud.dynamicUpdate 动态更新表数据
+
+* 动态更新数据
+
+* 适合版本EC 6.16.0+
+
+* @param param 参数
+
+  ```json
+  {
+  	"tableNameEn": "niubi_table",
+  	"columns": {
+  		"name": "我x是牛逼xxxx的表",
+  		"age": "niubi_table2",
+  		"sex": "niubi_table2"
+  	},
+  	"query": "and id=1",
+  	"search": {
+  		"id": "7"
+  	}
+  }
+  ```
+
+  
+
+* query: 自定义的查询条件，遵循sql的写法
+
+* tableNameEn: 英文的表名
+
+* search：查询条件，和query查询条件二选一，这个查询是等于模式
+
+* search 例子： "id":"1" 代表查询字段id=1的记录
+
+* columns: 要更新的字段和字段值列表
+
+* 例如 "name": "我是牛逼的表"，代表把name的指更新为 我是牛逼的表
+
+* @return {string} JSON字符串，自行转换为JSON对象
+
+* 成功返回示例：{"result":{"data":1}}，data代表操作的成功行数
+
+* 失败返回示例：{"result":{"msg":"我是错误信息"}}
+
+```javascript
+function main(){
+        let update ={
+            "tableNameEn": "niubi_tablexx",
+            "columns": {
+                "name": "1我x是牛逼xxxx的表",
+                "age": "niubi_table2",
+                "sex": "niubi_table2"
+            },
+            "query":"and name like '%我%'",
+            "search": {
+                "id": "7"
+            }
+		}
+
+		let updater =ecloud.dynamicUpdate(update)
+		logd("===> {}",updater);
+
+}
+main();
+
+
+```
+
+
+
+## ecloud.dynamicRemove 动态删除表数据
+
+* 动态删除数据
+* 适合版本EC 6.16.0+
+
+  ```json
+  {
+  	"tableNameEn": "niubi_table",
+  	"query": "and name like '%我%'",
+  	"search": {
+  		"id": "1"
+  	}
+  }
+* @param param 参数
+* 解释: 
+* query: 自定义的查询条件，遵循sql的写法
+* tableNameEn: 英文的表名
+* search：查询条件，和query查询条件二选一，这个查询是等于模式
+* search 例子： "id":"1" 代表查询字段id=1的记录
+* @return {string} JSON字符串，自行转换为JSON对象
+* 成功返回示例：{"result":{"data":1}}，data代表操作的成功行数
+* 失败返回示例：{"result":{"msg":"我是错误信息"}}
+
+```javascript
+function main(){
+    
+      let del ={
+                  "tableNameEn": "niubi_tablexx",
+
+                  "query":"and name like '%我%'",
+                  "search": {
+                      "id": "7"
+                  }
+      }
+
+      let delr =ecloud.dynamicRemove(del)
+      logd("===> {}",delr);
+
+}
+main();
+
+
+```
 
