@@ -423,8 +423,8 @@
 >                 logd("reset {}",reset)
 >                 if (reset) {
 >                     logd("开始重连...");
->                     //let rc = ws.reconnectBlocking();
->                     let rc = ws.connectBlocking(10000);
+>                     let rc = ws.reconnectBlocking();
+>                     //let rc = ws.connectBlocking(10000);
 >                     logd("重连--> "+rc);
 >                 }
 >              }
