@@ -423,6 +423,7 @@
 >                 logd("reset {}",reset)
 >                 if (reset) {
 >                     logd("开始重连...");
+>                     //let rc = ws.reconnectBlocking();
 >                     let rc = ws.connectBlocking(10000);
 >                     logd("重连--> "+rc);
 >                 }
@@ -449,12 +450,12 @@
  * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
   
 
-#### reconnectBlocking 同步重连
+#### reconnectBlocking 同步重新链接
  * 开始同步重新链接
  * @return {bool} true 代表链接成功 false代表失败
  * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
   
-#### reconnectBlocking 同步连接
+#### connectBlocking 同步连接
  * @param timeout 链接超时时间 单位是毫秒
  * @return {bool} true 代表链接成功 false代表失败
  * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
