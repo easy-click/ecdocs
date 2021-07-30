@@ -846,9 +846,16 @@
 >           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
 >         ui.run(1000,function (){
 >                         //移出对应的视图
+>                          //关闭悬浮框按钮
 >                          ui.removeCtrlView("log_close_ctrl")
+>                          //回主页按钮
 >                          ui.removeCtrlView("main_page_ctrl")
+>                          //脚本启停按钮
 >                          ui.removeCtrlView("script_status_ctrl")
+>                          //日志框按钮
+>                          ui.removeCtrlView("log_window_ctrl")
+>                          //退出脚本按钮
+>                          ui.removeCtrlView("system_power_ctrl")
 >                           //加入新的按钮
 >                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
 >                              logd(v);
@@ -892,9 +899,16 @@
 >        // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
 >      ui.run(1000,function (){
 >                      //移出对应的视图
->                       ui.removeCtrlView("log_close_ctrl")
->                       ui.removeCtrlView("main_page_ctrl")
->                       ui.removeCtrlView("script_status_ctrl")
+>                          //关闭悬浮框按钮
+>                          ui.removeCtrlView("log_close_ctrl")
+>                          //回主页按钮
+>                          ui.removeCtrlView("main_page_ctrl")
+>                          //脚本启停按钮
+>                          ui.removeCtrlView("script_status_ctrl")
+>                          //日志框按钮
+>                          ui.removeCtrlView("log_window_ctrl")
+>                          //退出脚本按钮
+>                          ui.removeCtrlView("system_power_ctrl")
 >                        //加入新的按钮
 >                       ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
 >                           logd(v);
@@ -935,9 +949,16 @@
 >           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
 >         ui.run(1000,function (){
 >                         //移出对应的视图
+>                          //关闭悬浮框按钮
 >                          ui.removeCtrlView("log_close_ctrl")
+>                          //回主页按钮
 >                          ui.removeCtrlView("main_page_ctrl")
+>                          //脚本启停按钮
 >                          ui.removeCtrlView("script_status_ctrl")
+>                          //日志框按钮
+>                          ui.removeCtrlView("log_window_ctrl")
+>                          //退出脚本按钮
+>                          ui.removeCtrlView("system_power_ctrl")
 >                           //加入新的按钮
 >                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
 >                              logd(v);
@@ -974,9 +995,16 @@
 >           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
 >         ui.run(1000,function (){
 >                         //移出对应的视图
+>                          //关闭悬浮框按钮
 >                          ui.removeCtrlView("log_close_ctrl")
+>                          //回主页按钮
 >                          ui.removeCtrlView("main_page_ctrl")
+>                          //脚本启停按钮
 >                          ui.removeCtrlView("script_status_ctrl")
+>                          //日志框按钮
+>                          ui.removeCtrlView("log_window_ctrl")
+>                          //退出脚本按钮
+>                          ui.removeCtrlView("system_power_ctrl")
 >                           //加入新的按钮
 >                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
 >                              logd(v);
@@ -1012,9 +1040,16 @@
 >           // 这里最好用延时，因为showCtrlWindow是异步的，防止没效果
 >         ui.run(1000,function (){
 >                         //移出对应的视图
+>                          //关闭悬浮框按钮
 >                          ui.removeCtrlView("log_close_ctrl")
+>                          //回主页按钮
 >                          ui.removeCtrlView("main_page_ctrl")
+>                          //脚本启停按钮
 >                          ui.removeCtrlView("script_status_ctrl")
+>                          //日志框按钮
+>                          ui.removeCtrlView("log_window_ctrl")
+>                          //退出脚本按钮
+>                          ui.removeCtrlView("system_power_ctrl")
 >                           //加入新的按钮
 >                          ui.addCtrlView("tag","res/a.png",32,32,0,function(v){
 >                              logd(v);
