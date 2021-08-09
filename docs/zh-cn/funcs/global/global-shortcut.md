@@ -1535,20 +1535,72 @@
 >     main();
 > ```
 
-### setLogViewSize 过期函数
-* 设置日志窗口大小
-* @param w 宽度
-* @param h 高度
-* @param textSize 日志的字体大小
-* @param backgroundColor 背景颜色，例如#336699
+
+
+### setLogFixedViewEx 设置日志固定栏目属性
+
+* 设置日志顶部固定窗口属性
+* 适合EC 6.17.0+
+* @param param map参数
 
 > ```javascript
 > 
-> function main(){
->     setLogViewSize(500,600,14,"#FFFFFF");
-> }
-> main();
+>  function main() {
+>     requestFloatViewPermission(1000);
+>       var m =  {
+>                     "show":true,
+>                     "h":150,
+>                     "textSize":12,
+>                     "textColor":"#000000",
+>                     "backgroundColor":"#ffffff"
+>                 }
+>       showLogWindow();
+>       sleep(1000)
+>       setLogFixedViewEx(m);
+>       setFixedViewText("TEST\n都是对的")
+>        
+>       sleep(5000);
+> 
+> 
+>  }
+>  main();
+> 
 > ```
+
+```json
+解释: 
+ *      show:是否展示
+ *      h:高度 -1 代表自适应
+ *      textSize:日志的字体大小
+ *      backgroundColor:背景颜色，例如#336699
+```
+
+
+
+### setFixedViewText 展示固定消息
+
+* 展示消息到悬浮窗固定的视图中
+* @param msg 消息
+
+> ```javascript
+>  function main() {
+>     requestFloatViewPermission(1000);
+>       var m =  {
+>                     "show":true,
+>                     "h":-1,
+>                     "textSize":12,
+>                     "backgroundColor":"#ffffff"
+>                 }
+>       showLogWindow();
+>       sleep(1000)
+>       setLogFixedViewEx(m);
+>       sleep(1000);
+>     	setFixedViewText("TEST")
+>  }
+>  main();
+> ```
+
+
 
 
 
@@ -1565,7 +1617,10 @@
 > }
 > main();
 > ```
-> 
+
+
+
+
 
 ## 定时任务
 

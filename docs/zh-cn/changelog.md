@@ -5,7 +5,9 @@
 ```json
 1、新增websocket okhttp3的实现
 2、新增websocket自动重连、心跳等设置机制
-3、修复部分bug
+3、新增日志悬浮窗固定的视图展示固定的变量
+4、新增函数为setLogFixedViewEx,setFixedViewText
+5、修复部分bug
 ```
 
 
