@@ -30,20 +30,21 @@
 ### 服务端返回   
 - 服务端返回格式如下：
 > ```json
->!!![沙雕警告]!!!热更的是编译的iec文件,不是打包的脚本apk
+> !!![沙雕警告]!!!热更的是编译的iec文件,不是打包的脚本apk
 > {
->    "download_url": "http://baidu.com/aaa.iec",
->    "version": "1.1.0",
->   "dialog":true,
->   "msg": "优化部分问题",
->   "force": false
->  }
+> "download_url": "http://baidu.com/aaa.iec",
+> "version": "1.1.0",
+> "dialog":true,
+> "msg": "优化部分问题",
+> "force": false,
+>   "md5":"XXXXX"
+> }
 > 
 > ```
 - download_url： 代表新包的下载地址
 - version：代表新包的版本号
+- md5: iec文件的MD5，如果有这个值会强制校验文件的准确性，保证文件一定是完成的
 - 返回这样的格式的JSON后，EC会下载最新的IEC包并加载使用。
-
 - 5.0.0.RC3 新增参数
     - dialog: 代表是否用对话框的形式展示，true 代表是对话框，false代表不是
     - msg: 对话框中要显示的消息
