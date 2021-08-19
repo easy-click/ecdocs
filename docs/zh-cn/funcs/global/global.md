@@ -942,6 +942,7 @@
 
 > ```javascript
 > function main(){
+>  !!![沙雕提醒]!!!脚本开头启动环境后,执行一次就行了,不要再问要不要一直执行了!!
 >  var result = daemonEnv(true);
 > }
 > main();
