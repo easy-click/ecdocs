@@ -32,13 +32,22 @@
 > ```json
 > !!![沙雕警告]!!!热更的是编译的iec文件,不是打包的脚本apk
 > !!![正常提醒]!!!如无需更新,服务器直接返回空字符串即可,不要返回json
+> //普通更新
+> {
+> "download_url": "http://baidu.com/aaa.iec",
+> "version": "1.1.0",
+> "dialog":true,
+> "msg": "优化部分问题",
+> "force": false
+> }
+> //严格方法,校验md5,防止更新失败
 > {
 > "download_url": "http://baidu.com/aaa.iec",
 > "version": "1.1.0",
 > "dialog":true,
 > "msg": "优化部分问题",
 > "force": false,
->   "md5":"XXXXX"
+>   "md5":"服务器自行校验的iec文件的md5值"
 > }
 > 
 > ```
