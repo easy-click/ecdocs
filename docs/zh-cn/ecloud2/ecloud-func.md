@@ -559,7 +559,7 @@
 > let crateTable = {
 > 
 >                          "tableName": "我是牛逼的表",
->                          "tableNameEn": "niubi_tablexx",
+>                          "tableNameEn": "niubi_table",
 >                          "columns": [
 >                              {
 >                                  "columnInfo": "姓名",
@@ -647,7 +647,7 @@ function main(){
             "pageSize":2,
             "fields":"",
             "query":" and age like '%2%'",
-            "tableNameEn": "niubi_tablexx",
+            "tableNameEn": "niubi_table",
             "search": {
              }
     };
@@ -695,7 +695,7 @@ main();
 ```javascript
 function main(){
     let add ={
-                "tableNameEn": "niubi_tablexx",
+                "tableNameEn": "niubi_table",
                 "columns": {
                     "name": "我是牛逼的表",
                     "age": "niubi_table2",
@@ -758,7 +758,7 @@ main();
 ```javascript
 function main(){
         let update ={
-            "tableNameEn": "niubi_tablexx",
+            "tableNameEn": "niubi_table",
             "columns": {
                 "name": "1我x是牛逼xxxx的表",
                 "age": "niubi_table2",
@@ -808,7 +808,7 @@ main();
 function main(){
     
       let del ={
-                  "tableNameEn": "niubi_tablexx",
+                  "tableNameEn": "niubi_table",
 
                   "query":"and name like '%我%'",
                   "search": {
