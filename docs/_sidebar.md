@@ -73,6 +73,7 @@
             * [ImageView图像](/zh-cn/funcs/ui/uidetail/imageview.md)
             * [CardView卡片布局](/zh-cn/funcs/ui/uidetail/cardview.md)
             * [Swtich开关按钮](/zh-cn/funcs/ui/uidetail/switch.md)
+    
 * [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
   
 * [企业版本](/zh-cn/enterprise/)
@@ -110,6 +111,8 @@
     * [插件开发](/zh-cn/funcs/plugin/plugins.md)
     * [Java-JS混合开发](/zh-cn/funcs/plugin/javajs.md)
     
+* [插件生态圈](/zh-cn/allplugin.md)
+
 * [免Root激活](/zh-cn/active-device.md)
 
 * [常见问题](/zh-cn/question-answer.md)
