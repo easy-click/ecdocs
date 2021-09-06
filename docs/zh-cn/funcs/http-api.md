@@ -423,7 +423,8 @@
 > 	while (true) {
 > 		logd("isconnect " + ws.isConnected());
 > 		sleep(1000) if (ws.isConnected()) {
-> 			b = ws.sendText("new Date-> " + new Date()) logd("send => " + b);
+> 			b = ws.sendText("new Date-> " + new Date())
+>                       logd("send => " + b);
 > 			sleep(1000)
 > 			// java的字符串转字节
 > 			ws.sendBinary(new java.lang.String("test").getBytes());
@@ -438,7 +439,8 @@
 > 			//                }
 > 		}
 > 	}
-> 	logd("isClosed " + ws.isClosed()) sleep(1000)
+> 	logd("isClosed " + ws.isClosed())
+>       sleep(1000)
 > 	//关闭连接
 > 	ws.close();
 > }
