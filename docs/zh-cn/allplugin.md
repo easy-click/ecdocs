@@ -24,3 +24,10 @@
 源码学习：
 
 - 妄想山海开源代码：https://github.com/wanghao20/wangxiang
+
+- https://github.com/lj4xym/TaobaoBabanongchang
+- https://github.com/YYYet/ant-forest-easyclick
+- https://github.com/YYYet/XMDrift-bottle-easyclick
+- https://gitee.com/mr_laoleng_admin/easyclick-source-code-sharing
+- https://gitee.com/hte9/JcFunction
+- https://gitee.com/jefferyeven/easy-clik
