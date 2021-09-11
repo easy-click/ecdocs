@@ -23,6 +23,33 @@
 > ```
 
 
+
+
+
+### setRepeatLoadDex 设置重复加载dex或者apk
+
+ * 设置重复加载dex，apk，防止插件过大导致加载时间过长
+ * 适合版本 EC 7.1.0+
+* @param r 是否重复加载，true 可以重复加载，false 不可以重复加载
+* @return true 载入成功， false载入失败
+
+> ```javascript
+> function main(){
+>   setRepeatLoadDex(false)
+> //类似这样会先从IEC文件的插件目录查找
+> //loadDex("ocr.apk");
+> //下面这个是从sdcard查找
+>  loadDex("/sdcard/a.apk");
+>  // a.apk中存在com.A这个这个类，可以直接使用
+>  var obj = new com.A(); 
+> }
+> main();
+> ```
+
+
+
+
+
 ### require 导入JS
 
  * 导入JS模块

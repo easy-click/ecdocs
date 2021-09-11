@@ -56,6 +56,7 @@
     * [原生UI定制](/zh-cn/funcs/ui/ui-custom.md)
         * [JS编写UI](/zh-cn/funcs/ui/ui-js-inter.md)
         * [模板式UI](/zh-cn/funcs/ui/ui-js-template.md)
+        * [代码编写UI](/zh-cn/funcs/ui/ui-recycleview.md)
         * [原生UI控件](/zh-cn/funcs/ui/ui-native-view.md)
             * [LinearLayout线性布局](/zh-cn/funcs/ui/uidetail/linearlayout.md)
             * [FrameLayout帧布局](/zh-cn/funcs/ui/uidetail/framelayout.md)
@@ -73,9 +74,9 @@
             * [ImageView图像](/zh-cn/funcs/ui/uidetail/imageview.md)
             * [CardView卡片布局](/zh-cn/funcs/ui/uidetail/cardview.md)
             * [Swtich开关按钮](/zh-cn/funcs/ui/uidetail/switch.md)
+        
+    * [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
     
-* [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
-  
 * [企业版本](/zh-cn/enterprise/)
     * [企业版云控接口(2.0+)](/zh-cn/ecloud2/)
         * [云控介绍(2.0+)](/zh-cn/ecloud2/intro.md)
