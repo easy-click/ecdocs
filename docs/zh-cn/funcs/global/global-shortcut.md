@@ -290,7 +290,12 @@
 > main();
 > ```
 
+
+
+
+
 ## 多点触摸
+
 ### multiTouch 多点触摸
 * 执行条件：无障碍7.0以上或者手势执行为代理服务
 * 多点触摸<br/>
@@ -298,11 +303,11 @@
 * x: X坐标
 * y: Y坐标
 * pointer：设置第几个手指触摸点，分别是 1，2，3等，代表第n个手指
-* delay: 该动作延迟多少毫秒执行
+* delay: 该动作延迟多少毫秒执行，这个是值当前这个事件先延迟后执行
 * @param touch1 第1个手指的触摸点数组,例如：[{"action":0,"x":1,"y":1,"pointer":1,"delay":20},{"action":2,"x":1,"y":1,"pointer":1,"delay":20}]
 * @param touch2 第2个手指的触摸点数组
 * @param touch3 第3个手指的触摸点数组
-* @param timeout 多点触摸执行的超时时间，单位是毫秒
+* @param timeout 多点触摸总执行的超时时间，单位是毫秒
 * @return boolean|布尔型
 
 > ```javascript
@@ -364,6 +369,74 @@
 > main();
 > ```
 
+
+
+### touchDown 执行按下
+
+* 执行按下
+* 适合EC 7.4.0+
+* @param x         x坐标   
+* @param y         y坐标   
+* @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> function main(){
+>  var result = touchDown(10,10);
+>  if (result){
+>      toast("成功");
+>  }else {
+>      toast("失败");
+>  }
+> }
+> main();
+> ```
+
+### touchMove 执行移动
+
+* 执行移动
+* 适合EC 7.4.0+
+* @param x         x坐标   
+* @param y         y坐标   
+* @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> function main(){
+>  var result = agentEvent.touchMove(10,10);
+>  if (result){
+>      toast("成功");
+>  }else {
+>      toast("失败");
+>  }
+> }
+> main();
+> ```
+
+
+### touchUp 执行弹起
+
+* 执行弹起事件
+* 适合EC 7.4.0+
+* @param x         x坐标   
+* @param y         y坐标   
+* @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> function main(){
+>  var result = touchUp(10,10);
+>  if (result){
+>      toast("成功");
+>  }else {
+>      toast("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+
+### 
+
 ## 滚动函数
 
 ### scrollForward 无指针向前滚动
@@ -410,6 +483,8 @@
 > 
 > main();
 > ```
+
+
 
 
 
