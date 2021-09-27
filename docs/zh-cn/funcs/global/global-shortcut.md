@@ -374,7 +374,7 @@
 ### touchDown 执行按下
 
 * 执行按下
-* 适合EC 7.4.0+
+* 适合EC 7.4.0+,安卓版本8+
 * @param x         x坐标   
 * @param y         y坐标   
 * @return 布尔型 true 代表成功 false代表失败
@@ -394,7 +394,7 @@
 ### touchMove 执行移动
 
 * 执行移动
-* 适合EC 7.4.0+
+* 适合EC 7.4.0+,安卓版本8+
 * @param x         x坐标   
 * @param y         y坐标   
 * @return 布尔型 true 代表成功 false代表失败
@@ -415,7 +415,7 @@
 ### touchUp 执行弹起
 
 * 执行弹起事件
-* 适合EC 7.4.0+
+* 适合EC 7.4.0+,安卓版本8+
 * @param x         x坐标   
 * @param y         y坐标   
 * @return 布尔型 true 代表成功 false代表失败
