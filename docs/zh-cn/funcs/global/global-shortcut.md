@@ -1333,7 +1333,7 @@
 > function main(){
 >     let result = getLastToast("com.xx",100);
 >     toast("结果:"+JSON.stringify(result));
->     if(result && result>0){
+>     if(result && result.length>0){
 >        for(let i=0;i<result.length;i++){
 >            logd(result[i])
 >        }
