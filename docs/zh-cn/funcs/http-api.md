@@ -404,7 +404,8 @@
 > 	//设置关闭时候的监听器
 > 	ws.onClose(function(ws1, code, reason) {
 > 		logi(" onClose  " + code + "  reason : " + reason + " remote:");
-> 	}) ws.onError(function(ws1, msg) {
+> 	})
+>       ws.onError(function(ws1, msg) {
 > 		logi(" onError  " + msg);
 > 		result[0] = "error";
 > 	})
@@ -422,7 +423,8 @@
 > 
 > 	while (true) {
 > 		logd("isconnect " + ws.isConnected());
-> 		sleep(1000) if (ws.isConnected()) {
+> 		sleep(1000) 
+>               if (ws.isConnected()) {
 > 			b = ws.sendText("new Date-> " + new Date())
 >                       logd("send => " + b);
 > 			sleep(1000)
