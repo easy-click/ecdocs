@@ -150,7 +150,10 @@
 > main();
 > ```
 
-##  ecloud.log 发送日志
+## 基础操作
+
+###  ecloud.log 发送日志
+
 * 发送日志到云端
 * @param msg 日志信息
 
@@ -163,7 +166,7 @@
 > ```
 
 
-##  ecloud.getDeviceNo 获取机器编号
+###  ecloud.getDeviceNo 获取机器编号
  * 获取机器编号
  * @return {string} 机器编码或者null
 
@@ -180,7 +183,7 @@
 
 
 
-##  ecloud.getCloudUrl 获取云控的URL地址
+###  ecloud.getCloudUrl 获取云控的URL地址
 
  * 获取云控的URL地址
  * @return {string} 云控的URL地址或者null
@@ -199,7 +202,7 @@
 
 
 
-##  ecloud.getTaskInfo 获取当前任务信息
+###  ecloud.getTaskInfo 获取当前任务信息
 
  * 取得当前任务的信息，当前任务已经被推送到本地了，直接获取
  * @return {JSON} 对象
@@ -241,9 +244,34 @@
 
 
 
+###  ecloud.removeScriptFile 清除脚本
+
+ * 删除脚本文件保证安全
+
+ * 适合版本： EC 6.11.0+
+
+ * @return {bool} true代表成功 false ，代表失败
+
+   
+
+> ```javascript
+> function main(){
+> var d = ecloud.removeScriptFile()
+> logd(d)
+> }
+> main();
+> ```
 
 
-##  ecloud.getData 取得数据
+
+
+
+## 数据共享表操作
+
+- 数据共享 对应的云控数据管理中的数据分组和数据列表功能
+- 表结构是固定好的，用户不可更改
+
+###  ecloud.getData 取得数据
  * 通过数据组名或者数据名称取得数据, 前提是要中云控中存在这个数据
  * @param map 可扩展参数表
  * 例如 {"groupName":"数据组1","dataName":"key"}
@@ -281,7 +309,7 @@
 
 
 
-##  ecloud.getDataPop 取得并删除数
+###  ecloud.getDataPop 取得并删除数
 
 
 
@@ -314,7 +342,7 @@
 
 
 
-##  ecloud.addData 新增数据
+###  ecloud.addData 新增数据
 
  * 新增一组数据，如果组名存在了，会自动最近数据
 
@@ -336,8 +364,8 @@
 
 > ```javascript
 > function main(){
->  var d = ecloud.addData({"groupName":"资源组1","dataName":"111","content":"test数据"})
->  logd(d)
+>  	var d = ecloud.addData({"groupName":"资源组1","dataName":"111","content":"test数据"})
+>  	logd(d)
 > }
 > main();
 > ```
@@ -352,7 +380,7 @@
 
 
 
-##  ecloud.updateData 修改数据
+###  ecloud.updateData 修改数据
 
  * 修改某个组下面的数据，组名和数据名必填
 
@@ -386,7 +414,7 @@
 
 
 
-##  ecloud.removeData 删除数据
+###  ecloud.removeData 删除数据
 
  * 删除某个组下面的数据，如果只填写组名，该组下面全部被删除，如果组名和数据名都有，就删除该组下数据名相同的数据
 
@@ -414,7 +442,7 @@
 
 
 
-##  ecloud.appendOneLineData 追加一条数据
+###  ecloud.appendOneLineData 追加一条数据
 
  * 查询该组下面的数据名的内容，并向内容尾追加一条数据
 
@@ -444,7 +472,7 @@
 
 
 
-##  ecloud.removeOneLineData 删除一条数据
+###  ecloud.removeOneLineData 删除一条数据
 
  * 查询该组下面的数据名的内容，并删除其中一条与content相等的数据
 
@@ -474,27 +502,14 @@
 
 
 
-##  ecloud.removeScriptFile 清除脚本
-
- * 删除脚本文件保证安全
-
- * 适合版本： EC 6.11.0+
-
- * @return {bool} true代表成功 false ，代表失败
-
-   
-
-> ```javascript
-> function main(){
-> var d = ecloud.removeScriptFile()
-> logd(d)
-> }
-> main();
-> ```
 
 
+## 动态数据接口
 
-##  ecloud.dynamicCreateTable 动态创建更新表
+- 动态数据 对应的云控数据管理中的数据分组和数据列表功能
+- 表结构不固定，用户自己创建，数据自己填充
+
+###  ecloud.dynamicCreateTable 动态创建更新表
 
 * 创建或者更新动态数据表结构
 
@@ -591,7 +606,7 @@
 
 
 
-##  ecloud.dynamicQuery 动态查询表数据
+###  ecloud.dynamicQuery 动态查询表数据
 
 * 动态查询数据
 
@@ -657,7 +672,7 @@ function main(){
 main();
 ```
 
-## ecloud.dynamicAdd 动态增加表数据
+### ecloud.dynamicAdd 动态增加表数据
 
 * 动态增加数据
 
@@ -712,7 +727,7 @@ main();
 
 
 
-## ecloud.dynamicUpdate 动态更新表数据
+### ecloud.dynamicUpdate 动态更新表数据
 
 * 动态更新数据
 
@@ -781,7 +796,7 @@ main();
 
 
 
-## ecloud.dynamicRemove 动态删除表数据
+### ecloud.dynamicRemove 动态删除表数据
 
 * 动态删除数据
 * 适合版本EC 6.16.0+
@@ -824,4 +839,481 @@ main();
 
 
 ```
+
+
+
+## 数据缓存接口
+
+- 该接口用于操作redis缓存一般表现为kv形式
+- 支持缓存过期，字符串，set集合
+- 如果需要支持boolean、整数，可以转换成字符串处理
+
+###  ecloud.addCache 新增缓存
+
+* 新增一个存放在redis的缓存
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key","expireTime":300,"dataType":1,"content":"数据"}
+* key定义：
+* cacheKey = 缓存key
+* expireTime = 过期时间 单位是秒，为空或者小于等于0代表不过期
+* dataType=数据类型，1 字符串，2 set集合用换行符\n分割的
+* content=数据，如果dataType=2这个数据将会用换行符\n分割转换为集合存储到redis中
+* @return {bool} true代表成功 false ，代表失败
+
+
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {"cacheKey": "key1", 
+>                       "expireTime": 300, 
+>                       "dataType": 1, 
+>                       "content": "数据"}
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+> 
+>     // SET集合
+>     let sss = "s1\ns2\ns3";
+>     let setData = {"cacheKey": "key1", 
+>                    "expireTime": 300, 
+>                    "dataType": 2, 
+>                    "content": sss}
+>     let addSet = ecloud.addCache(setData);
+>     logd("addSet {}", addSet);
+> }
+> 
+> main();
+> 
+> ```
+
+
+
+###  ecloud.getCache 获取缓存
+
+* 获取一个缓存，如果缓存失效了 无数据返回
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key"}
+* key定义：
+* cacheKey = 缓存key
+* @return {string} 服务端返回的JSON字符串，解析result节点即可
+
+
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 1,
+>         "content": "数据"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+> 
+>     // SET集合
+>     let sss = "s1\ns2\ns3";
+>     let setData = {
+>         "cacheKey": "key1",
+>         "expireTime": -1,
+>         "dataType": 2,
+>         "content": sss
+>     }
+>     let addSet = ecloud.addCache(setData);
+>     logd("addSet {}", addSet);
+> 
+> 
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+>     //分割后 for打印
+>     data.result.split("\n").forEach(function (item) {
+>         console.log(item)
+>     })
+> 
+> }
+> 
+> main();
+> 
+> 
+> 
+> ```
+
+
+
+
+
+
+
+###  ecloud.updateCache 更新缓存
+
+* 更新一个redis的缓存
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key","expireTime":300,"dataType":1,"content":"数据"}
+* key定义：
+* cacheKey = 缓存key
+* expireTime = 过期时间 单位是秒，为空或者小于等于0代表不过期
+* dataType=数据类型，1 字符串，2 set集合用换行符\n分割的
+* content=数据，如果dataType=2这个数据将会用换行符\n分割转换为集合存储到redis中
+* @return {bool} true代表成功 false ，代表失败
+
+
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 1,
+>         "content": "数据"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+> 
+>     let up = ecloud.updateCache({"cacheKey":"key1","content":"test123"})
+> 
+>     data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("更新后的数据data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("更新后的数据data {}", data.result);
+> 
+> }
+> 
+> main();
+> 
+> ```
+
+
+
+
+
+
+
+###  ecloud.updateCacheExpire 更新过期时间
+
+* 更新一个redis的缓存过期时间
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key","expireTime":300}
+* key定义：
+* cacheKey = 缓存key
+* expireTime = 过期时间 单位是秒，为空或者小于等于0代表不过期
+* @return {bool} true代表成功 false ，代表失败
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 1,
+>         "content": "数据"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+>     let up = ecloud.updateCacheExpire({"cacheKey":"key1","expireTime":0})
+>     logd("up {}", up);
+>     let leftTime = ecloud.getCacheExpire({"cacheKey":"key1"})
+>     logd("剩余过期时间 {}", leftTime);
+> }
+> 
+> main();
+> 
+> 
+> ```
+
+
+
+
+
+###  ecloud.getCacheExpire 获取剩余过期时间
+
+* 获取一个redis的key剩余的过期时间
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key"}
+* key定义：
+* cacheKey = 缓存key
+* @return {long} 返回redis剩余的过期时间 负数代表永不过期
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 1,
+>         "content": "数据"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+>     let up = ecloud.updateCacheExpire({"cacheKey":"key1","expireTime":0})
+>     logd("up {}", up);
+>     let leftTime = ecloud.getCacheExpire({"cacheKey":"key1"})
+>     logd("剩余过期时间 {}", leftTime);
+> }
+> 
+> main();
+> 
+> 
+> ```
+
+
+
+
+
+
+
+
+
+
+
+###  ecloud.removeCache 删除缓存
+
+* 删除一个redis的缓存
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key"}
+* key定义：
+* cacheKey = 缓存key
+* @return {bool} true代表成功 false ，代表失败
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 1,
+>         "content": "数据"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+> 
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+> 
+> 
+>     let del = ecloud.removeCache({"cacheKey":"key1"})
+> 
+>     logd("删除 {}", del);
+> 
+>     data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("删除后data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("删除后data {}", data.result);
+> }
+> 
+> main();
+> 
+> 
+> ```
+
+
+
+
+
+###  ecloud.appendOneLineCache 追加缓存
+
+* 追加一个redis set的缓存
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key","content":"数据"}
+* key定义：
+* cacheKey = 缓存key
+* content=数据，作为一整行，追加到redis的set集合中
+* @return {string} 服务端返回的JSON字符串，解析result节点即可
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 2,
+>         "content": "a\nb\nc"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+> 
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+> 
+> 
+>     let inc = ecloud.appendOneLineCache({"cacheKey":"key1","content":"test"})
+>     logd("==inc {}",inc);
+>     inc.result.split("\n").forEach(function (item){
+>        console.log("append --- {}",item)
+>     })
+> 
+> }
+> 
+> main();
+> 
+> ```
+
+
+
+###  ecloud.removeOneLineCache 删除一行缓存
+
+*  删除一个redis set的缓存元素
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key","content":"数据"}
+* key定义：
+* cacheKey = 缓存key
+* content=数据，作为一整行，追加到redis的set集合中
+* @return {string} 服务端返回的JSON字符串，解析result节点即可
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 2,
+>         "content": "a\nb\nc"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+> 
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+> 
+> 
+>     let inc = ecloud.appendOneLineCache({"cacheKey":"key1","content":"test"})
+>     logd("==inc {}",inc);
+>     inc.result.split("\n").forEach(function (item){
+>        console.log("append --- {}",item)
+>     })
+>     inc = ecloud.removeOneLineCache({"cacheKey":"key1","content":"test"})
+>         logd("==inc {}",inc);
+>         inc.result.split("\n").forEach(function (item){
+>            console.log("append --- {}",item)
+>         })
+> }
+> 
+> main();
+> 
+> ```
+
+
+
+
+
+
+
+
+
+###  ecloud.incrementCache 自增缓存
+
+* redis的自增长计数功能，每次调用这个key的值都会+1
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key"}
+* key定义：
+* cacheKey = 缓存key
+* @return {long} 返回redis自增后的值
+
+
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 2,
+>         "content": "a\nb\nc"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+> 
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+> 
+> 
+>     let inc = ecloud.incrementCache({"cacheKey":"key2"})
+>     logd("==inc {}",inc);
+>     let get =ecloud.getCache({"cacheKey":"key2"})
+>     //这里获取的是字符串
+>     logd("==get {}",get.result);
+> 
+> }
+> 
+> main();
+> 
+> ```
+
+
+
+
+
+
+
+###  ecloud.decrementCache 自减缓存
+
+* redis的自减计数功能，每次调用这个key的值都会-1
+* 适合版本 EC 7.5.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key"}
+* key定义：
+* cacheKey = 缓存key
+* @return {long} 返回redis自减的值
+
+
+
+> ```javascript
+> function main() {
+>     //字符串
+>     let stringData = {
+>         "cacheKey": "key1",
+>         "expireTime": 300,
+>         "dataType": 2,
+>         "content": "a\nb\nc"
+>     }
+>     let addString = ecloud.addCache(stringData);
+>     logd("addString {}", addString);
+>     let data = ecloud.getCache({"cacheKey": "key1"});
+>     logd("data {}", JSON.stringify(data));
+>     //直接输出
+>     logd("data {}", data.result);
+>     let inc = ecloud.incrementCache({"cacheKey":"key2"})
+>     logd("==inc {}",inc);
+>     let get =ecloud.decrementCache({"cacheKey":"key2"})
+>     //这里获取的是字符串
+>     logd("==get {}",get);
+> }
+> 
+> main();
+> 
+> 
+> ```
+
+
 
