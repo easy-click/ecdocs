@@ -14,7 +14,7 @@
 > ```javascript
 >     
 > function main(){
->     //mysql 的地址
+>     //mysql 的地址 ip:端口/数据库名
 >     let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >     let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >     logd("inited "+inited);
@@ -39,8 +39,8 @@
 
 > ```javascript
 >     
-> function main(){
->     //mysql 的地址
+> function main(){ 
+>     //mysql 的地址 ip:端口/数据库名
 >     let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >     let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >     logd("inited "+inited);
@@ -67,7 +67,7 @@
 > ```javascript
 >     
 > function main(){
->     //mysql 的地址
+>     //mysql 的地址 ip:端口/数据库名
 >     let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >     let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >     logd("inited "+inited);
@@ -99,7 +99,7 @@
 > ```javascript
 >     
 > function main(){
->     //mysql 的地址
+>     //mysql 的地址 ip:端口/数据库名
 >     let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >     let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >     logd("inited "+inited);
@@ -127,7 +127,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址 ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -186,7 +186,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址  ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -248,7 +248,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址 ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -322,7 +322,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址 ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -417,7 +417,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址 ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -479,7 +479,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址 ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -539,7 +539,7 @@
 > ```javascript
 >     
 > function main(){
->           //mysql 的地址
+>           //mysql 的地址 ip:端口/数据库名
 >           let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >           let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >           logd("inited "+inited);
@@ -593,7 +593,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址  ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
@@ -664,7 +664,7 @@
 > ```javascript
 >     
 > function main(){
->       //mysql 的地址
+>       //mysql 的地址  ip:端口/数据库名
 >       let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >       let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >       logd("inited "+inited);
