@@ -113,4 +113,33 @@
 > }
 > main();
 > ```
+
+
+
+
+
+## shell.execAgentCommandEx 代理模式下执行shell
+
+* 执行shell命令，包含正常和错误结果，返回的是JSON数组，自己判断正确还是错误
+* 适合EC 7.6.0+ 版本
+* @param command 命令字符串
+* @return JSON数组 shell结果
+
+
+> ```javascript
+> function main(){
+>  	startEnv()
 > 
+>   let cmd="ls /sdcard/"
+>   let d= agentEvent.execShellCommandEx(cmd)
+>   if (d) {
+>       for (var i = 0; i < d.length; i++) {
+>           var value=d[i];
+>           logd(value);
+> 
+>       }
+>   }
+> }
+> main();
+> ```
+
