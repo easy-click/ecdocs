@@ -21,7 +21,7 @@
 ### 编写xml视图
 - 使用webview加载本地的main.html，tag=web
 >```xml
-> < ?xml version="1.0" encoding="UTF-8" ?>
+> <?xml version="1.0" encoding="UTF-8" ?>
 > <LinearLayout
 >         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 >         xmlns:android="http://schemas.android.com/apk/res/android"
