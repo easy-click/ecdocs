@@ -20,6 +20,7 @@
 
 ### 编写xml视图
 - 使用webview加载本地的main.html，tag=web
+- 注意:需要layout.attr.xsd和layout.xsd两个文件,创建原生ui项目的layout文件下手动复制到当前项目的layout下
 >```xml
 > <?xml version="1.0" encoding="UTF-8" ?>
 > <LinearLayout
