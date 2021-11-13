@@ -1519,31 +1519,38 @@
 ### onActivityEvent 监听Activity 状态 
 
  * 监听UI所在的activity事件
- * @param eventType 事件类型，分别为：onResume：Activity恢复时， onPause: Activity暂停时， onStop：Activity停止时， onDestroy：Activity销毁时
+ * @param eventType 事件类型，分别为：onResume：Activity恢复时， onPause: Activity暂停时， onStop：Activity停止时， onDestroy：Activity销毁时,onActivityResult: 跳转到启动地方返回时候，
  * @param callback 回调函数
 
 > ```javascript
 > function main() {
->  //监听Activity的事件设置
->     ui.onActivityEvent("onResume", function (eventType) {
->         // 可以在这里判断服务是否正常
->         ui.logd("activity onResume " + ui.isServiceOk());
->     });
+> //监听Activity的事件设置
+>  ui.onActivityEvent("onResume", function (eventType) {
+>      // 可以在这里判断服务是否正常
+>      ui.logd("activity onResume " + ui.isServiceOk());
+>  });
 > 
->     ui.onActivityEvent("onPause", function (eventType) {
->         ui.logd("activity onPause");
->     });
+>  ui.onActivityEvent("onPause", function (eventType) {
+>      ui.logd("activity onPause");
+>  });
 > 
->     ui.onActivityEvent("onStop", function (eventType) {
->         ui.logd("activity onStop");
->     });
->     ui.onActivityEvent("onDestroy", function (eventType) {
->         ui.logd("activity onDestroy");
->     });
+>  ui.onActivityEvent("onStop", function (eventType) {
+>      ui.logd("activity onStop");
+>  });
+>  ui.onActivityEvent("onDestroy", function (eventType) {
+>      ui.logd("activity onDestroy");
+>  });
+>   
+>   
+> //  参数请看Android的
+>   // protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) 函数
+>  ui.onActivityEvent("onActivityResult", function (requestCode,resultCode,data) {
+>      ui.logd("activity onDestroy");
+>  });
 > }
 > 
 > main();
->  ```
+> ```
 
 ### getActivity UI对应的Activity 
 
