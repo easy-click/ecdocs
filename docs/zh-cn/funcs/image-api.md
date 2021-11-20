@@ -977,7 +977,7 @@ main()
 >         let rectp= new Rect();
 >         rectp.left=0;
 >         rectp.top=0;
->         rectp.right==device.getScreenWidth();
+>         rectp.right=device.getScreenWidth();
 >         rectp.bottom=device.getScreenHeight();
 >          let matchs = image.matchTemplate(aimage, temp,0.7,0.9,rectp,-1,10,5);
 >        //这玩意是个数组
@@ -1031,7 +1031,7 @@ main()
 >         var rectp= new Rect();
 >         rectp.left=0;
 >         rectp.top=0;
->         rectp.right==device.getScreenWidth();
+>         rectp.right=device.getScreenWidth();
 >         rectp.bottom=device.getScreenHeight();
 >          let matchs = image.matchTemplateEx( temp,0.7,0.9,rectp,-1,1,5);
 >          logd(JSON.stringify(matchs));
