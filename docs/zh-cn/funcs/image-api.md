@@ -649,7 +649,7 @@ main()
 >        //这玩意是个数组
 >        if(points && points.length > 0){
 >            for(let i=0;i<points.length;i++){
->  >              logd(points[i],points[i].x,points[i].y)
+>                logd(points[i],points[i].x,points[i].y)
 >                 //点击坐标
 >                 clickPoint(points[i].x,points[i].y)
 >           }
