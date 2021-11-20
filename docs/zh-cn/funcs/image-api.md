@@ -1024,29 +1024,26 @@ main()
 >          return;
 >      }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
->      var aimage = image.captureFullScreen();
->      if (aimage != null) {
->         var temp = readResAutoImage("tmp.png");
->         var rectp= new Rect();
->         rectp.left=0;
->         rectp.top=0;
->         rectp.right=device.getScreenWidth();
->         rectp.bottom=device.getScreenHeight();
->          let matchs = image.matchTemplateEx( temp,0.7,0.9,rectp,-1,1,5);
->          logd(JSON.stringify(matchs));
->            //这玩意是个数组
->            if(matchs && matchs.length > 0){
->                for(let i=0;i<matchs.length;i++){
->                    logd(JSON.stringify(matchs[i]));
->                    clickPoint(matchs[i].x,matchs[i].y)
->               }
->            }
->           //图片要回收
->           image.recycle(aimage)
+>        sleep(1000)   
+>        var temp = readResAutoImage("tmp.png");
+>        var rectp= new Rect();
+>        rectp.left=0;
+>        rectp.top=0;
+>        rectp.right=device.getScreenWidth();
+>        rectp.bottom=device.getScreenHeight();
+>        let matchs = image.matchTemplateEx( temp,0.7,0.9,rectp,-1,1,5);
+>        logd(JSON.stringify(matchs));
+>        //这玩意是个数组
+>        if(matchs && matchs.length > 0){
+>           for(let i=0;i<matchs.length;i++){
+>               logd(JSON.stringify(matchs[i]));
+>               clickPoint(matchs[i].x,matchs[i].y)
+>           }
+>        }
 >        //图片要回收
->        image.recycle(temp )
->      }
+>        image.recycle(aimage)
+>       //图片要回收
+>       image.recycle(temp )
 > }
 > main();
 > ```
