@@ -143,12 +143,7 @@
 * @param miSecond 毫秒
 > ```javascript
 > function main(){
->     var result = sleep(1000);
->     if (result){
->         toast("成功");
->     } else {
->         toast("失败");
->     }
+>     sleep(1000);
 > }
 > main();
 > ```
