@@ -80,6 +80,7 @@
 * [企业版本](/zh-cn/enterprise/)
     * [企业版云控接口(2.0+)](/zh-cn/ecloud2/)
         * [云控介绍(2.0+)](/zh-cn/ecloud2/intro.md)
+        * [云控打包配置(3.0+)](/zh-cn/ecloud2/pkgset.md)
         * [云控函数(2.0+)](/zh-cn/ecloud2/ecloud-func.md)
         * [开放API(2.0+)](/zh-cn/ecloud2/openapi.md)
     * [企业版云控接口(老版本)](/zh-cn/ecloud/)

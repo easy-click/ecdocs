@@ -1316,3 +1316,42 @@ main();
 > ```
 
 
+
+
+
+###  ecloud.popPushCache push或者pop命令
+
+* redis push或者pop命令
+* 适合版本 EC 7.8.0+
+* @param map 可扩展参数表
+* 例如 {"cacheKey":"缓存key"}
+* key定义：
+* cmd = 支持 spop，rpush，lpush，lpop，rpop
+* cacheKey = 缓存key
+* content = push或者pop的内容
+* @return {string} 服务端返回的JSON字符串，解析result节点即可
+
+
+
+> ```javascript
+> function main() {
+>  //字符串
+>  let stringData = {
+>      "cacheKey": "key1",
+>      "cmd": "lpush",
+>      "content": "aaa"
+>  }
+>  let popPushCachex = ecloud.popPushCache(stringData);
+>  logd("popPushCachex {}", popPushCachex);
+>  let data = ecloud.getCache({"cacheKey": "key1"});
+>  logd("data {}", JSON.stringify(data));
+>  
+> }
+> 
+> main();
+> 
+> 
+> ```
+
+
+
