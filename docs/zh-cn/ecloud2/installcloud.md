@@ -93,26 +93,36 @@
 
 
 > 选择phpmyadmin的用户一栏
+<img src="/docs/zh-cn/ecloud2/images/image-20211203151451822.png" alt="image-20211203151451822" style="zoom:33%;" />
 
-![image-20211203151451822](/docs/zh-cn/ecloud2/images/image-20211203151451822.png)
+
 
 > 点击红色框中的编辑权限，然后选择全选
 
-![image-20211203151534953](/docs/zh-cn/ecloud2/images/image-20211203151534953.png)
+
+<img src="/docs/zh-cn/ecloud2/images/image-20211203151534953.png" alt="image-20211203151534953" style="zoom:33%;" />
+
+
 
 > 点击执行
+<img src="/docs/zh-cn/ecloud2/images/image-20211203151554359.png" alt="image-20211203151554359" style="zoom:33%;" />
 
-![image-20211203151554359](/docs/zh-cn/ecloud2/images/image-20211203151554359.png)
+
+
 
 > 变为以下状态就是权限分配成功
+<img src="/docs/zh-cn/ecloud2/images/image-20211203151718322.png" alt="image-20211203151718322" style="zoom:33%;" />
 
-![image-20211203151718322](/docs/zh-cn/ecloud2/images/image-20211203151718322.png)
+
 
 ### 编辑数据库配置
 
 > 进入文件管理点击编辑，找到config.toml
 
-![image-20211203145911611](/docs/zh-cn/ecloud2/images/image-20211203145911611.png)
+
+
+<img src="/docs/zh-cn/ecloud2/images/image-20211203145911611.png" alt="image-20211203145911611" style="zoom:33%;" />
+
 
 > 看到下面三个选项，全部更改为ecloudgo
 
@@ -131,8 +141,8 @@
 > 点击添加进程守护
 
 
+<img src="/docs/zh-cn/ecloud2/images/image-20211203150616509.png" alt="image-20211203150616509" style="zoom:33%;" />
 
-![image-20211203150616509](/docs/zh-cn/ecloud2/images/image-20211203150616509.png)
 
 > 选择目录和执行文件
 
@@ -140,13 +150,14 @@
 
 > 启动成功
 
-![image-20211203150742524](/docs/zh-cn/ecloud2/images/image-20211203150742524.png)
+
+<img src="/docs/zh-cn/ecloud2/images/image-20211203150742524.png" alt="image-20211203150742524" style="zoom:33%;" />
 
 > 日志查看是否成功
+<img src="/docs/zh-cn/ecloud2/images/image-20211203150820652.png" alt="image-20211203150820652" style="zoom:33%;" />
 
-![image-20211203150820652](/docs/zh-cn/ecloud2/images/image-20211203150820652.png)
+<img src="/docs/zh-cn/ecloud2/images/image-20211203150827519.png" alt="image-20211203150827519" style="zoom:33%;" />
 
-![image-20211203150827519](/docs/zh-cn/ecloud2/images/image-20211203150827519.png)
 
 
 
@@ -202,7 +213,8 @@
 
 >  进入设备管理-设备列表-未授权设备按钮点击下，再点击分配即可
 
-![image-20211203153609841](/docs/zh-cn/ecloud2/images/image-20211203153609841.png)
+
+<img src="/docs/zh-cn/ecloud2/images/image-20211203153609841.png" alt="image-20211203153609841" style="zoom:33%;" />
 
 
 
@@ -222,11 +234,16 @@
 
 4、配置supervisor，修改为对应的二进制执行文件即可
 
-![image-20211203152321572](/docs/zh-cn/ecloud2/images/image-20211203152321572.png)
+
+<img src="/docs/zh-cn/ecloud2/images/image-20211203152321572.png" alt="image-20211203152321572" style="zoom:33%;" />
+
+
 
 > 点击重启
 
-![image-20211203152346117](/docs/zh-cn/ecloud2/images/image-20211203152346117.png)
+
+
+<img src="/docs/zh-cn/ecloud2/images/image-20211203152346117.png" alt="image-20211203152346117" style="zoom:33%;" />
 
 
 
