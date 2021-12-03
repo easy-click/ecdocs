@@ -78,7 +78,9 @@
     * [H5 UI定制](/zh-cn/funcs/ui/html-ui-custom.md)
     
 * [企业版本](/zh-cn/enterprise/)
+    
     * [企业版云控接口(2.0+)](/zh-cn/ecloud2/)
+        * [云控安装(3.0+)](/zh-cn/ecloud2/installcloud.md)
         * [云控介绍(2.0+)](/zh-cn/ecloud2/intro.md)
         * [云控打包配置(3.0+)](/zh-cn/ecloud2/pkgset.md)
         * [云控函数(2.0+)](/zh-cn/ecloud2/ecloud-func.md)
