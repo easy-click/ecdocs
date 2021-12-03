@@ -881,6 +881,7 @@ main()
 > function main(){
 >    let d = utils.playMp3("/sdcard/a.mp3",true)
 >    logd("dd "+d)
+>    //给点延迟,等音乐开始真正播放
 >    sleep(30*1000)
 >    utils.stopMp3()
 >    logd("stop play ")
@@ -900,6 +901,7 @@ main()
 > function main(){
 >    let d = utils.playMp3("/sdcard/a.mp3",true)
 >    logd("dd "+d)
+>    //给点延迟,等音乐开始真正播放
 >    sleep(30*1000)
 >    utils.stopMp3()
 >    logd("stop play ")
