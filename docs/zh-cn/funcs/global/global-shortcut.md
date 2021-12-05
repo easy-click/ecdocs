@@ -1760,6 +1760,32 @@
 > ```
 
 
+
+## 动态权限申请
+
+
+
+### requestRuntimePermission 申请动态权限
+
+* 申请动态权限
+* 适合版本 EC 7.9.0+
+* @param permissionArray 动态权限数组，可以是多个
+* @timeout 申请超时时间 单位是毫秒
+* @return {bool} true 代表有权限  false代表无权限或申请失败
+
+```json
+function main(){
+let per=["android.permission.READ_CALENDAR","android.permission.READ_SMS"]
+let result=requestRuntimePermission(per,10000)
+logd(result);
+}
+main();
+```
+
+
+
+
+
 ## 其他函数
 
 ### random 随机函数 
