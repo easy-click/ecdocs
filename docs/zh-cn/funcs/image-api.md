@@ -350,7 +350,7 @@ main()
 
 ## 比色
 
-### image.cmpColor 单点比色
+### image.cmpColor 多点比色
  * 单点或者多点比色，找到所有符合标准的点，如果都符合返回true，否则是false
  * @param image1 图片
  * @param points     字符串类似这样 6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696
@@ -390,7 +390,7 @@ main()
 
 
 
-### image.cmpColorEx 单点比色扩展
+### image.cmpColorEx 多点比色扩展
  * 单点或者多点比色，找到所有符合标准的点，自动截图，如果都符合返回true，否则是false
  * @param points     字符串类似这样 6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696
  * @param threshold  找色时颜色相似度取值为 0.0 ~ 1.0
@@ -423,7 +423,7 @@ main()
 
 
 
-### image.cmpMultiColor 多点比色
+### image.cmpMultiColor 多组比色
  * 多点或者多点数组比色，找到所有符合标准的点，依次查找，如果找到就返回当前points的索引值，如果返回-1，说明都没有找到
  * @param image1 图片
  * @param points     数组类似这样 ["6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696","6|1|0x969696"]
@@ -461,7 +461,7 @@ main()
 > main();
 > ```
 
-### image.cmpMultiColorEx 多点比色扩展
+### image.cmpMultiColorEx 多组比色扩展
  * 多点或者多点数组比色，找到所有符合标准的点，自动截屏，依次查找，如果找到就返回当前points的索引值，如果返回-1，说明都没有找到
  * @param points     数组类似这样 ["6|1|0x969696-0x000010,1|12|0x969696,-4|0|0x969696","6|1|0x969696"]
  * @param threshold  找色时颜色相似度取值为 0.0 ~ 1.0
