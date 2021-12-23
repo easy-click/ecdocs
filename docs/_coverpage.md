@@ -7,7 +7,10 @@
 * 支持图色查找，OpenCV自带并集成
 * 支持安卓5.0 ~ 12
 * 技术交流 QQ群1: 777164022   QQ群2: 620028786 Q群3：647082990
+* [GITHUB](https://github.com/easy-click/easyclick-libs)
 
-[GitHub](https://github.com/easy-click/easyclick-libs)
-[开始](README)
+[IOS版本](http://ieasyclick.com/iosdocs/#/)
+[安卓版本](README)
+
+
 
