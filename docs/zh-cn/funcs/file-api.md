@@ -78,7 +78,7 @@
 
 
 ## file.create 创建
-* 创建一个文件或者文件夹
+* 创建一个文件
 * @param path 文件或者文件夹路径
 * @return 布尔型 true 代表创建成功
 
@@ -90,6 +90,19 @@
 > }
 > main();
 > ```        
+
+## file.mkdirs 创建文件夹
+* 创建文件夹
+* @param path   路径
+* @return 布尔型 true 代表成功，false代表失败
+> ```javascript
+>     
+> function main(){
+>     var t=file.mkdirs("/sdcard/testdir/");
+>     toast(t);
+> }
+> main();
+> ```
 
 ## file.readAssets 读取assets
 * 从APK的assets文件夹中读取数据为字符串
@@ -165,19 +178,6 @@
 > ```
 
 
-
-## file.mkdirs 创建文件夹
-* 创建文件夹
-* @param path   路径
-* @return 布尔型 true 代表成功，false代表失败
-> ```javascript
->     
-> function main(){
->     var t=file.mkdirs("/sdcard/testdir/");
->     toast(t);
-> }
-> main();
-> ```
 
 
 
