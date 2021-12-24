@@ -79,7 +79,7 @@
 
 ## file.create 创建
 * 创建一个文件
-* @param path 文件或者文件夹路径
+* @param path 文件路径
 * @return 布尔型 true 代表创建成功
 
 > ```javascript
