@@ -823,10 +823,10 @@
 >       for (var i = 0; i < 1000; i++) {
 >              sleep(1000);
 >              var s = new Date().getTime();
->              var d = image.captureScreenBitmap("jpg",100,100,200,300,100);
+>              var d = image.captureFullScreen();
 >              if (d) {
 >                  var s = new Date().getTime();
->                  var bd = image.binaryzationBitmap(d,1,200);
+>                  var bd = image.binaryzationBitmap(image.imageToBitmap(d),1,200);
 >                  logd("time "+(new Date().getTime()-s))
 >                  logd(bd);
 >                  if (bd) {
@@ -980,8 +980,8 @@
 >    logd("申请截图结果... "+request)
 >    ///申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
->    var bitmap = image.captureScreenBitmap("jpg",800,800,100,100,100);
->    var color = image.getPixelBitmap(bitmap,100,100);
+>    var bitmap = image.captureFullScreen("jpg",800,800,100,100,100);
+>    var color = image.getPixelBitmap(image.imageToBitmap(bitmap),100,100);
 >    //图片要回收
 >    image.recycle(bitmap)
 > }
@@ -1014,10 +1014,10 @@
 >    logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
->    var bitmap = image.captureScreenBitmap("jpg",800,800,100,100,100);
+>    var bitmap = image.captureFullScreen();
 >    var w = bitmap.getWidth();
 >    var h =bitmap.getHeight();
->    var mPixels =  image.getPixelsBitmap(bitmap,w*h, 0, w, 0, 0,w, h);
+>    var mPixels =  image.getPixelsBitmap(image.imageToBitmap(bitmap),w*h, 0, w, 0, 0,w, h);
 >    //图片要回收
 >    image.recycle(bitmap)
 > }
@@ -1228,10 +1228,11 @@
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
->        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
+>        var d =image.captureFullScreen();
 >        logd(d)
 >        sleep(1000);
 >        if (d) {
+>            d = image.imageToBitmap(d)
 >            d= image.clipBitmap(d,100,100,200,200);
 >            var ds = image.bitmapBase64(d,"jpg",100);
 >            logd(ds)
@@ -1270,7 +1271,7 @@
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
->        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
+>        var d =image.captureFullScreen();
 >        logd(d)
 >        sleep(1000);
 >        if (d) {
@@ -1310,10 +1311,11 @@
 >     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
->        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
+>        var d =image.captureFullScreen();
 >        logd(d)
 >        sleep(1000);
 >        if (d) {
+>            d = image.imageToBitmap(d)    
 >            d= image.clipBitmap(d,100,100,200,200);
 >            var ds = image.bitmapBase64(d,"jpg",100);
 >            logd(ds)
@@ -1353,13 +1355,12 @@
 >       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
->        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
+>        var d =image.captureFullScreen();
 >        logd(d)
 >        sleep(1000);
 >        if (d) {
 >            var ds= image.imageToBitmap(d);
 >            logd(ds)
->            ds.recycle();
 >            image.recyle(d);
 >        }
 >
@@ -1386,12 +1387,11 @@
 >           return;
 >       }
 >
-> 
 > logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >     sleep(1000)
 > for (var i = 0; i < 100; i++) {
->     var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
+>     var d =image.captureFullScreen();
 >     logd(d)
 >     sleep(1000);
 >     if (d) {
