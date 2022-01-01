@@ -1,12 +1,6 @@
 
 ## 说明
 
-- 截图函数需要Andrioid 5.0 以上版本才能使用
-- 无障碍模式下截图是需要权限的，如果弹出了运行截图，请授权
-- 代理模式下的截图不需要权限，建议长期运行使用代理模式
-- 图色模块的对象前缀是image，例如 image.requestScreenCapture()这样调用
-- 图色模块需要对颜色进行查找，开发工具自带找色功能，请参考[找色找图操作](/zh-cn/funcs/devtools/dev-tools-screen.md#找色操作)
-
 
 ## 设置
 ### image.setInitParam 初始化参数
@@ -18,7 +12,7 @@
 > 
 > function main() {
 >  //action_timeout 找图找色动作的最大时间，超时后会自动返回避免阻塞
->   // auto_click_request_dialog 是否自动点击截屏授权对话框，默认是true，自动点击
+
 > // var a = image.setInitParam({"action_timeout":1000});
 >    var a = image.setInitParam(
 >      {
@@ -31,95 +25,13 @@
 > ```
 
 ## 申请截图
-### image.requestScreenCapture 申请截图权限
-* 向系统申请屏幕截图权限，返回是否请求成功。
-* 第一次使用该函数会弹出截图权限请求，建议选择“总是允许”。
-* 这个函数只是申请截图权限，并不会真正执行截图，真正的截图函数是captureScreen()。
-* 该函数在截图脚本中只需执行一次，而无需每次调用captureScreen()都调用一次。
- * @param timeout 超时时间，单位是毫秒
- * @param type 截屏的类型，0 自动选择，1 代表授权模式，2 代表无需权限模式（该模式前提条件：运行模式为代理模式）
-* @return true 代表成功 false代表失败
-
-> ```javascript
-> 
-> function main() {
->     logd("isServiceOk "+isServiceOk());
->       startEnv()
->       logd("isServiceOk "+isServiceOk());
->        let request = image.requestScreenCapture(10000,0);
->        if (!request) {
->            request = image.requestScreenCapture(10000,0);
->        }
->        logd("申请截图结果... "+request)
->        if(!request){
->            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->            exit()
->        }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
-> }
-> main();
-> ```
 
 
-
-
-### image.releaseScreenCapture 释放截屏请求
-* 释放截屏请求
-
-
-> ```javascript
-> 
-> function main() {
->     image.releaseScreenCapture();
-> }
-> main();
-> ```
 
 ## 截图
-### image.captureScreen 截取屏幕Image对象
-* 截取当前屏幕并返回一个Image对象。
-* 没有截图权限时执行该函数会返回null
-* 两次调用可能返回相同的Image对象。这是因为设备截图的更新需要一定的时间，短时间内（一般来说是16ms）连续调用则会返回同一张截图。
-* 截图需要转换为Bitmap格式，从而该函数执行需要一定的时间(0~20ms)。
-* 另外在requestScreenCapture()执行成功后需要一定时间后才有截图可用，因此如果立即调用captureScreen()，会等待一定时间后(一般为几百ms)才返回截图。
-* 如果区域空或则有负数的，就会是全屏
-* @param retryNumber 重试次数，直到能截到图为止，默认是3
-* @param x 截图的起始X坐标
-* @param y 截图的起始Y坐标
-* @param ex 终点X坐标
-* @param ey 终点Y坐标
-* @return AutoImage对象或者null
 
 
-> ```javascript
-> 
-> function main() {
->     logd("isServiceOk "+isServiceOk());
->          startEnv()
->          logd("isServiceOk "+isServiceOk());
->      
->           var request = image.requestScreenCapture(10000,0);
->           if (!request) {
->              request = image.requestScreenCapture(10000,0);
->           }
->           logd("申请截图结果... "+request)
->                if(!request){
->                    loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->                    exit()
->                }
->            //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->            sleep(1000)
->           for (let i = 0; i < 10; i++) {
->               var cap = image.captureScreen(3,0,0,300,400)
->               logd("截图数据: " +cap)
->               sleep(1000)
->                //图片要回收
->                image.recycle(cap)
->           }
-> }
-> main();
-> ```
+
 
 
 ### image.captureFullScreen 截取全屏Image对象
@@ -156,189 +68,15 @@
 > main();
 > ```
 
-### image.captureFullScreenEx 截取全屏屏Image对象扩展
-* 抓取全屏函数，代理模式下并且requestScreenCapture函数的type为0的时候，会使用截屏函数，尽力消除色差问题。
-* @return AutoImage对象或者null
-
-> ```javascript
-> 
->   function main() {
->       logd("isServiceOk "+isServiceOk());
->       startEnv()
->       logd("isServiceOk "+isServiceOk());
->    
->        var request = image.requestScreenCapture(10000,0);
->    
->        if (!request) {
->           request = image.requestScreenCapture(10000,0);
->        }
->        logd("申请截图结果... "+request)
->        if(!request){
->            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->            exit()
->        }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
->        for (let i = 0; i < 10; i++) {
->            var cap = image.captureFullScreenEx()
->            logd("截图数据: " +cap)
->            sleep(1000)
->            //图片要回收
->            image.recycle(cap)
->        }
->   }
-> main();
-> ```
-
-### image.captureScreenBitmap 截取屏幕Bitmap对象
- * 将屏幕抓取为Bitmap对象，如果中间有-1或者宽度、宽度为-1，将会是全屏
- * @param format jpg或者png，代理模式下有用
- * @param x 开始X坐标
- * @param y 开始Y坐标
- * @param ex 终点X坐标
- * @param ey 终点Y坐标
- * @param q 图片质量，1 - 100，越高越好，代理模式下有用
- * @return Bitmap null或者bitmap对象
-
-
-> ```javascript
-> 
->   function main() {
->       logd("isServiceOk "+isServiceOk());
->       startEnv()
->       logd("isServiceOk "+isServiceOk());
->    
->        var request = image.requestScreenCapture(10000,0);
->    
->        if (!request) {
->           request = image.requestScreenCapture(10000,0);
->        }
->        logd("申请截图结果... "+request)
->        if(!request){
->            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->            exit()
->        }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
->        for (let i = 0; i < 10; i++) {
->            var cap = image.captureScreenBitmap("jpg",100,100,200,300,100);
->            logd("截图数据: " +cap)
->            sleep(1000)
->            //图片要回收
->            image.recycle(cap)
->        }
->   }
-> main();
-> ```
-
-
-### image.captureToFile 截取屏幕到文件
-* 截取当前屏幕并以PNG格式保存到path中。如果文件不存在会被创建；文件存在会被覆盖。
-* 如果区域空或则有负数的，就会是全屏
-* @param retryNumber 重试次数，直到能截到图为止，默认是3
-* @param x 截图的起始X坐标
-* @param y 截图的起始Y坐标
-* @param ex 终点X坐标
-* @param ey 终点Y坐标
-* @param path 截图保存路径
-* @return true 截图成功 false 代表不成功
-
-
-> ```javascript
-> 
-> function main() {
->    logd("isServiceOk "+isServiceOk());
->    startEnv()
->    logd("isServiceOk "+isServiceOk());
-> 
->     var request = image.requestScreenCapture(10000,0);
-> 
->     if (!request) {
->        request = image.requestScreenCapture(10000,0);
->     }
->     logd("申请截图结果... "+request)
->        if(!request){
->            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->            exit()
->        }
->     home();
->     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->     sleep(1000)
->     for (let i = 0; i < 10; i++) {
->         var cap = image.captureToFile(3,0,0,300,400,"/sdcard/a"+i+".png");
->         logd("是否成功: " +cap)
->         sleep(1000)   
->     }
-> }
->
-> main();
-> ```
 
 
 
-### image.screencapImage screencap命令截图
-
-* 使用系统的screencap命令截图AutoImage，适合root或者代理模式, 有root权限或者开启了代理服务
-* 适合版本 EC 6.8.0+
-* @param root 是否优先使用root方式截图
-* @return AutoImage 对象或者null
-
-```javascript
-
-function main() {
-    startEnv()
-    for (let i = 0; i < 10; i++) {
-        sleep(1000);
-        let d =image.screencapImage(false);
-        logd(d);
-        if (d) {
-             let r = image.saveTo(d,"/sdcard/data/a"+i+".png");
-             logd(r);
-             image.recycle(d )
-
-             logd("isRecycled "+image.isRecycled(d));
-        }
-
-    }
-
-}
-
-main()
-
-```
 
 
 
-### image.screencapBitmap screencap命令截图Bitmap
-
-* 使用系统的screencap命令截图为bitmap，适合root或者代理模式, 有root权限或者开启了代理服务
-* 适合版本 EC 6.8.0+
-* @param root 是否优先使用root方式截图
-* @return {Bitmap} 对象
-
-```javascript
-
-function main() {
-    startEnv()
-    for (let i = 0; i < 10; i++) {
-        sleep(1000);
-        let d =image.screencapBitmap(false);
-        logd(d);
-        if (d) {
-             let r = image.saveBitmap(d,"png",100,"/sdcard/data/b"+i+".png");
-             logd(r);
-
-             image.recycle(d)
-
-             logd("isRecycled "+image.isRecycled(d));
-
-        }
-    }
-}
-main()
 
 
-```
+
 
 
 
@@ -364,10 +102,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       let req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -403,14 +138,12 @@ main()
 > ```javascript
 > 
 > function main() {
->       let req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
 >       }
+>     
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >            let points3 ="205|1130|0xff944b-0x101010,211|1158|0xff8e42,191|1175|0xfcfbf7";
@@ -437,10 +170,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       let req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -474,10 +204,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       let req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -513,10 +240,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       let req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -554,10 +278,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -600,10 +321,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -634,10 +352,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -679,10 +394,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -722,10 +434,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -769,10 +478,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -805,10 +511,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -849,13 +552,12 @@ main()
 > ```javascript
 > 
 > function main() {
->     var request = image.requestScreenCapture(10000,0);
->     if (request){
->         toast("申请成功");
->     }else {
->        toast("申请失败");
->         exit();
->     }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
+>   
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    //从工程目录下res文件夹下读取sms.png文件
@@ -904,13 +606,11 @@ main()
 > ```javascript
 > 
 > function main() {
->     var request = image.requestScreenCapture(10000,0);
->     if (request){
->         toast("申请成功");
->     }else {
->        toast("申请失败");
->         exit();
->     }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >     //从工程目录下res文件夹下读取sms.png文件
@@ -961,14 +661,11 @@ main()
 > ```javascript
 > 
 > function main() {
->      var req = image.requestScreenCapture(10000,0);
->      if (!req) {
->          req = image.requestScreenCapture(10000,0);
->      }
->      if (!req) {
->          toast("申请权限失败");
->          return;
->      }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >      var aimage = image.captureFullScreen();
@@ -1015,14 +712,11 @@ main()
 > ```javascript
 > 
 > function main() {
->      var req = image.requestScreenCapture(10000,0);
->      if (!req) {
->          req = image.requestScreenCapture(10000,0);
->      }
->      if (!req) {
->          toast("申请权限失败");
->          return;
->      }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)   
 >        var temp = readResAutoImage("tmp.png");
@@ -1069,10 +763,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -1122,10 +813,7 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
->       }
+>       let req = startEnv();
 >       if (!req) {
 >           toast("申请权限失败");
 >           return;
@@ -1225,13 +913,11 @@ main()
 > ```javascript
 > 
 > function main() {
->      var req = image.requestScreenCapture(10000,0);
->        if (!req) {
->         req = image.requestScreenCapture(10000,0);
->      }
->      if (!req) {
->          toast("申请权限失败");
->      }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >      sleep(1000)
 >      var aimage = image.captureFullScreen();
@@ -1256,10 +942,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
@@ -1285,10 +972,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >    ///申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
@@ -1318,10 +1006,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
@@ -1346,10 +1035,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
@@ -1377,8 +1067,7 @@ main()
 > 
 >     function main() {
 >     
->         //生成一个二维码bitmap 带logo的
->         let bot = utils.createQRCode("我是大佬的弟弟",1000,1000,image.readBitmap("/sdcard/yyb2.png"));
+>         let bot = image.readBitmap("/sdcard/yyb2.png");
 >         logd("bot "+bot);
 >         //保存的到文件
 >         let saved = image.saveBitmap(bot,"png",100,"/sdcard/tmp.png");
@@ -1387,14 +1076,7 @@ main()
 >          if (bot) {
 >                 bot.recycle()
 >             }
->         //扫描二维码
->         let bitmap = image.readBitmap("/sdcard/tmp.png")
->         let data = utils.decodeQRCode(bitmap);
->         logd("data "+data);
->         //回收掉防止内存暴涨
->         if (bitmap) {
->             bitmap.recycle()
->         }
+>        
 >     }
 >     
 >     main();
@@ -1412,10 +1094,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
@@ -1441,10 +1124,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >   //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
@@ -1469,11 +1153,11 @@ main()
 > ```javascript
 > 
 > function main() {
->    var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
->    logd("申请截图结果... "+request)
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
@@ -1534,10 +1218,11 @@ main()
 > ```javascript
 > 
 > function main() {
->   var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >
 >    logd("申请截图结果... "+request)
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -1576,11 +1261,11 @@ main()
 > ```javascript
 > 
 > function main() {
->   var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
->
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
@@ -1616,11 +1301,11 @@ main()
 > ```javascript
 > 
 > function main() {
->   var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
->
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >    logd("申请截图结果... "+request)
 >     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
@@ -1651,23 +1336,24 @@ main()
 
 
 ### image.imageToBitmap (AutoImage转Bitmap)
- * 将AutoImage转换为安卓原生的Bitmap对象
+ * 将AutoImage转换为原生的 BufferedImage 对象
  * @param img {AutoImage}
- * @return  {Bitmap} 对象
+ * @return  {BufferedImage} 对象
 
 > ```javascript
 > 
 > function main() {
->   var request = image.requestScreenCapture(10000,0);
->    if (!request) {
->        request = image.requestScreenCapture(10000,0);
->    }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
 >
 >    logd("申请截图结果... "+request)
 >       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
->        var d =image.captureFullScreenEx("jpg",0,0,0,0,100);
+>        var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
 >        logd(d)
 >        sleep(1000);
 >        if (d) {
@@ -1686,25 +1372,26 @@ main()
 
 
 
-### image.bitmapToImage (Bitmap转AutoImage)
+### image.bitmapToImage (BufferedImage转AutoImage)
 
  * 将安卓原生的Bitmap对象转换为AutoImage
- * 适合EC 6.15.0+版本
- * @param img {Bitmap}对象
+ * @param img {BufferedImage}对象
  * @return {AutoImage} 对象
 
 > ```javascript
 > function main() {
-> var request = image.requestScreenCapture(10000,0);
-> if (!request) {
->     request = image.requestScreenCapture(10000,0);
-> }
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
+>
 > 
 > logd("申请截图结果... "+request)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >     sleep(1000)
 > for (var i = 0; i < 100; i++) {
->     var d =image.captureFullScreenEx("jpg",0,0,0,0,100);
+>     var d =image.captureScreenBitmap("jpg",0,0,0,0,100);
 >     logd(d)
 >     sleep(1000);
 >     if (d) {

@@ -250,32 +250,6 @@
 > ```
 
 
-
-
-### dragToPoint 拖动到目标选择器
-
-* 通过选择器拖动某个元素到目标X Y 坐标
-* @param selectors 原始元素选择器
-* @param endX      目标 X 坐标
-* @param endY      目标 Y 坐标
-* @param duration 持续时长 单位毫秒
-* @return 布尔型 true 成功 false 失败
-
-> ```javascript
-> 
-> function main(){
->     var selectors = text("设置");
->     var result = dragToPoint(selectors,100,100,200);
->     if (result){
->         toast("拖动成功");
->     } else {
->         toast("拖动失败");
->     }
-> }
-> main();
-> ```
-
-
 ## 输入数据
 
 ### inputText  输入数据

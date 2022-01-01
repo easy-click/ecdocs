@@ -4,15 +4,15 @@
 
 
 
-##  device.getIMEI 获取IMEI
-* 获取手机的IMEI
+##  device.getDeviceId 获取id
+* 获取手机的id
 * @return 字符串
 
 
 > ```javascript
 >     
 > function main(){
->     var imei = device.getIMEI();
+>     var imei = device.getDeviceId();
 >     toast(imei);
 > }
 > main();
@@ -48,6 +48,19 @@
 > main();
 > ```
 
+##  device.getScale 屏幕缩放比
+* 屏幕缩放比
+* @return {float}
+
+
+> ```javascript
+>     
+> function main(){
+>     var d = device.getScale();
+>     toast(d);
+> }
+> main();
+> ```
 
 
 
@@ -73,7 +86,7 @@
 
 
 ##  device.getOSVersion 取得手机版本号
-* 取得手机版本号,例如 6.0等字符串
+
 * @return 字符串
 
 
