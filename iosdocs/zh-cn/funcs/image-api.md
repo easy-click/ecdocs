@@ -24,14 +24,77 @@
 > main();
 > ```
 
-## 申请截图
+
+
+## 流式截图
+
+### image.startScreenStream 开启流式截图
+ * 初始化一个图像流的截屏模式，这个速度比其他的方式要快
+ * @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> 
+>   function main() {
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+> 
+>            var cap = image.startScreenStream()
+>            logd("截图: " +cap)
+>         
+>   }
+> main();
+> ```
 
 
 
-## 截图
+
+### image.stopScreenStream 停止流式截图
+ * 停止图像流
+ * @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> 
+>   function main() {
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+> 
+>            var cap = image.stopScreenStream()
+>            logd("截图: " +cap)
+>         
+>   }
+> main();
+> ```
 
 
 
+
+### image.captureScreenStream 图像流
+* 从图像流中获取一张图片
+* @return AutoImage对象或者null
+
+> ```javascript
+> 
+>   function main() {
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+>        for (let i = 0; i < 10; i++) {
+>            var cap = image.captureScreenStream()
+>            logd("截图数据: " +cap)
+>            sleep(1000)
+>            //图片要回收
+>            image.recycle(cap)
+>        }
+>   }
+> main();
+> ```
+
+
+
+
+## 普通截图
 
 
 ### image.captureFullScreen 截取全屏Image对象
@@ -44,19 +107,6 @@
 >       logd("isServiceOk "+isServiceOk());
 >       startEnv()
 >       logd("isServiceOk "+isServiceOk());
->    
->        var request = image.requestScreenCapture(10000,0);
->    
->        if (!request) {
->           request = image.requestScreenCapture(10000,0);
->        }
->        logd("申请截图结果... "+request)
->        if(!request){
->            loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
->            exit()
->        }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
 >        for (let i = 0; i < 10; i++) {
 >            var cap = image.captureFullScreen()
 >            logd("截图数据: " +cap)
