@@ -4,10 +4,10 @@
 
 ## 插件模块加载
 
-### loadDex 载入dex或者apk
+### loadDex 载入jar包
 
  * 载入dex文件
- * @param path 路径，加载顺序分别是插件目录(例如 ab.apk)或者是文件路径(例如 /sdcard/ab.apk)加载
+ * @param path 路径，加载顺序分别是插件目录(例如 ab.jar)或者是文件路径(例如 /sdcard/ab.jar)加载
  * @return true 载入成功， false载入失败
 
 > ```javascript
@@ -15,33 +15,9 @@
 >    //类似这样会先从IEC文件的插件目录查找
 >    //loadDex("ocr.apk");
 >    //下面这个是从sdcard查找
->     loadDex("/sdcard/a.apk");
+>     loadDex("c:/plugin/a.jar");
 >     // a.apk中存在com.A这个这个类，可以直接使用
 >     var obj = new com.A(); 
-> }
-> main();
-> ```
-
-
-
-
-
-### setRepeatLoadDex 设置重复加载dex或者apk
-
- * 设置重复加载dex，apk，防止插件过大导致加载时间过长
- * 适合版本 EC 7.1.0+
-* @param r 是否重复加载，true 可以重复加载，false 不可以重复加载
-* @return true 载入成功， false载入失败
-
-> ```javascript
-> function main(){
->   setRepeatLoadDex(false)
-> //类似这样会先从IEC文件的插件目录查找
-> //loadDex("ocr.apk");
-> //下面这个是从sdcard查找
->  loadDex("/sdcard/a.apk");
->  // a.apk中存在com.A这个这个类，可以直接使用
->  var obj = new com.A(); 
 > }
 > main();
 > ```
@@ -53,7 +29,7 @@
 ### require 导入JS
 
  * 导入JS模块
- * @param path 路径，例如 本地/sdcard/a.js或者 EC工程中的文件路径 slib/a.js
+ * @param path 路径，例如 本地c:/sdcard/a.js或者 EC工程中的文件路径 slib/a.js
  * @return 模块对象
 
 > ```javascript
@@ -110,7 +86,6 @@
 ### isScriptExit 是否已退出脚本
 
  * 判断EC运行的当前线程是否处于退出状态，可用判断脚本是否退出，或者子线程是否退出
- * 适用版本(EC 6.2.0+)
  * @return true 已退出
 
 >```javascript
@@ -159,7 +134,7 @@
 >     var d ='while(true){sleep(1000);logd(111111);}';
 >        
 >        thread.execAsync(function() {
->            //execScript(1,"/sdcard/ad.js")
+>            //execScript(1,"c:/sdcard/ad.js")
 >            execScript(2,d);
 >        });
 >        
@@ -168,31 +143,6 @@
 >            loge("fsadffsad")
 >        }
 >        
-> }
-> main();
-> ```
-
-
-### restartScript  重启脚本
-* 重启脚本，适合无限循环，或者有异常的情况可以下载最新的iec再次执行，避免进入UI才能热更新,
-* 注意: 该方法威力巨大，请自行控制好是否自动重启，否则只能强杀进程才能停止
-* @param path 新的IEC路径，如果不需要可以填写null
-* @param stopCurrent 是否停止当前的脚本
-* @param delay 延迟多少秒后执行
-* @return bool true 代表成功 false 代表失败
-
-> ```javascript
-> function main(){
->  logd("我是在脚本运行的");
-> setStopCallback(function(){
->      restartScript(null,false,3)
->  });
->  
->  //setExceptionCallback(function (){
->  //    restartScript(null,true,3)
->  //});
->       sleep(1000);
->     logd("脚本结束") 
 > }
 > main();
 > ```
@@ -268,191 +218,22 @@
 
 
 
-### observeEvent 对系统事件进行监听
-
- * 对系统事件进行监听
- * 代理模式适用版本(EC 6.0.0+)
- * @param event 事件类型 类型有:
- * activity-change 页面切换，支持无障碍和代理模式
- * notification-show：状态栏通知展示， 支持无障碍和代理模式
- * toast-show：Toast消息展示， 支持无障碍和代理模式
- * key-down：按键按下， 支持无障碍
- * key-up：按键弹起 支持无障碍
- * acc-service-interrupt：无障碍服务被中断 支持无障碍
- * acc-service-destroy： 无障碍服务被销毁 支持无障碍
- * acc-event：无障碍节点事件 支持无障碍和代理模式
- * acc-service-connected: 无障碍服务连接成功 支持无障碍
- * auto-service-status: 自动化服务可用状态 支持无障碍
- * @param callback 事件回调
- * @return {bool}  | true 成功，false失败
-
-> ```javascript
-> function main(){
->     startEnv();
->   logd("开始监听");
->      observeEvent("activity-change",function (key,data){
->             logd("页面切换: "+typeof data)
->             logd("页面切换: "+data)
->          });
->         //监听无障碍节点事件
->      observeEvent("acc-event",function (key,data){
->               logd("acc-event: "+typeof data)
->                 logd("acc-event: "+data)
->              });
->     while(true){
->         sleep(1000)
->     }
->     //取消事件监听
->     cancelObserveEvent("acc-event")
-> }
-> main();
-> ```
-
-
-### cancelObserveEvent 取消对系统事件监听
- * 取消事件监听
- * @param event 事件类型
- * @return {bool} | true 成功，false失败
-
-> ```javascript
-> function main(){
->     startEnv();
->   logd("开始监听");
->      observeEvent("activity-change",function (key,data){
->             logd("页面切换: "+typeof data)
->             logd("页面切换: "+data)
->          });
->         //监听无障碍节点事件
->      observeEvent("acc-event",function (key,data){
->               logd("acc-event: "+typeof data)
->                 logd("acc-event: "+data)
->              });
->         sleep(10000)
->     //取消事件监听
->     cancelObserveEvent("acc-event")
-> }
-> main();
-> ```
 
 
 ## 日志消息方法
 
-### setSaveLog  保存日志
- * 设置保存日志信息到文件中
- * @param save 是否保存
- * @param path 自定义的文件夹
- * @param size 每个文件分隔的尺寸
- * @return 保存日志文件的目录
-
-> ```javascript
-> function main(){
->     var s = setSaveLog(true,"/sdcard/aaa/",1024*1024);
->     logd("save dir is:"+s);
-> }
-> main();
-> ```
 
 
 
 
 
-### setSaveLogEx  保存日志
-
- * 设置保存日志信息到文件中
- * @param save 是否保存
- * @param path 自定义的文件夹
- * @param size 每个文件分隔的尺寸
- * @param fileName 日志的自定义文件名称
- * @return 保存日志文件的目录
-
-> ```javascript
-> function main(){
->  var s = setSaveLogEx(true,"/sdcard/aaa/",1024*1024,"testlog");
->  logd("save dir is:"+s);
-> }
-> main();
-> ```
 
 
 
-### setFloatDisplayLineNumber  打印日志行号
-
-* 打印日志的时候，悬浮窗是否展示行号，正式发布，可以不展示行号，不影响调试和保存在文件的日志中
-* @param ds  true 代表显示， false 不显示
-
-
-> ```javascript
-> function main(){
->    setFloatDisplayLineNumber(true);
->    
-> }
-> main();
-> ```
-
-
-### toast  带参数Toast消息
-* 显示Toast消息
-* 适用版本(EC 5.21.0+)
-* @param msg 消息字符串
-* @param extra 扩展map参数，只有在有悬浮窗权限情况下参数才会生效
-    * x : X坐标
-    * y : Y坐标 
-    * duration : 持续时长 单位是毫秒
-    * textColor : 16进制文字颜色，例如#888888
-    * width : toast宽度
-    * height : toast高度
-    * draggable : 是否能够拖动true 代表可以
-
-> ```javascript
->     function main() {
->         let toastExtra={
->             "x":100, 
->             "y":1200,
->             "duration":1000,
->             "textColor":"#778899",
->             "width":200,
->             "height":200,
->             "draggable":true
->         }
->         for (var i = 0; i < 3; i++) {
->             sleep(500)
->             toast(time()+"ddd",toastExtra);
->         }
->         logd(time()+"  222");
->     }
->     main();
-> ```
-
-### toast1 Toast1消息
- * 显示Toast消息 (扩展方法)
- * @param msg 消息字符串
-
-
-> ```javascript
-> function main(){
->     toast1("msg");
-> }
-> main();
-> ```
-
-
-
-### toast2  Toast2消息
- * 显示Toast消息(扩展方法)
- * @param msg 消息字符串
-
-
-> ```javascript
-> function main(){
->     toast2("msg");
-> }
-> main();
-> ```
 
 
 ### setLogLevel 设置日志的等级
 * 设置日志的等级,可以根据情况关闭或开启日志
-* 适用版本(EC 5.21.0+)
 * @param level 日志等级，值分别是 debug,info,warn,error,off，排序分别是debug < info < warn < error < off，
 * 例如 off代表关闭所有级别日志，debug代表打印包含logd,logi,logw,loge的日志，info代表打印包含logi,logw,loge的日志，warn 代表打印包含logw,loge的日志
 * @param displayToast 是否展示toast消息
@@ -535,27 +316,7 @@
 > ```
 
 
-### clearLog 清除日志
- * 清除日志
- * @param lines 整型，要清除的行数，-1 代表全部清除
 
-
-> ```javascript
-> function main(){
->    showLogWindow()
->    sleep(1000)
->    for (var i = 0; i < 4; i++) {
->           logd(" "+i);
->    }
->    sleep(2000)
->     //清除前三行
->    clearLog(3)
->     //清除所有
->     clearLog(-1)
-> }
-> main();
-> 
-> ```
 
 
 ## 读取IEC包资源
@@ -587,8 +348,6 @@
 > function main(){
 > //这里已读取图片为例子
 > var d =readIECFileAsByte("res/a.png")
-> importPackage(android.graphics)
-> let ad =BitmapFactory.decodeByteArray(d,0,d.length)
 > logd(d)
 > logd(d.length)
 > logd(ad);
@@ -620,7 +379,7 @@
 ### readResBitmap  读取Bitmap资源
 * 读取res文件夹中的资源文件，并返Bitmap图片对象
 * @param fileName 文件名称，不要加res前缀
-* @return string 如果是null代表没内容
+* @return BufferedImage 如果是null代表没内容
 
 
 > ```javascript
@@ -657,273 +416,23 @@
 
 > ```javascript
 > function main(){
->     var b = saveResToFile("img/a.png","/sdcard/a.png");
+>     var b = saveResToFile("img/a.png","c:/sdcard/a.png");
 > }
 > main();
 > 
 > ```
 
 
-## UI参数读取
-
-
-### deleteConfig 删除配置值
-* @param key 在UI界面中配置的key
-* @return {bool} true 代表成功 false 代表失败
-
-
-> ```javascript
-> function main(){
->  var testData = deleteConfig("test_key");
-> }
-> main();
-> 
-> ```
-
-
-### readConfigInt 读取整型配置
-* @description 读取UI界面中的参数,返回是整型
-* @param key 在UI界面中配置的key
-* @return 整型，找不到就返回0
-
-
-> ```javascript
-> function main(){
->     var testData = readConfigInt("test_key");
-> }
-> main();
-> 
-> ```
-
-### readConfigString 读取字符串配置
-* 读取UI界面中的参数,返回是字符串
-* @param key 在UI界面中配置的key
-* @return 字符串 找不到就返回空字符串
-
-
-> ```javascript
-> function main(){
->     var testData = readConfigString("test_key");
-> }
-> main();
-> 
-> ```
-
-### readConfigDouble 读取double配置
-* 读取UI界面中的参数,返回是Double型
-* @param key 在UI界面中配置的key
-* @return double
-
-
-> ```javascript
-> function main(){
->     var testData = readConfigDouble("test_key");
-> }
-> main();
-> ```
-
-
-### readConfigBoolean 读取布尔型配置
- * 读取UI界面中的参数,返回是布尔型
- * @param key 在UI界面中配置的key
- * @return true 或者 false
-
-
-> ```javascript
- > function main(){
- >     var testData = readConfigBoolean("test_key");
- > }
- > main();
- > ```
-
-
-### getConfigJSON 取所有配置
- * 取得配置的JSON
- * @return JSON数据
-
-
-> ```javascript
- > function main(){
- >     var testData = getConfigJSON();
- > }
- > main();
- > ```
-
-
-### updateConfig 更新配置
-* 更新配置
-* @param key 键
-* @param value  值
-* @return {boolean} true 成功，false失败
-
-> ```javascript
- > function main(){
- >    updateConfig("a","sss");
- > }
- > main();
- > ```
-
-## EC 系统设置
-
-
-### setECSystemConfig 设置EC参数
- * 设置EC的系统参数
- * @param params  map形式例如 {"running_mode":"无障碍"},<br/>
- * {<br/>
- *     "running_mode":"无障碍",<br/>
- *     "auto_start_service":"是",<br/>
- *      "log_float_window":"否",<br/>
- *      "ctrl_float_window":"否"<br/>
- * }<br/>
- *  参数解释有：<br/>
- *  running_mode : 运行模式 值有 无障碍，代理两种
- *  auto_start_service： 开机自启动 值有 是，否 两种
- *  log_float_window : 日志悬浮窗展示 值有 是，否 两种
- *  ctrl_float_window : 启停控制悬浮窗展示 值有 是，否 两种
- *
- * @return 布尔型 true 是 false 否
-
-> ```javascript
-> function main(){
->     var m = {
->           "node_service":"需要",
->           "proxy_service":"不需要",
->           "running_mode":"无障碍",
->            "log_float_window":"否",
->            "ctrl_float_window":"否"
->       };
->     setECSystemConfig(m);
->     
-> }
-> main();
-> ```
-
-### openECSystemSetting 打开EC系统界面
-* 打开EC系统设置页面
-* @return true 成功 false 失败
-
-> ```javascript
- > function main(){
- >     var result = openECSystemSetting();
- > }
- > main();
- > ```
-
-
-### setWallpaperService 设置壁纸服务函数
- * 设置壁纸服务函数
- * 适用版本(EC 6.1.0+)
- * @return 布尔型  true代表启动成功，false代表启动失败
-> ```javascript
- > function main(){
- >     var result = setWallpaperService();
- > }
- > main();
- > ```
 
 
 
 
-### isWallpaperServiceSet 是否设置壁纸成功
- * 是否设置壁纸成功
- * 适用版本(EC 6.1.0+)
- * @return 布尔型  true代表启动成功，false代表启动失败
-> ```javascript
- > function main(){
- >     var result = isWallpaperServiceSet();
- > }
- > main();
- > ```
-
-### openECloudSetting 打开EC云控界面
-* 打开EC云控界面
-* @return true 成功 false 失败
-
-> ```javascript
- > function main(){
- >     var result = openECloudSetting();
- > }
- > main();
- > ```
-
-## 设置IEC文件(脚本中的热更新)
-
-### setIECPath 设置脚本路径
-* 设置要执行的IEC文件路径
-* @return true 成功 false 失败
-
-> ```javascript
- > function main(){
- >     var result = setIECPath("/sdcard/release.iec");
->     logd("result : "+result);
->     logd("当前路径 "+getIECPath());
->     //开启定时任务准备下一次执行
->     var id2 =startJob("task2","2",true);
->     logd("job id "+id2);
->
- > }
- > main();
- > ```
 
 
-## 运行模式
-
-### activeSelf 激活自己
-* 激活自己,条件：1 开启USB调试，2 开启本机ADB WIFI调试,请参考激活章节文档
-* 适用版本(EC 5.15.0+)
-* @param activeType 激活类型，0 自动，1 模式1 2 模式2
-* @param timeout 超时时间
-* @return {string} 激活成功：代表成功，其他都是错误消息
-
-> ```javascript
-> function main(){
->     var result = activeSelf(0,10*1000);
->         logd(result)
-> }
-> main();
-> ```
 
 
-### activeDevice 通过IP激活其他设备
-* ip 设备的IP,条件：1 开启目标设备USB调试，2 开启目标设备ADB WIFI调试,请参考激活章节文档
-* 适用版本(EC 5.15.0+)
-* @param ip 设备的IP
-* @param activeType 激活类型，0 自动，1 模式1 2 模式2
-* @param timeout 超时时间
-* @return {string} 激活成功：代表成功，其他都是错误消息
+## 自动化服务相关
 
-> ```javascript
-> function main(){
->     var result = activeDevice("192.168.1.108",0,10*1000);
->     logd(result)
-> }
-> main();
-> ```
-
-
-### isAccMode 无障碍模式判断
- * 是否是无障碍模式
- * @return true或者false
-
-
-> ```javascript
- > function main(){
- >     var result = isAccMode();
- > }
- > main();
- > ```
-
-### isAgentMode 代理模式判断
- * 是否是代理模式
- * @return true或者false
-
-
-> ```javascript
- > function main(){
- >     var result = isAgentMode();
- > }
- > main();
- > ```
 
 ### isServiceOk 自动化服务状态
  * 自动化服务是否正常
@@ -957,7 +466,6 @@
 
  * 守护自动化环境
  * 如果是激活或者无障碍保活的情况下，尽量保证自动服务不掉线
- * 适合版本:EC 6.7.0+
  * @param daemon 是否守护自动化环境 true 是，false 否
  * @return 布尔型  true代表启动成功，false代表启动失败
 
@@ -989,7 +497,7 @@
 
 ### time 毫秒级当前时间戳
  * !!!沙雕提醒!!!默认时间戳是秒,不要直接比较
- * 适用版本(EC 5.14.0+)
+
  * 毫秒级当前时间戳
  * @return {long} 毫秒级别的long时间
 
@@ -1003,7 +511,7 @@
 
 
 ### timeFormat 格式化时间
- * 适用版本(EC 5.14.0+)
+
  * 格式化时间函数例如：```yyyy-MM-dd HH:mm:ss```
  * @return {string} 格式化之后的当前时间
 
@@ -1016,7 +524,7 @@
 
 
 ### console.time 计时开始
- * 适用版本(EC 5.14.0+)
+ 
  * 计时开始,和timeEnd成对出现计算用时
  * @param label 标签
  * @return  {long} 当前时间
@@ -1031,7 +539,7 @@
 
 
 ### console.timeEnd 计时结束
- * 适用版本(EC 5.14.0+)
+ 
  * 计时结束,和timeEnd成对出现计算用时
  * @param label 标签
  * @return {long} 与计时开始的差值
