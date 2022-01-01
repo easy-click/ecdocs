@@ -585,6 +585,28 @@
 
 ## 找图
 
+
+### image.initOpenCV 初始化OpenCV
+ * 初始化OPENCV 类库
+ * 如果使用找图请先调用这个函数，第一次初始化需要复制类库，时间可能较长，以后再次执行就很快
+ *  @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> 
+> function main() {
+>       let req = startEnv();
+>       if (!req) {
+>           toast("申请权限失败");
+>           return;
+>       }
+>        sleep(1000)
+>       var  d= image.initOpenCV();
+>       logd(d)
+> }
+> main();
+> ```
+
+
 ### image.findImage 找图
 * 找图。在大图片image中查找小图片template的位置（模块匹配），找到时返回位置坐标区域(Rect)，找不到时返回null。
 * @param image     大图片
@@ -607,7 +629,8 @@
 >           toast("申请权限失败");
 >           return;
 >       }
->   
+>    var  d= image.initOpenCV();
+>       logd(d)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    //从工程目录下res文件夹下读取sms.png文件
@@ -661,6 +684,8 @@
 >           toast("申请权限失败");
 >           return;
 >       }
+>    var  d= image.initOpenCV();
+>       logd(d)
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >     //从工程目录下res文件夹下读取sms.png文件
@@ -716,6 +741,8 @@
 >           toast("申请权限失败");
 >           return;
 >       }
+>    var  d= image.initOpenCV();
+>       logd(d)
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >      var aimage = image.captureFullScreen();
@@ -767,6 +794,8 @@
 >           toast("申请权限失败");
 >           return;
 >       }
+>    var  d= image.initOpenCV();
+>       logd(d)
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)   
 >        var temp = readResAutoImage("tmp.png");
