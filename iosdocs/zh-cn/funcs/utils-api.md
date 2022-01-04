@@ -6,7 +6,6 @@
 
 ### utils.zip 压缩
  * 将多个文件压缩成一个zip文件
- * 适用版本(EC 5.17.0+)
  * @param zipFile 目标zip文件的路径
  * @param passwd 目标ip文件密码，空代表无密码
  * @param files 要压缩的文件或者文件夹，文件数组例如: ["/sdcard/a.txt","/sdcard/bb/"]

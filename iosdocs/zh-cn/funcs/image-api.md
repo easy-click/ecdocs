@@ -12,7 +12,6 @@
 > 
 > function main() {
 >  //action_timeout 找图找色动作的最大时间，超时后会自动返回避免阻塞
-
 > // var a = image.setInitParam({"action_timeout":1000});
 >    var a = image.setInitParam(
 >      {

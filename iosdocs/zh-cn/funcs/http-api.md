@@ -518,7 +518,7 @@
 
 #### setReadTimeout 设置读数据超时时间
 
-* 适用EC 6.17.0+
+
 * 在创建websocket链接类型=1的时候使用
 * 设置读数据超时时间
 * @param timeout 单位是秒
@@ -528,7 +528,7 @@
 
 #### setWriteTimeout 设置写数据超时时间
 
-* 适用EC 6.17.0+
+
 * 在创建websocket链接类型=1的时候使用
 * 设置写数据超时时间
 * @param timeout 单位是秒
@@ -540,7 +540,6 @@
 
 #### setPingInterval 设置心跳超时时间
 
-* 适用EC 6.17.0+
 * 在创建websocket链接类型=1的时候使用
 * 设置心跳超时时间
 * @param timeout 单位是秒
@@ -552,7 +551,7 @@
 
 #### setConnectionLostTimeout 设置心跳超时时间
 
-* 适用EC 6.17.0+
+
 * 在创建websocket链接类型=2的时候使用
 * 设置心跳超时时间
 * @param timeout 单位是秒
@@ -562,7 +561,7 @@
 
 #### setAutoReconnect 设置自动重连
 
-* 适用EC 6.17.0+
+
 * 设置自动重连
 * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
 

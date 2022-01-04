@@ -14,7 +14,7 @@
 >     
 > function main(){
 >     var data = file.readFile("/sdcard/test.txt");
->     toast(data);
+>     logd(data);
 > }
 > main();
 > ```
@@ -86,7 +86,7 @@
 >     
 > function main(){
 >     var create=file.create("/sdcard/test.txt");
->     toast(create);
+>     logd(create);
 > }
 > main();
 > ```        
@@ -99,24 +99,12 @@
 >     
 > function main(){
 >     var t=file.mkdirs("/sdcard/testdir/");
->     toast(t);
+>     logd(t);
 > }
 > main();
 > ```
 
-## file.readAssets 读取assets
-* 从APK的assets文件夹中读取数据为字符串
-* @param path assets文件夹中的文件路径，例如 data/a.txt
-* @return 字符串
 
-> ```javascript
->     
-> function main(){
->     var data=file.readAssets("data/test.txt");
->     toast(data);
-> }
-> main();
-> ```
 
 
 ## file.deleteAllFile 删除
@@ -141,7 +129,7 @@
 > function main(){
 >     var data="sss";
 >     var t=file.appendLine(data,"/sdcard/test.txt");
->     toast(t);
+>     logd(t);
 > }
 > main();
 > ```
@@ -157,7 +145,7 @@
 >     
 > function main(){
 >     var t=file.readLine("/sdcard/test.txt",1);
->     toast(t);
+>     logd(t);
 > }
 > main();
 > ```
@@ -172,7 +160,7 @@
 >     
 > function main(){
 >     var t=file.readAllLines("/sdcard/test.txt");
->     toast(t);
+>     logd(t);
 > }
 > main();
 > ```
@@ -189,7 +177,7 @@
 >     
 > function main(){
 >     var t=file.exists("/sdcard/testdir/");
->     toast(t);
+>     logd(t);
 > }
 > main();
 > ```
@@ -205,7 +193,7 @@
 >     
 > function main(){
 >     var t=file.copy("/sdcard/a.png","/sdcard/b.png");
->     toast(t);
+>     logd(t);
 > }
 > main();
 > ```

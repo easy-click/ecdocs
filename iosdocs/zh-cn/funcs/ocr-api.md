@@ -18,7 +18,7 @@
  * 如果类型是 ocrLite, 参数设置为 : {"type":"ocrLite","cpuType:"","baseDir":""},
     * baseDir: ocrLite 类库存放路径，一般会和ec自带在同个目录下,文件夹名称是: OcrLiteNcnn
     * cpuType: 主机的cpu类型，分别是win-lib-cpu-x64，win-lib-cpu-x86,Linux-Lib-CPU,Darwin-Lib-CPU
-    * 如果baseDir和cpuType不填写，重新会自动查找
+    * 如果baseDir和cpuType不填写，程序会自动查找
  * @return {bool} 布尔型 成功或者失败
 
 
