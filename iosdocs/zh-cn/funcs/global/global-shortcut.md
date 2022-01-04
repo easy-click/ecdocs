@@ -261,7 +261,6 @@
 > ```javascript
 > 
 > function main(){
-
 >     var result = inputText("我是内容",100);
 >     if (result){
 >         toast("是");
@@ -298,6 +297,44 @@
 > ```
 
 
+### appLaunch 运行程序
+
+ *  运行程序
+  * @param bundleId app的 bundleID
+ *  @return bool 布尔型| true代表成功
+
+> ```javascript
+> 
+> function main(){
+>     var result = appLaunch("com.tencent.xin");
+>     if (result){
+>         toast("成功");
+>     } else {
+>         toast("失败");
+>     }
+> }
+> main();
+> ```
+
+
+### appKillByBundleId 杀死程序
+
+ * 使用bundleID杀死一个进程
+ * @param bundleId app的 bundleID
+ * @return {boolean} true 成功，false 失败成功
+
+> ```javascript
+> 
+> function main(){
+>     var result = appKillByBundleId("com.tencent.xin");
+>     if (result){
+>         toast("成功");
+>     } else {
+>         toast("失败");
+>     }
+> }
+> main();
+> ```
 
 
 
