@@ -35,6 +35,8 @@
     
 
 * [高级功能](/zh-cn/advance/)
+
+    * [部署方式](/zh-cn/advance/deploy.md)
     * [插件开发](/zh-cn/funcs/plugin/plugins.md)
     * [Java-JS混合开发](/zh-cn/funcs/plugin/javajs.md)
 
