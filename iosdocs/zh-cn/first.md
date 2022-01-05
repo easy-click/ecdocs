@@ -43,3 +43,20 @@
 
 ### ipa签名
 
+- 由于ios封闭性，免越狱的需要自行签名才能进行正常的安装
+- 请打开爱思助手，选择工具箱，选择ipa签名，具体签名请看：https://www.i4.cn/news_detail_38195.html
+- 原始ipa在中控程序 config/easyclick.ipa 文件
+
+- 签名完成后，请用爱思助手安装ipa到手机上
+
+
+
+## 链接中控开发
+
+1、开发插件安装完毕
+
+2、ipa签名并安装成功
+
+3、中控启动成功
+
+<img src="zh-cn/images/image-20220105095753431.png" alt="image-20220105095753431" style="zoom:25%;" />
