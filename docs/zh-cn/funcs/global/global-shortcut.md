@@ -401,7 +401,7 @@
 
 > ```javascript
 > function main(){
->  var result = agentEvent.touchMove(10,10);
+>  var result = touchMove(10,10);
 >  if (result){
 >      toast("成功");
 >  }else {
