@@ -832,7 +832,34 @@ main()
 
 ## 找图
 
+### image.initOpenCV 初始化OpenCV
+
+ * 初始化OPENCV 类库
+ * 如果使用找图请先调用这个函数，第一次初始化需要复制类库，时间可能较长，以后再次执行就很快
+ * @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> function main() {
+>    let req = startEnv();
+>    if (!req) {
+>        toast("申请权限失败");
+>        return;
+>    }
+>     sleep(1000)
+>    var  d= image.initOpenCV();
+>    logd(d)
+> }
+> main();
+> ```
+
+
+
+
+
+
+
 ### image.findImage 找图
+
 * 找图。在大图片image中查找小图片template的位置（模块匹配），找到时返回位置坐标区域(Rect)，找不到时返回null。
 * @param image     大图片
 * @param template  小图片（模板）
@@ -849,39 +876,41 @@ main()
 > ```javascript
 > 
 > function main() {
->     var request = image.requestScreenCapture(10000,0);
->     if (request){
->         toast("申请成功");
->     }else {
->        toast("申请失败");
->         exit();
->     }
->    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->    sleep(1000)
->    //从工程目录下res文件夹下读取sms.png文件
->    let sms=readResAutoImage("sms.png");
->     //抓取屏幕
->    let aimage = image.captureFullScreen();
->    logd("aimage "+aimage);
->    if (aimage != null) {
->        //在图片中查找
->        let points = image.findImage(aimage, sms,0, 0, 0, 0,0.7, 0.9, 21, 5);
->        logd("points " + JSON.stringify(points));
->        //这玩意是个数组
->        if(points && points.length > 0){
->            for(let i=0;i<points.length;i++){
->                    logd(points[i])
->                    let x = parseInt((points[i].left + points[i].right)/2)
->                    let y = parseInt((points[i].top + points[i].bottom)/2)
->                    //点击坐标
->                    clickPoint(x,y)
->           }
+>  var request = image.requestScreenCapture(10000,0);
+>  if (request){
+>      toast("申请成功");
+>  }else {
+>     toast("申请失败");
+>      exit();
+>  }
+>   var  d= image.initOpenCV();
+>    logd(d)
+> //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+> sleep(1000)
+> //从工程目录下res文件夹下读取sms.png文件
+> let sms=readResAutoImage("sms.png");
+>  //抓取屏幕
+> let aimage = image.captureFullScreen();
+> logd("aimage "+aimage);
+> if (aimage != null) {
+>     //在图片中查找
+>     let points = image.findImage(aimage, sms,0, 0, 0, 0,0.7, 0.9, 21, 5);
+>     logd("points " + JSON.stringify(points));
+>     //这玩意是个数组
+>     if(points && points.length > 0){
+>         for(let i=0;i<points.length;i++){
+>                 logd(points[i])
+>                 let x = parseInt((points[i].left + points[i].right)/2)
+>                 let y = parseInt((points[i].top + points[i].bottom)/2)
+>                 //点击坐标
+>                 clickPoint(x,y)
 >        }
->         //图片要回收
->         image.recycle(aimage)
 >     }
->     //图片要回收
->     image.recycle(sms)
+>      //图片要回收
+>      image.recycle(aimage)
+>  }
+>  //图片要回收
+>  image.recycle(sms)
 > }
 > 
 > main();
@@ -904,32 +933,34 @@ main()
 > ```javascript
 > 
 > function main() {
->     var request = image.requestScreenCapture(10000,0);
->     if (request){
->         toast("申请成功");
->     }else {
->        toast("申请失败");
->         exit();
->     }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
->     //从工程目录下res文件夹下读取sms.png文件
->    var sms=readResAutoImage("sms.png");
->     //在当前屏幕中查找，并且限制只查找一个
->     var points = image.findImageEx(sms,0,0,0,0,0.7, 0.9, 21, 5);
->     logd("points " + JSON.stringify(points));
->    //这玩意是个数组
->    if(points && points.length > 0){
->        for(let i=0;i<points.length;i++){
->                    logd(points[i])
->                    let x = parseInt((points[i].left + points[i].right)/2)
->                    let y = parseInt((points[i].top + points[i].bottom)/2)
->                    //点击坐标
->                    clickPoint(x,y)
->       }
+>  var request = image.requestScreenCapture(10000,0);
+>  if (request){
+>      toast("申请成功");
+>  }else {
+>     toast("申请失败");
+>      exit();
+>  }
+>   var  d= image.initOpenCV();
+>    logd(d)
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)
+>  //从工程目录下res文件夹下读取sms.png文件
+> var sms=readResAutoImage("sms.png");
+>  //在当前屏幕中查找，并且限制只查找一个
+>  var points = image.findImageEx(sms,0,0,0,0,0.7, 0.9, 21, 5);
+>  logd("points " + JSON.stringify(points));
+> //这玩意是个数组
+> if(points && points.length > 0){
+>     for(let i=0;i<points.length;i++){
+>                 logd(points[i])
+>                 let x = parseInt((points[i].left + points[i].right)/2)
+>                 let y = parseInt((points[i].top + points[i].bottom)/2)
+>                 //点击坐标
+>                 clickPoint(x,y)
 >    }
->     //图片要回收
->     image.recycle(sms)
+> }
+>  //图片要回收
+>  image.recycle(sms)
 > }
 > 
 > main();
@@ -961,39 +992,41 @@ main()
 > ```javascript
 > 
 > function main() {
->      var req = image.requestScreenCapture(10000,0);
->      if (!req) {
->          req = image.requestScreenCapture(10000,0);
->      }
->      if (!req) {
->          toast("申请权限失败");
->          return;
->      }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
->      var aimage = image.captureFullScreen();
->      if (aimage != null) {
->         var temp = readResAutoImage("tmp.png");
->         let rectp= new Rect();
->         rectp.left=0;
->         rectp.top=0;
->         rectp.right=device.getScreenWidth();
->         rectp.bottom=device.getScreenHeight();
->          let matchs = image.matchTemplate(aimage, temp,0.7,0.9,rectp,-1,10,5);
->        //这玩意是个数组
->          logd(JSON.stringify(matchs));
->            //这玩意是个数组
->            if(matchs && matchs.length > 0){
->                for(let i=0;i<matchs.length;i++){
->                    logd(JSON.stringify(matchs[i]));
->                    clickPoint(matchs[i].x,matchs[i].y)
->               }
+>   var req = image.requestScreenCapture(10000,0);
+>   if (!req) {
+>       req = image.requestScreenCapture(10000,0);
+>   }
+>   if (!req) {
+>       toast("申请权限失败");
+>       return;
+>   }
+>   var  d= image.initOpenCV();
+>    logd(d)
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)
+>   var aimage = image.captureFullScreen();
+>   if (aimage != null) {
+>      var temp = readResAutoImage("tmp.png");
+>      let rectp= new Rect();
+>      rectp.left=0;
+>      rectp.top=0;
+>      rectp.right=device.getScreenWidth();
+>      rectp.bottom=device.getScreenHeight();
+>       let matchs = image.matchTemplate(aimage, temp,0.7,0.9,rectp,-1,10,5);
+>     //这玩意是个数组
+>       logd(JSON.stringify(matchs));
+>         //这玩意是个数组
+>         if(matchs && matchs.length > 0){
+>             for(let i=0;i<matchs.length;i++){
+>                 logd(JSON.stringify(matchs[i]));
+>                 clickPoint(matchs[i].x,matchs[i].y)
 >            }
->        //图片要回收
->        image.recycle(aimage)
->        //图片要回收
->        image.recycle(temp )
->      }
+>         }
+>     //图片要回收
+>     image.recycle(aimage)
+>     //图片要回收
+>     image.recycle(temp )
+>   }
 > }
 > main();
 > ```
@@ -1015,35 +1048,37 @@ main()
 > ```javascript
 > 
 > function main() {
->      var req = image.requestScreenCapture(10000,0);
->      if (!req) {
->          req = image.requestScreenCapture(10000,0);
->      }
->      if (!req) {
->          toast("申请权限失败");
->          return;
->      }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)   
->        var temp = readResAutoImage("tmp.png");
->        var rectp= new Rect();
->        rectp.left=0;
->        rectp.top=0;
->        rectp.right=device.getScreenWidth();
->        rectp.bottom=device.getScreenHeight();
->        let matchs = image.matchTemplateEx( temp,0.7,0.9,rectp,-1,1,5);
->        logd(JSON.stringify(matchs));
->        //这玩意是个数组
->        if(matchs && matchs.length > 0){
->           for(let i=0;i<matchs.length;i++){
->               logd(JSON.stringify(matchs[i]));
->               clickPoint(matchs[i].x,matchs[i].y)
->           }
+>   var req = image.requestScreenCapture(10000,0);
+>   if (!req) {
+>       req = image.requestScreenCapture(10000,0);
+>   }
+>   if (!req) {
+>       toast("申请权限失败");
+>       return;
+>   }
+>   var  d= image.initOpenCV();
+>    logd(d)
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)   
+>     var temp = readResAutoImage("tmp.png");
+>     var rectp= new Rect();
+>     rectp.left=0;
+>     rectp.top=0;
+>     rectp.right=device.getScreenWidth();
+>     rectp.bottom=device.getScreenHeight();
+>     let matchs = image.matchTemplateEx( temp,0.7,0.9,rectp,-1,1,5);
+>     logd(JSON.stringify(matchs));
+>     //这玩意是个数组
+>     if(matchs && matchs.length > 0){
+>        for(let i=0;i<matchs.length;i++){
+>            logd(JSON.stringify(matchs[i]));
+>            clickPoint(matchs[i].x,matchs[i].y)
 >        }
->        //图片要回收
->        image.recycle(aimage)
->       //图片要回收
->       image.recycle(temp )
+>     }
+>     //图片要回收
+>     image.recycle(aimage)
+>    //图片要回收
+>    image.recycle(temp )
 > }
 > main();
 > ```
@@ -1069,35 +1104,37 @@ main()
 > ```javascript
 > 
 > function main() {
->       var req = image.requestScreenCapture(10000,0);
->         if (!req) {
->          req = image.requestScreenCapture(10000,0);
+>    var req = image.requestScreenCapture(10000,0);
+>      if (!req) {
+>       req = image.requestScreenCapture(10000,0);
+>    }
+>    if (!req) {
+>        toast("申请权限失败");
+>        return;
+>    }
+>   var  d= image.initOpenCV();
+>    logd(d)
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)
+>    for (var i = 0; i < 1000; i++) {
+>           sleep(1000);
+>           var s = new Date().getTime();
+>           var d = image.captureFullScreenEx();
+>           if (d) {
+>               var saved =image.saveTo(d,"/sdcard/testb.png");
+>               var s = new Date().getTime();
+>               var bd = image.binaryzation(d,1,200);
+>               logd("time "+(new Date().getTime()-s))
+>               logd(bd.uuid);
+>               if (bd) {
+>                   var saved =image.saveTo(bd,"/sdcard/testb2.png");
+>                   logd("saved "+saved)
+>                   exit()
+>               }
+>                //图片要回收
+>                image.recycle(d)
+>           }
 >       }
->       if (!req) {
->           toast("申请权限失败");
->           return;
->       }
->        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
->        sleep(1000)
->       for (var i = 0; i < 1000; i++) {
->              sleep(1000);
->              var s = new Date().getTime();
->              var d = image.captureFullScreenEx();
->              if (d) {
->                  var saved =image.saveTo(d,"/sdcard/testb.png");
->                  var s = new Date().getTime();
->                  var bd = image.binaryzation(d,1,200);
->                  logd("time "+(new Date().getTime()-s))
->                  logd(bd.uuid);
->                  if (bd) {
->                      var saved =image.saveTo(bd,"/sdcard/testb2.png");
->                      logd("saved "+saved)
->                      exit()
->                  }
->                   //图片要回收
->                   image.recycle(d)
->              }
->          }
 > 
 > }
 > main();

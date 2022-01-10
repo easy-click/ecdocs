@@ -606,7 +606,11 @@
 > ```
 
 
+
+
+
 ### image.findImage 找图
+
 * 找图。在大图片image中查找小图片template的位置（模块匹配），找到时返回位置坐标区域(Rect)，找不到时返回null。
 * @param image     大图片
 * @param template  小图片（模板）
