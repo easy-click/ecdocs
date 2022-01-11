@@ -1,6 +1,6 @@
 
 # 远程调试
-##花生壳版教程
+## 花生壳版教程
 - https://www.bilibili.com/video/BV1vz4y1S7gd?p=25&share_source=copy_web
 ## 先在手机上安装EC调试版本
 
