@@ -4,7 +4,7 @@
 
 ```json
 1、修改版本号,防止沙雕经常搞错版本
-2、使用找图，一定要先调用image.initOpenCv函数
+2、使用找图，一定要先调用image.initOpenCV函数
 
 ```
 
