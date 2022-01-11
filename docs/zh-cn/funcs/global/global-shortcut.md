@@ -1774,6 +1774,7 @@
 * @return {bool} true 代表有权限  false代表无权限或申请失败
 
 ```json
+//安卓权限大全http://home.laoleng.top:3001/web/#/9?page_id=1740
 function main(){
 let per=["android.permission.READ_CALENDAR","android.permission.READ_SMS"]
 let result=requestRuntimePermission(per,10000)
