@@ -819,26 +819,20 @@ main();
 * 成功返回示例：{"result":{"data":1}}，data代表操作的成功行数
 * 失败返回示例：{"result":{"msg":"我是错误信息"}}
 
-```javascript
-function main(){
-    
-      let del ={
-                  "tableNameEn": "niubi_table",
-
-                  "query":"and name like '%我%'",
-                  "search": {
-                      "id": "7"
-                  }
-      }
-
-      let delr =ecloud.dynamicRemove(del)
-      logd("===> {}",delr);
-
-}
-main();
-
-
-```
+>```javascript
+>function main(){    
+>      let del ={
+>                  "tableNameEn": "niubi_table",
+>                  "query":"and name like '%我%'",
+>                  "search": {
+>                      "id": "7"
+>                  }
+>      }
+>      let delr =ecloud.dynamicRemove(del)
+>      logd("===> {}",delr);
+>}
+>main();
+>```
 
 
 
