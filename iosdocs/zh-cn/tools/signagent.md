@@ -62,6 +62,18 @@
 
 
 
+如果出现这个弹窗，请到手机信任这个程序:
+
+<img src="zh-cn/images/image-20220208105413446.png" alt="image-20220208105413446" style="zoom:50%;" />
+
+`进入手机的 设置 - 通用 - 设备管理 ，选择开发者应用, 点击信任 apple developement:xxxx`
+
+<img src="zh-cn/images/image-20220105102213366.png" alt="image-20220105102213366" style="zoom:50%;" />
+
+
+
+
+
 ### 常见错误
 
 #### Failed to register bundle identifier
