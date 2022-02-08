@@ -3,6 +3,11 @@
 * [更改记录](/zh-cn/changelog.md)
 
 * [工具&教程](/zh-cn/tools/)
+  
+    * [安装必要软件](/zh-cn/tools/installreadme)
+        * [1、安装代理ipa](/zh-cn/tools/signagent.md)
+        * [2、安装中控](/zh-cn/tools/installcenter.md)
+        * [3、安装开发插件](/zh-cn/tools/installdevtools.md)
     
     * [第一个工程](/zh-cn/first.md)
     * [学习教程](/zh-cn/jiaocheng.md)
