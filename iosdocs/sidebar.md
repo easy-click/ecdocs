@@ -2,7 +2,7 @@
 
 * [更改记录](/zh-cn/changelog.md)
 
-* [工具&教程](/zh-cn/tools/)
+* [工具和教程](/zh-cn/tools/)
   
     * [安装必要软件](/zh-cn/tools/installreadme)
         * [1、安装代理ipa](/zh-cn/tools/signagent.md)
