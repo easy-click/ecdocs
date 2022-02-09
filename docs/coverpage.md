@@ -1,5 +1,5 @@
 
-# EasyClick 易点自动化
+# EasyClick 易点自动化安卓版
 
 > 一个免ROOT功能强大的自动化测试软件
 
@@ -10,7 +10,7 @@
 * [GITHUB](https://github.com/easy-click/easyclick-libs)
 
 [IOS版本](http://ieasyclick.com/iosdocs/#/)
-[安卓版本](README)
+[开始](README)
 
 
 

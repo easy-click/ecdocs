@@ -1,5 +1,5 @@
 
-# EasyClick iOS版本
+# EasyClick 易点自动化iOS版本
 
 > 一个免越狱功能强大的自动化测试软件
 >
