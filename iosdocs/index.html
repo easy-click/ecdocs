@@ -27,6 +27,11 @@
         mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并。
         maxLevel: 2,//最大的内容表级别。
         subMaxLevel: 3,//在自定义边栏中添加目录（TOC）。
+        alias: { // 定义路由别名，可以更自由的定义路由规则。 支持正则
+        '/.*/sidebar.md': '/sidebar.md',//防止意外回退
+        '/.*/navbar.md': '/navbar.md',
+        '/.*/coverpage.md': '/coverpage.md',
+        },
         toc: {
             tocMaxLevel: 3,
             target: 'h2, h3, h4, h5, h6'
@@ -42,6 +47,9 @@
             depth: 4
         },
     }
+    
+    
+
 </script>
 <!--
 <script src="//unpkg.zhimg.com/docsify-plugin-toc"></script>    
