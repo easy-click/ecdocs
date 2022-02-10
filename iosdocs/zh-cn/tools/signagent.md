@@ -18,6 +18,27 @@
 
 ### 设置签名
 
+```json
+签名类型:
+普通的appleid签名:
+	- 免费
+	- 限制: 只能安装3台设备，bundleId只能允许十天更改三次，
+		证书7天就会过期，需要再次使用xcode运行代理ipa源码
+  - 地址: https://appleid.apple.com/account
+个人开发者签名:
+	- 费用688元，使用iPhone
+	- 限制: 安装100台设备，证书一年后过期，过期后需要再次使用xcode运行代理ipa源码
+	- 地址：https://developer.apple.com/cn/support/enrollment/
+	- https://www.jianshu.com/p/029167817dde
+	
+这里演示的是appleid免费的签名
+实际开发和调试脚本可以使用免费appleid
+正式使用超过3台设备，需要使用个人开发者签名或者申请大量的免费appleid签名
+
+```
+
+
+
 点击左上角的项目，进入项目属性，点击`TARGETS`中的`WebDriverAgentRunner`，切换到`Signing & Capabilities`：
 
 <img src="zh-cn/images/image-20220208102448367.png" alt="image-20220208102448367" style="zoom:50%;" />
