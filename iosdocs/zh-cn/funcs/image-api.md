@@ -585,7 +585,74 @@
 ## 找图
 
 
+
+
+
+### image.findImageByColor 透明找图
+
+* 透明找图（这个函数不需要初始化Opencv）
+* @param image     大图片
+* @param template  小图片（模板）
+* @param x         找图区域 x 起始坐标
+* @param y         找图区域 y 起始坐标
+* @param ex 终点X坐标
+* @param ey 终点Y坐标
+* @param threshold 图片相似度。取值范围为0~1的浮点数。默认值为0.9。
+* @param limit 限制结果的数量，如果要找到1个，就填写1，如果是多个请填写多个
+* @return 多个Point 坐标点数组或者null
+
+> ```javascript
+> function main() {
+> var request = image.requestScreenCapture(10000,0);
+> if (request){
+> 
+> }else {
+> 
+> exit();
+> }
+> 
+> 
+> //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+> sleep(1000)
+> //从工程目录下res文件夹下读取sms.png文件
+> let sms=readResAutoImage("sms.png");
+> //抓取屏幕
+> let aimage = image.captureFullScreen();
+> logd("aimage "+aimage);
+> if (aimage != null) {
+> //在图片中查找
+> let points = image.findImageByColor(aimage, sms,0, 0, 0, 0, 0.8, 5);
+> logd("points " + JSON.stringify(points));
+> //这玩意是个数组
+> if(points && points.length > 0){
+>   for(let i=0;i<points.length;i++){
+>           logd(points[i])
+>           let x = points[i].x
+>           let y =points[i].y
+>           //点击坐标
+>           clickPoint(x,y)
+>  }
+> }
+> //图片要回收
+> image.recycle(aimage)
+> }
+> //图片要回收
+> image.recycle(sms)
+> }
+> 
+> main();
+> ```
+
+
+
+
+
+
+
+
+
 ### image.initOpenCV 初始化OpenCV
+
  * 初始化OPENCV 类库
  * 如果使用找图请先调用这个函数，第一次初始化需要复制类库，时间可能较长，以后再次执行就很快
  *  @return 布尔型 true 代表成功 false代表失败
