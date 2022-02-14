@@ -41,6 +41,8 @@
 
 ### 中控配置(可选)
 
+- 如果你修改了agent的源码bundleid，这里一定要进行修改config文件的`bundleID`属性，填写agent的bundleID的前缀
+
 - 记事本或者editpad++编辑 `config/config.toml`
 
 > ```toml
@@ -54,7 +56,7 @@
 > ## 执行器的jar文件，不用填写
 > jar = ""
 > ## 运行agent的 bundleID 前缀，会自动根据这个查找启动代理服务
-> bundleID = "com.ieasyclick.auto.ios.xctrunner"
+> bundleID = "com.ieasyclick.auto.ios"
 > ```
 
 
