@@ -11,8 +11,8 @@
 ## 设置
 ### image.setInitParam 初始化参数
 * 设置图色模块初始化参数,设置找图超时时间
-* @param params 超时时间，单位是毫秒
-* @return true 代表成功 false代表失败
+* @param action_timeout 找图找色动作的最大时间，超时后会自动返回避免阻塞，单位是毫秒
+* @param auto_click_request_dialog 是否自动点击截屏授权对话框，默认是true，自动点击
 
 > ```javascript
 > 
