@@ -19,8 +19,8 @@
 > function main() {
 >  //action_timeout 找图找色动作的最大时间，超时后会自动返回避免阻塞
 >   // auto_click_request_dialog 是否自动点击截屏授权对话框，默认是true，自动点击
-> // var a = image.setInitParam({"action_timeout":1000});
->    var a = image.setInitParam(
+> // image.setInitParam({"action_timeout":1000});
+>    image.setInitParam(
 >      {
 >        "action_timeout":1000,
 >        "auto_click_request_dialog":false
