@@ -1,5 +1,7 @@
 * [简介](README.md)
 
+* [**技术服务**](/zh-cn/device_solution.md) 
+
 * [更改记录](/zh-cn/changelog.md)
 
 * [工具和教程](/zh-cn/tools/)

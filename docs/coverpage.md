@@ -9,6 +9,12 @@
 * 技术交流 QQ群1: 777164022   QQ群2: 620028786 Q群3：647082990 QQ群4: 772810035
 * [GITHUB](https://github.com/easy-click/easyclick-libs)
 
+
+
+
+
+[手机采购](/zh-cn/device_solution.md)  |  [机房搭建](/zh-cn/device_solution.md)  | [整体技术解决方案](/zh-cn/device_solution.md)
+
 [IOS版本](http://ieasyclick.com/iosdocs/#/)
 [开始](README)
 
