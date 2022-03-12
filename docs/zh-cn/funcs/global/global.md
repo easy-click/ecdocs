@@ -606,6 +606,7 @@
 
 
 > ```javascript
+> //[提醒沙雕] 不要用<运行选中>功能,此功能不会带着附件文件执行,必须运行整个项目
 > function main(){
 >     var testData = readResString("a.txt");
 > }
@@ -624,6 +625,7 @@
 
 
 > ```javascript
+> //[提醒沙雕] 不要用<运行选中>功能,此功能不会带着附件文件执行,必须运行整个项目
 > function main(){
 >     var b = readResBitmap("a.txt");
 > }
@@ -639,6 +641,7 @@
 
 
 > ```javascript
+> //[提醒沙雕] 不要用<运行选中>功能,此功能不会带着附件文件执行,必须运行整个项目
 > function main(){
 >     var b = readResAutoImage("img/a.png");
 > }
