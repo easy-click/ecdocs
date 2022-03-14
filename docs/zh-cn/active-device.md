@@ -79,3 +79,18 @@
 ## 批量开启ADB WIFI
 - 进入IDEA，选择EasyClick开发工具 - 激活保活设备 -批量开启ADB WIFI 调试
 
+
+
+
+
+## ROM内置激活器
+
+- 1、下载V1.12.0-EC激活设备-无障碍保活.zip，解压，找到agent文件夹下面的手机cpu对应的激活二进制文件（百度查看cpu是arm还是x86的）
+- 2、将文件放入到手机中的某个目录。例如 /data/local/tmp/agent
+- 3、使用adb命令执行adb shell /data/local/tmp/agent -mode=runagent -dport=19901,19902,19903 --password=123 & 即可后台运行
+        - password : 密码
+        - dport : 运行端口号，请写多个，用,号隔开
+
+4、使用adb shell netstat -ant 如果有运行的 19901端口 代表成功
+5、如果是ROM直接拉起二进制文件，可以将文件放在/system/bin/下面, 开机启动命令/system/bin/agent -mode=runagent -dport=19901,19902,19903 --password=123 & 即可后台运行
+

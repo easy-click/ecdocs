@@ -508,7 +508,7 @@ main()
 * @param ey 终点Y坐标
 * @param limit 限制个数
 * @param orz 方向，分别从1-8
-* @return 多个Point 坐标点数组或者null
+* @return 多个 PointIndex 坐标点数组或者null
 
 > ```javascript
 > 
@@ -549,7 +549,7 @@ main()
 * 在图片中找到颜色和color完全相等的点，参数从JSON中获取如果没有找到，则返回null。
 * @param image 图片
 * @param jsonFileName     res文件中取色工具生成的JSON文件，只要填写文件名称即可，后缀不用填写
-* @return 多个Point 坐标点数组或者null
+* @return 多个 PointIndex 坐标点数组或者null
 
 > ```javascript
 > 
@@ -595,7 +595,7 @@ main()
 * @param ey 终点Y坐标
 * @param limit 限制个数
 * @param orz 方向，分别从1-8
-* @return 多个Point 坐标点数组或者null
+* @return 多个 PointIndex 坐标点数组或者null
 
 > ```javascript
 > 
@@ -629,7 +629,7 @@ main()
 ### image.findColorExJ 自动截屏单点找色(JSON)
 * 当前屏幕中找到颜色和color完全相等的点，参数从JSON中获取如果没有找到，则返回null。
 * @param jsonFileName     res文件中取色工具生成的JSON文件，只要填写文件名称即可，后缀不用填写
-* @return 多个Point 坐标点数组或者null
+* @return 多个 PointIndex 坐标点数组或者null
 
 > ```javascript
 > 
@@ -660,6 +660,97 @@ main()
 > ```
 
 
+
+
+
+### image.findNotColor 单点找非色
+
+* 在图片中找到颜色和color完全不相等的某个点，并返回该点的坐标；如果没有找到，则返回null。
+* @param image 图片
+* @param color     要寻找的颜色类似， 0xCDD7E9-0x101010,0xCDD7E9-0x101010
+* @param threshold 找色时颜色相似度取值为 0.0 ~ 1.0
+* @param x 区域的X起始坐标
+* @param y 区域的Y起始坐标
+* @param ex 终点X坐标
+* @param ey 终点Y坐标
+* @param limit 限制个数
+* @param orz 方向，分别从1-8
+* @return 多个 PointIndex 坐标点数组或者null
+
+> ```javascript
+> function main() {
+>    let req = image.requestScreenCapture(10000,0);
+>      if (!req) {
+>       req = image.requestScreenCapture(10000,0);
+>    }
+>    if (!req) {
+>        toast("申请权限失败");
+>        return;
+>    }
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)
+>    let aimage = image.captureFullScreen();
+>    if (aimage != null) {
+>        let points = image.findNotColor(aimage,"0xCDD7E9-0x101010,0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
+>        logd("points "+JSON.stringify(points));
+>         //这玩意是个数组
+>         if(points){
+>             for(let i=0;i<points.length;i++){
+>                 logd(JSON.stringify(points[i]),points[i].x,points[i].y)
+>                 //点击坐标
+>                 clickPoint(points[i].x,points[i].y)
+>            }
+>         }
+>        //图片要回收
+>        image.recycle(aimage)
+>    }
+> 
+> }
+> main();
+> ```
+
+### image.findNotColorEx 自动截屏单点找非色
+
+* 在当前屏幕中找到颜色和color完全不相等的点，并返回该点的坐标；如果没有找到，则返回null。
+* @param color     要寻找的颜色
+* @param threshold 找色时颜色相似度取值为 0.0 ~ 1.0
+* @param x 区域的X起始坐标
+* @param y 区域的Y起始坐标
+* @param ex 终点X坐标
+* @param ey 终点Y坐标
+* @param limit 限制个数
+* @param orz 方向，分别从1-8
+* @return 多个 PointIndex 坐标点数组或者null
+
+> ```javascript
+> function main() {
+>    var req = image.requestScreenCapture(10000,0);
+>      if (!req) {
+>       req = image.requestScreenCapture(10000,0);
+>    }
+>    if (!req) {
+>        toast("申请权限失败");
+>        return;
+>    }
+>     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>     sleep(1000)
+>    var points = image.findNotColorEx("0xCDD7E9-0x101010,0xCDD7E9-0x101010", 0.9, 0, 0, 0, 0, 10,1);
+>    logd("points " + JSON.stringify(points));
+>     //这玩意是个数组
+>     if(points && points.length > 0){
+>         for(let i=0;i<points.length;i++){
+>             logd(JSON.stringify(points[i]), points[i].x, points[i].y)
+>             //点击坐标
+>             clickPoint(points[i].x,points[i].y)
+>        }
+>     }
+> 
+> }
+> main();
+> ```
+
+
+### 
 
 
 ### image.findMultiColor 多点找色
