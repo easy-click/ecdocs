@@ -143,3 +143,24 @@
 > main();
 > ```
 
+
+
+
+
+## shell.addSuBin 新增root命令
+
+* 新增root命令
+* 运行环境: 无限制
+* @param cmd 新的命令
+* @return {boolean} true
+
+> ```javascript
+> function main(){
+>   shell.addSuBin("222ddd")
+>   //增加完成后 使用su请求一下root授权
+>  var result = shell.su();
+> }
+> main();
+> ```
+
+## 
