@@ -1,6 +1,7 @@
 ## 说明
 - jdbc模块函数主要是用于操作MYSQL或者ORACLE等数据库
 - jdbc模块的对象前缀是jdbc，例如 jdbc.init()这样调用
+- jdbc模块支持的mysql版本为5.x,不支持8.0+版本
 
 
 ## jdbc.init 初始化JDBC链接
