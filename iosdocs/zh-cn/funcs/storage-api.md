@@ -26,7 +26,7 @@
 
 ### storage.keys 所有key获取
  * 所有key获取
- 
+
  * @return {string} JSON字符串
 
 > ```javascript
@@ -87,7 +87,7 @@
 
 ### storage.putInt 存储整型数据
  * 存储整型数据
- 
+
  * @param key 键
  * @param value 整型数据
  * @return {bool} true成功 false 失败
@@ -108,7 +108,7 @@
 
 ### storage.putBoolean 存储布尔型数据
  * 存储布尔型数据
- 
+
  * @param key 键
  * @param value 布尔型数据
  * @return {bool} true成功 false 失败

@@ -63,7 +63,7 @@
 ## cancelInterval 取消周期执行
  * 取消周期执行的函数
  * @param t 要取消的函数
- 
+
 > ```javascript
 >     
 > function main(){

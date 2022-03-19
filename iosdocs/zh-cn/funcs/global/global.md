@@ -2,7 +2,7 @@
 全局模块是指直接调用方法就可以使用的模块，无需使用前缀对象名称
 
 
-## 插件模块加载
+## 插件模块加载（待完成）
 
 ### loadDex 载入jar包
 
@@ -14,7 +14,7 @@
 > function main(){
 >    //类似这样会先从IEC文件的插件目录查找
 >    //loadDex("ocr.apk");
->    //下面这个是从sdcard查找
+>    //下面这个是
 >     loadDex("c:/plugin/a.jar");
 >     // a.apk中存在com.A这个这个类，可以直接使用
 >     var obj = new com.A(); 
@@ -524,7 +524,7 @@
 
 
 ### console.time 计时开始
- 
+
  * 计时开始,和timeEnd成对出现计算用时
  * @param label 标签
  * @return  {long} 当前时间
@@ -539,7 +539,7 @@
 
 
 ### console.timeEnd 计时结束
- 
+
  * 计时结束,和timeEnd成对出现计算用时
  * @param label 标签
  * @return {long} 与计时开始的差值
