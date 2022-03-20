@@ -28,10 +28,14 @@
 	- 用于安装到iphone上的程序
 	- 需要使用苹果系统的xcode进行编译运行
 	- 可以使用mac mini(淘宝上二手一千多块钱)或者黑苹果
-
-中控平台:
-	- 中控程序支持windows，macos，linux等系统
+桥接程序:
+	- 用于链接ios设备的程序，并自动链接到中控程序上
+	- 可以部署到windows，macos，linux，树莓派、单片机等设备上
 	- 用于运行和守护代理的自动化服务
+
+中控程序:
+	- 中控程序支持windows，macos，linux等系统
+	- 用于执行脚本、管理设备、配置UI参数等
 	- 自带了web管理界面，可以在web上管理设备和脚本
 
 开发插件:
@@ -53,6 +57,7 @@
 
 
 * [1、安装代理ipa](/zh-cn/tools/signagent.md)
-* [2、安装中控](/zh-cn/tools/installcenter.md)
-* [3、安装开发插件](/zh-cn/tools/installdevtools.md)
+* [2、安装桥接程序](/zh-cn/tools/installbridge.md)
+* [3、安装中控程序](/zh-cn/tools/installcenter.md)
+* [4、安装开发插件](/zh-cn/tools/installdevtools.md)
 

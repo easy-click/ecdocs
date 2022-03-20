@@ -8,9 +8,10 @@
   
     * [安装必要软件](/zh-cn/tools/installreadme)
         * [1、安装代理ipa](/zh-cn/tools/signagent.md)
-        * [2、安装中控](/zh-cn/tools/installcenter.md)
-        * [3、安装开发插件](/zh-cn/tools/installdevtools.md)
-    
+        * [2、安装桥接程序](/zh-cn/tools/installbridge.md)
+        * [3、安装中控程序](/zh-cn/tools/installcenter.md)
+        * [4、安装开发插件](/zh-cn/tools/installdevtools.md)
+        
     * [第一个工程](/zh-cn/first.md)
     * [学习教程](/zh-cn/jiaocheng.md)
     * [资源下载](/zh-cn/download_resources.md)

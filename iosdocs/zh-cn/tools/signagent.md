@@ -8,7 +8,11 @@
 
 >  请到资源区网盘最终找到这个压缩包，下载到本地并解压
 
-<img src="zh-cn/images/image-20220208100042106.png" alt="image-20220208100042106" style="zoom:50%;" />
+
+
+<img src="zh-cn/images/image-20220320215238249.png" alt="image-20220320215238249" style="zoom:50%;" />
+
+
 
 > 双击 `easyclick.xcodeproj ` xcode会自动打开这个工程
 
