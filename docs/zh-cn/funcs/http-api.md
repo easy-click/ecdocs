@@ -405,7 +405,7 @@
 > 	ws.onClose(function(ws1, code, reason) {
 > 		logi(" onClose  " + code + "  reason : " + reason + " remote:");
 > 	})
->       ws.onError(function(ws1, msg) {
+>    ws.onError(function(ws1, msg) {
 > 		logi(" onError  " + msg);
 > 		result[0] = "error";
 > 	})
@@ -414,6 +414,23 @@
 > 		//转成java的
 > 		logi(" onBinary  " + new java.lang.String(bytes));
 > 	})
+>   
+>      //每3000 发送一次文本心跳数据
+>     ws.startHeartBeat(function () {
+>         return null;
+>     }, function () {
+>         return new Date().toISOString();
+>     }, 3000, true);
+> 
+> 
+>      ws.startHeartBeat(function () {
+>             return new java.lang.String("testXXX").getBytes();
+>         }, function () {
+>             return null;
+>         }, 3000, true);
+> 
+>   //停止发送心跳
+>   //ws.stopHeartBeat()
 > 
 > 	//开始连接   阻塞的
 > 	let r = ws.connect(10000);
@@ -424,9 +441,9 @@
 > 	while (true) {
 > 		logd("isconnect " + ws.isConnected());
 > 		sleep(1000) 
->               if (ws.isConnected()) {
+>            if (ws.isConnected()) {
 > 			b = ws.sendText("new Date-> " + new Date())
->                       logd("send => " + b);
+>                    logd("send => " + b);
 > 			sleep(1000)
 > 			// java的字符串转字节
 > 			ws.sendBinary(new java.lang.String("test").getBytes());
@@ -442,7 +459,7 @@
 > 		}
 > 	}
 > 	logd("isClosed " + ws.isClosed())
->       sleep(1000)
+>    sleep(1000)
 > 	//关闭连接
 > 	ws.close();
 > }
@@ -454,6 +471,26 @@
 #### connect 同步连接
  * 开始异步连接
  * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
+
+
+
+#### startHeartBeat 发送心跳
+
+* 这里调用一次即可，内部已经实现了按照设定的周期时间发送
+* @param heartDataBinCallback 心跳的二进制数据，一定要返回byte[]数组
+* @param heartDataStrCallback 心跳的文本数据，直接返回字符串
+* @param period               心跳周期 时间是毫秒
+* @param cancelOld            是否取消老的，true 或者false
+ * 详细代码看[例子](/zh-cn/funcs/http-api.md#httpnewwebsocket-websocket通信)
+
+
+
+
+
+#### stopHeartBeat 停止发送心跳
+
+ * 停止发送心跳
+ * 详细代码看[例子]
 
 
 #### reset 重置连接
