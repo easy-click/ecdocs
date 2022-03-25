@@ -319,7 +319,7 @@
  * @param index 条件索引
  * @param input int数据
  * @return  {bool} true 代表成功 false 代表失败
- 
+
 > ```javascript
 >     
 > function main(){
@@ -716,7 +716,6 @@
 > }
 > main();
 > ```
-
 
 
 

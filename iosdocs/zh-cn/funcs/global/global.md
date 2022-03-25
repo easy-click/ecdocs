@@ -159,7 +159,7 @@
 > function main(){
 >     var m ={"sss":"a"};
 >     var d =JSON.stringify(m);
->     toast(d);
+>     logd(d);
 > }
 > main();
 > ```
@@ -189,9 +189,9 @@
 >      });
 >     var result = sleep(1000);
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     } else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();
@@ -206,9 +206,9 @@
 >      });
 >     var result = sleep(1000);
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     } else {
->         toast("失败");
+>         logd("失败");
 >     }
 >     //这里有异常抛出
 >     result.length();
@@ -248,7 +248,7 @@
 >           logi(time()+" info");
 >           //logw(time()+" warn");
 >          // loge(time()+" error");
->           toast("--- "+time());
+>           logd("--- "+time());
 >       }
 >       //logd(time()+"  222");
 >   }

@@ -16,9 +16,9 @@
 > function main(){
 >     var result = clickPoint(100,100);
 >     if (result){
->         toast("点击成功");
+>         logd("点击成功");
 >     } else {
->         toast("点击失败");
+>         logd("点击失败");
 >     }
 > }
 > main();
@@ -62,9 +62,9 @@
 > function main(){
 >     var result = doubleClickPoint(100,100);
 >     if (result){
->         toast("点击成功");
+>         logd("点击成功");
 >     } else {
->         toast("点击失败");
+>         logd("点击失败");
 >     }
 > }
 > main();
@@ -84,9 +84,9 @@
 > function main(){
 >     var result = press(100,100,5000);
 >     if (result){
->         toast("长按成功");
+>         logd("长按成功");
 >     } else {
->         toast("长按失败");
+>         logd("长按失败");
 >     }
 > }
 > main();
@@ -113,7 +113,7 @@
 
 > ```javascript
 > function main() {
->    utils.openAppByName("视频");
+>    
 >    sleep(3000);
 >   //第一种数组式的写法
 >    var touch1 = [
@@ -205,9 +205,9 @@
 > function main(){
 >     var result = swipeToPoint(10,10,100,100,200);
 >     if (result){
->         toast("滑动成功");
+>         logd("滑动成功");
 >     } else {
->         toast("滑动失败");
+>         logd("滑动失败");
 >     }
 > }
 > main();
@@ -241,9 +241,9 @@
 > function main(){
 >     var result = drag(10,10,100,100,200);
 >     if (result){
->         toast("拖动成功");
+>         logd("拖动成功");
 >     } else {
->         toast("拖动失败");
+>         logd("拖动失败");
 >     }
 > }
 > main();
@@ -263,9 +263,9 @@
 > function main(){
 >     var result = inputText("我是内容",100);
 >     if (result){
->         toast("是");
+>         logd("是");
 >     } else {
->         toast("否");
+>         logd("否");
 >     }
 > }
 > main();
@@ -288,9 +288,9 @@
 > function main(){
 >     var result = home();
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     } else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();
@@ -308,9 +308,9 @@
 > function main(){
 >     var result = appLaunch("com.tencent.xin");
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     } else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();
@@ -328,9 +328,9 @@
 > function main(){
 >     var result = appKillByBundleId("com.tencent.xin");
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     } else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();

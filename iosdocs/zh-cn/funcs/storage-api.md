@@ -45,7 +45,6 @@
 
 ### storage.all 获取所有的key和值
  * 获取所有的key和值
- * 适用版本(EC 5.16.0+)
  * @return {string} JSON字符串
 
 > ```javascript
@@ -65,7 +64,6 @@
 
 ### storage.putString 存储字符串
  * 存储字符串
- * 适用版本(EC 5.15.0+)
  * @param key 键
  * @param value 字符串
  * @return {bool} true成功 false 失败
@@ -262,7 +260,6 @@
 ## 清理和其他
 ### storage.clear 清空存储
  * 清空存储
- * 适用版本(EC 5.15.0+)
  * @return {bool} true成功 false 失败
 
 > ```javascript

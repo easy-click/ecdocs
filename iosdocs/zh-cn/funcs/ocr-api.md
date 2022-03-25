@@ -9,7 +9,7 @@
 ## ocr.initOcr 初始化
 
  * 初始化OCR模块
- 
+
  * @param map map参数表
  * key分别为：
  * type : OCR类型，值分别为:
@@ -137,7 +137,7 @@
 
 ## ocr.getErrorMsg 获取错误消息
  * 获取OCR错误消息
- * 适用版本(EC 5.17.0+)
+ * 
  * @return {string} null代表没有错误
 
 
@@ -150,7 +150,7 @@
 
 ## ocr.releaseAll 释放OCR资源
  * 释放OCR占用的资源
- * 适用版本(EC 5.17.0+)
+ * 
  * @return {bool} 成功或者失败
 
 

@@ -153,7 +153,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -189,7 +189,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >     
@@ -221,7 +221,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -255,7 +255,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -291,7 +291,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -329,7 +329,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -372,7 +372,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -403,7 +403,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -445,7 +445,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -485,7 +485,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -529,7 +529,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >       
@@ -562,7 +562,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -662,7 +662,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        sleep(1000)
@@ -696,7 +696,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    var  d= image.initOpenCV();
@@ -751,7 +751,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    var  d= image.initOpenCV();
@@ -808,7 +808,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    var  d= image.initOpenCV();
@@ -861,7 +861,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    var  d= image.initOpenCV();
@@ -914,7 +914,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -964,7 +964,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -1064,7 +1064,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -1123,7 +1123,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1157,7 +1157,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1186,7 +1186,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1245,7 +1245,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1275,7 +1275,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1304,7 +1304,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -1331,7 +1331,7 @@
 > function main() {
 >     var imageX = image.captureFullScreen();
 >     var r = image.isRecycled(imageX);
->     toast("result "+r);
+>     logd("result "+r);
 >     //图片要回收
 >     image.recycle(imageX )
 > }
@@ -1369,7 +1369,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >
@@ -1413,7 +1413,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1453,7 +1453,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >    logd("申请截图结果... "+request)
@@ -1496,7 +1496,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >
@@ -1532,7 +1532,7 @@
 > function main() {
 >       let req = startEnv();
 >       if (!req) {
->           toast("申请权限失败");
+>           logd("申请权限失败");
 >           return;
 >       }
 >

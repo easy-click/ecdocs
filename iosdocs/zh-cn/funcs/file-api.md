@@ -1,6 +1,40 @@
 ## 说明
 - 文件模块函数主要是跟文件信息相关联
 - 文件模块的对象前缀是file，例如 file.readFile()这样调用
+- 注意: 中控是运行在电脑上的，所以file操作的是电脑上的路径，每个设备都有自己的沙盒文件夹，使用file.getSandBoxDir()获取
+- 如果想获取设备沙盒文件夹中文件路径 请使用  file.getSandBoxFilePath这个函数
+
+
+
+
+
+## file.getSandBoxDir 获取沙盒的文件夹路径
+
+* 获取当前设备沙盒的文件夹路径
+* @return 字符串
+
+> ```javascript
+> function main(){
+>  var data = file.getSandBoxDir();
+>  logd(data);
+> }
+> main();
+> ```
+
+
+
+## file.getSandBoxFilePath 获取沙盒中的文件路径
+
+* 拼接出一个带沙盒路径的文件地址
+* @return 字符串
+
+> ```javascript
+> function main(){
+>  var data = file.getSandBoxFilePath("a.txt");
+>  logd(data);
+> }
+> main();
+> ```
 
 
 

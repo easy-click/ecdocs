@@ -246,7 +246,7 @@
 > function main(){
 >     var url = "https://imtt.dd.qq.com/16891/apk/DF4FD15AF9A9B51BA74D2710CF738EEF.apk?fsname=com.ishugui_3.9.2.3068_3923068.apk&csr=1bbd";
 >     var x = http.downloadFile(url, "/sdcard/ss.apk", 10 * 1000, {"User-Agent": "test"});
->     toast("download result->     " + x);
+>     logd("download result->     " + x);
 > }
 > main();
 > ```
@@ -283,7 +283,7 @@
 > function main(){
 >     var url = "http://192.168.0.5:8081/api/httpGet?a=1";
 >     var x = http.httpGetDefault(url, 10 * 1000, {"User-Agent": "test"});
->     toast(" result->     " + x);
+>     logd(" result->     " + x);
 >     loge("result ->     " + x);
 > }
 > main();
@@ -305,7 +305,7 @@
 >     var url = "http://192.168.0.5:8081/api/httpGet?a=1";
 >     var pa = {"b": "22"};
 >     var x = http.httpGet(url, pa, 10 * 1000, {"User-Agent": "test"});
->     toast(" result->     " + x);
+>     logd(" result->     " + x);
 >     loge("result ->     " + x);
 > }
 > main();
@@ -344,7 +344,7 @@
 >     var pa = {"b": "我是b的值"};
 >     var files = {"file1": "/sdcard/p.json", "file2": "/sdcard/z.xml"};
 >     var x = http.httpPost(url, pa, files, 10 * 1000, {"User-Agent": "test"});
->     toast(" result->     " + x);
+>     logd(" result->     " + x);
 >     loge("result ->     " + x);
 > }
 > main();
@@ -364,7 +364,7 @@
 >     var url = "http://192.168.0.5:8081/api/postJSON";
 >     var pa = {"b": "我是b的值"};
 >     var x = http.postJSON(url, pa, 10 * 1000, {"User-Agent": "test"});
->     toast(" result->     " + x);
+>     logd(" result->     " + x);
 >     loge("result ->     " + x);
 > }
 > main();

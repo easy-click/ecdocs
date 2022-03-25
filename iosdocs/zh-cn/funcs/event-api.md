@@ -17,9 +17,9 @@
 > function main(){
 >  var result = agentEvent.setAgentCallParam({"remoteCallTimeout":10000});
 >  if (result){
->      toast("是");
+>      logd("是");
 >  }else {
->      toast("否");
+>      logd("否");
 >  }
 > }
 > main();
@@ -44,9 +44,9 @@
 > function main(){
 >     var result = agentEvent.touchDown(10,10);
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     }else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();
@@ -63,9 +63,9 @@
 > function main(){
 >     var result = agentEvent.touchMove(10,10);
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     }else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();
@@ -83,9 +83,9 @@
 > function main(){
 >     var result = agentEvent.touchUp(10,10);
 >     if (result){
->         toast("成功");
+>         logd("成功");
 >     }else {
->         toast("失败");
+>         logd("失败");
 >     }
 > }
 > main();

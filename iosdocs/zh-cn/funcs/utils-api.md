@@ -137,7 +137,7 @@
 >     
 > function main(){
 >     var value = utils.getRangeInt(1,100);
->     toast(value);
+>     logd(value);
 > }
 > main();
 > ```

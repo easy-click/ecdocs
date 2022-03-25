@@ -13,7 +13,7 @@
 >     
 > function main(){
 >     var imei = device.getDeviceId();
->     toast(imei);
+>     logd(imei);
 > }
 > main();
 > ```
@@ -110,7 +110,7 @@
 >     
 > function main(){
 >     var res = device.getBattery();
->     toast(res);
+>     logd(res);
 > }
 > main();
 > ```
@@ -130,7 +130,7 @@
 >     
 > function main(){
 >     var res = device.isCharging();
->     toast(res);
+>     logd(res);
 > }
 > main();
 > ```
