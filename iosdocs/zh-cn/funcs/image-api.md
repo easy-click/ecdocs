@@ -6,14 +6,14 @@
 ### image.setInitParam 初始化参数
 * 设置图色模块初始化参数,设置找图超时时间
 * @param params 超时时间，单位是毫秒
-* @return true 代表成功 false代表失败
+
 
 > ```javascript
 > 
 > function main() {
 >  //action_timeout 找图找色动作的最大时间，超时后会自动返回避免阻塞
-> // var a = image.setInitParam({"action_timeout":1000});
->    var a = image.setInitParam(
+>    image.setInitParam({"action_timeout":1000});
+>    image.setInitParam(
 >      {
 >        "action_timeout":1000,
 >        "auto_click_request_dialog":false
