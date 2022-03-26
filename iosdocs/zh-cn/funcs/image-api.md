@@ -1002,7 +1002,7 @@
 > ```javascript
 > 
 > function main() {
->     var autoimg = image.readImage("/sdcard/a.png");
+>     var autoimg = image.readImage("F:/a.png");
 >     //图片要回收
 >     image.recycle(autoimg)
 > }
@@ -1018,7 +1018,7 @@
 > ```javascript
 > 
 > function main() {
->     var autoimg = image.readBitmap("/sdcard/a.png");
+>     var autoimg = image.readBitmap("F:/a.png");
 >     //图片要回收
 >     image.recycle(autoimg)
 > }
