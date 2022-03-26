@@ -27,7 +27,7 @@
 > ```javascript
 >   function main() {
 >   	let ocrLite = {
->   		"type": "ocrLite"
+>   		"type": "ocrLite",
 >        "baseDir":"c:/ec/OcrLiteNcnn",
 >        "cpuType":"win-lib-cpu-x64"
 >   	}
