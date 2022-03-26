@@ -18,7 +18,16 @@
 
 - 请在脚本开头使用startEnv函数，纠正坐标系统
 
-  
+
+
+## 无法复制opencv问题
+
+- <img src="zh-cn/images/969EAF4C4E9F0A034561E1DAC988E7F7.png" alt="969EAF4C4E9F0A034561E1DAC988E7F7" style="zoom:50%;" />
+- 缺少VC 库  无法复制opencv库文件
+- 解决方法是去EC的百度 网盘下载 VC类库安装，网盘文件名称是 WindowsVC安装包，下载exe安装
+- 如果还不行，就下载vcyunxingkuheji.rar这个安装
+
+
 
 ## JSON.stringify 内存溢出
 - 如果有以下错误，请检查一下要转换的对象中是否有java的string，解决方法将原来的string转为js的字符串
