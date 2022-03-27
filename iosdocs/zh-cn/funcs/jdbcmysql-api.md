@@ -15,7 +15,6 @@
 >     
 > function main(){
 >     //mysql 的地址 ip:端口/数据库名
->     //!!![提醒沙雕]!!!总有沙雕把ip填成127.0.0.1或localhost导致连接失败,127是本机,本机是手机,不是你写代码的电脑,ip要填电脑的局域网ip!!!
 >     let mysqlUrl ="jdbc:mysql://192.168.0.3:3306/test?characterEncoding=utf8&autoReconnect=true"
 >     let inited = jdbc.init("com.mysql.jdbc.Driver",mysqlUrl,"root","root123456");
 >     logd("inited "+inited);
