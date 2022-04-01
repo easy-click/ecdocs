@@ -148,6 +148,37 @@
 > ```
 
 
+
+### restartScript  重启脚本
+
+* 重启脚本，适合无限循环，或者有异常的情况可以再次执行，
+* 注意: 该方法威力巨大，请自行控制好是否自动重启，否则只能强杀进程才能停止
+* @param path 新的IEC路径，如果不需要可以填写null
+* @param stopCurrent 是否停止当前的脚本
+* @param delay 延迟多少秒后执行
+* @return bool true 代表成功 false 代表失败
+
+> ```javascript
+> function main(){
+> logd("我是在脚本运行的");
+> setStopCallback(function(){
+>   restartScript(null,false,3)
+> });
+> 
+> //setExceptionCallback(function (){
+> //    restartScript(null,true,3)
+> //});
+>    sleep(1000);
+>  logd("脚本结束") 
+> }
+> main();
+> ```
+
+
+## 
+
+
+
 ## JSON处理
 
 ### JSON.stringify 格式化为JSON字符串
