@@ -148,27 +148,6 @@
 
 
 
-### storage.putEncrypt 存储并加密字符串
-* 存储并加密字符串数据
-
-* @param key 键
-* @param value 字符串数据
-* @return {bool} true成功 false 失败
-
-> ```javascript
->     
-> function main(){
->  let storage= storages.create("123");
->  logd(storage);
->  //存储数据
->  let r = storage.putEncrypt("key","3232");
->  logd(r);
->  //获取数据
->  logd(storage.getDecryptString("key"));
-> }
-> main();
-> `
-
 
 
 

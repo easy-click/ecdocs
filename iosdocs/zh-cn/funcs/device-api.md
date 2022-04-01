@@ -12,13 +12,70 @@
 > ```javascript
 >     
 > function main(){
->     var imei = device.getDeviceId();
->     logd(imei);
+>     var xx = device.getDeviceId();
+>     logd(xx);
 > }
 > main();
 > ```
 
+
+
+
+
+##  device.getDeviceAlias 获取设备中控别名
+
+* 获取中控设备号别名
+* @return string
+
+
+> ```javascript
+> function main(){
+>  var xx = device.getDeviceAlias();
+>  logd(xx);
+> }
+> main();
+> ```
+
+
+
+##  device.getSerialNo 获取设备序列号
+
+*  获取设备序列号，在手机的设置中可以查询到
+* @return string
+
+
+> ```javascript
+> function main(){
+>  var xx = device.getSerialNo();
+>  logd(xx);
+> }
+> main();
+> ```
+
+
+
+##  device.applist 获取程序列表
+
+* 获取当前设备的安装的程序列表
+* @return {string} json 字符串
+
+
+> ```javascript
+> function main(){
+>  var applistx = device.applist();
+>  logd(applistx);
+> }
+> main();
+> ```
+
+
+
+
+
+
+
 ##  device.getScreenWidth 屏幕宽度
+
 * 取得屏幕宽度
 * @return 整型
 

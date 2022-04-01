@@ -1,4 +1,23 @@
-当前最新版本: 2.1.0
+当前最新版本: 2.2.0
+
+
+
+```json
+## 2.2.0
+- 新增界面版本的控制，无需控制台运行中控和桥接程序
+- 新增IDEA IOS 的java-js混合项目
+- 新增中控插件功能
+- 新增mysql数据库支持
+- 新增设备模块applist,getSerialNo,getDeviceAlias函数 
+- 新增启动自动化的getStartEnvMsg消息函数
+- 修复saveBitmap函数问题
+- 优化中控请求桥接程序超时设置
+- 优化启动自动化不成功的消息提示
+- 优化windows下的文件操作模块
+- 优化findImageByColor速度
+```
+
+
 
 ```json
 ## 2.1.0
