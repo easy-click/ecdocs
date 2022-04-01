@@ -61,8 +61,8 @@
 
 
 
-### 启动iTunes或爱思助手
+### 启动iTunes
 
-- 由于ios的封闭性，请在 Windows上安装`iTunes`或者`爱思助手`，并打开，保证能找到iphone设备
+- 由于ios的封闭性，请在 Windows上安装`iTunes`，并打开，保证能找到iphone设备
 
 - 启动后即可进入下一个步骤，启动中控程序
