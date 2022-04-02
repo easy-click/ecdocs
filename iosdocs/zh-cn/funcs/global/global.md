@@ -489,6 +489,20 @@
  > main();
  > ```
 
+### getStartEnvMsg 获取自动化消息
+
+ * 获取启动自动化消息
+ * @return string
+
+
+> ```javascript
+> function main(){
+>  var result = getStartEnvMsg();
+>   logd(result)
+> }
+> main();
+> ```
+
 
 
 
