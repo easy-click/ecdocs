@@ -93,11 +93,11 @@
 
 
 
-## 普通截图
+## 普通截图 jpg
 
 
 ### image.captureFullScreen 截取全屏Image对象
-* 截取当前屏幕并返回一个Image对象。
+* 截取当前屏幕并返回一个Image对象, 这个格式是jpg。
 * @return AutoImage对象或者null
 
 > ```javascript
@@ -120,6 +120,32 @@
 
 
 
+
+
+
+## 普通截图 png
+
+
+### image.captureFullScreenPng 截取全屏Image对象
+
+* 截取当前屏幕并返回一个Image对象，这个格式是PNG。
+* @return AutoImage对象或者null
+
+> ```javascript
+> function main() {
+>    logd("isServiceOk "+isServiceOk());
+>    startEnv()
+>    logd("isServiceOk "+isServiceOk());
+>     for (let i = 0; i < 10; i++) {
+>         var cap = image.captureFullScreenPng()
+>         logd("截图数据: " +cap)
+>         sleep(1000)
+>         //图片要回收
+>         image.recycle(cap)
+>     }
+> }
+> main();
+> ```
 
 
 

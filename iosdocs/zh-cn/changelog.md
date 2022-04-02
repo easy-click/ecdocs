@@ -10,11 +10,14 @@
 - 新增mysql数据库支持
 - 新增设备模块applist,getSerialNo,getDeviceAlias函数 
 - 新增启动自动化的getStartEnvMsg消息函数
+- 新增image模块captureFullScreenPng函数
+- 新增中控设备监控-操作-截图功能
 - 修复saveBitmap函数问题
 - 优化中控请求桥接程序超时设置
 - 优化启动自动化不成功的消息提示
 - 优化windows下的文件操作模块
 - 优化findImageByColor速度
+- 优化截图jpg失真的问题
 ```
 
 
