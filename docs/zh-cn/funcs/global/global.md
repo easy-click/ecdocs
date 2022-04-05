@@ -621,7 +621,7 @@
 ### readResBitmap  读取Bitmap资源
 * 读取res文件夹中的资源文件，并返Bitmap图片对象
 * @param fileName 文件名称，不要加res前缀
-* @return string 如果是null代表没内容
+* @return Bitmap 如果是null代表没内容
 
 
 > ```javascript
@@ -637,7 +637,7 @@
 ### readResAutoImage  读取Image资源
 * 读取res文件夹中的资源文件，并返 AutoImage 图片对象
 * @param fileName 文件名称，不要加res前缀
-* @return string 如果是null代表没内容
+* @return AutoImage 如果是null代表没内容
 
 
 > ```javascript
