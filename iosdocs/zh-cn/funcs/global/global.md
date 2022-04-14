@@ -2,7 +2,7 @@
 全局模块是指直接调用方法就可以使用的模块，无需使用前缀对象名称
 
 
-## 插件模块加载（待完成）
+## 插件模块加载
 
 ### loadDex 载入jar包
 
@@ -596,3 +596,40 @@
 > }
 > main();
 > ```
+
+
+
+## 其他
+
+### setAgentTimeout 设置代理请求超时
+
+* @param envTimeout 启动自动化超时时间，单位是毫秒，可以设置为 10000 - 15000
+* @param readTimeout 其他的请求超时时间，单位是毫秒，可以设置为 2000 - 5000
+* @return {boolean} true代表成功
+
+
+> ```javascript
+> function main(){
+> 	setAgentTimeout(10000,3000);
+> }
+> main();
+> 
+> ```
+
+
+
+### activeAppInfo 当前运行的程序 bundleId
+
+* @param 当前运行的程序 bundleId
+* @return {string} 当前运行的程序 bundleId
+
+
+> ```javascript
+> function main(){
+> 	let d=	activeAppInfo();
+>   logd(d);
+> }
+> main();
+> 
+> ```
+
