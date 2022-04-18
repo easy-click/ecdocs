@@ -7,7 +7,7 @@
 - <img src="zh-cn/images/image-20220416095051551.png" alt="image-20220416095051551" style="zoom:50%;" />
 - 设置端口并保存，点击开启程序，等带运行状态变成正常
 - 当前的端口（例如: 8999）需要暴露到公网，可以使用花生壳暴露在互联网，让xcode端链接上来
-- 花生壳教程 ： https://hsk.oray.com/news/6165.html
+- 花生壳教程 ： https://www.bilibili.com/video/BV1F34y147Ky?p=6
 - 有自建的服务器，可以使用frp进行内网穿透，https://github.com/fatedier/frp/releases
 
 
