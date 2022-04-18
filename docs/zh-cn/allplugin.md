@@ -17,9 +17,17 @@
 
 
 
-- 全分辨率找图插件 -2
+- 全分辨率找图插件 -2（已停更）
   - 地址: [http://www.xinxingheipingguo.top/docs](http://www.xinxingheipingguo.top/docs)
   - 作者清&风，QQ: 2968576127
+
+- 全分辨率找图插件 -3 
+
+  - 地址: [https://www.showdoc.com.cn/1820857786166340/8402531131533081](https://www.showdoc.com.cn/1820857786166340/8402531131533081)
+
+  - 作者 风飞扬，QQ: 573768148
+
+
 
 源码学习：
 

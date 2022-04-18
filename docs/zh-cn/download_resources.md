@@ -13,9 +13,5 @@
 
 - [Github仓库](https://github.com/easy-click/easyclick-libs)
 
-        
-# 触动、按键插件
- 
-- [按键-EC插件下载](/zh-cn/resource/EC-anjian.zip)
+  ​      
 
-- [触动-EC插件下载](/zh-cn/resource/EC-chudong.zip) 
