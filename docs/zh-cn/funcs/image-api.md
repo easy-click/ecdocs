@@ -1781,7 +1781,7 @@ main()
 >            var ds= image.imageToBitmap(d);
 >            logd(ds)
 >            ds.recycle();
->            image.recyle(d);
+>            image.recycle(d);
 >        }
 >
 >    }

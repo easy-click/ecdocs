@@ -63,6 +63,7 @@
 >   		}
 >   	
 >   		logd("耗时: " + console.timeEnd(1) + " ms")
+>   		image.recycle(bitmap )
 >   		sleep(1000);
 >   		logd("ix = "+ix)
 >   	}
