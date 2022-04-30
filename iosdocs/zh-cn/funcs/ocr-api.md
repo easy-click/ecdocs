@@ -42,7 +42,7 @@
 >   	for (var ix = 0; ix < 20; ix++) {
 >    
 >   		//读取一个bitmap
->   		let bitmap = image.readBitmap("/sdcard/Screenshot_20210127_152932_com.huawei.android.lau.jpg");
+>   		let bitmap = image.readBitmap("D:/Screenshot_20210127_152932_com.huawei.android.lau.jpg");
 >   		if (!bitmap) {
 >   			loge("读取图片失败");
 >   			continue;
