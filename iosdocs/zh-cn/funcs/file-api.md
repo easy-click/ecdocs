@@ -47,7 +47,7 @@
 > ```javascript
 >     
 > function main(){
->     var data = file.readFile("/sdcard/test.txt");
+>     var data = file.readFile("D:/test.txt");
 >     logd(data);
 > }
 > main();
@@ -69,10 +69,10 @@
 >     
 > function main(){
 >   //删除包含 时间 字符串的行
->   let r = file.deleteLine("/sdcard/a.txt",-1,"时间");
+>   let r = file.deleteLine("D:/a.txt",-1,"时间");
 >   logd("r "+r);
 >   //删除第3行
->    r = file.deleteLine("/sdcard/a.txt",3,null);
+>    r = file.deleteLine("D:/a.txt",3,null);
 >   logd("r "+r);
 > }
 > main();
@@ -87,7 +87,7 @@
 > ```javascript
 >     
 > function main(){
->     var data = file.listDir("/sdcard/");
+>     var data = file.listDir("D:/");
 >     for(var i = 0; i < data.length; i++) {
 >         logd("path "+data[i]);  
 >     }
@@ -105,7 +105,7 @@
 >     
 > function main(){
 >     var data="Test";
->     file.writeFile(data,"/sdcard/test.txt");
+>     file.writeFile(data,"D:/test.txt");
 > }
 > main();
 > ```
@@ -119,7 +119,7 @@
 > ```javascript
 >     
 > function main(){
->     var create=file.create("/sdcard/test.txt");
+>     var create=file.create("D:/test.txt");
 >     logd(create);
 > }
 > main();
@@ -132,7 +132,7 @@
 > ```javascript
 >     
 > function main(){
->     var t=file.mkdirs("/sdcard/testdir/");
+>     var t=file.mkdirs("D:/testdir/");
 >     logd(t);
 > }
 > main();
@@ -148,7 +148,7 @@
 > ```javascript
 >     
 > function main(){
->     file.deleteAllFile("data/test.txt");
+>     file.deleteAllFile("D:/test.txt");
 > }
 > main();
 > ```
@@ -162,7 +162,7 @@
 >     
 > function main(){
 >     var data="sss";
->     var t=file.appendLine(data,"/sdcard/test.txt");
+>     var t=file.appendLine(data,"D:/test.txt");
 >     logd(t);
 > }
 > main();
@@ -178,7 +178,7 @@
 > ```javascript
 >     
 > function main(){
->     var t=file.readLine("/sdcard/test.txt",1);
+>     var t=file.readLine("D:/test.txt",1);
 >     logd(t);
 > }
 > main();
@@ -193,7 +193,7 @@
 > ```javascript
 >     
 > function main(){
->     var t=file.readAllLines("/sdcard/test.txt");
+>     var t=file.readAllLines("D:/test.txt");
 >     logd(t);
 > }
 > main();
@@ -210,7 +210,7 @@
 > ```javascript
 >     
 > function main(){
->     var t=file.exists("/sdcard/testdir/");
+>     var t=file.exists("D:/testdir/");
 >     logd(t);
 > }
 > main();
@@ -226,7 +226,7 @@
 > ```javascript
 >     
 > function main(){
->     var t=file.copy("/sdcard/a.png","/sdcard/b.png");
+>     var t=file.copy("D:/a.png","D:/b.png");
 >     logd(t);
 > }
 > main();
