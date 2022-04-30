@@ -21,7 +21,7 @@
     * cookie: HTTP 请求Cookie，map参数, 例如 {"a":1} 
     * data:HTTP POST的数据，map参数, 例如 {"a":1} 
     * file:要上传的文件，集合参数，例如
-    * [{"key":"a1","fileName":"a.txt","filePath":"/sdcard/"},{"key":"a1","fileName":"a.jpg","filePath":"/sdcard/","contentType":"image/jpg"}]
+    * [{"key":"a1","fileName":"a.txt","filePath":"D:/"},{"key":"a1","fileName":"a.jpg","filePath":"D:/","contentType":"image/jpg"}]
         - 其中contentType可有可无
     * responseCharset: 字符串，强制设置响应内容的编码集
 * @return Response 对象或者null
@@ -50,7 +50,7 @@
 >    //file:[{}]
 >    //responseCharset: string
 >    var md = utils.dataMd5("12345");
->    var md2 = utils.fileMd5("/sdcard/sb.png");
+>    var md2 = utils.fileMd5("D:/sb.png");
 >    var url = "http://192.168.0.5:8081/api/request";
 >    var proxy = {"host": "192.168.0.5", "port": "100"};
 >    var userAgent = "xxx";
@@ -79,12 +79,12 @@
 >        {
 >            "key": "file",
 >            "fileName": "f.png",
->            "filePath": "/sdcard/sb.png"
+>            "filePath": "D:/sb.png"
 >        },
 >        {
 >            "key": "file",
 >            "fileName": "f2.png",
->            "filePath": "/sdcard/sde.png",
+>            "filePath": "D:/sde.png",
 >            "contentType": "image/png"
 >        }
 >    ];
@@ -131,7 +131,7 @@
     * cookie: HTTP 请求Cookie，map参数, 例如 {"a":1} 
     * data:HTTP POST的数据，map参数, 例如 {"a":1} 
     * file:要上传的文件，集合参数，例如
-    * [{"key":"a1","fileName":"a.txt","filePath":"/sdcard/"},{"key":"a1","fileName":"a.jpg","filePath":"/sdcard/","contentType":"image/jpg"}]
+    * [{"key":"a1","fileName":"a.txt","filePath":"D:/"},{"key":"a1","fileName":"a.jpg","filePath":"D:/","contentType":"image/jpg"}]
         - 其中contentType可有可无
     * responseCharset: 字符串，强制设置响应内容的编码集
 * @return Response 对象或者null
@@ -160,7 +160,7 @@
 >    //file:[{}]
 >    //responseCharset: string
 >    var md = utils.dataMd5("12345");
->    var md2 = utils.fileMd5("/sdcard/sb.png");
+>    var md2 = utils.fileMd5("D:/sb.png");
 >    var url = "http://192.168.0.5:8081/api/request";
 >    var proxy = {"host": "192.168.0.5", "port": "100"};
 >    var userAgent = "xxx";
@@ -189,12 +189,12 @@
 >        {
 >            "key": "file",
 >            "fileName": "f.png",
->            "filePath": "/sdcard/sb.png"
+>            "filePath": "D:/sb.png"
 >        },
 >        {
 >            "key": "file",
 >            "fileName": "f2.png",
->            "filePath": "/sdcard/sde.png",
+>            "filePath": "D:/sde.png",
 >            "contentType": "image/png"
 >        }
 >    ];
@@ -245,7 +245,7 @@
 >     
 > function main(){
 >     var url = "https://imtt.dd.qq.com/16891/apk/DF4FD15AF9A9B51BA74D2710CF738EEF.apk?fsname=com.ishugui_3.9.2.3068_3923068.apk&csr=1bbd";
->     var x = http.downloadFile(url, "/sdcard/ss.apk", 10 * 1000, {"User-Agent": "test"});
+>     var x = http.downloadFile(url, "D:/ss.apk", 10 * 1000, {"User-Agent": "test"});
 >     logd("download result->     " + x);
 > }
 > main();
@@ -264,7 +264,7 @@
 >     
 > function main(){
 >     var url = "https://imtt.dd.qq.com/16891/apk/DF4FD15AF9A9B51BA74D2710CF738EEF.apk?fsname=com.ishugui_3.9.2.3068_3923068.apk&csr=1bbd";
->     var x = http.downloadFileDefault(url, "/sdcard/ss.apk", {"User-Agent": "test"});
+>     var x = http.downloadFileDefault(url, "D:/ss.apk", {"User-Agent": "test"});
 >     toast("download result->     " + x);
 > }
 > main();
@@ -317,7 +317,7 @@
 * Http Post 请求
 * @param url     请求的URL
 * @param params  参数，例如 {"a":"1"} 这样的参数或者字符串
-* @param files  要上传的文件，例如 {"file1":"/sdcard/1.png"}这样的文件参数
+* @param files  要上传的文件，例如 {"file1":"D:/1.png"}这样的文件参数
 * @param timeout 超时时间 单位毫秒
 * @param headers – 头标志例如{“a”:“11”}
 * @return 字符串 请求后返回的字符串
@@ -342,7 +342,7 @@
 >     //带上传文件的请求
 >     var url = "http://192.168.0.5:8081/api/httpPost";
 >     var pa = {"b": "我是b的值"};
->     var files = {"file1": "/sdcard/p.json", "file2": "/sdcard/z.xml"};
+>     var files = {"file1": "D:/p.json", "file2": "D:/z.xml"};
 >     var x = http.httpPost(url, pa, files, 10 * 1000, {"User-Agent": "test"});
 >     logd(" result->     " + x);
 >     loge("result ->     " + x);
