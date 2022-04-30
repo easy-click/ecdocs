@@ -1237,6 +1237,8 @@ main()
 >           toast("申请权限失败");
 >           return;
 >       }
+>       var  d= image.initOpenCV();
+>       logd(d)
 >        //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >       for (var i = 0; i < 1000; i++) {
