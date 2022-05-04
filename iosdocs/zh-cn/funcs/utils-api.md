@@ -18,15 +18,15 @@
 >         zipFile ="/sdcard/a.zip"
 >         //压缩文件
 >         let passwd = "123";
->         let files =["/sdcard/test.json","/sdcard/gifshow"]
+>         let files =["D:/test.json","D:/gifshow"]
 >         let re = utils.zip(zipFile,passwd,files);
 >         logd("压缩结果: "+re);
 > 
->         let ure = utils.unzip(zipFile,passwd,"/sdcard/test111/");
+>         let ure = utils.unzip(zipFile,passwd,"D:/test111/");
 >         logd("解压结果: "+ure);
 > 
 > 
->        let data = utils.readFileInZip("/sdcard/a.zip",passwd,"test.json")
+>        let data = utils.readFileInZip("D:/a.zip",passwd,"test.json")
 >         logd("读取数据结果: "+data);
 > }
 > 
@@ -49,15 +49,15 @@
 >         zipFile ="/sdcard/a.zip"
 >         //压缩文件
 >         let passwd = "123";
->         let files =["/sdcard/test.json","/sdcard/gifshow"]
+>         let files =["D:/test.json","D:/gifshow"]
 >         let re = utils.zip(zipFile,passwd,files);
 >         logd("压缩结果: "+re);
 > 
->         let ure = utils.unzip(zipFile,passwd,"/sdcard/test111/");
+>         let ure = utils.unzip(zipFile,passwd,"D:/test111/");
 >         logd("解压结果: "+ure);
 > 
 > 
->        let data = utils.readFileInZip("/sdcard/a.zip",passwd,"test.json")
+>        let data = utils.readFileInZip("D:/a.zip",passwd,"test.json")
 >         logd("读取数据结果: "+data);
 > }
 > 
@@ -85,15 +85,15 @@
 >         zipFile ="/sdcard/a.zip"
 >         //压缩文件
 >         let passwd = "123";
->         let files =["/sdcard/test.json","/sdcard/gifshow"]
+>         let files =["D:/test.json","D:/gifshow"]
 >         let re = utils.zip(zipFile,passwd,files);
 >         logd("压缩结果: "+re);
 > 
->         let ure = utils.unzip(zipFile,passwd,"/sdcard/test111/");
+>         let ure = utils.unzip(zipFile,passwd,"D:/test111/");
 >         logd("解压结果: "+ure);
 > 
 > 
->        let data = utils.readFileInZip("/sdcard/a.zip",passwd,"test.json")
+>        let data = utils.readFileInZip("D:/a.zip",passwd,"test.json")
 >         logd("读取数据结果: "+data);
 > }
 > 
@@ -154,7 +154,7 @@
 > ```javascript
 >     
 > function main(){
->     var md5 = utils.fileMd5("/sdcard/a.txt");
+>     var md5 = utils.fileMd5("D:/a.txt");
 > }
 > main();
 > ```

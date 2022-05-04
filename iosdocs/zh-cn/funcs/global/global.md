@@ -7,7 +7,7 @@
 ### loadDex 载入jar包
 
  * 载入dex文件
- * @param path 路径，加载顺序分别是插件目录(例如 ab.jar)或者是文件路径(例如 /sdcard/ab.jar)加载
+ * @param path 路径，加载顺序分别是插件目录(例如 ab.jar)或者是文件路径(例如 D:/ab.jar)加载
  * @return true 载入成功， false载入失败
 
 > ```javascript
@@ -15,7 +15,7 @@
 >    //类似这样会先从IEC文件的插件目录查找
 >    //loadDex("ocr.apk");
 >    //下面这个是
->     loadDex("c:/plugin/a.jar");
+>     loadDex("D:/a.jar");
 >     // a.apk中存在com.A这个这个类，可以直接使用
 >     var obj = new com.A(); 
 > }
@@ -29,7 +29,7 @@
 ### require 导入JS
 
  * 导入JS模块
- * @param path 路径，例如 本地c:/sdcard/a.js或者 EC工程中的文件路径 slib/a.js
+ * @param path 路径，例如 本地D:/a.js或者 EC工程中的文件路径 slib/a.js
  * @return 模块对象
 
 > ```javascript
@@ -126,7 +126,7 @@
 ### execScript 载入JS
 * 执行JS文件或者内容
 * @param type 1=文件，2=直接是JS内容
-* @param content 路径例如/sdcard/a.js或者js的内容
+* @param content 路径例如D:/a.js或者js的内容
 * @return 布尔型，true代表执行成功， false代表失败
 
 > ```javascript
@@ -134,7 +134,7 @@
 >     var d ='while(true){sleep(1000);logd(111111);}';
 >        
 >        thread.execAsync(function() {
->            //execScript(1,"c:/sdcard/ad.js")
+>            //execScript(1,"D:/ad.js")
 >            execScript(2,d);
 >        });
 >        
@@ -438,16 +438,17 @@
 
 
 
+
 ### saveResToFile 保存资源为文件
 * 保存res文件夹中的资源文件到指定的路径
 * @param fileName 文件名称，不要加res前缀
-* @param path 要保存到的路径地址，例如/sdcard/aa.txt
+* @param path 要保存到的路径地址，例如D:/aa.txt
 * @return boolean|布尔型 true代表保存成功
 
 
 > ```javascript
 > function main(){
->     var b = saveResToFile("img/a.png","c:/sdcard/a.png");
+>     var b = saveResToFile("img/a.png","D:/a.png");
 > }
 > main();
 > 

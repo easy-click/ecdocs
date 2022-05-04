@@ -950,13 +950,13 @@
 >              var s = new Date().getTime();
 >              var d = image.captureFullScreenEx();
 >              if (d) {
->                  var saved =image.saveTo(d,"/sdcard/testb.png");
+>                  var saved =image.saveTo(d,"D:/testb.png");
 >                  var s = new Date().getTime();
 >                  var bd = image.binaryzation(d,1,200);
 >                  logd("time "+(new Date().getTime()-s))
 >                  logd(bd.uuid);
 >                  if (bd) {
->                      var saved =image.saveTo(bd,"/sdcard/testb2.png");
+>                      var saved =image.saveTo(bd,"D:/testb2.png");
 >                      logd("saved "+saved)
 >                      exit()
 >                  }
@@ -1219,7 +1219,7 @@
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
->     var r = image.saveTo(imageX,"/sdcard/a.png");
+>     var r = image.saveTo(imageX,"D:/a.png");
 >     toast("result "+r);
 >     //图片要回收
 >     image.recycle(imageX )
@@ -1242,10 +1242,10 @@
 > 
 >     function main() {
 >     
->         let bot = image.readBitmap("/sdcard/yyb2.png");
+>         let bot = image.readBitmap("D:/yyb2.png");
 >         logd("bot "+bot);
 >         //保存的到文件
->         let saved = image.saveBitmap(bot,"png",100,"/sdcard/tmp.png");
+>         let saved = image.saveBitmap(bot,"png",100,"D:/tmp.png");
 >         logd("saved "+saved);
 >         //回收掉防止内存暴涨
 >          if (bot) {
