@@ -668,7 +668,7 @@
 
 
 
-### findIECFile 保存资源为文件
+### findIECFile 查找IEC的文件
 
 * 查找IEC的文件
 * 适合版本 EC 8.0.0+
