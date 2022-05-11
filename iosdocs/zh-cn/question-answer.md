@@ -5,6 +5,7 @@
 - 由于iPhone需要挂载开发者镜像文件，请到网盘下载DeveloperDiskImage.zip文件
 - 解压zip文件到桥接程序的config文件夹，之前这个文件下有就DeveloperDiskImage，按照版本规则放置即可
 - 如果没有你的手机型号，可以自己按照这个链接提取developer镜像：https://ighibli.github.io/2017/03/28/Could-not-locate-device-support-files/
+- https://github.com/haikieu/xcode-developer-disk-image-all-platforms/tree/master/DiskImages/iPhoneOS.platform/DeviceSupport
 - 如果还是没有镜像，可以尝试将最靠近`你的iPhone版本`的`镜像版本文件夹名称修改与手机版本一致 `
 
 
