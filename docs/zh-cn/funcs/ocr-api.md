@@ -36,6 +36,21 @@
 
 > ```javascript
 >   function main() {
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+>        let request = image.requestScreenCapture(10000,0);
+>        if (!request) {
+>            request = image.requestScreenCapture(10000,0);
+>        }
+>        logd("申请截图结果... "+request)
+>        if(!request){
+>           loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>          exit()
+>       }
+>       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>       sleep(1000)
+>       
 >   	let paddleocr = {
 >   		"type": "paddleocr"
 >   	}
@@ -96,6 +111,21 @@
 
 > ```javascript
 >   function main() {
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+>        let request = image.requestScreenCapture(10000,0);
+>        if (!request) {
+>            request = image.requestScreenCapture(10000,0);
+>        }
+>        logd("申请截图结果... "+request)
+>        if(!request){
+>           loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>          exit()
+>       }
+>       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>       sleep(1000)
+>       
 >   	let paddleocr = {
 >   		"type": "paddleocr"
 >   	}
@@ -157,11 +187,22 @@
 - Tesseract 例子
 
 > ```javascript
->  
-> 
-> 
 > function main() {
-> 
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+>        let request = image.requestScreenCapture(10000,0);
+>        if (!request) {
+>            request = image.requestScreenCapture(10000,0);
+>        }
+>        logd("申请截图结果... "+request)
+>        if(!request){
+>           loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>          exit()
+>       }
+>       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>       sleep(1000)
+>       
 >     //Tesseract模块初始化参数
 >     let tessInitMap ={
 >         "type":"tess",
@@ -213,6 +254,21 @@
 > ```javascript
 > 
 >   function main() {
+>       logd("isServiceOk "+isServiceOk());
+>       startEnv()
+>       logd("isServiceOk "+isServiceOk());
+>        let request = image.requestScreenCapture(10000,0);
+>        if (!request) {
+>            request = image.requestScreenCapture(10000,0);
+>        }
+>        logd("申请截图结果... "+request)
+>        if(!request){
+>           loge("申请截图权限失败,检查是否开启后台弹出,悬浮框等权限")
+>          exit()
+>       }
+>       //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
+>       sleep(1000)
+>       
 >        let baiduOnlineInitMap ={
 >               "type":"baiduOnline",
 >               "ak":"xx",
