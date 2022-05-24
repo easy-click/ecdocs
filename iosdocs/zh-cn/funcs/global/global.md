@@ -456,6 +456,26 @@
 
 
 
+### findIECFile 查找IEC的文件
+
+* 查找IEC的文件
+* @param dir       文件夹名称，null代表只读res/文件夹，没有默认是res文件夹，可以是类似 res/aaa/这样的文件夹
+* @param names     文件名称前缀,null代表不匹配， 例如aaa,多个前缀用|分割，例如 aaa|bb|cc
+* @param ext       文件扩展名 ,null代表不匹配，例如.png,多个扩展用|分割，例如 .png|.jpg|.bmp
+* @param recursion 是否递归子目录，true代表递归
+* @return {array} 文件名称JSON数组
+
+
+> ```javascript
+> function main(){
+> 	let res = findIECFile("res/","dd2",".png|.jpg",true)
+> 	logd("findIECFile {}",JSON.stringify(res));
+> 
+> }
+> main();
+> 
+> ```
+
 
 
 
