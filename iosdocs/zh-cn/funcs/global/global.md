@@ -548,13 +548,12 @@
 
 ### closeEnv 关闭自动化
  * 关闭自动化环境
- * @param skinAccPage 无障碍模式停止失败 是否跳转到开启无障碍页面
  * @return 布尔型  true代表启动成功，false代表启动失败
 
 
 > ```javascript
  > function main(){
- >     var result = closeEnv(false);
+ >     var result = closeEnv();
  > }
  > main();
  > ```

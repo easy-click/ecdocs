@@ -301,13 +301,13 @@
 
  *  运行程序
   * @param bundleId app的 bundleID
- *  @return bool 布尔型| true代表成功
+ *  @return int 整型 进程的id
 
 > ```javascript
 > 
 > function main(){
 >     var result = appLaunch("com.tencent.xin");
->     if (result){
+>     if (result>0){
 >         logd("成功");
 >     } else {
 >         logd("失败");
