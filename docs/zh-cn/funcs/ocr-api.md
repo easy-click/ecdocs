@@ -2,7 +2,7 @@
 
 - OCR模块是属于对图像进行识别
 - OCR模块的对象前缀是ocr，例如 ocr.initOcr()这样调用
-- 目前的OCR包含了百度AI的easyedge,paddleocr,Tesseract和百度在线识别
+- 目前的OCR包含了ocrLite,百度AI的easyedge,paddleocr,Tesseract和百度在线识别
 - Tesseract 请下载对应的语言包或者自己创建语言包
 
 
@@ -12,25 +12,19 @@
  * 适用版本(EC 5.18.0+)
  * @param map map参数表
  * key分别为：
- * type : OCR类型，值分别为:
-    * easyedge= 百度AI,
-    * paddleocr=PaddleOcr
-    * tess = Tesseract 模块
-    * baiduOnline=百度在在线识别模块
- * 如果类型是 easyedge, 参数设置为 : {"type":"easyedge"},下载并安装好easyedge_OCR.APK, 并授予全部权限并打开APP，从资源区下载
- * 如果类型是 paddleocr, 参数设置为 : {"type":"paddleocr"},下载并安装好 PPOCR.APK, 并授予全部权限并打开APP，从资源区下载
- * 如果类型是 tess,请将训练的模型放到 /sdcard/tessdata/ 文件夹下,参数设置为 :
-    * {"type":"tess","language":"chi_sim","debug":false,"psm":1,"tessedit_char_blacklist":"","tessedit_char_whitelist":"","save_blob_choices":""}
-    * language: 语言数据集文件， 例如chi_sim.traineddata 代表是中文简体语言，参数就填写chi_sim
-    * debug: 代码是否设置调试模式，一般设置false即可
-    * psm :自己查询Tesseract资料，TessBaseAPI.PageSegMode.PSM_AUTO_OSD这样的整型值
-    * tessedit_char_blacklist: 自己查询Tesseract资料
-    * tessedit_char_whitelist: 自己查询Tesseract资料
-    * save_blob_choices: 自己查询Tesseract资料
- * 如果类型是 baiduOnline, 参数设置为 : {"type":"baiduOnline","ak":"xxx","sk":"xx"}
-    * ak = api key,sk = secret key, 百度OCR文档地址 : https://ai.baidu.com/ai-doc/OCR/Ck3h7y2ia
+ * type : OCR类型，
+ * 值分别为 tess = Tesseract模块，baiduOnline=百度在在线识别模块，paddleocr=百度离线的paddleocr，easyedge=百度AI OCR
+ * ocrLite = ocrLite
+ * 如果类型是 tess,请将训练的模型放到 /sdcard/tessdata/ 文件夹下,参数设置为 : {"type":"tess","language":"chi_sim","debug":false}<Br/>
+ * language: 语言数据集文件， 例如chi_sim.traineddata 代表是中文简体语言，参数就填写chi_sim
+ * debug: 代码是否设置调试模式，一般设置false即可
+ * 如果类型是 baiduOnline, 参数设置为 : {"type":"baiduOnline","ak":"xxx","sk":"xx"}<Br/>
+ * ak = api key,sk = secret key, 百度OCR文档地址 : https://ai.baidu.com/ai-doc/OCR/Ck3h7y2ia<Br/>
+ * 如果类型是 ocrLite, 参数设置为 : {"type":"ocrLite","numThread":4,"padding":10,"maxSideLen":0}<Br/>
+ * numThread: 线程数量。 <br/>
+ * padding: 图像预处理，在图片外周添加白边，用于提升识别率，文字框没有正确框住所有文字时，增加此值。<br/>
+ * maxSideLen: 按图片最长边的长度，此值为0代表不缩放，例：1024，如果图片长边大于1024则把图像整体缩小到1024再进行图像分割计算，如果图片长边小于1024则不缩放，如果图片长边小于32，则缩放到32。<br/>
  * @return {bool} 布尔型 成功或者失败
-
 
 - easyedge OCR例子
 
@@ -381,6 +375,81 @@
 
 
 
+## ocr.ocrImage 识别文字
+ * 对 AutoImage 进行OCR，返回的是JSON数据，其中数据类似于与：
+ * 适用版本(EC 8.2.0+)
+ * [{
+ * 	"label": "奇趣装扮三阶盘化",
+ *	"confidence": 0.48334712,
+ *	"x": 11,
+ *	"y": 25,
+ *	"width": 100,
+ *	"height": 100
+ * }]
+ *  <br/>
+ *  label: 代表是识别的文字
+ *  confidence：代表识别的准确度
+ *  x: 代表X开始坐标
+ *  Y: 代表Y开始坐标
+ *  width: 代表宽度
+ *  height: 代表高度
+ * @param image 图片
+ * @param timeout 超时时间 单位毫秒
+ * @param extra 扩展参数，map形式，例如 {"token":"xxx"}
+ * @return {JSON} JSON对象 
+
+
+
+```javascript
+function main() {
+    //let start = startEnv()
+    //logd("start {}", start)
+
+    let s = image.requestScreenCapture(10000, 0);
+    logd("s {}", s)
+
+
+    logd("初始化ocrLite")
+
+    let m = {
+        "type": "ocrLite"
+    }
+    m = {"type": "ocrLite", "numThread": 8, "padding": 10, "maxSideLen": 0};
+    let iniit = ocr.initOcr(m);
+    logd("初始化o " + iniit)
+    image.initOpenCV()
+    sleep(1000)
+    let id = thread.execAsync(function () {
+        while (true) {
+            sleep(1000)
+
+            let tmpImage = image.captureFullScreen();
+            logd("截图 tmpImage {}", tmpImage)
+            let tt = image.binaryzation(tmpImage, 1, 100)
+            console.time(1)
+            let result = ocr.ocrImage(tt, 10000, {"maxSideLen": 1024});
+            if (result) {
+                for (let i = 0; i < result.length; i++) {
+                    logd(JSON.stringify(result[i]))
+                }
+            }
+            logd("耗时 {}", console.timeEnd(1))
+            image.recycle(tt)
+            image.recycle(tmpImage)
+        }
+    })
+
+    logd("线程 thread id = {}", id)
+
+    sleep(115 * 1000)
+    thread.cancelThread(id)
+    sleep(1000)
+    //restartScript("/sdcard/release.iec", true, 3)
+}
+
+main();
+
+```
 
 
 
