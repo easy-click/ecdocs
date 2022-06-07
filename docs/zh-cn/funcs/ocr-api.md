@@ -53,13 +53,17 @@
 >   		"type": "easyedge",
 >    
 >   	}
+>   	let ocrlite = {
+>   		"type": "ocrLite",
+>    
+>   	}
 >   	let inited = ocr.initOcr(easyedge)
 >   	logd("初始化结果 -> " + inited);
 >   	if (!inited) {
 >   		loge("error : " + ocr.getErrorMsg());
 >   		return;
 >   	}
->    
+>       // ocrLite 模式下 不需要初始化这个server 没用的
 >   	let initServer = ocr.initOcrServer(5 * 1000);
 >   	logd("initServer " + initServer);
 >   	if (!initServer) {
@@ -414,7 +418,7 @@ function main() {
     let m = {
         "type": "ocrLite"
     }
-    m = {"type": "ocrLite", "numThread": 8, "padding": 10, "maxSideLen": 0};
+    m = {"type": "ocrLite", "numThread": 1, "padding": 10, "maxSideLen": 0};
     let iniit = ocr.initOcr(m);
     logd("初始化o " + iniit)
     image.initOpenCV()
