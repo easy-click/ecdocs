@@ -10,6 +10,7 @@
     - 代理端口设置: [agent.agentPort]
     - 投屏端口设置: [agent.screenPort]
     - 发现设备模式: [agent.scanMode] 
+这个版本无需更新ipa，是兼容老的版本！    
 ```
 
 
