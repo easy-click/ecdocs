@@ -149,7 +149,8 @@
 
 ### execScript 载入JS
 
-* 执行JS文件或者内容
+* 执行JS文件或者内容, [如果出现illegalStateException，可以尝试修改**eval**函数执行js脚本]
+* eval函数是js自带的，直接传入js内容就行
 * @param type 1=文件，2=直接是JS内容
 * @param content 路径例如/sdcard/a.js或者js的内容
 * @return 布尔型，true代表执行成功， false代表失败
