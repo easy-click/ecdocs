@@ -297,6 +297,51 @@
 > ```
 
 
+
+
+
+### openApp 使用bundleID 打开App
+
+* 使用bundleID 打开App, 这个不同于appLaunch函数，这个通过命令进行的
+* @param bundleId app的 bundleID
+* @return {boolean} true 成功，false 失败成功
+
+> ```javascript
+> function main(){
+>  var result = openApp("com.tencent.xin");
+>  if (result){
+>      logd("成功");
+>  } else {
+>      logd("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+### stopApp 使用bundleID 停止App
+
+* 使用bundleID 停止App, 这个不同于 appKillByBundleId 函数，这个通过命令进行的
+* @param bundleId app的 bundleID
+* @return {boolean} true 成功，false 失败成功
+
+> ```javascript
+> function main(){
+>  var result = stopApp("com.tencent.xin");
+>  if (result){
+>      logd("成功");
+>  } else {
+>      logd("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+
+
 ### appLaunch 运行程序
 
  *  运行程序

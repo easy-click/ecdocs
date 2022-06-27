@@ -54,6 +54,28 @@
 
 
 
+##  device.getDeviceName 获取设备名称
+
+*  获取设备名称，就是手机的名称
+*  @return string
+
+
+> ```javascript
+> function main(){
+> var xx = device.getDeviceName();
+> logd(xx);
+> }
+> main();
+> ```
+
+
+
+
+
+
+
+
+
 ##  device.applist 获取程序列表
 
 * 获取当前设备的安装的程序列表
@@ -173,6 +195,8 @@
 > ```
 
 
+> ```
+> 
 > ```
 
 
