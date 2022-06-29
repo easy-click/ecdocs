@@ -26,6 +26,7 @@
 
 > ```javascript
 >   function main() {
+>     //2.8.0+中控,要在中控设置页开启opencv功能,并重启中控
 >   	let ocrLite = {
 >   		"type": "ocrLite",
 >        "baseDir":"c:/ec/OcrLiteNcnn",
