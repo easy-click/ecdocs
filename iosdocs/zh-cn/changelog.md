@@ -1,4 +1,19 @@
-当前最新版本: 2.8.0
+当前最新版本: 2.9.0
+
+```json
+## 2.9.0
+- 新增安装、卸载app功能，installApp,uninstallApp函数 (无需启动自动化)
+- 新增网页用于复制、粘贴、打开URL Scheme等操作
+- 新增中控config.toml文件[agent.run15iOSIpaAgentAsApp]选项
+- 新增 resetUsbConn 重置USB链接函数
+- 新增IDEA开启、关闭自动化，重置USB链接功能
+- 新增网页关闭自动化，重置USB链接功能
+- 优化代理启动检测，新加中控config.toml文件[agent.detectTimeout]超时检测配置
+- 优化多点触摸支持5个手指
+
+```
+
+
 
 
 
