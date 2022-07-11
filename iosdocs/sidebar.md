@@ -44,6 +44,8 @@
 
 * [高级功能](/zh-cn/advance/)
 
+    * [系统配置](/zh-cn/advance/centerconfig.md)
+    * [网页工具](/zh-cn/advance/webtools.md)
     * [XCODE远程安装IPA](/zh-cn/advance/xcoderemote.md)
     * [部署方式](/zh-cn/advance/deploy.md)
     * [插件开发](/zh-cn/funcs/plugin/plugins.md)

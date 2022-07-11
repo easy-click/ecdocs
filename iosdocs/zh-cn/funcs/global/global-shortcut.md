@@ -108,6 +108,8 @@
 * @param touch1 第1个手指的触摸点数组,例如：[{"action":0,"x":1,"y":1,"pointer":1,"delay":20},{"action":2,"x":1,"y":1,"pointer":1,"delay":20}]
 * @param touch2 第2个手指的触摸点数组
 * @param touch3 第3个手指的触摸点数组
+* @param touch4 第4个手指的触摸点数组
+* @param touch5 第5个手指的触摸点数组
 * @param timeout 多点触摸总执行的超时时间，单位是毫秒
 * @return boolean|布尔型
 
@@ -164,7 +166,7 @@
 >        .action(2).x(300).y(900).pointer(2).delay(1)
 >        .next()
 >        .action(1).x(300).y(800).pointer(2).delay(1);
->    var x = multiTouch(touch1, touch2, null, 30000);
+>    var x = multiTouch(touch1, touch2, null,null,null, 30000);
 >    logd("xxs " + x);
 > }
 > main();
@@ -385,10 +387,75 @@
 
 
 
+### installApp 使用 路径 安装app
+
+* 使用 路径 安装app (无需启动自动化)
+* @param bundleId app的 bundleID
+* @param path ipa的路径 和桥接在同一个电脑上
+* @return {string} ok 代表 成功，其他字符串 失败
+
+> ```javascript
+> function main(){
+> var result = installApp("com.test.xin","c:/a.ipa");
+>    logd("result "+result);
+> if (result=="ok"){
+>   logd("成功");
+> } else {
+>   logd("失败");
+> }
+> }
+> main();
+> ```
+
+
+
+### uninstallApp 使用bundleID 卸载app
+
+* 使用bundleID 卸载app (无需启动自动化)
+* @param bundleId app的 bundleID
+* @return {string} ok 代表 成功，其他字符串 失败
+
+> ```javascript
+> function main(){
+> var result = uninstallApp("com.test.xin");
+> logd("result "+result);
+> if (result=="ok"){
+>   logd("成功");
+> } else {
+>   logd("失败");
+> }
+> }
+> main();
+> ```
+
+
+
+
+
 
 ## 其他函数
 
+
+
+### resetUsbConn 重置usb链接 
+
+* 重置USB链接，如果开起来自动化可以使用这个尝试
+* @return {boolean} true 成功，false 失败
+
+> ```javascript
+> function main(){
+>  var result = resetUsbConn();
+>  logd(result);
+> }
+> main();
+> ```
+
+
+
+
+
 ### random 随机函数 
+
  * 取得某个范围的随机值
  * @param min 最小值
  * @param max 最大值
@@ -402,3 +469,4 @@
 > }
 > main();
 > ```
+
