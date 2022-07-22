@@ -1,6 +1,24 @@
 ## 说明
 全局模块是指直接调用方法就可以使用的模块，无需使用前缀对象名称
 
+## 中控版本
+
+### version 获取中控版本
+
+ * 获取中控版本
+ * @return 字符串 例如 2.9.0
+
+> ```javascript
+> function main(){
+> 	logd(version())
+> }
+> main();
+> ```
+
+
+
+
+
 
 ## 插件模块加载
 
@@ -622,35 +640,18 @@
 
 ## 其他
 
-### setAgentTimeout 设置代理请求超时
+### random 随机函数 
 
-* @param envTimeout 启动自动化超时时间，单位是毫秒，可以设置为 10000 - 15000
-* @param readTimeout 其他的请求超时时间，单位是毫秒，可以设置为 2000 - 5000
-* @return {boolean} true代表成功
-
-
-> ```javascript
-> function main(){
-> 	setAgentTimeout(10000,3000);
-> }
-> main();
-> 
-> ```
-
-
-
-### activeAppInfo 当前运行的程序 bundleId
-
-* @param 当前运行的程序 bundleId
-* @return {string} 当前运行的程序 bundleId
-
+ * 取得某个范围的随机值
+ * @param min 最小值
+ * @param max 最大值
+ * @return 整型 在min和max中间的值, 包含最大和最小值
 
 > ```javascript
 > function main(){
-> 	let d=	activeAppInfo();
->   logd(d);
+>  var result = random(100,1000);
+>  sleep(result);
 > }
 > main();
-> 
 > ```
 

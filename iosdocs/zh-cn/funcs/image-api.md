@@ -69,6 +69,78 @@
 
 
 
+
+### image.isScreenStreamOk 流式截图是否正常
+
+ * 流式截图是否正常
+ * @return 布尔型 true 代表成功 false代表失败
+
+> ```javascript
+> function testScreen() {
+>     let start = image.startScreenStream();
+>     logd("start {}", start)
+>     setAgentSetting({"screenStreamQuality": 100})
+> 
+>     thread.execAsync(function () {
+>         while (true) {
+>             sleep(2000)
+>             // 服务不在的情况下
+>             let serviceOk = isServiceOk();
+>             if (!serviceOk) {
+>                 serviceOk = startEnv();
+>             }
+>             if (!serviceOk) {
+>                 // 适当加上重置USB链接
+>                 resetUsbConn();
+>                 continue
+>             }
+>             if (image.isScreenStreamOk()) {
+>                 continue
+>             }
+>             // 判断截屏是否成
+>             logd("重启流式截图状态")
+> 
+>             let start = image.startScreenStream()
+>             logd("startScreenStream :{}", start)
+>         }
+>     })
+> 
+> 
+>     while (true) {
+>         sleep(1000);
+>         console.time("1")
+>         let img = image.captureScreenStream()
+>         logd("img {} time: {}", img, console.timeEnd("1"))
+>         if (img) {
+>             image.saveTo(img, "a.png");
+>         }
+>         image.recycle(img)
+>     }
+> 
+> }
+> 
+> 
+> function main() {
+>    			logd("isServiceOk "+isServiceOk());
+>    			startEnv()
+>   // 带守护的 流式截图，可以设置投屏质量 
+>    			testScreen()
+> 
+> }
+> main();
+> ```
+
+
+
+
+
+```
+
+```
+
+
+
+
 ### image.captureScreenStream 图像流
 * 从图像流中获取一张图片
 * @return AutoImage对象或者null

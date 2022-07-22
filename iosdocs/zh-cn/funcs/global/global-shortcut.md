@@ -454,19 +454,58 @@
 
 
 
-### random 随机函数 
+### setAgentSetting 设置代理程序的配置
 
- * 取得某个范围的随机值
- * @param min 最小值
- * @param max 最大值
- * @return 整型 在min和max中间的值, 包含最大和最小值
+* 设置代理程序的配置
+ * @param ext 是一个map，例如 {"screenStreamQuality":100}
+ *  screenStreamQuality 代表投屏质量 1 - 100
+ *  screenStreamFramerate 代表投屏帧率 10 - 60
+ * @return {bool} true 成功，false 失败
 
 > ```javascript
-> 
 > function main(){
->     var result = random(100,1000);
->     sleep(result);
+>   // 如果不想设置某个属性，可以不在map填写
+> 	var result = setAgentSetting({"screenStreamQuality":60,"screenStreamFramerate":20});
+> 	logd(result);
 > }
 > main();
 > ```
+
+
+
+
+
+### setAgentTimeout 设置代理请求超时
+
+* @param envTimeout 启动自动化超时时间，单位是毫秒，可以设置为 10000 - 15000
+* @param readTimeout 其他的请求超时时间，单位是毫秒，可以设置为 2000 - 5000
+* @return {boolean} true代表成功
+
+
+> ```javascript
+> function main(){
+> 	setAgentTimeout(10000,3000);
+> }
+> main();
+> 
+> ```
+
+
+
+### activeAppInfo 当前运行的程序 bundleId
+
+* @param 当前运行的程序 bundleId
+* @return {string} 当前运行的程序 bundleId
+
+
+> ```javascript
+> function main(){
+> 	let d=	activeAppInfo();
+> logd(d);
+> }
+> main();
+> 
+> ```
+
+
 
