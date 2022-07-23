@@ -45,6 +45,8 @@
 * [高级功能](/zh-cn/advance/)
 
     * [系统配置](/zh-cn/advance/centerconfig.md)
+    * [企业版开放接口说明](/zh-cn/advance/openapiintro.md)
+    * [企业版开放接口文档](/zh-cn/advance/openapi.md)
     * [网页工具](/zh-cn/advance/webtools.md)
     * [XCODE远程安装IPA](/zh-cn/advance/xcoderemote.md)
     * [部署方式](/zh-cn/advance/deploy.md)

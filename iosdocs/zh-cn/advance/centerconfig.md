@@ -27,4 +27,8 @@ detectTimeout = 15
 # iOS15+ 设备，启动agent ipa，是否按照普通app模式运行 1 是 2否
 # 如果是 ios15+，使用这个模式，不重启手机情况下自动化会一直保持
 run15iOSIpaAgentAsApp = 2
+# 启动代理服务的时候 自动重置usb链接 1 是 2否
+resetUsbConAuto = 2
+# 投屏质量 1 - 100
+screenSteamQuality = 50
 ```
