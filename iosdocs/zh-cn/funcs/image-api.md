@@ -1194,7 +1194,7 @@
 >           toast("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
@@ -1224,7 +1224,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >    ///申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    var bitmap = image.captureFullScreen("jpg",800,800,100,100,100);
@@ -1258,7 +1258,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >    var bitmap = image.captureFullScreen();
@@ -1287,7 +1287,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
@@ -1346,7 +1346,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >    //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
@@ -1376,7 +1376,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >   //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >    sleep(1000)
 >     var imageX = image.captureFullScreen();
@@ -1471,7 +1471,7 @@
 >           return;
 >       }
 >
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
@@ -1514,7 +1514,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >      //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
@@ -1554,7 +1554,7 @@
 >           logd("申请权限失败");
 >           return;
 >       }
->    logd("申请截图结果... "+request)
+>    logd("申请截图结果... "+req)
 >     //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
 >        sleep(1000)
 >    for (var i = 0; i < 100; i++) {
@@ -1592,8 +1592,8 @@
 > ```javascript
 > 
 > function main() {
->       let req = startEnv();
->       if (!req) {
+>       let request = startEnv();
+>       if (!request) {
 >           logd("申请权限失败");
 >           return;
 >       }
@@ -1628,8 +1628,8 @@
 
 > ```javascript
 > function main() {
->       let req = startEnv();
->       if (!req) {
+>       let request = startEnv();
+>       if (!request) {
 >           logd("申请权限失败");
 >           return;
 >       }
