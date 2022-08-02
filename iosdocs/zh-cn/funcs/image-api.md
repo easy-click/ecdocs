@@ -701,13 +701,7 @@
 
 > ```javascript
 > function main() {
-> var request = image.requestScreenCapture(10000,0);
-> if (request){
 > 
-> }else {
-> 
-> exit();
-> }
 > 
 > 
 > //申请完权限至少等1s(垃圾设备多加点)再截图,否则会截不到图
@@ -723,25 +717,92 @@
 > logd("points " + JSON.stringify(points));
 > //这玩意是个数组
 > if(points && points.length > 0){
->   for(let i=0;i<points.length;i++){
->           logd(points[i])
->           let x = points[i].x
->           let y =points[i].y
->           //点击坐标
->           clickPoint(x,y)
->  }
-> }
-> //图片要回收
-> image.recycle(aimage)
-> }
-> //图片要回收
-> image.recycle(sms)
+> for(let i=0;i<points.length;i++){
+>        logd(points[i])
+>        let x = points[i].x
+>        let y =points[i].y
+>        //点击坐标
+>        clickPoint(x,y)
+>   }
+>    }
+>    //图片要回收
+>    image.recycle(aimage)
+>    }
+>    //图片要回收
+>  image.recycle(sms)
 > }
 > 
 > main();
 > ```
 
 
+
+
+
+### image.findImageByColorEx 透明找图扩展
+
+* 通过颜色找图，支持透明图，这个不需要处理话opencv
+* <p>
+* 整张图片都找不到时返回null
+* @param image1     大图片
+* @param template  小图片（模板）
+* @param x         找图区域 x 起始坐标
+* @param y         找图区域 y 起始坐标
+* @param ex 终点X坐标
+* @param ey 终点Y坐标
+* @param limit 限制结果的数量，如果要找到1个，就填写1，如果是多个请填写多个
+* @param extra 扩展函数，map结构例如<Br/>
+* {"firstColorOffset":"#101010","firstColorThreshold":1.0,"firstColorOffset":"#101010","otherColorThreshold":0.9,"cmpColorSucThreshold":1.0}
+* <Br/>firstColorOffset: 第一个匹配到的颜色偏色,例如 #101010 <Br/>
+* firstColorThreshold: 第一个匹配到的颜色偏色系数，例如 0.9<Br/>
+* firstColorOffset: 剩下需要找的颜色 偏色,例如 #101010<Br/>
+* otherColorThreshold: 剩下需要找的颜色 偏色系数，例如 0.9<Br/>
+* cmpColorSucThreshold: 成功匹配多少个颜色系数 就认为是成功的，例如 0.9 = 90%个点<Br/>
+* startX: 第一个点从哪里开始找的X坐标<Br/>
+* startY: 第一个点从哪里开始找的Y坐标<Br/>
+* @return 多个Point 坐标点数组或者null
+
+> ```javascript
+> 
+> function main() {
+> 
+>     let d = startEnv();
+>     logd("启动服务--> {}", d)
+>     let smallTmplate = readResAutoImage("tmp4.png");
+> 
+>     for (let i = 0; i < 100; i++) {
+>         sleep(1000)
+>         let img = image.captureFullScreen();
+>         logd("img = {}", img)
+>         if (img == null) {
+>             continue
+>         }
+>         console.time(1)
+>         let extra = {
+>             "firstColorOffset": "#202020",
+>             "otherColorOffset": "#000000",
+>             "cmpColorSucThreshold": 1,
+>             "firstColorThreshold": "1",
+>             "otherColorThreshold": "1",
+>             "startX": 0,
+>             "startY": 0
+>         }
+>         let points = image.findImageByColorEx(img, smallTmplate, 0, 0, 0, 0, 100, extra);
+>         logd("time-> {}", console.timeEnd(1))
+>         //这玩意是个数组
+>         if (points) {
+>             logd("points " + JSON.stringify(points));
+>         }
+> 
+>         image.recycle(img)
+> 
+>     }
+> 
+>   	image.recycle(smallTmplate)
+> }
+> 
+> main()
+> ```
 
 
 
