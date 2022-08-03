@@ -52,6 +52,7 @@
     * [部署方式](/zh-cn/advance/deploy.md)
     * [插件开发](/zh-cn/funcs/plugin/plugins.md)
     * [Java-JS混合开发](/zh-cn/funcs/plugin/javajs.md)
+    * [键盘输入码表](/zh-cn/advance/keyboard.md)
 
 * [插件生态圈](/zh-cn/allplugin.md)
 
