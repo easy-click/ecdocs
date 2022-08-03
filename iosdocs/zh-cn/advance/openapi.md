@@ -1,4 +1,12 @@
-# 企业版开放API
+在线apifox 接口  
+
+链接: https://www.apifox.cn/apidoc/shared-de0cb92e-6f29-49c1-8386-7982b3b1e051  
+
+访问密码 : ZwzKf51B 
+
+
+
+# EasyClick IOS 企业版开放API
 
 > v1.0.0
 
@@ -1053,6 +1061,59 @@ POST /openapi/home
 |» data|boolean|true|none||true 成功 false 失败|
 |» msg|string|true|none||错误消息|
 
+## POST 模拟键盘
+
+POST /openapi/ioHIDEvent
+
+ 模拟人机交互，例如键盘输入和快捷键，具体健值请看 http://ieasyclick.com/iosdocs/#/zh-cn/advance/keyboard
+
+> Body 请求参数
+
+```json
+{
+  "deviceId": "6a290cdc0b6db0565955355b157acc090e33f76e",
+  "eventPageID": "0x0C",
+  "delay": 0.2,
+  "eventUsageID": "0x40"
+}
+```
+
+### 请求参数
+
+|名称|位置|类型|必选|说明|
+|---|---|---|---|---|
+|body|body|object| 否 |none|
+|» deviceId|body|string| 是 |设备ID|
+|» eventPageID|body|string| 是 |人机交互类型|
+|» eventUsageID|body|string| 是 |人机交互值|
+|» delay|body|number| 是 |持续时间单位毫秒|
+
+> 返回示例
+
+> 成功
+
+```json
+{
+  "code": 0,
+  "data": true
+}
+```
+
+### 返回结果
+
+|状态码|状态码含义|说明|数据模型|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|Inline|
+
+### 返回数据结构
+
+状态码 **200**
+
+|名称|类型|必选|约束|中文名|说明|
+|---|---|---|---|---|---|
+|» code|integer|true|none||none|
+|» data|boolean|true|none||none|
+
 # 自动化接口/启停自动化
 
 ## POST 重置USB链接
@@ -1693,4 +1754,6 @@ POST /openapi/refreshMsg
 |»»» serviceOk|string|true|none||服务是否正常|
 |»»» reportTime|string|true|none||上报时间|
 |» msg|string|true|none||msg  错误消息|
+
+# 数据模型
 

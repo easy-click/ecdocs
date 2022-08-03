@@ -15,7 +15,9 @@
 - 自动化接口
   - 自动化接口，例如点击、滑动、输入等，可以通过HTTP请求调用
 
+在线apifox 接口  
 
+链接: https://www.apifox.cn/apidoc/shared-de0cb92e-6f29-49c1-8386-7982b3b1e051  访问密码 : ZwzKf51B 
 
 请查看 :  [企业版开放接口文档](/zh-cn/advance/openapi.md)
 
