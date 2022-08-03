@@ -273,9 +273,29 @@
 > main();
 > ```
 
+### ioHIDEvent  模拟键盘
+
+* 模拟人机交互，例如键盘输入和快捷键，具体健值请看
+* <a href="http://ieasyclick.com/iosdocs/#/zh-cn/advance/keyboard">http://ieasyclick.com/iosdocs/#/zh-cn/advance/keyboard</a>
+* @param eventPageID 人机交互类型
+* @param eventUsageID 人机交互值
+* @param delay 时长一般设置为 0.2 即可，可能有延迟
+* @return boolean|布尔型
+
+> ```javascript
+> function main(){
+> 	let x = ioHIDEvent("0x07","0x11",0.2)
+> 	logd(x)
+> 
+> }
+> main();
+> ```
 
 
 
+```
+
+```
 
 
 
