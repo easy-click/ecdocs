@@ -19,25 +19,18 @@
 * [脚本函数](/zh-cn/funcs.md)
 
     * [全局模块](/zh-cn/funcs/global/global.md)
-
     * [全局快捷事件](/zh-cn/funcs/global/global-shortcut.md)
 
+    - [节点函数](/zh-cn/funcs/node-api.md)
+
     * [图色函数](/zh-cn/funcs/image-api.md)
-
     * [OCR识别](/zh-cn/funcs/ocr-api.md)
-
     * [设备函数](/zh-cn/funcs/device-api.md)
-
     * [文件函数](/zh-cn/funcs/file-api.md)
-
     * [Stroage存储函数](/zh-cn/funcs/storage-api.md)
-
     * [网络函数](/zh-cn/funcs/http-api.md)
-
     * [线程函数](/zh-cn/funcs/thread-api.md)
-
     * [常用工具函数](/zh-cn/funcs/utils-api.md)
-      
     * [JDBC MYSQL 命令函数](/zh-cn/funcs/jdbcmysql-api.md)
 
     
