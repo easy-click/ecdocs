@@ -783,3 +783,160 @@
 > main()
 > ```
 
+
+
+
+
+## 以下是节点的级联操作
+
+## parent 查询节点的父级
+
+* 查询节点的父级
+* @return {NodeInfo} 节点对象
+
+```json
+function main() {
+
+    // 进入查找状态
+    let nd = labelMatch(".*1.*").getOneNodeInfo(1000)
+    if (nd) {
+        console.log(" 查找 设置 节点信息 {}  ", JSON.stringify(nd))
+        let parent = nd.parent()
+        console.log(" 查找 parent {}  ", JSON.stringify(parent))
+    } else {
+        console.log(" 未查找 设置 节点信息  ")
+    }
+    // 先释放老的数据
+    releaseNode();
+}
+
+
+main()
+```
+
+## child 取得单个子节点
+
+* 取得单个子节点
+* @param index – 子节点索引
+* @return {NodeInfo} NodeInfo 对象 或者null
+
+```json
+function main() {
+
+    // 进入查找状态
+    let nd = labelMatch(".*1.*").getOneNodeInfo(1000)
+    if (nd) {
+        console.log(" 查找 设置 节点信息 {}  ", JSON.stringify(nd))
+       let child1 = nd.child(0)
+        console.log(" 查找 child {}  ", JSON.stringify(child1))
+    } else {
+        console.log(" 未查找 设置 节点信息  ")
+    }
+    // 先释放老的数据
+    releaseNode();
+}
+
+
+main()
+```
+
+## allChildren 取得所有子节点
+
+* 取得所有子节点
+* @return {array} NodeInfo 节点集合
+
+```json
+function main() {
+
+    // 进入查找状态
+    let nd = labelMatch(".*1.*").getOneNodeInfo(1000)
+    if (nd) {
+        console.log(" 查找 设置 节点信息 {}  ", JSON.stringify(nd))
+       let allChildren = nd.allChildren()
+        console.log(" 查找 allChildren {}  ", JSON.stringify(allChildren))
+    } else {
+        console.log(" 未查找 设置 节点信息  ")
+    }
+    // 先释放老的数据
+    releaseNode();
+}
+
+
+main()
+```
+
+## siblings 取得所有兄弟节点
+
+* 当前节点的所有兄弟节点
+* @return {array} NodeInfo 节点集合
+
+```json
+function main() {
+
+    // 进入查找状态
+    let nd = labelMatch(".*1.*").getOneNodeInfo(1000)
+    if (nd) {
+        console.log(" 查找 设置 节点信息 {}  ", JSON.stringify(nd))
+       let siblings = nd.siblings()
+        console.log(" 查找 siblings {}  ", JSON.stringify(siblings))
+    } else {
+        console.log(" 未查找 设置 节点信息  ")
+    }
+    // 先释放老的数据
+    releaseNode();
+}
+
+
+main()
+```
+
+## previousSiblings 取得前面的兄弟节点
+
+* 在当前节点前面的兄弟节点
+* @return {array} NodeInfo 节点集合
+
+```json
+function main() {
+
+    // 进入查找状态
+    let nd = labelMatch(".*1.*").getOneNodeInfo(1000)
+    if (nd) {
+        console.log(" 查找 设置 节点信息 {}  ", JSON.stringify(nd))
+       let previousSiblings = nd.previousSiblings()
+        console.log(" 查找 previousSiblings {}  ", JSON.stringify(previousSiblings))
+    } else {
+        console.log(" 未查找 设置 节点信息  ")
+    }
+    // 先释放老的数据
+    releaseNode();
+}
+
+
+main()
+```
+
+## nextSiblings 取得后面的兄弟节点
+
+* 在当前节点后面的兄弟节点
+* @return {array} NodeInfo 节点集合
+
+```json
+function main() {
+
+    // 进入查找状态
+    let nd = labelMatch(".*1.*").getOneNodeInfo(1000)
+    if (nd) {
+        console.log(" 查找 设置 节点信息 {}  ", JSON.stringify(nd))
+       let nextSiblings = nd.nextSiblings()
+        console.log(" 查找 nextSiblings {}  ", JSON.stringify(nextSiblings))
+    } else {
+        console.log(" 未查找 设置 节点信息  ")
+    }
+    // 先释放老的数据
+    releaseNode();
+}
+
+
+main()
+```
+
