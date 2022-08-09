@@ -293,9 +293,43 @@
 
 
 
-```
 
-```
+
+## 屏幕方向
+
+### setOrientation  设置屏幕方向
+
+* 设置屏幕方向，横屏只支持向右旋转90度
+ * @param orientation 1 正常的竖屏，2 向右旋转90度(顺时针)
+ * @return boolean|布尔型
+
+> ```javascript
+> function main(){
+> 	let x = setOrientation(1)
+> 	logd(x)
+> 
+> }
+> main();
+> ```
+
+
+
+### getOrientation  获取屏幕方向
+
+* 获取屏幕方向
+ * @return int| 0 竖屏，1 横屏 （向右旋转90度(顺时针)）
+
+> ```javascript
+> function main(){
+> 	let x = getOrientation()
+> 	logd(x)
+> }
+> main();
+> ```
+
+
+
+
 
 
 
