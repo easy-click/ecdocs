@@ -300,6 +300,7 @@
 ### setOrientation  设置屏幕方向
 
 * 设置屏幕方向，横屏只支持向右旋转90度
+* 适配版本 EC iOS 中控 3.0.0+
  * @param orientation 1 正常的竖屏，2 向右旋转90度(顺时针)
  * @return boolean|布尔型
 
@@ -317,6 +318,7 @@
 ### getOrientation  获取屏幕方向
 
 * 获取屏幕方向
+* 适配版本 EC iOS 中控 3.0.0+
  * @return int| 0 竖屏，1 横屏 （向右旋转90度(顺时针)）
 
 > ```javascript
@@ -328,6 +330,28 @@
 > ```
 
 
+
+### adjustScreenOrientation  校正屏幕方向
+
+* 校正屏幕方向，适配坐标系
+
+* 适配版本 EC iOS 中控 3.0.0+
+
+* @param orientation 0 自动校正坐标系 1 强制竖屏坐标系，2 强制向右旋转90度(顺时针)坐标系
+
+* @return int| 1 竖屏，2 横屏 （向右旋转90度(顺时针)）
+
+  
+
+> ```javascript
+> function main(){
+> 	logd(setOrientation(1))
+> 	sleep(1000)
+> 	logd(getOrientation())
+> 	logd("adjustScreenOrientation {}", adjustScreenOrientation(0))
+> }
+> main();
+> ```
 
 
 

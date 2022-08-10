@@ -9,9 +9,10 @@
 - 新增IDEA 开发节点支持 -- 已完成
 - 新增setFetchNodeParam设置节点抓取参数  -- 已完成
 - 新增投屏输入文字功能 -- 已完成 
-- 新增获取getOrientation屏幕方向的函数 -- 已完成
+- 新增 getOrientation 获取屏幕方向 -- 已完成
+- 新增 setOrientation 设置屏幕方向 -- 已完成 
+- 新增 adjustScreenOrientation 校正屏幕方向和坐标系 -- 已完成 
 - 新增 ioHIDEvent 函数模拟键盘输入 -- 已完成
-- 新增 setOrientation 设置屏幕方向函数 -- 已完成 
 - 恢复投屏的截图功能 -- 已完成
 - 恢复测试自动化功能 -- 已完成
 - 修复投屏的质量设置 -- 已完成
