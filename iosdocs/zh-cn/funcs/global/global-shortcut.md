@@ -239,7 +239,7 @@
  * @return 布尔型 true 拖动成功, false 拖动失败
 
 > ```javascript
-> 
+> //此功能有bug,暂时不能用
 > function main(){
 >     var result = drag(10,10,100,100,200);
 >     if (result){
