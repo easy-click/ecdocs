@@ -339,7 +339,7 @@
 
 * @param orientation 0 自动校正坐标系 1 强制竖屏坐标系，2 强制向右旋转90度(顺时针)坐标系
 
-* @return int| 1 竖屏，2 横屏 （向右旋转90度(顺时针)）
+* @return JSON字符串，里面的key分别是  orientation, screenWidth, screenHeight
 
   
 
