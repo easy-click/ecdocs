@@ -378,6 +378,88 @@
 
 
 
+### homeScreen 强制进入主页
+
+* 强制进入主页
+* 适配 EC iOS 中控 3.0.0+
+* @return {null|布尔型}
+
+> ```javascript
+> function main(){
+>  var result = homeScreen();
+>  if (result){
+>      logd("成功");
+>  } else {
+>      logd("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+### isLocked 屏幕是否是锁定状态
+
+* 屏幕是否是锁定状态
+* 适配 EC iOS 中控 3.0.0+
+* @return {null|布尔型}
+
+> ```javascript
+> function main(){
+>  var result = isLocked();
+>  if (result){
+>      logd("成功");
+>  } else {
+>      logd("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+### lockScreen 锁定屏幕
+
+* 锁定屏幕
+* 适配 EC iOS 中控 3.0.0+
+* @return {null|布尔型}
+
+> ```javascript
+> function main(){
+>  var result = lockScreen();
+>  if (result){
+>      logd("成功");
+>  } else {
+>      logd("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+### unlockScreen 解锁屏幕
+
+* 解锁屏幕，屏幕不能有密码等
+* 适配 EC iOS 中控 3.0.0+
+* @return {null|布尔型}
+
+> ```javascript
+> function main(){
+>  var result = unlockScreen();
+>  if (result){
+>      logd("成功");
+>  } else {
+>      logd("失败");
+>  }
+> }
+> main();
+> ```
+
+
+
+
+
 
 
 ### openApp 使用bundleID 打开App
