@@ -1176,7 +1176,51 @@
 
 
 
+## 点击节点
 
+
+
+## clickCenter 点击节点中心点
+
+* 点击节点中心点
+* 支持版本: EC iOS 中控 3.0.0+
+* @return {bool} true 成功，false 失败
+
+```json
+function main(){
+      setFetchNodeParam({"labelFilter":"2","maxDepth":"70","visibleFilter":"2","excludedAttributes":"visible,2"})
+    let node = name("地图").getOneNodeInfo(10000)
+    logd(JSON.stringify(node))
+    if(node){
+        logd(node.clickRandom())
+    }
+
+}
+
+main()
+```
+
+
+
+## clickRandom 随机点击节点
+
+* 随机点击节点的坐标
+* 支持版本: EC iOS 中控 3.0.0+
+* @return {bool} true 成功，false 失败
+
+```json
+function main(){
+      setFetchNodeParam({"labelFilter":"2","maxDepth":"70","visibleFilter":"2","excludedAttributes":"visible,2"})
+    let node = name("地图").getOneNodeInfo(10000)
+    logd(JSON.stringify(node))
+    if(node){
+        logd(node.clickRandom())
+    }
+
+}
+
+main()
+```
 
 
 
