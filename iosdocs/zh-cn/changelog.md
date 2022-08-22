@@ -5,6 +5,7 @@
 
 - 新增 captureFullScreenEx 函数
 - 新增 API captureFullScreenByteEx 接口
+- IDEA 图色面板新增截图设置
 - 统一图色截图为竖屏，横屏也是竖屏
 - 统一节点支持横屏和竖屏
 - 修复部分问题
