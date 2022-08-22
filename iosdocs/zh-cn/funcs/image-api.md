@@ -168,7 +168,45 @@
 ## 普通截图 jpg
 
 
+
+
+### image.captureFullScreenEx 截取全屏Image对象
+
+* 抓取全屏，格式是JPG
+* 适配EC iOS 3.1.0+
+* @param ext 扩展参数，可以调整截图的方式和质量，可以分别是
+*  type: 1 代表截图方式1  2 代表截图方式2 ，根据自己机器情况调用
+*  quality: 图片质量，type=1的时候，支持 1， 50， 100，三种不同的质量标准
+*      当type =2 的时候，支持1-100图片质量
+* @return {null|AutoImage}
+
+> ```javascript
+> function main() {
+>     logd("isServiceOk " + isServiceOk());
+>     startEnv()
+>     logd("isServiceOk " + isServiceOk());
+>     for (let i = 0; i < 10; i++) {
+>         console.time(1)
+>         var cap = image.captureFullScreenEx({"type": "1", "quality": 50})
+>         logd("截图数据: " + cap + "  耗时: " + console.timeEnd(1))
+>         image.saveTo(cap, "b.jpg");
+>         sleep(1000)
+>         //图片要回收
+>         image.recycle(cap)
+>     }
+> }
+> ```
+
+
+
+
+
+
+
+
+
 ### image.captureFullScreen 截取全屏Image对象
+
 * 截取当前屏幕并返回一个Image对象, 这个格式是jpg。
 * @return AutoImage对象或者null
 

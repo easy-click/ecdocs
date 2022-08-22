@@ -3,6 +3,8 @@
 ```json
 # 3.1.0
 
+- 新增 captureFullScreenEx 函数
+- 新增 API captureFullScreenByteEx 接口
 - 统一图色截图为竖屏，横屏也是竖屏
 - 统一节点支持横屏和竖屏
 - 修复部分问题
@@ -11,6 +13,7 @@
     - 2、节点查询支持横屏和竖屏，所以节点点击的时需要自己调用adjustScreenOrientation函数纠正坐标系
     - 3、推荐节点和图色都保持竖屏的坐标系，避免坐标系的切换问题
     - 4、投屏横竖屏不受以上的限制
+    - 新增的 captureFullScreenEx 调整图片质量可有效减少图片的大小和截图时间，建议尝试
 [该版本需要更新IPA、中控、开发插件]
 ```
 
