@@ -1,4 +1,15 @@
-### 当前发布版本: 3.1.0
+### 当前发布版本: 3.2.0
+
+```json
+# 3.2.0
+
+- 新增deviceInfo函数
+- 修复getScreenWidth和getScreenHeight的问题
+
+[已经安装了3.1的IPA，不用更新IPA了]
+```
+
+
 
 ```json
 # 3.1.0

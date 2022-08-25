@@ -2,6 +2,32 @@
 - 设备模块函数主要是跟设备信息相关联
 - 设备模块的对象前缀是device，
 
+##  device.getDeviceInfo 获取设备的信息
+
+* 获取设备的信息
+* 适配版本EC iOS 3.2.0+
+* 返回的是JSON
+* orientation：:方向 1 竖屏 2 横屏
+*  screenWidth：:屏幕宽度
+*  screenHeight：:屏幕高度
+*  orientationClick：当前坐标系方向，1竖屏 2横屏
+* deviceId：设备ID
+* serialNo：设备序列号
+* deviceName：设备名称
+* productVersion：设备版本
+* model：设备型号
+* @return JSON字符串
+
+
+> ```javascript
+> function main(){
+>  var xx = device.getDeviceInfo();
+>  logd(xx);
+> }
+> 
+> main();
+> ```
+
 
 
 ##  device.getDeviceId 获取id
