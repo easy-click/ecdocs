@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ieasyclick.com/case</id>
+    <title>EasyClick - 自动化脚本专家 Blog</title>
+    <updated>2021-09-02T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://ieasyclick.com/case"/>
+    <subtitle>EasyClick - 自动化脚本专家 Blog</subtitle>
+    <icon>https://ieasyclick.com/img/easyclick.png</icon>
+    <entry>
+        <title type="html"><![CDATA[2015]]></title>
+        <id>kgdata</id>
+        <link href="https://ieasyclick.com/case/kgdata"/>
+        <updated>2021-09-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2015]]></summary>
+        <content type="html"><![CDATA[<div class="admonition admonition-info alert alert--info"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</h5></div><div class="admonition-content"></div></div>]]></content>
+    </entry>
+</feed>
