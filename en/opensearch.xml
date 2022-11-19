@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>EasyClick_自动化脚本编写_自动化测试_自动化脚本开发_自动化办公</ShortName>
-  <Description>Search EasyClick_自动化脚本编写_自动化测试_自动化脚本开发_自动化办公</Description>
+  <ShortName>EasyClick官网_手机自动化脚本编写_游戏自动化_营销自动化_自动化测试_自动化脚本开发_自动化办公</ShortName>
+  <Description>Search EasyClick官网_手机自动化脚本编写_游戏自动化_营销自动化_自动化测试_自动化脚本开发_自动化办公</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://ieasyclick.com/en/img/easyclick.png</Image>
   <Url type="text/html" method="get" template="https://ieasyclick.com/en/search?q={searchTerms}"/>
