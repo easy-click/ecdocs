@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkeasyclick_website=self.webpackChunkeasyclick_website||[]).push([[8691],{7725:function(e){e.exports=JSON.parse('{"permalink":"/case","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"\u5408\u4f5c\u4f19\u4f34"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkeasyclick_website=self.webpackChunkeasyclick_website||[]).push([[4217],{1112:function(e){e.exports=JSON.parse('{"title":"\u5408\u4f5c\u4f19\u4f34","items":[{"title":"2015","permalink":"/case/kgdata"}]}')}}]);

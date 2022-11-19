@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ieasyclick.com/en/case</id>
-    <title>EasyClick - 自动化脚本专家 Blog</title>
+    <title>EasyClick_自动化脚本编写_自动化测试_自动化脚本开发_自动化办公 Blog</title>
     <updated>2021-09-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ieasyclick.com/en/case"/>
-    <subtitle>EasyClick - 自动化脚本专家 Blog</subtitle>
+    <subtitle>EasyClick_自动化脚本编写_自动化测试_自动化脚本开发_自动化办公 Blog</subtitle>
     <icon>https://ieasyclick.com/en/img/easyclick.png</icon>
     <entry>
         <title type="html"><![CDATA[2015]]></title>
