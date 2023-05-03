@@ -2,13 +2,15 @@
 title: EasyClick iOS 免越狱中控投屏使用手册
 
 ---
-## EasyClick iOS 免越狱中控投屏使用手册（V6.1.0）
+## EasyClick iOS 免越狱中控投屏使用手册（V6.2.0）
 
 - 官网地址: https://ieasyclick.com/
+- 论坛: http://bbs.ieasyclick.com/
+- 百度网盘下载： https://pan.baidu.com/s/124sTYQAZkedgfnTv3iFTZg 提取码：7bhy
 
 ## 下载文件
 
-- 找网盘下载ioscenter_windows开头的压缩包，并且解压到文件夹，文件夹和名称不要有特殊字符、空格、中文等
+- 到网盘下载ioscenter_windows开头的压缩包，并且解压到文件夹，文件夹和名称不要有特殊字符、空格、中文等
 - 双击ioscenter.exe开始运行中控程序
 
 <img src="myimages/image-20230408084252788.png" alt="image-20230408084252788" style="zoom:33%;" />
@@ -33,7 +35,7 @@ title: EasyClick iOS 免越狱中控投屏使用手册
 
 ### 设置开发者镜像
 
-- 到网盘中下载DeveloperImage12.4-16.4.zip文件，解压到安装目录下的bridgebin\win\config\DeveloperDiskImage，文件夹中，按照版本好排列即可
+- 到网盘中下载DeveloperImage12.4-16.4.zip文件，解压到安装目录下的bridgebin\config\DeveloperDiskImage，文件夹中，按照版本好排列即可
 
   <img src="myimages/image-20230408084330902.png" alt="image-20230408084330902" style="zoom:33%;" />
 
@@ -227,7 +229,24 @@ title: EasyClick iOS 免越狱中控投屏使用手册
 - 鼠标移动到投屏界面，上下滚动鼠标即可
 - <img src="myimages/image-20230419101738677.png" alt="image-20230419101738677" style="zoom:30%;" />
 
-## 授权
+
+
+## 脚本录制
+
+- 6.2.0以上的版本才有脚本录制功能
+
+  - 第一步将设备设置为主控，并且进行投屏
+  - <img src="myimages/image-20230427103215467.png" alt="image-20230427103215467" style="zoom:30%;" />
+
+  - 第二步，选择工具栏的投屏脚本 - 录制脚本，点击新增脚本，输入脚本名称，保存就会有一个新的空脚本出来
+  - 第三步，点击 **开始录制** 按钮，进入录制状态，然后在主屏幕进行点击、滑动、输入等操作即可完成录制，如果想停止录制，可以点击  **录制中** 按钮，结束录制
+  - 第四步，点击保存按钮，保存脚本到中控下面
+  - <img src="myimages/image-20230427103748868.png" alt="image-20230427103748868" style="zoom:30%;" />
+  - 第五步，选择设备，点击**执行脚本**，即可运行脚本，点击停止脚本，即可停止脚本
+  - <img src="myimages/image-20230427103527571.png" alt="image-20230427103527571" style="zoom:30%;" />
+  - <img src="myimages/image-20230427103858727.png" alt="image-20230427103858727" style="zoom:30%;" />
+
+## 购买授权
 
 - 设备授权和投屏授权是分开的，请找代理商购买获取授权卡号
 
