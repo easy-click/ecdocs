@@ -2,7 +2,7 @@
 title: EasyClick iOS 免越狱中控投屏使用手册
 
 ---
-## EasyClick iOS 免越狱中控投屏使用手册（V6.2.0）
+## EasyClick iOS 免越狱中控投屏使用手册（V6.5.0）
 
 - 官网地址: https://ieasyclick.com/
 - 论坛: http://bbs.ieasyclick.com/
@@ -32,10 +32,11 @@ title: EasyClick iOS 免越狱中控投屏使用手册
 ### 安装和信任
 
 - 用爱思安装好投屏的ipa文件到苹果手机中，并且需要找手机的系统设置 - 通用- 设备管理 - 信任开发者，如没有信任选项，可以无视
+- iOS 16+，请开启开发者模式，具体请看 https://jingyan.baidu.com/article/17bd8e525171bdc4ab2bb8bd.html
 
 ### 设置开发者镜像
 
-- 到网盘中下载DeveloperImage12.4-16.4.zip文件，解压到安装目录下的bridgebin\config\DeveloperDiskImage，文件夹中，按照版本好排列即可
+- 到网盘中下载DeveloperImage12.4-16.4.zip文件，解压到安装目录下的bridgebin\config\DeveloperDiskImage，文件夹中，**按照版本好排列即可**
 
   <img src="myimages/image-20230408084330902.png" alt="image-20230408084330902" style="zoom:33%;" />
 
@@ -116,6 +117,13 @@ title: EasyClick iOS 免越狱中控投屏使用手册
   - <img src="myimages/image-20230408093924785.png" alt="image-20230408093924785" style="zoom:33%;" />
 - 子分辨率，对子屏幕分辨率进行调整
   - <img src="myimages/image-20230408094238083.png" alt="image-20230408094238083" style="zoom:33%;" />
+
+
+
+## 横竖屏幕坐标系切换
+
+
+
 - 横竖屏切换，可以对主屏、子屏幕进行横竖屏切换，特别适合游戏、普通app横竖屏的切换
   - <img src="myimages/image-20230408094306050.png" alt="image-20230408094306050" style="zoom:33%;" />
 
@@ -198,6 +206,34 @@ title: EasyClick iOS 免越狱中控投屏使用手册
 - 点击开始扫描，扫描到电脑后，然后点击>按钮，点击开始组网即可
 - <img src="myimages/image-20230408104912784.png" alt="image-20230408104912784" style="zoom:33%;" />
 
+## 相册操作
+
+- 相册操作支持iOS15+的设备，低于这个版本，请用文件传输模块
+- 左侧工具栏 - 系统功能 - 上传图片
+- 点击选择图片，然后点击开始上传，即可看到进度提示，上传成功，一般支持jpg、png格式
+
+<img src="myimages/image-20230524101059790.png" alt="image-20230524101059790" style="zoom:33%;" />
+
+- 左侧工具栏 - 系统功能 - 上传视频
+- 点击选择视频，点击开始上传，即可看到上传进度，文件越大上传的越慢，支持MP4格式
+- <img src="myimages/image-20230524101320811.png" alt="image-20230524101320811" style="zoom:33%;" />
+
+## 打开应用
+
+- 6.5重新设计了打开应用功能
+
+- 左侧工具栏 - 打开应用
+- 输入包名或者URL点击打开，可以直接打开app或者url
+- 输入包名或者URL，名称，点击增加，可以保存当前的应用方便后续打开
+- 默认应用按钮，可以直接打开系统自带的应用
+- 快捷设置按钮，是设置程序中的快捷跳转入口
+
+
+
+<img src="myimages/image-20230524101359096.png" alt="image-20230524101359096" style="zoom:33%;" />
+
+
+
 ## 打字模式
 
 - 点击手机上的输入框，弹出输入法对话框的情况下，勾选底部输入框右侧的复选框，代表是打字模式
@@ -231,6 +267,18 @@ title: EasyClick iOS 免越狱中控投屏使用手册
 
 
 
+## 投屏系统设置
+
+- 左侧工具栏 - 系统设置按钮
+
+- 打字模式，是指输入框可以进入边打字 边输入的状态
+- 鼠标滚轮控制，是指鼠标可以控制上下滑动
+- 滑动模式，可以用普通模式和多点滑动模式
+- 默认主控，代表主控大界面是否展示出来
+- 自动投屏，是指开启投屏程序自动进入投屏状态
+
+<img src="myimages/image-20230524101633991.png" alt="image-20230524101633991" style="zoom:33%;" />
+
 ## 脚本录制
 
 - 6.2.0以上的版本才有脚本录制功能
@@ -245,6 +293,13 @@ title: EasyClick iOS 免越狱中控投屏使用手册
   - 第五步，选择设备，点击**执行脚本**，即可运行脚本，点击停止脚本，即可停止脚本
   - <img src="myimages/image-20230427103527571.png" alt="image-20230427103527571" style="zoom:30%;" />
   - <img src="myimages/image-20230427103858727.png" alt="image-20230427103858727" style="zoom:30%;" />
+
+## 小屏幕快捷功能
+
+- 鼠标双击小屏幕的标题，可以自动变成主控
+- 鼠标放到小屏幕的回形针按钮，会弹出一些针对单个屏幕操作的快捷方式
+
+<img src="myimages/image-20230524101935290.png" alt="image-20230524101935290" style="zoom:33%;" />
 
 ## 购买授权
 
