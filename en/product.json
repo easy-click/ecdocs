@@ -1,12 +1,12 @@
 {
   "v1": {
     "prods": [
-      "iosusb_iOS USB版本中控+投屏_v6.30.0",
-      "iostjcenter_iOS 脱机版中控+投屏_v1.3.0",
-      "iosdevimg_iOS开发者镜像_v12.4-17.0",
-      "ideazip_idea开发包(开发脚本的)_v2020.2.4.win",
-      "androiddevzip_安卓开发插件(开发脚本的)_v9.25.0",
-      "iosdevzip_iOS USB+脱机版本开发插件(开发脚本的)_v6.31.0"
+      "iosusb_iOS USB版本中控+投屏v6.30.0",
+      "iostjcenter_iOS 脱机版中控+投屏v1.3.0",
+      "iosdevimg_iOS开发者镜像v12.4-17.0",
+      "ideazip_idea开发包(开发脚本的)v2020.2.4.win",
+      "androiddevzip_安卓开发插件(开发脚本的)v9.25.0",
+      "iosdevzip_iOS USB+脱机版本开发插件(开发脚本的)v6.31.0"
     ],
     "iosusb": {
       "url": "http://45.133.238.14:9888/IOS%E8%B5%84%E6%BA%90/USB%E7%89%88%E6%9C%AC/v6.30.0/%E4%B8%AD%E6%8E%A7/ioscenter_windows-x64_6_30_0.zip",
