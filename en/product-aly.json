@@ -3,7 +3,7 @@
   "v1": {
     "prods": [
       "iosusb_iOS USB版本中控+投屏v6.38.0",
-      "iostjcenter_iOS 脱机版中控+投屏v1.5.0",
+      "iostjcenter_iOS 脱机版中控+投屏v1.6.0",
       "iosdevimg_iOS 开发者镜像v12.4-16.8",
       "ecloud_安卓+iOS 脱机版本云控系统v4.2.0",
       "androidcenter_安卓中控投屏系统v1.1.0",
@@ -19,8 +19,8 @@
       "filename": "iosusb.zip"
     },
     "iostjcenter": {
-      "url": "https://ieasyclick.oss-cn-beijing.aliyuncs.com/ios/EasyClickiOS%E8%84%B1%E6%9C%BA%E6%97%A0%E7%BA%BF%E4%B8%AD%E6%8E%A7%E6%8A%95%E5%B1%8Fv1.5.0.zip",
-      "version": "1.5.0",
+      "url": "https://ieasyclick.oss-cn-beijing.aliyuncs.com/ios/EasyClickiOS%E8%84%B1%E6%9C%BA%E6%97%A0%E7%BA%BF%E4%B8%AD%E6%8E%A7%E6%8A%95%E5%B1%8Fv1.6.0.zip",
+      "version": "1.6.0",
       "desc": "iOS 脱机版本的中控和投屏安装包，下载后会自动解压",
       "unzipDir": "iostjcenter",
       "filename": "iostjcenter.zip"
