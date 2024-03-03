@@ -11,8 +11,8 @@
       "iosdevzip_iOS USB版+脱机版本开发插件(开发脚本的)v6.39.0"
     ],
     "iosusb": {
-      "url": "http://45.133.238.14:9888/IOS%E8%B5%84%E6%BA%90/USB%E7%89%88%E6%9C%AC/v6.39.0/%E4%B8%AD%E6%8E%A7/ioscenter_windows-x64_6_38_0.zip",
-      "version": "6.29.0",
+      "url": "http://45.133.238.14:9888/IOS%E8%B5%84%E6%BA%90/USB%E7%89%88%E6%9C%AC/v6.39.0/%E4%B8%AD%E6%8E%A7/ioscenter_windows-x64_6_39_0.zip",
+      "version": "6.39.0",
       "desc": "iOS USB版本的中控和投屏安装包，下载后会自动解压",
       "unzipDir": "iosusb",
       "filename": "iosusb.zip"
@@ -61,7 +61,7 @@
     },
     "iosdevzip": {
       "url": "http://45.133.238.14:9888/IOS%E8%B5%84%E6%BA%90/%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/6.39.0-iOS-EasyClick-USB+%E8%84%B1%E6%9C%BA%E7%89%88-idea%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6.zip",
-      "version": "6.29.0",
+      "version": "6.39.0",
       "unzipDir": "iosdevzip",
       "desc": "iOS脱机+USB版本开发插件包，下载后会自动安装解压到idea中，直接启动idea就可以使用EasyClick iOS开发插件",
       "filename": "iosdevzip.zip"

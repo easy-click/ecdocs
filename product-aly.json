@@ -61,8 +61,8 @@
       "filename": "androiddevzip.zip"
     },
     "iosdevzip": {
-      "url": "https://ieasyclick.oss-cn-beijing.aliyuncs.com/ios/6.29.0-iOS-EasyClick-USB%2B%E8%84%B1%E6%9C%BA%E7%89%88-idea%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6.zip",
-      "version": "6.29.0",
+      "url": "https://ieasyclick.oss-cn-beijing.aliyuncs.com/ios/6.39.0-iOS-EasyClick-USB%2B%E8%84%B1%E6%9C%BA%E7%89%88-idea%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6.zip",
+      "version": "6.39.0",
       "unzipDir": "iosdevzip",
       "desc": "iOS脱机+USB版本开发插件包，下载后会自动安装解压到idea中，直接启动idea就可以使用EasyClick iOS开发插件",
       "filename": "iosdevzip.zip"
