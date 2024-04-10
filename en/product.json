@@ -7,7 +7,7 @@
       "ecloud_安卓+iOS 脱机版本云控系统v4.3.0",
       "androidcenter_安卓中控投屏系统v1.8.0",
       "ideazip_idea开发包(开发脚本的)v2020.2.4.win",
-      "androiddevzip_安卓开发插件(开发脚本的)v9.35.0",
+      "androiddevzip_安卓开发插件(开发脚本的)v9.36.0",
       "iosdevzip_iOS USB版+脱机版本开发插件(开发脚本的)v6.41.0"
     ],
     "iosusb": {
@@ -53,8 +53,8 @@
       "filename": "ideazip.zip"
     },
     "androiddevzip": {
-      "url": "http://45.133.238.14:9888/%E5%AE%89%E5%8D%93%E8%B5%84%E6%BA%90/EasyClick-%E5%AE%89%E5%8D%93-9.35.0-idea%E6%8F%92%E4%BB%B6.zip",
-      "version": "9.35.0",
+      "url": "http://45.133.238.14:9888/%E5%AE%89%E5%8D%93%E8%B5%84%E6%BA%90/EasyClick-%E5%AE%89%E5%8D%93-9.36.0-idea%E6%8F%92%E4%BB%B6.zip",
+      "version": "9.36.0",
       "desc": "安卓开发插件包，下载后会自动安装解压到idea中，直接启动idea就可以使用EasyClick安卓开发插件",
       "unzipDir": "androiddevzip",
       "filename": "androiddevzip.zip"
