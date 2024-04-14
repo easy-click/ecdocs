@@ -6,7 +6,7 @@ title: EasyClick iOS 免越狱中控投屏使用手册
 
 - 官网地址: https://ieasyclick.com/
 - 论坛: http://bbs.ieasyclick.com/
-- 百度网盘下载： https://pan.baidu.com/s/124sTYQAZkedgfnTv3iFTZg 提取码：7bhy
+- 123网盘：https://www.123pan.com/s/6Hlmjv-QayIA.html
 
 ## 下载文件
 
