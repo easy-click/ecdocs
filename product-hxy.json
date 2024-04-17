@@ -1,7 +1,7 @@
 {
   "v1": {
     "prods": [
-      "iosusb_iOS USB版本中控+投屏v6.41.0",
+      "iosusb_iOS USB版本中控+投屏v6.42.0",
       "iostjcenter_iOS 脱机版中控+投屏v1.7.0",
       "iosdevimg_iOS 开发者镜像v12.4-16.8",
       "ecloud_安卓+iOS 脱机版本云控系统v4.4.0",
@@ -11,8 +11,8 @@
       "iosdevzip_iOS USB版+脱机版本开发插件(开发脚本的)v6.42.0"
     ],
     "iosusb": {
-      "url": "http://45.133.238.14:9888/IOS%E8%B5%84%E6%BA%90/USB%E7%89%88%E6%9C%AC/v6.41.0/%E4%B8%AD%E6%8E%A7/ioscenter_windows-x64_6_41_0.zip",
-      "version": "6.41.0",
+      "url": "http://45.133.238.14:9888/IOS%E8%B5%84%E6%BA%90/USB%E7%89%88%E6%9C%AC/v6.42.0/%E4%B8%AD%E6%8E%A7/ioscenter_windows-x64_6_42_0.zip",
+      "version": "6.42.0",
       "desc": "iOS USB版本的中控和投屏安装包，下载后会自动解压",
       "unzipDir": "iosusb",
       "filename": "iosusb.zip"
