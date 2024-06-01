@@ -4,7 +4,7 @@
       "iosusb_iOS USB版本中控+投屏v6.46.0",
       "iostjcenter_iOS 脱机版中控+投屏v1.7.0",
       "iosdevimg_iOS 开发者镜像v12.4-16.8",
-      "ecloud_安卓+iOS 脱机版本云控系统v4.4.0",
+      "ecloud_安卓+iOS 脱机版本云控系统v4.5.0",
       "androidcenter_安卓中控投屏系统v1.8.0",
       "ideazip_idea开发包(开发脚本的)v2020.2.4.win",
       "androiddevzip_安卓开发插件(开发脚本的)v10.3.0",
@@ -32,10 +32,10 @@
       "filename": "iosdevimg.zip"
     },
     "ecloud": {
-      "url": "http://45.133.238.14:9888/%E4%BA%91%E6%8E%A7%E5%AE%89%E8%A3%85%E5%8C%85/ecloudgo-4.4.0.zip",
+      "url": "http://45.133.238.14:9888/%E4%BA%91%E6%8E%A7%E5%AE%89%E8%A3%85%E5%8C%85/ecloudgo-4.5.0.zip",
       "unzipDir": "ecloudgo",
       "desc": "云控产品，支持安卓和脱机版本的iOS，下载后按照官方的教程进行配置环境",
-      "version": "4.4.0",
+      "version": "4.5.0",
       "filename": "ecloudgo.zip"
     },
     "androidcenter": {
