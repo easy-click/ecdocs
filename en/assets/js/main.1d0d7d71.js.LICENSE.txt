@@ -17,6 +17,16 @@ object-assign
  */
 
 /*!
+ * Viewer.js v1.11.6
+ * https://fengyuanchen.github.io/viewerjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2023-09-17T03:16:38.052Z
+ */
+
+/*!
  * lunr.Builder
  * Copyright (C) 2020 Oliver Nightingale
  */
