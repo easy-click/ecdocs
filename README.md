@@ -1,3 +1,9 @@
+# 官方地址
+- EasyClick 官网地址：https://ieasyclick.com/
+# 官方博客
+- 官方博客地址 https://blog.ieasyclick.com/
+
+
 # 最新文档备份地址
 - https://github.com/easy-click/easyclick-docs-md
 
