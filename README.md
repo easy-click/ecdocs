@@ -13,6 +13,10 @@
 
 - EasyClick技术方案：https://ieasyclick.com/community/how_to_select/
 
+# iDeviceFarm 产品
+iDeviceFarm这个产品也是使用AI操作手机的，基于EasyClick 技术构建，可以使用节点、VLM、OPENCV等技术识别手机屏幕，还能有离线免费的OCR来使用, 
+可以用AI很多手机一起执行，如果不想写自动化脚本可以试试这个产品，
+- https://www.idevicefarm.com
 
 
 # EasyClick简介
@@ -84,4 +88,4 @@
 Q群4: 772810035 Q群5: 484379843 Q群6：435253761
 Q群7: 397570651 Q群8: 12076933 Q群9: 778278905
 
-
+iOS群控 iOS自动化脚本 https://www.iosqunkong.com 苹果群控 苹果自动化脚本 https://www.pingguoqunkong.com
